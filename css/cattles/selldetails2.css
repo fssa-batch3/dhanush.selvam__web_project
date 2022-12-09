@@ -1,0 +1,184 @@
+body {
+    background-color: #e8f5ec;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    background-color: #0b1320;
+}
+
+.logo {
+    width: 60px;
+    padding: 15px;
+    padding-right: 30px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+    color: #E0F1FF;
+}
+
+li {
+    padding: 20px 20px;
+    list-style: none;
+    font-size: 18px;
+}
+
+.lotit {
+    padding-top: 5px;
+    color: #E0F1FF;
+}
+
+h2{
+    color: #E0F1FF;
+}
+
+.h11{
+    margin-right: 570px;
+    color: #00a651
+}
+
+.h12{
+    text-align: center;
+    margin-top: -15px;
+}
+
+.h13{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.d0{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 40px;
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #0075A3;
+    border-style: none;
+    border-radius: 10px;
+    color: white;
+}
+
+hr{
+    margin: 0px 100px;
+    margin-bottom: 30px;
+}
+
+.choose{
+    width: 50px;
+    margin-left: 48%;
+}
+
+.bspace{
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+.ispace{
+    padding: 0px 10px;
+}
+
+.i2{
+    width: 150px;
+}
+
+.i2:hover{
+    transform: scale(1.1);
+}
+
+.d1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5px 400px;
+}
+
+p{
+    font-size: 18px;
+    line-height: 15px;
+    padding-left: 40px;
+    font-weight: bold;
+}
+
+.foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #0b1320;
+    color: white;
+    margin-top: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.foot1 {
+    width: 60%;
+}
+
+.logof {
+    width: 100px;
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+.f1p {
+    padding-left: 60px;
+    padding-bottom: 25px;
+    line-height: 30px;
+}
+
+.foot2 {
+    padding-top: 50px;
+    padding-right: 150px;
+}
+
+.contact{
+    width: 50px;
+    padding-right: 30px;
+}
+
+.contact1{
+    width: 40px;
+    padding-right: 30px;
+}
+
+.contact2{
+    width: 40px;
+}
+
+.d3{
+    margin-left: 30px;
+}
+
+.d4{
+    margin-left: 5px;
+}
+
+.d5{
+    margin-left: 10px;
+}
+
+.d6{
+    margin-left: 15px;
+}
+
+.d7{
+    margin-left: -5px;
+}

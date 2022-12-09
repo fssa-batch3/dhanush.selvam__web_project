@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Edit Cattle Details </title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/cattles/cattleprofile.css">
+</head>
+
+<body>
+
+    <main>
+        <form>
+            <div class="navbar">
+                <div><img class="logo" src="../../assets/images/cattles/logo.png" alt="logo"></div>
+                <div>
+                    <h1 class="lotit"> KowMart </h1>
+                </div>
+            </div>
+            <div class = "titbut">
+                <div class = "bspace"><a href = "seller_cattlelist.html"><button class = "btn0"> BACK </button></a></div>
+                <h1 class="ho6"> Edit Cattle Details </h1>
+            </div>
+            <div class = "r1">
+                <div>
+                    <label> Age </label><br>
+                    <input required = "number" value = "4"\>
+                </div>
+                <div>
+                    <label> Gender </label><br>
+                    <select required>
+                        <option> Choose </option>
+					    <option value> Male </option>
+					    <option> Female </option>
+				    </select>
+                </div>
+                <div>
+                    <label> Weight(kg) </label><br>
+                    <input required = "text"  value = "400Kg"\>
+                </div>
+            </div>
+            <div class = "r1">
+                <div>
+                    <label> Milk per day </label><br>
+                    <input required = "number"  value = "12 litres"\>
+                </div>
+                <div>
+                    <label> Price(Rs.) </label><br>
+                    <input required = "number"  value = "Rs.70000"\>
+                </div>
+                <div>
+                    <label> Lactation </label><br>
+                    <input required = "number" value = "2"\>
+                </div>
+            </div>
+            <div class = "r2">
+                <label> Description </label><br>
+                <textarea></textarea>
+            </div>
+            <div class = "r3">
+                <div>
+				    <label> Add or Remove Photo: </label><br>
+				    <input type = "file"\>
+                </div>  
+                <div>
+				    <label> Add or Remove Video: </label><br>
+				    <input type = "file"\>
+                </div>  
+			</div>
+            <div class = "sub">
+                <div>
+                    <button class = "btn" id = "btn1"> Edit </button>
+                </div>
+                <div>
+                    <a href = "cattle_index.html"><button class = "btn" type = "button"> Save </button></a>
+                </div>
+            </div>
+        </form>
+    </main>
+    
+</body>
+</html>

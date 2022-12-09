@@ -1,0 +1,78 @@
+body{
+    background-image: url("../../images/cattles/1.jpg");
+    background-size: cover;
+}
+
+form{
+    background-color: #ffffff80;
+    border-radius: 20px;
+}
+
+.order{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.bg{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    left: -15%;
+    margin-top: 10%;
+}
+
+label{
+    width: 100px;
+    display: inline-block;
+}
+
+div{
+    padding: 15px;
+}
+
+.sub{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+label{
+    margin-right: 30px;
+}
+
+.cp{
+    font-size: 30px;
+    text-align: center;
+}
+
+.logo {
+    width: 70px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: -50px;
+}
+
+.lotit{
+    font-size: 45px;
+    margin-right: 30px;
+    margin-top: 13px;
+    color: #00384e
+}
+
+.btn{
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #F8E382;
+    border-style: none;
+    border-radius: 10px;
+}
+
+#btn1{
+    background-color: #D2D2FB;
+}
