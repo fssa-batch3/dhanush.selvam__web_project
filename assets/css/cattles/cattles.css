@@ -1,0 +1,163 @@
+body {
+    background-color: #e8f5ec;
+}
+
+main {
+    overflow-x: hidden;
+}
+
+.chl{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 30px 100px;
+    align-items: center;
+}
+
+.chl2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.chi{
+    width: 100px;
+    border-radius: 50px;
+}
+
+.ispace{
+    padding: 15px 10px 0px 15px;
+}
+
+.chl1{
+    display: flex;
+    flex-direction: row;
+}
+
+.chln{
+    display: flex;
+    flex-direction: column;  
+    text-align: center;
+}
+
+button{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-style: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.bspace{
+    margin-left: 40px; 
+}
+
+.btn{
+    margin-top: -10px;
+    background-color: #0075A3;
+}
+
+.btn1{
+    background-color: #5F9AA5;
+}
+
+.btn2{
+    background-color: #00a651;
+}
+
+div.p1 >div.bspace >a >button:hover {
+    background-color: white;
+    color: #00a651;
+    border: 2px solid #00a651;
+}
+
+.ho1{
+    height: 450px;
+    background-image:url("../../images/cattles/ho4.jpg");
+    margin: 30px 100px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+}
+
+.ho5{
+    background-color: #ffffff80;
+    padding: 15px 20px;
+}
+
+.ho7{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 100px;
+}
+
+.p1{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    width: 280px;
+    padding: 10px 20px;
+    background-color: white;
+ }
+
+.divspace{
+    padding-left: 40px;
+ }
+
+ .p1:hover {
+    box-shadow: 0 0 1px 1px #00a651;
+}
+ 
+ .i1 {
+    width: 270px;
+    height: 255px;
+    padding: 10px 5px;
+}
+
+.i1:hover{
+    transform: scale(1.1);
+}
+
+ p{
+    line-height: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.ho8{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 100px;
+    margin-bottom: -15px;
+    align-items: center;
+}
+
+hr{
+    margin: 0px 100px;
+}
+
+.gif {
+    width: 180px;
+    position: relative;
+    animation-duration: 7s;
+    animation-name: running_cow;
+    animation-iteration-count: infinite;
+    margin-top: 10px;
+}
+
+@keyframes running_cow {
+    0% {
+        left: calc(0% - 100px);
+    }
+
+    100% {
+        left: calc(100%);
+    }
+}

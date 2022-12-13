@@ -1,0 +1,85 @@
+body {
+    background-color: #e8f5ec;
+}
+
+.ho6{
+    margin-right: 700px;
+}
+
+.ho6buf{
+    margin-right: 650px;
+}
+
+.ho7 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0px 100px;
+}
+
+.p1{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 280px;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.p1:hover {
+    box-shadow: 0 0 1px 1px #00a651;
+}
+
+.i1 {
+    width: 270px;
+    height: 255px;
+    padding: 10px 5px;
+}
+
+.i1:hover{
+    transform: scale(1.1)
+}
+
+p{
+    line-height: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.divspace{
+    padding-left: 40px;
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #00a651;
+    color: white;
+    border-style: none;
+    border-radius: 10px;
+}
+
+div.bspace >a >button:hover {
+    background-color: white;
+    color: #00a651;
+    border: 2px solid #00a651;
+}
+
+.btn{
+    margin-top: 10px;
+    background-color: #0075A3;
+}
+
+.bspace{
+    margin-left: 40px;
+}
+
+.titbut{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-left: 100px;
+}
