@@ -13,44 +13,33 @@
 
 <body>
     <div class = "bg">
-    <form>
-        <div class="navbar">
-            <div><img class="logo" src="../../assets/images/cattles/logo.png" alt="logo"></div>
-            <div>
-                <h1 class="lotit"> KowMart </h1>
-            </div>
-        </div>
-        <h2 class = "cp"> Your Profile </h2>
-        <div class = "order">
-            <div>
-                <label> Seller Id </label>
-                <input type = "text" value = "S001" readonly \>
-            </div>
-            <div>
-                <label> Name </label>
-                <input required = "text" value="Inba Lokesh"\>
-            </div> 
-            <div>
-                <label> Phone No. </label>
-                <input required = "tel" maxlength = "10" value = "1234567890"\>
-            </div>
-            <div>
-                <label> Address </label>
-                <input required = "text" value = "No.727, RK Road, Kannatur, Chennai, Tamil Nadu."\>
-            </div>
-            <a href = "seller_cattlelist.html"><p> Your Cattle Details </p></a>
-            <div class = "sub">
+        <form>
+            <h1> Profile </h1>
+            <div class = "order">
                 <div>
-                    <button class = "btn"> Edit </button>
+                    <label> Seller ID </label>
+                    <input value = "S001" readonly \>
                 </div>
                 <div>
-                    <a href = "cattle_index.html"><button type = "button"> Save </button></a>
+                    <label> Name </label>
+                    <input value = "Inba Lokesh" readonly required = "text"  \>
+                </div>
+                <div>
+                    <label> Phone No. </label>
+                    <input  value = "1234567890" readonly required = "tel" maxlength = "10"\>
+                </div>
+                <div>
+                    <label> Address </label>
+                    <input value = "Chennai - 33, Tamil Nadu." readonly required = "text"\>
+                </div>
+                <a href = "seller_cattlelist.html"><p> Your Cattle Details </p></a>
+                <div class = "sub">
+                    <div><button class = "btn"> Edit </button></div>
+                    <div><a href = "cattle_index.html"><button type = "button"> Save </button></a></div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
     </div>
 
 </body>
-
 </html>

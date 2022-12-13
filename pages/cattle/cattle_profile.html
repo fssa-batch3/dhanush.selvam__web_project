@@ -8,23 +8,32 @@
     <title> Edit Cattle Details </title>
 
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/cattles/cattleprofile.css">
+    <link rel="stylesheet" href="../../assets/css/cattles/selldetails3.css">
+    <link rel="stylesheet" href="../../assets/css/header_footer.css">
 </head>
 
 <body>
+    <header>
+        <div class="navbar">
+            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
+            <div class="lotit"><a href = "../../index.html"><h1> KowMart </h1></a></div>
+        </div>
+        <div>
+            <ul class="navbar">
+                <li><a href="#">Cattles</a></li>
+                <li><a href="#">Agro Products</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+    </header>
 
     <main>
-        <form>
-            <div class="navbar">
-                <div><img class="logo" src="../../assets/images/cattles/logo.png" alt="logo"></div>
-                <div>
-                    <h1 class="lotit"> KowMart </h1>
-                </div>
-            </div>
-            <div class = "titbut">
-                <div class = "bspace"><a href = "seller_cattlelist.html"><button class = "btn0"> BACK </button></a></div>
-                <h1 class="ho6"> Edit Cattle Details </h1>
-            </div>
+        <div class = "d0">  
+            <div><a href = "seller_cattlelist.html"><button> BACK </button></a></div>
+            <h1 class = "h14"> Cattle Details </h1>
+        </div>
+        <hr>
+        <form>  
             <div class = "r1">
                 <div>
                     <label> Age </label><br>
@@ -64,23 +73,41 @@
             <div class = "r3">
                 <div>
 				    <label> Add or Remove Photo: </label><br>
-				    <input type = "file"\>
+				    <input type = "file" multiple>
                 </div>  
                 <div>
 				    <label> Add or Remove Video: </label><br>
-				    <input type = "file"\>
+				    <input type = "file" multiple>
                 </div>  
 			</div>
             <div class = "sub">
-                <div>
-                    <button class = "btn" id = "btn1"> Edit </button>
-                </div>
-                <div>
-                    <a href = "cattle_index.html"><button class = "btn" type = "button"> Save </button></a>
-                </div>
+                <div class = "butspace"><button class = "btn2"> Sold </button></div>
+                <div class = "butspace"><a href = "cattle_index.html"><button class = "btn1" type = "button"> Save </button></a></div>
             </div>
         </form>
     </main>
+
+    <footer>
+        <div class="foot">
+            <div class="foot1">
+                <img class="logof" src="../../assets/images/cattles/logo.png">
+                <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
+                    Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
+                    full potential while ensuring livestock wellbeing.</p>
+            </div>
+            <div class="foot2">
+                <h2> CONNECT WITH US</h2>
+                <p> Email: info@kowmart.com</p>
+                <p> Ph.no: 1234567890</p>
+                <p> Insta: KowMart</p>
+                <div class = "contact">
+                    <i class="fa-regular fa-envelope"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
     
 </body>
 </html>

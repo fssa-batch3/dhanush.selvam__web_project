@@ -5,25 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1024979679.js" crossorigin="anonymous"></script>
     <title> Sell details 3</title>
 
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/cattles/selldetails3.css">
+    <link rel="stylesheet" href="../../assets/css/header_footer.css">
 </head>
 
 <body>
     <header>
         <div class="navbar">
-            <div><a href = "../../index.html"><img class="logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
-            <div>
-                <a href = "../../index.html"><h1 class="lotit"> KowMart </h1></a>
-            </div>
+            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
+            <div class="lotit"><a href = "../../index.html"><h1> KowMart </h1></a></div>
         </div>
         <div>
             <ul class="navbar">
                 <li><a href="#">Cattles</a></li>
                 <li><a href="#">Agro Products</a></li>
-                <li><a href="#">Doctor Appointment</a></li>
                 <li><a href="#">About Us</a></li>
             </ul>
         </div>
@@ -31,7 +30,7 @@
 
     <main>
         <div class = "d0">  
-            <div class = "bspace"><a href = "../../pages/cattle/sell_details2.html"><button> BACK </button></a></div>
+            <div><a href = "../../pages/cattle/sell_details2.html"><button> BACK </button></a></div>
             <h1 class = "h11"> List Your LiveStock Here</h1>
         </div>
             <h3 class = "h12"> Buy and Sell your Cattles easier!</h3>
@@ -79,14 +78,14 @@
             <div class = "r3">
                 <div>
 				    <label> Upload Photo: </label><br>
-				    <input required type = "file">
+				    <input required type = "file" multiple>
                 </div>  
                 <div>
 				    <label> Upload Video: </label><br>
-				    <input required type = "file"\>
+				    <input required type = "file" multiple>
                 </div>  
 			</div>
-            <div class="bspace1"><a href="cattle_index.html"><button class = "btn" type = "button"> SUBMIT </button></a></div>
+            <div class="bspace"><a href="cattle_index.html"><button class = "btn" type = "button"> SUBMIT </button></a></div>
         </form>
     </main>
 
@@ -103,9 +102,11 @@
                 <p> Email: info@kowmart.com</p>
                 <p> Ph.no: 1234567890</p>
                 <p> Insta: KowMart</p>
-                <img class = "contact" src = "../../assets/images/mail-removebg-preview.png">
-                <img class = "contact1" src = "../../assets/images/whatsapp_logo_prev_ui.png">
-                <img class = "contact2" src = "../../assets/images/insta-removebg-preview.png">
+                <div class = "contact">
+                    <i class="fa-regular fa-envelope"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
             </div>
         </div>
     </footer>
