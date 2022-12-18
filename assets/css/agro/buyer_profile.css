@@ -88,6 +88,10 @@ h2.head1 >a:hover{
     text-align: center;
 }
 
+.head2{
+    text-align: center;
+}
+
 .name{
     text-align: center;
     font-size: 24px;
@@ -137,7 +141,7 @@ button{
     background-color: #D2D2FB;
 }
 
-.fa-bag-shopping, .fa-cart-shopping{
+.fa-bag-shopping, .fa-cart-shopping, .fa-right-from-bracket{
     padding-left: 60px;
     padding-right: 30px;
     color: #0075A3;
