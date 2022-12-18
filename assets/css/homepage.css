@@ -1,5 +1,6 @@
 body {
     background-color: #e8f5ec;
+    font-family: 'PT Serif', serif;    
 }
 
 main {
@@ -29,6 +30,7 @@ div.bspace >a >button:hover {
 
 .btn:hover {
     color: orange;
+    border-style: none;
 }
 
 .bspace{
@@ -92,6 +94,7 @@ p{
     line-height: 15px;
     font-weight: bold;  
     font-size: 18px;
+    
 }
 
 .gif {

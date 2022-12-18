@@ -1,5 +1,6 @@
 body{
     background-color: #fff4e8;
+    font-family: 'PT Serif', serif;
 }
 
 .chl{
@@ -102,4 +103,12 @@ p{
 
 hr{
     margin: 0px 100px;
+}
+
+i.fa-brands:hover{
+    color: orange;  
+}
+
+i.fa-regular:hover{
+    color: orange;  
 }

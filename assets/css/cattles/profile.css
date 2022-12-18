@@ -1,3 +1,6 @@
+body{
+    font-family: 'PT Serif', serif;
+}
 
 form{
     background-color: #e8f5ec;
@@ -6,15 +9,24 @@ form{
     padding: 10px;
 }
 
-h1{
+.head{
     text-align: center;
     color: #00384e;
     font-size: 50px;
     margin-bottom: 40px;
 }
 
-p{
+.link{
     text-align: center;
+}
+
+p.link >a{
+    color: #0645AD;
+    text-decoration: underline;
+}
+
+.bspace{
+    margin-left: 40px;
 }
 
 .order{
@@ -24,7 +36,7 @@ p{
 }
 
 label{
-    width: 100px;
+    width: 110px;
     margin-right: 30px; 
     display: inline-block;
 }
@@ -38,11 +50,16 @@ input{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 120px;
+    margin: 5% 0%;
 }
 
-div{
+.divs{
     padding: 15px;
+}
+
+p{
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .sub{
@@ -62,4 +79,8 @@ button{
 
 .btn{
     background-color: #D2D2FB;
+}
+
+.form1{
+    background-color: #ddeceb;
 }

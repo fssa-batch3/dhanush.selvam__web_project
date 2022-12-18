@@ -1,5 +1,6 @@
 body {
     background-color: #e8f5ec;
+    font-family: 'PT Serif', serif;
 }
 
 .ho6{
@@ -112,3 +113,7 @@ div#p1s >div >a >button:hover{
     color: orange;
     border: 2px solid orange;
 }  
+
+i#ic:hover{
+    color: orange;
+}

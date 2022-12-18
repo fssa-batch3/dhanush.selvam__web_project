@@ -6,67 +6,105 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/1024979679.js" crossorigin="anonymous"></script>
-    <title>Agro Products</title>
-    <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
+    <title> Seller Profile </title>
+
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/agro/buyer_profile.css">
+    <link rel="stylesheet" href="../../assets/css/header_footer.css">
+    <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-    <main>
-        <div class = "dmain">
-            <form>
-                <div class = "s1">
-                    <div class = "hello">
-                        <img class = "prologo" src = "../../assets/images/profile_logo.png">
-                        <p> Hi, Dhanush </p>
-                    </div>
-                    <div class = "myorder"><i class="fa-solid fa-bag-shopping"></i><h2> My orders </h2></div>
-                    <div class = "myorder"><i class="fa-solid fa-cart-shopping"></i> <a href = "cart.html"><h2> Cart </h2></a></div>
-                    
-                </div>
-                <div class = "s2">
-                    <div class = "details">
-                        <h1> Profile </h1>
-                        <div>
-                            <label> Name </label><br>
-                            <input  value = "Dhanush" readonly required = "text" \>
-                        </div>
-                        <div>
-                            <label> Gender </label><br>
-                            <input value = "Male" readonly>
-                        </div>
-                        <div>
-                            <label> Ph.no </label><br>
-                            <input  value = "1234567890" readonly required = "tel" maxlength = "10"\>
-                        </div>
-                        <div>
-                            <label> Email </label><br>
-                            <input  value = "dhanush212@gmail.com" placeholder = "abc@gmail.com" readonly required = "Email"\>
-                        </div>
-                        <div>
-                            <label> Address line 1</label><br>
-                            <input value = "Module-1 & 2, 1st Floor, Block B, SP Infocity" readonly required = "text"\>
-                        </div>
-                        <div>
-                            <label> Address line 2</label><br>
-                            <input value = " 40 MGR Salai, Perungudi, Chennai, Tamil Nadu." readonly required = "text"\>
-                        </div>
-                        <div>
-                            <label> Pincode </label><br>
-                            <input value = "600096" readonly required = "number"\>
-                        </div>
-                        <div class = "sub">
-                            <div><button class = "btn"> Edit </button></div>
-                            <div><a href = "agro.html"><button type = "button"> Save </button></a></div>
-                        </div>
-                    </div>
-                </div>
-            </form>
+    <header>
+        <div class="navbar">
+            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
+            <div class="lotit"><a href = "../../index.html"><h1> KowMart </h1></a></div>
         </div>
-    </main>
+        <div>
+            <ul class="navbar">
+                <li><a href="../cattle/cattle_index.html">Cattles</a></li>
+                <li><a href="agro.html">Agro Products</a></li>
+                <li><a href="../about.html">About Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+        <main>
+            <div class = "dmain divs">
+                <form>
+                    <div class = "s1 divs">
+                        <div class = "hello">
+                            <img class = "prologo" src = "../../assets/images/profile_logo.png" alt = "profile_logo>
+                            <p class = "name"> Hi, Dhanush </p>
+                        </div>
+                        <div class = "myorder"><i class="fa-solid fa-bag-shopping"></i> <h2 class = "head1"><a href = "order.html"> My orders </a></h2></div>
+                        <div class = "myorder"><i class="fa-solid fa-cart-shopping"></i> <h2 class = "head1"><a href = "cart.html"> Cart </a></h2></div>
+                    </div>
+                    <div class = "s2 divs">
+                        <div class = "details divs">
+                            <h1 class = "head"> Profile </h1>
+                            <div class = "divs">
+                                <label> Name </label><br>
+                                <input  value = "Dhanush" readonly required = "text" \>
+                            </div>
+                            <div class = "divs">
+                                <label> Gender </label><br>
+                                <input value = "Male" readonly>
+                            </div>
+                            <div class = "divs">
+                                <label> Ph.no </label><br>
+                                <input  value = "1234567890" readonly required = "tel" maxlength = "10"\>
+                            </div>
+                            <div class = "divs">
+                                <label> Email </label><br>
+                                <input  value = "dhanush212@gmail.com" placeholder = "abc@gmail.com" readonly required = "Email"\>
+                            </div>
+                            <div class = "divs">
+                                <label> Address line 1</label><br>
+                                <input value = "Module-1 & 2, 1st Floor, Block B, SP Infocity" readonly required = "text"\>
+                            </div>
+                            <div class = "divs">
+                                <label> Address line 2</label><br>
+                                <input value = " 40 MGR Salai, Perungudi, Chennai, Tamil Nadu." readonly required = "text"\>
+                            </div>
+                            <div class = "divs">
+                                <label> Pincode </label><br>
+                                <input value = "600096" readonly required = "number"\>
+                            </div>
+                            <div class = "sub divs">
+                                <div class = "divs"><button class = "btn"> Edit </button></div>
+                                <div class = "divs"><a href = "agro.html"><button type = "button"> Save </button></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <div class="foot">
+                <div class="foot1">
+                    <img class="logof" src="../../assets/images/cattles/logo.png" class = "logo">
+                    <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
+                        Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
+                        full potential while ensuring livestock wellbeing.</p>
+                </div>
+                <div class="foot2">
+                    <h2> CONNECT WITH US</h2>
+                    <div class = "bspace">
+                        <p> Email: info@kowmart.com</p>
+                        <p> Ph.no: 1234567890</p>
+                        <p> Insta: KowMart</p>
+                    </div>
+                    <div class = "contact">
+                        <i class="fa-regular fa-envelope"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
 </body>
-
 </html>

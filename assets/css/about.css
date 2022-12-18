@@ -1,0 +1,61 @@
+body{
+    background-color: #e8f5ec;
+    font-family: 'PT Serif', serif;    
+}
+
+.page{
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: 5%;
+}
+
+.s2{
+    width: 50%;
+}
+
+p{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 15px;
+}
+
+.bspace{
+    margin-left: 40px;
+}
+
+.p1{
+    font-size: 22px;
+    line-height: 3rem;
+    font-weight: normal;
+}
+
+.head{
+    line-height: 3rem;
+}
+
+img{
+    border-radius: 10px;
+}
+
+.ho1 {
+    height: 450px;
+    background-image: url("../images/cattles/ho3.jpg");
+    margin-top: 60px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ho5 {
+    background-color: #ffffff80;
+    padding: 15px 20px;
+}

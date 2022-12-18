@@ -1,3 +1,7 @@
+body{
+    font-family: 'PT Serif', serif;
+}
+
 .dmain{
     display: flex;
     justify-content: center;
@@ -18,7 +22,7 @@ form{
     padding-top: 30px;
     padding-bottom: 0px;
     margin-bottom: 20px;
-    background-color: #e8f5ec;
+    background-color: #fff4e8;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     border-radius: 10px;
 }
@@ -26,7 +30,7 @@ form{
 .myorder{
     display: flex;
     align-items: center;
-    background-color: #e8f5ec;
+    background-color: #fff4e8;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -36,7 +40,7 @@ form{
 }
 
 .details{
-    background-color: #e8f5ec;
+    background-color: #fff4e8;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
@@ -52,7 +56,12 @@ a{
     color: black;
 }
 
-h2:hover{
+h2.head1 >a{
+    color: black;
+    font-size: 35px;
+}
+
+h2.head1 >a:hover{
     color: #0075A3;
 }
 
@@ -67,11 +76,11 @@ h2:hover{
     background-color: white;
 }
 
-div{
+.divs{
     padding: 15px;
 }
 
-h1{
+.head{
     margin-top: 0px;
     margin-bottom: 10px;
     font-size: 50px;
@@ -79,7 +88,7 @@ h1{
     text-align: center;
 }
 
-p{
+.name{
     text-align: center;
     font-size: 24px;
     font-weight: bold;
@@ -128,9 +137,25 @@ button{
     background-color: #D2D2FB;
 }
 
-i{
+.fa-bag-shopping, .fa-cart-shopping{
     padding-left: 60px;
     padding-right: 30px;
     color: #0075A3;
 }
 
+p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.bspace{
+    margin-left: 40px;
+}
+
+i.fa-brands:hover{
+    color: orange;  
+}
+
+i.fa-regular:hover{
+    color: orange;  
+}

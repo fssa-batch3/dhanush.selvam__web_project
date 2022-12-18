@@ -1,5 +1,6 @@
 body{
     background-color: #fff4e8;
+    font-family: 'PT Serif', serif;
 }
 
 .ho6 {
@@ -86,4 +87,12 @@ div.bspace >a >button:hover{
     align-items: center;
     margin-top: 40px;
     margin-left: 100px;
+}
+
+i.fa-brands:hover{
+    color: orange;  
+}
+
+i.fa-regular:hover{
+    color: orange;  
 }

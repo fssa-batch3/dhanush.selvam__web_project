@@ -5,41 +5,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Profile</title>
+    <script src="https://kit.fontawesome.com/1024979679.js" crossorigin="anonymous"></script>
+    <title> Profile </title>
 
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
     <link rel="stylesheet" href="../../assets/css/cattles/profile.css">
+    <link rel="stylesheet" href="../../assets/css/header_footer.css">
+    <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class = "bg">
-        <form>
-            <h1> Profile </h1>
-            <div class = "order">
-                <div>
-                    <label> Seller ID </label>
-                    <input value = "S001" readonly \>
+    <header>
+        <div class="navbar">
+            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
+            <div class="lotit"><a href = "../../index.html"><h1> KowMart </h1></a></div>
+        </div>
+        <div>
+            <ul class="navbar">
+                <li><a href="cattle_index.html">Cattles</a></li>
+                <li><a href="../agro pro/agro.html">Agro Products</a></li>
+                <li><a href="../about.html">About Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class = "bg divs">
+            <form>
+                <h1 class = "head"> Profile </h1>
+                <div class = "order divs">
+                    <div class = "divs">
+                        <label> Seller ID </label>
+                        <input value = "S001" readonly \>
+                    </div>
+                    <div class = "divs">
+                        <label> Name </label>
+                        <input value = "Inba Lokesh" readonly required = "text"  \>
+                    </div>
+                    <div class = "divs">
+                        <label> Phone No. </label>
+                        <input  value = "1234567890" readonly required = "tel" maxlength = "10"\>
+                    </div>
+                    <div class = "divs">
+                        <label> Address </label>
+                        <input value = "No.727, RK Road, Kannatur, Chennai, Tamil Nadu." readonly required = "text"\>
+                    </div>
+                    <p class = "link"><a href = "seller_cattlelist.html"> Your Cattle Details </a></p>
+                    <div class = "sub divs">
+                        <div class = "divs"><button class = "btn"> Edit </button></div>
+                        <div class = "divs"><a href = "cattle_index.html"><button type = "button"> Save </button></a></div>
+                    </div>
                 </div>
-                <div>
-                    <label> Name </label>
-                    <input value = "Inba Lokesh" readonly required = "text"  \>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="foot" id = "fogif">
+            <div class="foot1">
+                <img class="logof" src="../../assets/images/cattles/logo.png" alt = "logo">
+                <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
+                    Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
+                    full potential while ensuring livestock wellbeing.</p>
+            </div>
+            <div class="foot2">
+                <h2> CONNECT WITH US</h2>
+                <div class = "bspace">
+                    <p> Email: info@kowmart.com</p>
+                    <p> Ph.no: 1234567890</p>
+                    <p> Insta: KowMart</p>
                 </div>
-                <div>
-                    <label> Phone No. </label>
-                    <input  value = "1234567890" readonly required = "tel" maxlength = "10"\>
-                </div>
-                <div>
-                    <label> Address </label>
-                    <input value = "Chennai - 33, Tamil Nadu." readonly required = "text"\>
-                </div>
-                <a href = "seller_cattlelist.html"><p> Your Cattle Details </p></a>
-                <div class = "sub">
-                    <div><button class = "btn"> Edit </button></div>
-                    <div><a href = "cattle_index.html"><button type = "button"> Save </button></a></div>
+                <div class = "contact">
+                    <i class="fa-regular fa-envelope"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-instagram"></i>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </footer>
+
 
 </body>
 </html>

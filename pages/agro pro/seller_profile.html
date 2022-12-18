@@ -1,69 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Profile</title>
+    <script src="https://kit.fontawesome.com/1024979679.js" crossorigin="anonymous"></script>
+    <title> Seller Profile </title>
 
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/agro/sellerprofile.css">
+    <link rel="stylesheet" href="../../assets/css/header_footer.css">
+    <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class = "bg">
-        <form>
-            <div class = "logo">
-                <img src = "../../assets/images/agro/sellerlogo.png">
-                <h2> TRUST BASKET </h2>
-            </div>
-            <div class = "details">
-                <div class = "details1">
-                    <h1> Profile </h1>
-                    <div>
-                        <label> Seller ID </label><br>
-                        <input value = "S01" readonly \>
+    <header>
+        <div class="navbar">
+            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
+            <div class="lotit"><a href = "../../index.html"><h1> KowMart </h1></a></div>
+        </div>
+        <div>
+            <ul class="navbar">
+                <li><a href="../cattle/cattle_index.html">Cattles</a></li>
+                <li><a href="agro.html">Agro Products</a></li>
+                <li><a href="../about.html">About Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class = "bg divs">
+            <form>
+                <div class = "logoo">
+                    <img class = "image" src = "../../assets/images/agro/sellerlogo.png" alt = "profile_logo">
+                    <h2 class = "head1"> TRUST BASKET </h2>
+                </div>
+                <div class = "details divs">
+                    <div class = "details1 divs">
+                        <h1 class = "head"> Profile </h1>
+                        <div class = "divs">
+                            <label> Seller ID </label><br>
+                            <input value = "S01" readonly \>
+                        </div>
+                        <div class = "divs">
+                            <label> Name </label><br>
+                            <input value = "Ananth Narayanan" readonly required = "text" \>
+                        </div>
+                        <div class = "divs">
+                            <label> Company Name </label><br>
+                            <input value = "TrustBasket" readonly required = "text"\>
+                        </div>
+                        <div class = "divs">
+                            <label> Tel. </label><br>
+                            <input  value = "1234567890" readonly required = "tel" maxlength = "10"\>
+                        </div>
+                        <div class = "divs">
+                        <label> Email </label><br>
+                            <input  value = "info@trustbasket.com" readonly required = "Email"\>
+                        </div>
                     </div>
-                    <div>
-                        <label> Name </label><br>
-                        <input value = "Ananth Narayanan" readonly required = "text" \>
-                    </div>
-                    <div>
-                        <label> Company Name </label><br>
-                        <input value = "TrustBasket" readonly required = "text"\>
-                    </div>
-                    <div>
-                        <label> Tel. </label><br>
-                        <input  value = "1234567890" readonly required = "tel" maxlength = "10"\>
-                    </div>
-                    <div>
-                    <label> Email </label><br>
-                        <input  value = "info@trustbasket.com" readonly required = "Email"\>
+                    <div class = "details2 divs">
+                        <div class = "divs">
+                            <label> Address line 1</label><br>
+                            <input value = "Module-1 & 2, 1st Floor, Block B, SP Infocity" readonly required = "text"\>
+                        </div>
+                        <div class = "divs">
+                            <label> Address line 2</label><br>
+                            <input value = " 40 MGR Salai, Perungudi, Chennai, Tamil Nadu." readonly required = "text"\>
+                        </div>
+                        <div class = "divs">
+                            <label> Pincode </label><br>
+                            <input value = "600096" readonly required = "number"\>
+                        </div>
+                        <p class = "link"><a href = "seller_productlist.html"> Your Product Details </a></p>
+                        <div class = "sub divs">
+                            <div class = "divs"><button class = "btn"> Edit </button></div>
+                            <div class = "divs"><a href = "agro.html"><button type = "button"> Save </button></a></div>
+                        </div>
                     </div>
                 </div>
-                <div class = "details2">
-                    <div>
-                        <label> Address line 1</label><br>
-                        <input value = "Module-1 & 2, 1st Floor, Block B, SP Infocity" readonly required = "text"\>
-                    </div>
-                    <div>
-                        <label> Address line 2</label><br>
-                        <input value = " 40 MGR Salai, Perungudi, Chennai, Tamil Nadu." readonly required = "text"\>
-                    </div>
-                    <div>
-                        <label> Pincode </label><br>
-                        <input value = "600096" readonly required = "number"\>
-                    </div>
-                    <a href = "seller_productlist.html"><p> Your Product Details </p></a>
-                    <div class = "sub">
-                        <div><button class = "btn"> Edit </button></div>
-                        <div><a href = "agro.html"><button type = "button"> Save </button></a></div>
-                    </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="foot">
+            <div class="foot1">
+                <img class="logof" src="../../assets/images/cattles/logo.png" alt = "logo">
+                <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
+                    Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
+                    full potential while ensuring livestock wellbeing.</p>
+            </div>
+            <div class="foot2">
+                <h2> CONNECT WITH US</h2>
+                <div class = "bspace">
+                    <p> Email: info@kowmart.com</p>
+                    <p> Ph.no: 1234567890</p>
+                    <p> Insta: KowMart</p>
+                </div>
+                <div class = "contact">
+                    <i class="fa-regular fa-envelope"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-instagram"></i>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </footer>
 
 </body>
 </html>

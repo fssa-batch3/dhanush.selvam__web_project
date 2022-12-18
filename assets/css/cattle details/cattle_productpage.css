@@ -1,5 +1,6 @@
 body {
     background-color: #e8f5ec;
+    font-family: 'PT Serif', serif;
 }
 
 p{
@@ -270,4 +271,8 @@ h4{
 
 .ibg{
     margin: 30px;
+}
+
+span{
+    font-family: serif;
 }

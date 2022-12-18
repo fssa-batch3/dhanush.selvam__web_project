@@ -1,5 +1,6 @@
 body {
     background-color: #e8f5ec;
+    font-family: 'PT Serif', serif;
 }
 
 .d0{
@@ -30,7 +31,7 @@ button{
 }
 
 .h11{
-    margin-right: 570px;
+    margin-right: 560px;
     color: #00a651
 }
 

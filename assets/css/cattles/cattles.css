@@ -1,5 +1,6 @@
 body {
     background-color: #e8f5ec;
+    font-family: 'PT Serif', serif;
 }
 
 main {
@@ -23,6 +24,10 @@ main {
 .chi{
     width: 100px;
     border-radius: 50px;
+}
+
+.chi:hover{
+    transform: scale(1.2)
 }
 
 .ispace{
