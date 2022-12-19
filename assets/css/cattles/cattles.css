@@ -80,7 +80,7 @@ div.p1 >div.bspace >a >button:hover {
 .ho1{
     height: 450px;
     background-image:url("../../images/cattles/ho4.jpg");
-    margin: 30px 100px;
+    margin: 30px 0px;
     background-size: cover;
     background-position: center;
     display: flex;
