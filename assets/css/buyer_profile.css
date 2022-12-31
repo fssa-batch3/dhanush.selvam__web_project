@@ -1,0 +1,165 @@
+body{
+    font-family: 'PT Serif', serif;
+}
+
+.dmain{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+form{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    
+}
+
+.hello{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+    background-color: #e8f5ec;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 10px;
+}
+
+.myorder{
+    display: flex;
+    align-items: center;
+    background-color: #e8f5ec;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 0px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.details{
+    background-color: #e8f5ec;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.prologo{
+    width: 200px;
+    margin: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+h2.head1 >a{
+    color: black;
+    font-size: 35px;
+}
+
+h2.head1 >a:hover{
+    color: #0075A3;
+}
+
+.s1{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.s2{
+    width: 50%;
+    background-color: white;
+}
+
+.divs{
+    padding: 15px;
+}
+
+.head{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 50px;
+    color: #00384e;
+    text-align: center;
+}
+
+.head2{
+    text-align: center;
+}
+
+.name{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #309393;
+}
+
+label{
+    margin-right: 30px; 
+    display: inline-block;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+input{
+    margin-top: 10px;
+    width: 80%;
+    padding-left: 10px;
+    height: 40px;   
+    font-size: 20px;
+}
+
+select{
+    height: 40px;
+    width: 150px;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.sub{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #F8E382;
+    border-style: none;
+    border-radius: 10px;
+}
+
+.btn{
+    background-color: #D2D2FB;
+}
+
+.fa-bag-shopping, .fa-cart-shopping, .fa-right-from-bracket, .fa-star{
+    padding-left: 60px;
+    padding-right: 30px;
+    color: #0075A3;
+}
+
+p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+i.fa-brands:hover{
+    color: orange;  
+}
+
+i.fa-regular:hover{
+    color: orange;  
+}
+
+#ic:hover{
+    color: #0075A3;
+}

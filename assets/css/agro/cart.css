@@ -23,7 +23,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     width: 80%;
-    background-color: #fff4e8;
+    background-color: #e8f5ec;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     padding-top: 20px;
     padding-bottom: 10px;
@@ -131,10 +131,6 @@ button{
     margin-bottom: 30px;
 }
 
-.bspace{
-    margin-left: 40px;
-}
-
 .p1{
     font-size: 18px;
 }
@@ -149,4 +145,8 @@ i.fa-brands:hover{
 
 i.fa-regular:hover{
     color: orange;  
+}
+
+#ic:hover{
+    color: black;
 }

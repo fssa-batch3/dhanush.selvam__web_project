@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title> Cattle List 1</title>
 
+    <script src = "assets/js/toggle_button.js" defer></script>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/cattles/cattlelist.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
@@ -19,131 +20,141 @@
     <header>
         <div class="navbar">
             <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "../../index.html"><h1> KowMart </h1></a></div>
+            <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <div>
+        <a href = "#" class = "toggle-button">
+            <span class = "bar"></span>
+            <span class = "bar"></span>
+            <span class = "bar"></span>
+        </a>
+        <div class = "link_container">
             <ul class="navbar">
                 <li><a href="cattle_index.html">Cattles</a></li>
                 <li><a href="../agro pro/agro.html">Agro Products</a></li>
                 <li><a href="../about.html">About Us</a></li>
             </ul>
         </div>
+        <div class = "navbar butcot" id = "sellpro">
+            <div class = "butspace"><a href = "profile.html"> <button class = "sell"> SELLER </button> </a></div>
+            <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
+        </div>
     </header>
 
-    <main>
+    <main>    
         <div class = "titbut">
-            <div><a href = "../../pages/cattle/cattle_index.html"><button class = "btn"> BACK </button></a></div>
+            <div><a href = "../../pages/cattle/cattle_index.html"><button class = "btn"> BACK </button></a></div> 
             <div class="ho6"><h1> All Cows </h1></div>
         </div>
-        
 
+        <div class = "listhead"><h1> All Cows </h1></div>
+       
         <div class="ho7">
             <div class="p1">
-                <a href = "../cattle details/cattle_detailscow1.html"><img class="i1" src="../../assets/images/cattles/s1.jpg" alt = "cow"></a>      
+                <a href = "../cattle details/cow/C1.html"><img class="i1" src="../../assets/images/cattles/c1.jpg" alt = "cow"></a>      
                 <div class = "bspace">
-                    <p> Gir Cow G018 </p>
+                    <p class = "pname"> Gir Cow G018 </p>
                     <p> Age: 4 Years</p>
                     <p> Gender: Female</p>
-                    <a href = "../cattle details/cattle_detailscow1.html"><button> Know More </button></a>
+                    <a href = "../cattle details/cow/C1.html"><button> Know More </button></a>
                 </div> 
             </div>
             <div class="p1">
-                <a href = "../cattle details/cattle_detailscow2.html"><img class="i1" src="../../assets/images/cattles/s2.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C2.html"><img class="i1" src="../../assets/images/cattles/c2.jpg" alt = "cow"></a>
                 <div class = "bspace">
-                    <p> HF Cow H165 </p>
+                    <p class = "pname"> HF Cow H165 </p>
                     <p> Age: 2 Years</p>
                     <p> Gender: Female</p>
-                    <a href = "../cattle details/cattle_detailscow2.html"><button> Know More </button></a>
+                    <a href = "../cattle details/cow/C2.html"><button> Know More </button></a>
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/cattle_detailscow3.html"><img class="i1" src="../../assets/images/cattles/s3.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C3.html"><img class="i1" src="../../assets/images/cattles/c3.jpg" alt = "cow"></a>
                 <div class = "bspace">
-                    <p> Kankrej Cow K006 </p>
+                    <p class = "pname"> Kankrej Cow K006 </p>
                     <p> Age: 1 Year</p>
                     <p> Gender: Female</p>
-                    <a href = "../cattle details/cattle_detailscow3.html"><button> Know More </button></a>
+                    <a href = "../cattle details/cow/C3.html"><button> Know More </button></a>
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/cattle_detailscow4.html"><img class="i1" src="../../assets/images/cattles/s4.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C4.html"><img class="i1" src="../../assets/images/cattles/c4.jpg" alt = "cow"></a>
                 <div class = "bspace">
-                    <p> Tharparkar Cow T035 </p>
+                    <p class = "pname"> Tharparkar Cow T035 </p>
                     <p> Age: 3 Years</p>
                     <p> Gender: Female</p>
-                    <a href = "../cattle details/cattle_detailscow4.html"><button> Know More </button></a>
+                    <a href = "../cattle details/cow/C4.html"><button> Know More </button></a>
                 </div>
             </div>
             <div class="p1">
-                <img class="i1" src="../../assets/images/cattles/chp1.jpg" alt = "cow">
+                <a href = "../cattle details/cow/C5.html"><img class="i1" src="../../assets/images/cattles/c5.jpg" alt = "cow"></a>
                 <div class = "bspace">
-                    <p> Red Sindhi R021 </p>
+                    <p class = "pname"> Red Sindhi R021 </p>
                     <p> Age: 4 Years</p>
-                    <p> Gender: Male</p>
-                    <button> Know More </button>
+                    <p> Gender: Female</p>
+                    <a href = "../cattle details/cow/C5.html"><button> Know More </button></a>
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/cattle_detailscow6.html"><img class="i1" src="../../assets/images/cattles/chp2.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C6.html"><img class="i1" src="../../assets/images/cattles/c6.jpg" alt = "cow"></a>
                 <div class = "bspace">
-                    <p> Sahiwal Cow S139 </p>
+                    <p class = "pname"> Sahiwal Cow S139 </p>
                     <p> Age: 3 Years</p>
                     <p> Gender: Female</p>
-                    <a href = "../cattle details/cattle_detailscow6.html"><button> Know More </button></a>
+                    <a href = "../cattle details/cow/C6.html"><button> Know More </button></a>
                 </div>
             </div>
             <div class="p1">
-                <img class="i1" src="../../assets/images/cattles/chp3.jpg" alt = "cow">
+                <a href = "../cattle details/cow/C7.html"><img class="i1" src="../../assets/images/cattles/c7.jpg" alt = "cow"></a>
                 <div class = "bspace">
-                    <p> Jersey Cow J006 </p>
+                    <p class = "pname"> Jersey Cow J006 </p>
                     <p> Age: 5 Year</p>
                     <p> Gender: Male</p>
-                    <a href = "#"><button> Know More </button></a>
+                    <a href = "../cattle details/cow/C7.html"><button> Know More </button></a>
                 </div>
             </div>
             <div class="p1">
-                <img class="i1" src="../../assets/images/cattles/chp4.jpg" alt = "cow">
+                <a href = "../cattle details/cow/C8.html"><img class="i1" src="../../assets/images/cattles/c8.jpg" alt = "cow"></a>
                 <div class = "bspace">
-                    <p> Rathi Heifer Cow R036 </p>
+                    <p class = "pname"> Rathi Heifer Cow R036 </p>
                     <p> Age: 1 Year</p>
                     <p> Gender: Female</p>
-                    <a href = "#"><button> Know More </button></a>
+                    <a href = "../cattle details/cow/C8.html"><button> Know More </button></a>
                 </div>
             </div>
             <div class="p1">
-                <img class="i1" src="../../assets/images/cattles/cl1.jpg" alt = "cow">        
+                <a href = "../cattle details/cow/C9.html"><img class="i1" src="../../assets/images/cattles/c9.jpg" alt = "cow"></a>        
                 <div class = "bspace">
-                    <p> Ongole Cow OC5 </p>
+                    <p class = "pname"> Ongole Cow OC5 </p>
                     <p> Age: 6 Years</p>
                     <p> Gender: Female</p>
-                    <a href = "#"><button> Know More </button></a>
+                    <a href = "../cattle details/cow/C9.html"><button> Know More </button></a>
                 </div>
             </div>
             <div class="p1">
-                <img class="i1" src="../../assets/images/cattles/cl2.jpg" alt = "cow">
+                <a href = "../cattle details/cow/C10.html"><img class="i1" src="../../assets/images/cattles/c10.jpg" alt = "cow"></a>
                 <div class = "bspace">
-                    <p> Deoni Cow D001 </p>
+                    <p class = "pname"> Deoni Cow D001 </p>
                     <p> Age: 5 Years</p>
                     <p> Gender: Female</p>
-                    <a href = "#"><button> Know More </button></a>
+                    <a href = "../cattle details/cow/C10.html"><button> Know More </button></a>
                 </div>
             </div>
             <div class="p1">
-                <img class="i1" src="../../assets/images/cattles/cl3.jpg" alt = "cow">
+                <a href = "../cattle details/cow/C11.html"><img class="i1" src="../../assets/images/cattles/c11.jpg" alt = "cow"></a>
                 <div class = "bspace">
-                    <p> Kapila Cow K111 </p>
+                    <p class = "pname"> Kapila Cow K111 </p>
                     <p> Age: 5 Years</p>
                     <p> Gender: Female</p>
-                    <a href = "#"><button> Know More </button></a>
+                    <a href = "../cattle details/cow/C11.html"><button> Know More </button></a>
                 </div>
             </div>
             <div class="p1">
-                <img class="i1" src="../../assets/images/cattles/cl4.jpg" alt = "cow">
+                <a href = "../cattle details/cow/C12.html"><img class="i1" src="../../assets/images/cattles/c12.jpg" alt = "cow"></a>
                 <div class = "bspace">
-                    <p> Vilwadri Cow V002 </p>
+                    <p class = "pname"> Vilwadri Cow V002 </p>
                     <p> Age: 1 Year</p>
                     <p> Gender: Female</p>
-                    <a href = "#"><button> Know More </button></a>
+                    <a href = "../cattle details/cow/C12.html"><button> Know More </button></a>
                 </div>
             </div>
         </div>
@@ -158,14 +169,14 @@
                     full potential while ensuring livestock wellbeing.</p>
             </div>
             <div class="foot2">
-                <h2> CONNECT WITH US</h2>
-                <div class = "bspace">
+                <h2 class = "connect"> CONNECT WITH US</h2>
+                <div class = "fspace">
                     <p> Email: info@kowmart.com</p>
                     <p> Ph.no: 1234567890</p>
-                    <p> Insta: KowMart</p>
+                    <p> Address: Chennai - 33</p>
                 </div>
                 <div class = "contact">
-                    <i class="fa-regular fa-envelope"></i>
+                    <i class="fa-brands fa-facebook"></i>
                     <i class="fa-brands fa-whatsapp"></i>
                     <i class="fa-brands fa-instagram"></i>
                 </div>

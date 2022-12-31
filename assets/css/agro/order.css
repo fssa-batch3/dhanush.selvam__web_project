@@ -9,7 +9,7 @@ body{
 }
 
 .content{
-    background-color: #fff4e8;
+    background-color: #e8f5ec;
     width: 80%;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
@@ -57,6 +57,11 @@ body{
 
 .divbtn{
     margin-right: 5%;
+}
+
+div.divbtn >button{
+    display: flex;
+    align-items: center;
 }
 
 button{ 
@@ -113,7 +118,7 @@ hr{
 }
 
 .btn1{
-    background-color: #fff4e8;
+    background-color: #e8f5ec;
 }
 
 button.btn1 >a{
@@ -136,10 +141,6 @@ a{
     margin: -5% 5% 2% 0%;
 }
 
-.bspace{
-    margin-left: 40px;
-}
-
 .p1{
     font-size: 18px;
     color: white;
@@ -159,4 +160,17 @@ i.fa-brands:hover{
 
 i.fa-regular:hover{
     color: orange;  
+}
+
+#ic:hover{
+    color: black;
+}
+
+#ic1{
+    padding-right: 10px;
+}
+
+
+#ic1:hover{
+    color: white;
 }

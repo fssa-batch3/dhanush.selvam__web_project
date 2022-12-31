@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/normalize.css">
-    <link rel="stylesheet" href="../../assets/css/cattles/profile.css">
+    <link rel="stylesheet" href="../../assets/css/sellerprofile.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
     <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
@@ -29,33 +29,57 @@
                 <li><a href="../about.html">About Us</a></li>
             </ul>
         </div>
+        <div class = "navbar">
+            <div><a href = "#"> <button class = "sell"> SELLER </button> </a></div>
+            <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
+        </div>
     </header>
 
     <main>
         <div class = "bg divs">
-            <form>
-                <h1 class = "head"> Profile </h1>
-                <div class = "order divs">
-                    <div class = "divs">
-                        <label> Seller ID </label>
-                        <input value = "S001" readonly \>
+            <form class = "form1">
+                <div class = "logoo">
+                    <img class = "image" src = "../../assets/images/cowpro.png" alt = "profile_logo">
+                    <h2 class = "head1" id = "he1"> Hi, Inba </h2>
+                </div>
+                <div class = "details divs">
+                    <div class = "details1 divs">
+                        <h1 class = "head"> Profile </h1>
+                        <div class = "divs">
+                            <label> Seller ID </label><br>
+                            <input value = "S001" readonly \>
+                        </div>
+                        <div class = "divs">
+                            <label> Name </label><br>
+                            <input value = "Inba Lokesh" readonly required = "text" \>
+                        </div>
+                        <div class = "divs">
+                            <label> Phone No. </label><br>
+                            <input  value = "1234567890" readonly required = "tel" maxlength = "10"\>
+                        </div>
+                        <div class = "divs">
+                        <label> Email </label><br>
+                            <input  value = "abc@gmail.com" readonly required = "Email"\>
+                        </div>
                     </div>
-                    <div class = "divs">
-                        <label> Name </label>
-                        <input value = "Inba Lokesh" readonly required = "text"  \>
-                    </div>
-                    <div class = "divs">
-                        <label> Phone No. </label>
-                        <input  value = "1234567890" readonly required = "tel" maxlength = "10"\>
-                    </div>
-                    <div class = "divs">
-                        <label> Address </label>
-                        <input value = "No.727, RK Road, Kannatur, Chennai, Tamil Nadu." readonly required = "text"\>
-                    </div>
-                    <p class = "link"><a href = "seller_cattlelist.html"> Your Cattle Details </a></p>
-                    <div class = "sub divs">
-                        <div class = "divs"><button class = "btn"> Edit </button></div>
-                        <div class = "divs"><a href = "cattle_index.html"><button type = "button"> Save </button></a></div>
+                    <div class = "details2 divs">
+                        <div class = "divs">
+                            <label> Address line 1</label><br>
+                            <input value = "No.727,Gandhi Street" readonly required = "text"\>
+                        </div>
+                        <div class = "divs">
+                            <label> Address line 2</label><br>
+                            <input value = "RK Road, Kannatur, Chennai, Tamil Nadu." readonly required = "text"\>
+                        </div>
+                        <div class = "divs">
+                            <label> Pincode </label><br>
+                            <input value = "600119" readonly required = "number"\>
+                        </div>
+                        <p class = "link"><a href = "seller_cattlelist.html"> Your Cattle List </a></p>
+                        <div class = "sub divs">
+                            <div class = "divs"><button class = "btn"> Edit </button></div>
+                            <div class = "divs"><a href = "cattle_index.html"><button type = "button"> Save </button></a></div>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -72,7 +96,7 @@
             </div>
             <div class="foot2">
                 <h2> CONNECT WITH US</h2>
-                <div class = "bspace">
+                <div class = "fspace">
                     <p> Email: info@kowmart.com</p>
                     <p> Ph.no: 1234567890</p>
                     <p> Insta: KowMart</p>
