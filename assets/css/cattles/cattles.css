@@ -1,6 +1,7 @@
 body {
     background-color: #e8f5ec;
     font-family: 'PT Serif', serif;
+    width: fit-content;
 }
 
 main {
@@ -13,12 +14,6 @@ main {
     justify-content: space-between;
     margin: 30px 100px;
     align-items: center;
-}
-
-.chl2{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
 
 .chi{
@@ -37,6 +32,26 @@ main {
 .chl1{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.chl2{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px 30px;
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input{
+    outline: none;
+    border: 0;
+    width: 80%;
 }
 
 .chln{
@@ -55,12 +70,7 @@ button{
 }
 
 .bspace{
-    margin-left: 40px; 
-}
-
-.btn{
-    margin-top: -10px;
-    background-color: #0075A3;
+    margin-left: 20px; 
 }
 
 .btn1{
@@ -78,7 +88,8 @@ div.p1 >div.bspace >a >button:hover {
 }
 
 .ho1{
-    height: 450px;
+    width: 100%;
+    height: 50vh;
     background-image:url("../../images/cattles/ho4.jpg");
     margin: 30px 0px;
     background-size: cover;
@@ -92,6 +103,7 @@ div.p1 >div.bspace >a >button:hover {
 .ho5{
     background-color: #ffffff80;
     padding: 15px 20px;
+    font-size: 32px;
 }
 
 .ho7{
@@ -99,15 +111,14 @@ div.p1 >div.bspace >a >button:hover {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 20px 100px;
+    margin: 20px 120px 10px 120px;
 }
 
 .p1{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    margin-right: 40px;
     margin-bottom: 20px;
     width: 280px;
-    padding: 10px 20px;
+    padding: 10px 20px 15px 20px;
     background-color: white;
  }
 
@@ -157,6 +168,19 @@ hr{
     margin-top: 10px;
 }
 
+.fa-magnifying-glass{
+    color: darkgrey;
+}
+
+.fa-magnifying-glass:hover{
+    transform: scale(1);
+    color: darkgrey;
+}
+
+.pname{
+    color:#00a651;
+}
+
 @keyframes running_cow {
     0% {
         left: calc(0% - 100px);
@@ -164,5 +188,79 @@ hr{
 
     100% {
         left: calc(100%);
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .p1{
+        width: 430px;
+        margin-bottom: 50px;
+    }
+
+    .i1{
+        width: 420px;
+        height: 400px;
+    }
+
+    .ho7{
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px 80px 0px 80px;
+    }
+
+    hr{
+        margin-top: -40px;
+    }
+
+    .gif{
+        margin-top: -30px;
+    }
+
+    .ho1{
+        background-position: 0;
+        height: 63vh;
+    }
+
+    p{
+        line-height: 30px;
+    }
+
+    div.p1 >div.bspace >p{
+        font-size: 25px;
+    }
+
+    .bspace{
+       text-align: center;
+       padding: 0px;
+    }
+
+    .chl{
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .chl1{
+        justify-content: center;
+    }
+
+    .chi{
+        width: 150px;
+    }
+
+    .chl2{
+        width: 500px;
+        height: 50px;
+        font-size: 30px;
+        margin: 50px 0px 30px 0px;
+    }
+
+    div.chln >p{
+        font-size: 25px;
+        line-height: 10px;
+    }
+
+    h1{
+        font-size: 40px;
     }
 }

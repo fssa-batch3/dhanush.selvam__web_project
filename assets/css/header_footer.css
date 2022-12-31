@@ -1,10 +1,13 @@
 header{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background-color: #0b1320;
-    padding: 0px 20px;
+    padding: 0px 50px 0px 30px;
+    color: #E0F1FF;
+    width: auto;
 }
 
 .logo{
@@ -37,7 +40,6 @@ ul{
 li {
     padding: 20px 20px;
     list-style: none;
-    font-size: 18px;
 }
 
 .lotit {
@@ -45,6 +47,7 @@ li {
 }
 
 h2{
+    font-size: 24px;
     color: #E0F1FF;
 }
 
@@ -80,10 +83,6 @@ h2{
     font-size: 18px;
 }
 
-.connect{
-    padding-left: 40px;
-}
-
 .foot2 {
     padding-top: 50px;
     padding-right: 150px;
@@ -92,6 +91,7 @@ h2{
 .contact{
     display: flex;
     justify-content: space-evenly;
+    margin-top: 30px;
 }
 
 i{
@@ -101,4 +101,181 @@ i{
 i:hover{
     transform: scale(1.2);
     color: green;
+}
+
+.fa-user{
+    padding-top: 5px;
+}
+
+.fa-user:hover{
+    color: orange;
+}
+
+.fspace{
+    padding-left: 40px;
+}
+
+.sell{
+    background-color: #0b1320;
+    border: 1px solid white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.sell:hover {
+    color: orange;
+    border-style: none;
+}
+
+.user{
+    margin-left: 30px;
+}
+
+.toggle-button{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    height: 40px;
+}
+
+.toggle-button .bar{
+    height: 7px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 480px) {
+
+    body{
+        width: fit-content;
+    }
+
+    .toggle-button{
+        display: flex;
+        position: absolute;
+        top: 3.1rem;
+        right: -15rem;
+    }
+
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+    }
+
+    .logo{
+        width: 100px;
+    }
+
+    .logodiv{
+        padding: 30px;
+        margin-top: -5px;
+    }
+
+    .hd{
+        font-size: 3.5rem;
+    }
+
+    .link_container{
+        display: flex;
+        margin-top: -20px;
+        background-color: #f1f1f1;
+        width: 100%;
+    }
+
+    .link_container:active{
+        display: flex;
+    }
+
+    .butcot{
+        display: flex;
+        background-color: #f1f1f1;
+        margin-top: -10px;
+        width: 100%;
+    }
+
+    .butspace{
+        margin-left: 50px;
+        margin-bottom: 20px;
+    }
+
+    li >a{
+        color: black;
+        font-size: 30px;
+    }
+
+    li >a:hover{
+        background-color: rgb(227, 227,227);
+    }
+
+    ul.navbar{
+        display: flex;
+        flex-direction: column;
+        margin-left: 5px;
+    }
+
+    ul.navbar >li{
+        margin-right: 20px;
+        padding: 30px 20px;
+    }
+
+    .foot{
+        display: block;
+        padding: 0px 0px 0px 0px;
+        background-color: #0b1320;
+        color: white;
+    }
+
+    .foot1{
+        margin: 0;
+        width: 100%;
+    }
+
+    .logof{
+        padding-left: 20px;
+    }
+
+    .f1p{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .foot2{
+        padding: 0px;
+        text-align: center;
+    }
+
+    .connect{
+        color: #00a651;
+    }
+
+    .contact{
+        margin-top: -10px;
+        padding: 20px 0px 30px 0px;
+    }
+
+    .btn ,.sell{
+        background-color: transparent;
+        color: #00a651;
+        border: 1px solid black;
+        font-size: 30px;
+    }
+
+    #sellpro{
+        flex-direction: column;
+    }
+
+    .fa-user{
+        color: black;
+        font-size: 40px;
+    }
+
+    .user{
+        margin: 10px 0px 20px 60px;
+    }
 }

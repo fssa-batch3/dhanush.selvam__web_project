@@ -1,10 +1,11 @@
 body {
     background-color: #e8f5ec;
     font-family: 'PT Serif', serif;
+    width: fit-content
 }
 
 .ho6{
-    margin-right: 700px;
+    margin-right: 700px; 
 }
 
 .ho6buf{
@@ -22,15 +23,14 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 0px 100px;
+    margin: 20px 120px 10px 120px;
 }
 
 .p1{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    margin-right: 20px;
     margin-bottom: 20px;
     width: 280px;
-    padding: 10px 20px;
+    padding: 10px 20px 15px 20px;
     background-color: white;
 }
 
@@ -80,7 +80,7 @@ div.bspace >a >button:hover {
 }
 
 .bspace{
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 .titbut{
@@ -89,4 +89,58 @@ div.bspace >a >button:hover {
     justify-content: space-between;
     margin-top: 40px;
     margin-left: 100px;
+}
+
+.pname{
+    color:#00a651;
+}
+
+.listhead{
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+
+    .p1{
+        width: 430px;
+        margin-bottom: 50px;
+    }
+
+    .i1{
+        width: 420px;
+        height: 400px;
+    }
+
+    .ho7{
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px 80px 0px 80px;
+    }
+
+    p{
+        line-height: 30px;
+    }
+
+    div.p1 >div.bspace >p{
+        font-size: 25px;
+    }
+
+    .bspace{
+        text-align: center;
+        padding: 0px;
+    }
+
+    .titbut{
+        display: none;
+    }
+
+    .listhead{
+        display: flex;
+        justify-content: center;
+        margin: 20px 0px -10px 0px;
+    }
+
+    h1{
+        font-size: 40px;
+    }
 }
