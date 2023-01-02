@@ -95,52 +95,43 @@ div.bspace >a >button:hover {
     color:#00a651;
 }
 
-.listhead{
-    display: none;
-}
-
 @media screen and (max-width: 480px) {
 
     .p1{
-        width: 430px;
+        width: 250px;
         margin-bottom: 50px;
     }
 
     .i1{
-        width: 420px;
-        height: 400px;
+        width: 240px;
+        height: 260px;
     }
 
     .ho7{
         flex-direction: column;
         justify-content: center;
-        margin: 20px 80px 0px 80px;
-    }
-
-    p{
-        line-height: 30px;
-    }
-
-    div.p1 >div.bspace >p{
-        font-size: 25px;
+        margin: 20px 30px 0px 30px;
     }
 
     .bspace{
         text-align: center;
-        padding: 0px;
+        margin: 0px;
     }
 
-    .titbut{
+    div >a >button.btn{
         display: none;
     }
 
-    .listhead{
-        display: flex;
+    .titbut{
+        margin: 10px 0px -10px 0px;
         justify-content: center;
-        margin: 20px 0px -10px 0px;
+    }
+
+    .ho6 ,.ho6buf{
+        margin:0;
     }
 
     h1{
-        font-size: 40px;
+        font-size: 28px;
     }
 }

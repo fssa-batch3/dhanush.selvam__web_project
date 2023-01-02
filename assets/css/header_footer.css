@@ -21,6 +21,7 @@ header{
 
 .navbar {
     display: flex;
+    flex-wrap: wrap;
 }
 
 a {
@@ -54,6 +55,7 @@ h2{
 .foot {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     background-color: #0b1320;
     color: white;
@@ -138,12 +140,12 @@ i:hover{
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 50px;
-    height: 40px;
+    width: 30px;
+    height: 20px;
 }
 
 .toggle-button .bar{
-    height: 7px;
+    height: 3.5px;
     width: 100%;
     background-color: white;
     border-radius: 10px;
@@ -158,8 +160,8 @@ i:hover{
     .toggle-button{
         display: flex;
         position: absolute;
-        top: 3.1rem;
-        right: -15rem;
+        top: 1.9rem;
+        right: 1.5rem;
     }
 
     header{
@@ -169,21 +171,20 @@ i:hover{
     }
 
     .logo{
-        width: 100px;
+        width: 60px;
     }
 
     .logodiv{
-        padding: 30px;
-        margin-top: -5px;
+        padding: 20px 15px 0px 10px;
+        margin-top: -7px;
     }
 
     .hd{
-        font-size: 3.5rem;
+        font-size: 2rem;
     }
 
     .link_container{
         display: flex;
-        margin-top: -20px;
         background-color: #f1f1f1;
         width: 100%;
     }
@@ -200,13 +201,13 @@ i:hover{
     }
 
     .butspace{
-        margin-left: 50px;
+        margin-left: 35px;
         margin-bottom: 20px;
     }
 
     li >a{
         color: black;
-        font-size: 30px;
+        font-size: 20px;
     }
 
     li >a:hover{
@@ -216,17 +217,17 @@ i:hover{
     ul.navbar{
         display: flex;
         flex-direction: column;
-        margin-left: 5px;
+        margin-left: 0;
     }
 
     ul.navbar >li{
         margin-right: 20px;
-        padding: 30px 20px;
+        padding: 20px 0px;
     }
 
     .foot{
         display: block;
-        padding: 0px 0px 0px 0px;
+        padding: 0px;
         background-color: #0b1320;
         color: white;
     }
@@ -237,12 +238,14 @@ i:hover{
     }
 
     .logof{
-        padding-left: 20px;
+        padding: 20px 0px 0px 10px;
+        width: 75px;
     }
 
     .f1p{
-        padding-left: 40px;
-        padding-right: 40px;
+        padding: 0px 25px;
+        font-size: 13px;
+        line-height: 20px;
     }
 
     .foot2{
@@ -263,7 +266,8 @@ i:hover{
         background-color: transparent;
         color: #00a651;
         border: 1px solid black;
-        font-size: 30px;
+        font-size: 25px;
+        padding: 7px 15px;
     }
 
     #sellpro{
@@ -272,10 +276,10 @@ i:hover{
 
     .fa-user{
         color: black;
-        font-size: 40px;
+        font-size: 30px;
     }
 
     .user{
-        margin: 10px 0px 20px 60px;
+        margin: 0px 0px 20px 40px;
     }
 }

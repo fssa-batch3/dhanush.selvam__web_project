@@ -128,49 +128,49 @@ hr{
 @media screen and (max-width: 480px) {
 
     .p1{
-        width: 430px;
+        width: 250px;
         margin-bottom: 50px;
     }
 
     .i1{
-        width: 420px;
-        height: 400px;
+        width: 240px;
+        height: 260px;
     }
 
     .ho7{
         flex-direction: column;
         justify-content: center;
-        margin: 20px 80px 0px 80px;
+        margin: 20px 30px 0px 30px;
     }
 
     hr{
-        margin-top: -40px;
+        margin: -10px 35px -15px 35px;
+        height: 2px;
+        background-color: black;
     }
 
     .gif{
         margin-top: -40px;
+        width: 130px;
     }
 
     .ho1{
+        height: 36vh;
         background-position: 0;
-        height: 63vh;
     }
 
-    p{
-        line-height: 30px;
-    }
-
-    div.p1 >div.bspace >p{
-        font-size: 25px;
+    .ho5{
+        padding: 5px 10px;
+        font-size: 20px;
     }
 
     .bspace{
        text-align: center;
        padding: 0px;
     }
-
+    
     .ho6{
-        font-size: 40px;
+        font-size: 28px;
     }
 
 }

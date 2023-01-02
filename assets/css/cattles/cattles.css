@@ -194,45 +194,40 @@ hr{
 @media screen and (max-width: 480px) {
 
     .p1{
-        width: 430px;
+        width: 250px;
         margin-bottom: 50px;
     }
 
     .i1{
-        width: 420px;
-        height: 400px;
+        width: 240px;
+        height: 260px;
     }
 
     .ho7{
         flex-direction: column;
         justify-content: center;
-        margin: 20px 80px 0px 80px;
+        margin: 20px 30px 0px 30px;
     }
 
     hr{
-        margin-top: -40px;
+        margin: -10px 35px 0px 35px;
+        height: 2px;
+        background-color: black;
     }
 
     .gif{
         margin-top: -30px;
+        width: 130px;
     }
 
     .ho1{
         background-position: 0;
-        height: 63vh;
-    }
-
-    p{
-        line-height: 30px;
-    }
-
-    div.p1 >div.bspace >p{
-        font-size: 25px;
+        height: 36vh;
     }
 
     .bspace{
        text-align: center;
-       padding: 0px;
+       margin: 0px;
     }
 
     .chl{
@@ -245,22 +240,41 @@ hr{
     }
 
     .chi{
-        width: 150px;
+        width: 80px;
     }
 
     .chl2{
-        width: 500px;
-        height: 50px;
-        font-size: 30px;
-        margin: 50px 0px 30px 0px;
+        width: 250px;
+        height: 25px;
+        font-size: 18px;
+        margin: 40px 0px 25px 0px;
     }
 
     div.chln >p{
-        font-size: 25px;
+        font-size: 18px;
         line-height: 10px;
     }
 
-    h1{
-        font-size: 40px;
+    .ho8{
+        margin-left: 25px;
+        margin-right: 25px;
     }
+
+    .ho5{
+        font-size: 18px;
+    }
+
+    .fa-magnifying-glass{
+        font-size: 20px;
+    }
+
+    h1{
+        font-size: 28px;
+    }
+
+    .btn1{
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+
 }
