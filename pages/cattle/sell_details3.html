@@ -19,17 +19,22 @@
     <header>
         <div class="navbar">
             <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "../../index.html"><h1> KowMart </h1></a></div>
+            <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <div>
+        <a href = "#" class = "toggle-button">
+            <span class = "bar"></span>
+            <span class = "bar"></span>
+            <span class = "bar"></span>
+        </a>
+        <div class = "link_container">
             <ul class="navbar">
                 <li><a href="cattle_index.html">Cattles</a></li>
                 <li><a href="../agro pro/agro.html">Agro Products</a></li>
                 <li><a href="../about.html">About Us</a></li>
             </ul>
         </div>
-        <div class = "navbar">
-            <div><a href = "profile.html"> <button class = "sell"> SELLER </button> </a></div>
+        <div class = "navbar butcot" id = "sellpro">
+            <div class = "butspace"><a href = "profile.html"> <button class = "sell"> SELLER </button> </a></div>
             <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
         </div>
     </header>
@@ -45,55 +50,74 @@
             <hr>
 
         <form>
-            <div class = "r1">
-                <div>
-                    <label> Age </label><br>
-                    <input required type = "number"\>
+            
+                <div class = "r1">
+                    <div>
+                        <label> Age </label><br>
+                        <input required type = "number" id = "age">
+                    </div>
+                    <div>
+                        <label> Gender </label><br>
+                        <select required>
+                            <option> Choose </option>
+                            <option> Male </option>
+                            <option> Female </option>
+                        </select>
+                    </div>
+                    <div>
+                        <label> Weight (kg) </label><br>
+                        <input required type = "number" id = "weight">
+                    </div>
                 </div>
-                <div>
-                    <label> Gender </label><br>
-                    <select required>
-                        <option> Choose </option>
-					    <option> Male </option>
-					    <option> Female </option>
-				    </select>
+                <div class = "r1">
+                    <div>
+                        <label> Milk per day (litres) </label><br>
+                        <input required type = "number" id = "litres">
+                    </div>
+                    <div>
+                        <label> Price (Rs.) </label><br>
+                        <input required type = "number" id = "price">
+                    </div>
+                    <div>
+                        <label> Lactation </label><br>
+                        <input required type = "number" id = "lact">
+                    </div>
                 </div>
-                <div>
-                    <label> Weight (kg) </label><br>
-                    <input required type = "number"\>
+                <div class = "r2">
+                    <label> Description </label><br>
+                    <textarea></textarea>
                 </div>
-            </div>
-            <div class = "r1">
-                <div>
-                    <label> Milk per day (litres) </label><br>
-                    <input required type = "number"\>
+                <div class = "r3">
+                    <div>
+                        <label> Upload Photo: </label><br>
+                        <input required type = "file" multiple>
+                    </div>  
+                    <div>
+                        <label> Upload Video: </label><br>
+                        <input required type = "file" multiple>
+                    </div>  
                 </div>
-                <div>
-                    <label> Price (Rs.) </label><br>
-                    <input required type = "number"\>
-                </div>
-                <div>
-                    <label> Lactation </label><br>
-                    <input required type = "number"\>
-                </div>
-            </div>
-            <div class = "r2">
-                <label> Description </label><br>
-                <textarea></textarea>
-            </div>
-            <div class = "r3">
-                <div>
-				    <label> Upload Photo: </label><br>
-				    <input required type = "file" multiple>
-                </div>  
-                <div>
-				    <label> Upload Video: </label><br>
-				    <input required type = "file" multiple>
-                </div>  
-			</div>
-            <div class="bspace"><a href="profile.html"><button class = "btn" type = "button"> SUBMIT </button></a></div>
+                <div class="bspace"><a href="profile.html"><button class = "btn0" type = "button"> SUBMIT </button></a></div>
+             
         </form>
     </main>
+
+    <script>
+        function sub(){
+            const name = document.getElementById("name").value
+            const phone_no = document.getElementById("phone_no").value
+            const email = document.getElementById("email").value
+            const password = document.getElementById("password").value
+            const confirm_password = document.getElementById("confirm_password").value<a 
+
+            console.log(name)
+            console.log(phone_no)
+            console.log(email)
+            console.log(password)
+            console.log(confirm_password)
+            window.location.href = "../cattle/profile.html"
+        }  
+    </script>
 
     <footer>
         <div class="foot">
@@ -104,7 +128,7 @@
                     full potential while ensuring livestock wellbeing.</p>
             </div>
             <div class="foot2">
-                <h2> CONNECT WITH US</h2>
+                <h2 class = "connect"> CONNECT WITH US</h2>
                 <div class = "fspace">
                     <p> Email: info@kowmart.com</p>
                     <p> Ph.no: 1234567890</p>

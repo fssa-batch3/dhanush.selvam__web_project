@@ -25,18 +25,18 @@
             <div class = "order">
                 <div>
                     <label> Email </label><br>
-                    <input type = "email" placeholder="abc@gmail.com">
+                    <input type = "email" placeholder="abc@gmail.com" id = "email">
                 </div>
                 <div>
                     <label> Phone No. </label><br>
-                    <input required = "tel" maxlength = "10">
+                    <input required = "tel" maxlength = "10" id = "phone_no">
                 </div>
                 <div>
                     <label> Password </label><br>
-                    <input required type  = "password">
+                    <input required type  = "password" id = "password">
                 </div>
                 <div class = "btn">
-                    <a href = "../index.html"><button type = "button"> LOGIN </button></a>
+                    <button type = "button" onclick = "sub()"> LOGIN </button></a>
                 </div>
                 <div class = "new">
                     <p> New Customer? <a href = "register.html"> Start here </a></p>
@@ -44,6 +44,19 @@
             </div>
         </form>
     </div>
+
+    <script>
+        function sub(){
+            const phone_no = document.getElementById("phone_no").value
+            const email = document.getElementById("email").value
+            const password = document.getElementById("password").value
+
+            console.log(phone_no)
+            console.log(email)
+            console.log(password)
+            window.location.href = "../index.html"
+        }
+    </script>
 
 </body>
 </html>

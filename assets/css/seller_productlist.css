@@ -4,7 +4,7 @@ body {
 }
 
 .ho6{
-    margin-right: 700px;
+    width: 60%;
 }
 
 .ho7 {
@@ -15,10 +15,8 @@ body {
     margin: 20px 100px;
 }
 
-.ho8{
-    display: grid;
-    grid-template-columns: 1fr 1.15fr 1fr;
-    margin-left: 135px;
+#ho8{
+    justify-content: space-evenly;
 }
 
 .titbut{
@@ -39,9 +37,8 @@ p{
     font-weight: bold;
 }
 
-.p1 {
+.p1{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    margin-right: 40px;
     margin-bottom: 20px;
     width: 280px;
     padding: 10px 20px;
@@ -84,14 +81,12 @@ div.p1 >div >a >button:hover{
     padding: 10px 20px;
 }
 
-/* seller_productlist */
-
 .body1 {
     background-color: #fff4e8;
 }
 
 .ho6s{
-    margin-right: 680px;
+    width: 61%;
 }
 
 #p1s:hover {
@@ -124,4 +119,41 @@ i#ic:hover{
 #name2{
     margin-top: 3rem;
     margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 480px) {
+
+    div.titbut >div >a >button.btn{
+        display: none;
+    }
+
+    .ho6{
+        width:95%;
+    }
+
+    .ho6s{
+        width: 100%;
+    }
+
+    .p1{
+        width: 250px;
+        margin-bottom: 50px;
+    }
+
+    .i1{
+        width: 240px;
+        height: 260px;
+    }
+
+    .ho7{
+        flex-direction: column;
+        align-content: center;
+        margin: 0px;
+        margin-bottom: -40px;
+    }
+
+    #ho8{
+        margin-top: 40px;
+    }
+
 }

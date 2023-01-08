@@ -11,6 +11,7 @@ main {
 .chl{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: 30px 100px;
     align-items: center;
@@ -195,7 +196,7 @@ hr{
 
     .p1{
         width: 250px;
-        margin-bottom: 50px;
+        margin: 20px 20px 50px 20px;
     }
 
     .i1{
@@ -203,16 +204,17 @@ hr{
         height: 260px;
     }
 
+
     .ho7{
-        flex-direction: column;
-        justify-content: center;
-        margin: 20px 30px 0px 30px;
+        width: 370px;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: scroll;
+        margin: 0px;
     }
 
     hr{
         margin: -10px 35px 0px 35px;
-        height: 2px;
-        background-color: black;
     }
 
     .gif{
@@ -221,7 +223,6 @@ hr{
     }
 
     .ho1{
-        background-position: 0;
         height: 36vh;
     }
 
@@ -240,7 +241,7 @@ hr{
     }
 
     .chi{
-        width: 80px;
+        width: 90px;
     }
 
     .chl2{
@@ -261,7 +262,8 @@ hr{
     }
 
     .ho5{
-        font-size: 18px;
+        padding: 5px 10px;
+        font-size: 22px;
     }
 
     .fa-magnifying-glass{

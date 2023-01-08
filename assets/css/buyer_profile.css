@@ -36,7 +36,6 @@ form{
     border-radius: 10px;
     padding: 0px;
     text-align: center;
-    font-size: 24px;
 }
 
 .details{
@@ -100,8 +99,6 @@ h2.head1 >a:hover{
 }
 
 label{
-    margin-right: 30px; 
-    display: inline-block;
     font-size: 22px;
     font-weight: bold;
 }
@@ -137,7 +134,7 @@ button{
     border-radius: 10px;
 }
 
-.btn{
+.btn1{
     background-color: #D2D2FB;
 }
 
@@ -162,4 +159,50 @@ i.fa-regular:hover{
 
 #ic:hover{
     color: #0075A3;
+}
+
+@media screen and (max-width: 480px) {
+
+    form{
+        flex-direction: column;
+        width: auto;
+    }
+
+    .dmain{
+        display: block;
+        margin-top: 25px;
+    }
+
+    .divs{
+        padding: 10px;
+    }
+
+    label{
+        font-size: 20px;
+    }
+
+    .s1{
+        width: auto;
+    }
+
+    .s2{
+        width: auto;
+    }
+
+    input{
+        width: 95%;
+    }
+
+    button{
+        padding: 10px 25px;
+        font-size: 22px;
+    }
+
+    h2.head1 >a{
+        font-size: 28px;
+    }
+
+    .fa-bag-shopping, .fa-cart-shopping, .fa-right-from-bracket, .fa-star{
+        font-size: 28px;
+    }
 }

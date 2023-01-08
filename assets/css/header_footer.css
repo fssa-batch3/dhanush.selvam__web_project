@@ -8,6 +8,9 @@ header{
     padding: 0px 50px 0px 30px;
     color: #E0F1FF;
     width: auto;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .logo{
@@ -19,7 +22,7 @@ header{
     padding-right: 30px;
 }
 
-.navbar {
+.navbar ,.navbar1{
     display: flex;
     flex-wrap: wrap;
 }
@@ -168,6 +171,7 @@ i:hover{
         flex-direction: column;
         align-items: flex-start;
         padding: 0px;
+        position: static;
     }
 
     .logo{
@@ -233,8 +237,8 @@ i:hover{
     }
 
     .foot1{
-        margin: 0;
         width: 100%;
+        margin: 0;
     }
 
     .logof{
@@ -250,11 +254,11 @@ i:hover{
 
     .foot2{
         padding: 0px;
-        text-align: center;
     }
 
     .connect{
         color: #00a651;
+        text-align: center;
     }
 
     .contact{

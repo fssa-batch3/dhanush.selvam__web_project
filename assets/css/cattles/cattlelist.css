@@ -5,11 +5,19 @@ body {
 }
 
 .ho6{
-    margin-right: 700px; 
+    width: 58%;
 }
 
-.ho6buf{
-    margin-right: 650px;
+.ho6b{
+    width: 61%;
+}
+
+.ho6s{
+    width: 60%;
+}
+
+.ho6f{
+    width: 62%;
 }
 
 .ho6cat{
@@ -109,8 +117,9 @@ div.bspace >a >button:hover {
 
     .ho7{
         flex-direction: column;
-        justify-content: center;
-        margin: 20px 30px 0px 30px;
+        align-content: center;
+        margin: 0px;
+        margin-bottom: -40px;
     }
 
     .bspace{
@@ -123,12 +132,24 @@ div.bspace >a >button:hover {
     }
 
     .titbut{
-        margin: 10px 0px -10px 0px;
+        margin: 10px 0px 0px 0px;
         justify-content: center;
     }
 
-    .ho6 ,.ho6buf{
-        margin:0;
+    .ho6{
+        width: 32%;
+    }
+
+    .ho6b{
+        width: 45%;
+    }
+
+    .ho6s{
+        width: 37%;
+    }
+
+    .ho6f{
+        width: 54%;
     }
 
     h1{

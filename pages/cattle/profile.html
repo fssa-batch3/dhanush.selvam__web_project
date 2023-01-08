@@ -20,17 +20,22 @@
     <header>
         <div class="navbar">
             <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "../../index.html"><h1> KowMart </h1></a></div>
+            <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <div>
+        <a href = "#" class = "toggle-button">
+            <span class = "bar"></span>
+            <span class = "bar"></span>
+            <span class = "bar"></span>
+        </a>
+        <div class = "link_container">
             <ul class="navbar">
                 <li><a href="cattle_index.html">Cattles</a></li>
                 <li><a href="../agro pro/agro.html">Agro Products</a></li>
                 <li><a href="../about.html">About Us</a></li>
             </ul>
         </div>
-        <div class = "navbar">
-            <div><a href = "#"> <button class = "sell"> SELLER </button> </a></div>
+        <div class = "navbar butcot" id = "sellpro">
+            <div class = "butspace"><a href = "#"> <button class = "sell"> SELLER </button> </a></div>
             <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
         </div>
     </header>
@@ -47,37 +52,37 @@
                         <h1 class = "head"> Profile </h1>
                         <div class = "divs">
                             <label> Seller ID </label><br>
-                            <input value = "S001" readonly \>
+                            <input value = "S001" readonly id = "seller_id">
                         </div>
                         <div class = "divs">
                             <label> Name </label><br>
-                            <input value = "Inba Lokesh" readonly required = "text" \>
+                            <input value = "Inba Lokesh" readonly required = "text" id = "name">
                         </div>
                         <div class = "divs">
                             <label> Phone No. </label><br>
-                            <input  value = "1234567890" readonly required = "tel" maxlength = "10"\>
+                            <input  value = "1234567890" readonly required = "tel" maxlength = "10" id = "phone_no">
                         </div>
                         <div class = "divs">
                         <label> Email </label><br>
-                            <input  value = "abc@gmail.com" readonly required = "Email"\>
+                            <input  value = "abc@gmail.com" readonly required = "Email" id = "email">
                         </div>
                     </div>
                     <div class = "details2 divs">
                         <div class = "divs">
                             <label> Address line 1</label><br>
-                            <input value = "No.727,Gandhi Street" readonly required = "text"\>
+                            <input value = "No.727,Gandhi Street" readonly required = "text" id = "address_line1">
                         </div>
                         <div class = "divs">
                             <label> Address line 2</label><br>
-                            <input value = "RK Road, Kannatur, Chennai, Tamil Nadu." readonly required = "text"\>
+                            <input value = "RK Road, Kannatur, Chennai, Tamil Nadu." readonly required = "text" id = "address_line2">
                         </div>
                         <div class = "divs">
                             <label> Pincode </label><br>
-                            <input value = "600119" readonly required = "number"\>
+                            <input value = "600119" readonly required = "number" id = "pincode">
                         </div>
                         <p class = "link"><a href = "seller_cattlelist.html"> Your Cattle List </a></p>
                         <div class = "sub divs">
-                            <div class = "divs"><button class = "btn"> Edit </button></div>
+                            <div class = "divs"><button class = "btn1"> Edit </button></div>
                             <div class = "divs"><a href = "cattle_index.html"><button type = "button"> Save </button></a></div>
                         </div>
                     </div>
@@ -85,6 +90,24 @@
             </form>
         </div>
     </main>
+
+    <script>
+        const seller_id = document.getElementById("seller_id").value
+        const name = document.getElementById("name").value
+        const phone_no = document.getElementById("phone_no").value
+        const email = document.getElementById("email").value
+        const address_line1 = document.getElementById("address_line1").value
+        const address_line2 = document.getElementById("address_line2").value
+        const pincode = document.getElementById("pincode").value
+
+        console.log(seller_id)
+        console.log(name)
+        console.log(phone_no)
+        console.log(email)
+        console.log(address_line1)
+        console.log(address_line2)
+        console.log(pincode)
+    </script>
 
     <footer>
         <div class="foot" id = "fogif">
@@ -95,7 +118,7 @@
                     full potential while ensuring livestock wellbeing.</p>
             </div>
             <div class="foot2">
-                <h2> CONNECT WITH US</h2>
+                <h2 class = "connect"> CONNECT WITH US</h2>
                 <div class = "fspace">
                     <p> Email: info@kowmart.com</p>
                     <p> Ph.no: 1234567890</p>

@@ -25,33 +25,58 @@
             <div class = "order">
                 <div>
                     <label> Name </label><br>
-                    <input type = "text">
+                    <input type = "text" id = "name">
                 </div>
                 <div>
                     <label> Phone No. </label><br>
-                    <input required = "tel" maxlength = "10">
+                    <input required = "tel" id = "phone_no" maxlength = "10">
                 </div>
                 <div>
                     <label> Email </label><br>
-                    <input type = "email" placeholder="abc@gmail.com">
+                    <input type = "email" placeholder="abc@gmail.com" id = "email">
                 </div>
                 <div>
                     <label> Password </label><br>
-                    <input required type  = "password">
+                    <input required type  = "password" id = "password">
                 </div>
                 <div>
                     <label> Confirm Password </label><br>
-                    <input required type  = "password">
+                    <input required type  = "password"  id = "confirm_password">
                 </div>
                 <div class = "btn">
-                    <a href = "../index.html"><button type = "button"> SUBMIT </button></a>
+                    <button type = "button" onclick = "sub()"> SUBMIT </button>
                 </div>
                 <div class = "new">
-                    <p> Already have an account? <a href = "sign in.html"> Login here </a></p>
+                    <p> Existing User? <a href = "sign in.html"> Login here </a></p>
                 </div>
             </div>
         </form>
     </div>
+    
+
+    <script>
+        function sub(){
+            const name = document.getElementById("name").value
+            const phone_no = document.getElementById("phone_no").value
+            const email = document.getElementById("email").value
+            const password = document.getElementById("password").value
+            const confirm_password = document.getElementById("confirm_password").value
+
+            console.log(name)
+            console.log(phone_no)
+            console.log(email)
+            console.log(password)
+            console.log(confirm_password)
+
+            localStorage.setItem("user_name",name)
+            localStorage.setItem("user_phone_no",phone_no)
+            localStorage.setItem("user_email",email)
+            localStorage.setItem("user_password",password)
+            localStorage.setItem("user_confirm_password",confirm_password)
+
+            window.location.href = "../index.html"
+        }  
+    </script>
 
 </body>
 </html>

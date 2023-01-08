@@ -79,8 +79,6 @@ p{
 }
 
 label{
-    margin-right: 30px; 
-    display: inline-block;
     font-size: 22px;
     font-weight: bold;
 }
@@ -107,7 +105,7 @@ button{
     border-radius: 10px;
 }
 
-.btn{
+.btn1{
     background-color: #D2D2FB;
 }
 
@@ -117,4 +115,65 @@ i.fa-brands:hover{
 
 i.fa-regular:hover{
     color: orange;  
+}
+
+@media screen and (max-width: 480px) {
+    
+    form, .form1{
+        display: block;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .logoo{
+        border-bottom: 1px solid black;
+        border-right: 0px;
+        padding: 0px;
+    }
+
+    .image{
+        display: block;
+        margin: auto;
+        width: 230px;
+    }
+
+    .divs{
+        padding: 10px;
+    }
+
+    label{
+        font-size: 20px;
+    }
+
+    .details{
+        display: block;
+        width: auto;
+    }
+
+    .details1{
+        width: 93%;
+    }
+
+    .details2{
+        width: 93%;
+        margin-top: -20px;
+    }
+
+    button{
+        padding: 10px 25px;
+        font-size: 22px;
+    }
+
+    .head{
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    #img1{
+        width: 200px;
+    }
+
+    #logoo1{
+        padding-top: 20px;
+    }
 }

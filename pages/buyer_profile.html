@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <title> Seller Profile </title>
+    <title> Buyer Profile </title>
 
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/buyer_profile.css">
@@ -19,17 +19,22 @@
     <header>
         <div class="navbar">
             <div class="logodiv"><a href = "../index.html"><img class = "logo" src="../assets/images/cattles/logo.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "../index.html"><h1> KowMart </h1></a></div>
+            <div class="lotit"><a href = "../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <div>
+        <a href = "#" class = "toggle-button">
+            <span class = "bar"></span>
+            <span class = "bar"></span>
+            <span class = "bar"></span>
+        </a>
+        <div class = "link_container">
             <ul class="navbar">
                 <li><a href="cattle/cattle_index.html">Cattles</a></li>
                 <li><a href="agro pro/agro.html">Agro Products</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </div>
-        <div class = "navbar">
-            <div><a href = "cattle/profile.html"> <button class = "sell"> SELLER </button> </a></div>
+        <div class = "navbar butcot" id = "sellpro">
+            <div class = "butspace"><a href = "cattle/profile.html"> <button class = "sell"> SELLER </button> </a></div>
             <div class = "user"><a href = "#"><i class="fa-solid fa-user"></i></a></div>
         </div>
     </header>
@@ -40,7 +45,7 @@
                     <div class = "s1 divs">
                         <div class = "hello">
                             <img class = "prologo" src = "../assets/images/profile_logo.png" alt = "profile_logo">
-                            <p class = "name"> Hi, Dhanush </p>
+                            <p class = "name"> Hi, XXX </p>
                         </div>
                         <div class = "myorder"><i class="fa-solid fa-star" id = "ic"></i> <h2 class = "head1"><a href = "cattle/favourites.html"> Favourites </a></h2></div>
                         <div class = "myorder"><i class="fa-solid fa-bag-shopping" id = "ic"></i> <h2 class = "head1"><a href = "agro pro/order.html"> My orders </a></h2></div>
@@ -52,41 +57,37 @@
                             <h1 class = "head"> Profile </h1>
                             <div class = "divs">
                                 <label> Name </label><br>
-                                <input readonly value = "Dhanush" required = "text" \>
-                            </div>
-                            <div class = "divs">
-                                <label> Gender </label><br>
-                                <input readonly value = "Male">
+                                <input readonly required = "text" id = "name">
                             </div>
                             <div class = "divs">
                                 <label> Ph.no </label><br>
-                                <input readonly value = "1234567890" required = "tel" maxlength = "10"\>
+                                <input readonly required = "tel" maxlength = "10">
                             </div>
                             <div class = "divs">
                                 <label> Email </label><br>
-                                <input placeholder = "abc@gmail.com" value = "abc@gmail.com" readonly required = "Email"\>
+                                <input placeholder = "abc@gmail.com" readonly required = "Email">
                             </div>
                             <div class = "divs">
                                 <label> Address line 1</label><br>
-                                <input readonly value = "Module-1 & 2, 1st Floor, Block B, SP Infocity" required = "text"\>
+                                <input readonly required = "text"> 
                             </div>
                             <div class = "divs">
                                 <label> Address line 2</label><br>
-                                <input readonly value = "40 MGR Salai, Perungudi, Chennai, Tamil Nadu." required = "text"\>
+                                <input readonly required = "text"\>
                             </div>
                             <div class = "divs">
                                 <label> Pincode </label><br>
-                                <input readonly value = "600096" required = "number"\>
+                                <input readonly required = "number"\>
                             </div>
                             <div class = "sub divs">
-                                <div class = "divs"><button class = "btn"> Edit </button></div>
+                                <div class = "divs"><button class = "btn1"> Edit </button></div>
                                 <div class = "divs"><a href = "cattle/cattle_index.html"><button type = "button"> Save </button></a></div>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
-        </main>
+        </main>    
 
         <footer>
             <div class="foot">
@@ -97,7 +98,7 @@
                         full potential while ensuring livestock wellbeing.</p>
                 </div>
                 <div class="foot2">
-                    <h2> CONNECT WITH US</h2>
+                    <h2 class = "connect"> CONNECT WITH US</h2>
                     <div class = "fspace">
                         <p> Email: info@kowmart.com</p>
                         <p> Ph.no: 1234567890</p>
@@ -111,6 +112,12 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            const name = localStorage.getItem("user_name");
+            console.log("name");
+            document.getElementById("name").value = name
+        </script>
 
 </body>
 </html>
