@@ -80,12 +80,12 @@ button{
 
 .btn2{
     background-color: #00a651;
+    border: 2px solid #00a651;
 }
 
 div.p1 >div.bspace >a >button:hover {
     background-color: white;
     color: #00a651;
-    border: 2px solid #00a651;
 }
 
 .ho1{

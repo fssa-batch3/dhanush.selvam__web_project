@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/agro/agrolist.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
+    <script src = "../../assets/js/main.js"></script>
     <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
@@ -21,11 +22,17 @@
             <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
             <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <a href = "#" class = "toggle-button">
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-        </a>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class = "navbar">
+                <li><a href="../cattle/cattle_index.html">Cattles</a></li>
+                <li><a href="agro.html">Agro Products</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li class = "logbutton"><a href="seller_profile.html"><button class = "sell"> SELLER </button></a></li>
+                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </div> 
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
         <div class = "link_container">
             <ul class="navbar">
                 <li><a href="../cattle/cattle_index.html">Cattles</a></li>
@@ -47,7 +54,7 @@
         
 
         <div class="ho7">
-            <div class="p1">
+            <!--<div class="p1">
                 <a href = "../agro details/cowfeed/cowfeeddetail1.html"><img class="i1" src="../../assets/images/agro/cf1.jpg" alt = "cattle feed"></a>
                 <div class = "bspace">  
                     <p class = "pname"> Anfotal Mineral Mixture</p>
@@ -127,7 +134,7 @@
                     <p> Price: Rs.899</p>
                     <a href = "../agro details/cowfeed/cowfeeddetail9.html"><button> Know More </button></a>
                 </div>
-            </div>
+            </div>-->
         </div>
     </main>
 
@@ -154,6 +161,140 @@
             </div>
         </div>
     </footer>
+
+    <script> 
+
+        let div_p1;
+        let product_image;
+        let div_bspace;
+        let p_name;
+        let p_quantity; 
+        let p_price;
+
+        const product_card = [
+            {
+                "name": "Anfotal Mineral Mixture",
+                "image":{
+                    "source": "../../assets/images/agro/cf1.jpg",
+                    "alt": "Anfotal Mineral Cattle Feed",
+                },
+                "quantity": 1,
+                "price": 399,
+            },
+            {
+                "name": "Diamond Mash Cattle Feed",
+                "image":{
+                    "source": "../../assets/images/agro/cf2.jpg",
+                    "alt": "Diamond Mash Cattle Feed",
+                },
+                "quantity": 1,
+                "price": 1299,
+            },
+            {
+                "name": "Refit Animal Calium Powder",
+                "image":{
+                    "source": "../../assets/images/agro/cf3.jpg",
+                    "alt": "Refit Animal Calium Powder",
+                },
+                "quantity": 1,
+                "price": 499,
+            },
+            {
+                "name": "Vetenex Mixture Powder",
+                "image":{
+                    "source": "../../assets/images/agro/cf4.jpg",
+                    "alt": "Vetenex Mixture Powder",
+                },
+                "quantity": 5,
+                "price": 799,
+            },
+            {
+                "name": "Aalmix Mineral Mixture",
+                "image":{
+                    "source": "../../assets/images/agro/cf5.jpg",
+                    "alt": "Aalmix Mineral Mixture",
+                },
+                "quantity": 1,
+                "price": 239,
+            },
+            {
+                "name": "Vetmido Feed Mixture",
+                "image":{
+                    "source": "../../assets/images/agro/cf6.jpg",
+                    "alt": "Vetmido Feed Mixture",
+                },
+                "quantity": 5,
+                "price": 799,
+            },
+            {
+                "name": "Prions Biotech Milk Booster",
+                "image":{
+                    "source": "../../assets/images/agro/cf7.jpg",
+                    "alt": "Prions Biotech Milk Booster",
+                },
+                "quantity": 1,
+                "price": 450,
+            },
+            {
+                "name": "RMR Cow Feed",
+                "image":{
+                    "source": "../../assets/images/agro/cf8.jpg",
+                    "alt": "RMR Cow Feed",
+                },
+                "quantity": 1,
+                "price": 1100,
+            },
+            {
+                "name": "Growel Growmin Feed Premix",
+                "image":{
+                    "source": "../../assets/images/agro/cf9.jpg",
+                    "alt": "Growel Growmin Feed Premix",
+                },
+                "quantity": 5,
+                "price": 899,
+            },
+        ]
+
+        for(i=0;i<9;i++){
+
+            // product container
+            div_p1 = document.createElement("div");
+            div_p1.setAttribute("class","p1");
+
+            // product image
+            product_image = document.createElement("img");
+            product_image.setAttribute("src",product_card[i]["image"]["source"]);
+            product_image.setAttribute("alt",product_card[i]["image"]["alt"]);
+            product_image.setAttribute("class","i1");
+            div_p1.append(product_image)
+
+            // product info container
+            div_bspace = document.createElement("div");
+            div_bspace.setAttribute("class","bspace");
+            div_p1.append(div_bspace)
+
+            // cattle info
+            p_name = document.createElement("p");
+            p_name.setAttribute("class","pname");
+            p_name.innerText = product_card[i]["name"];
+            div_bspace.append(p_name)
+
+            p_quantity = document.createElement("p");
+            p_quantity.innerText = "Quantity: " + product_card[i]["quantity"] + "Kg";
+            div_bspace.append(p_quantity)
+
+            p_price = document.createElement("p");
+            p_price.innerText = "Price: Rs." + product_card[i]["price"];
+            div_bspace.append(p_price)
+
+            button_know = document.createElement("button");
+            button_know.innerText = "Know More";
+            div_bspace.append(button_know)
+
+            document.querySelector("div.ho7").append(div_p1)
+        }
+
+    </script>
 
 </body>
 

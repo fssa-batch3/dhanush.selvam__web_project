@@ -48,11 +48,12 @@ body{
 }
 
 img{
-    width: 200px;
+    width: 100%;
 }
 
 .image{
     background-color: white;
+    width: 35%;
     margin-right: 40px;
     height: 2%;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -115,6 +116,10 @@ button{
     padding: 1px 10px;
 }
 
+div.code >p{
+    margin-right: 20px;
+}
+
 .fa-tag{
     font-size: 25px;
     padding: 0px 30px;
@@ -149,4 +154,67 @@ i.fa-regular:hover{
 
 #ic:hover{
     color: black;
+}
+
+@media screen and (max-width: 480px) {
+    
+    .head{
+        margin: 8% 0% 6% 0%;
+        font-size: 32px;
+    }
+
+    .page ,.cart ,.content{
+        display: block;
+    }
+
+    .cart ,.s1{
+        width: 100%;
+    }
+
+    .btn1{
+        padding: 10px 50px;
+        font-size: 30px;
+    }
+
+    .item{
+        padding: 5px 25px;
+    }
+
+    .line{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .image{
+        margin: auto;
+        width: 60%;
+    }
+
+    .details{
+        margin-left: 35px;
+    }
+
+    .s2{
+        width: 92%;
+        margin: auto;
+        margin-top: 20px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        padding-top: 10px;
+    }
+
+    div.order >h2.head1{
+        margin-left: 25px;
+    }
+
+    .code{
+        margin: 0px 25px 10px 25px;
+    }
+
+    .price ,.line1{
+        margin: 0px 25px;
+    }
+
+    .fa-tag{
+        padding: 0px 20px;
+    }
 }

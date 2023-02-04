@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/cattles/cattlelist.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
+    <script src = "../../assets/js/main.js"></script>
     <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
@@ -22,11 +23,19 @@
             <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
             <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <a href = "#" class = "toggle-button">
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-        </a>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class = "navbar">
+                <li><a href="cattle_index.html">Cattles</a></li>
+                <li><a href="../agro pro/agro.html">Agro Products</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li class = "logbutton"><a href="profile.html"><button class = "sell"> SELLER </button></a></li>
+                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </div> 
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
+        
         <div class = "link_container">
             <ul class="navbar">
                 <li><a href="cattle_index.html">Cattles</a></li>
@@ -34,6 +43,7 @@
                 <li><a href="../about.html">About Us</a></li>
             </ul>
         </div>
+
         <div class = "navbar butcot">
             <div class = "butspace"><a href = "profile.html"> <button class = "sell"> SELLER </button> </a></div>
             <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
@@ -47,8 +57,8 @@
         </div>
        
         <div class="ho7">
-            <div class="p1">
-                <a href = "../cattle details/cow/C1.html"><img class="i1" src="../../assets/images/cattles/c1.jpg" alt = "cow"></a>      
+            <!--<div class="p1">
+                <a href = "../cattle details/cow/C1.html"><img class="i1" src="../../assets/images/cattles/c1.jpg" alt = "Gir Cow"></a>      
                 <div class = "bspace">
                     <p class = "pname"> Gir Cow G018 </p>
                     <p> Age: 4 Years</p>
@@ -57,7 +67,7 @@
                 </div> 
             </div>
             <div class="p1">
-                <a href = "../cattle details/cow/C2.html"><img class="i1" src="../../assets/images/cattles/c2.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C2.html"><img class="i1" src="../../assets/images/cattles/c2.jpg" alt = "HF Cow"></a>
                 <div class = "bspace">
                     <p class = "pname"> HF Cow H165 </p>
                     <p> Age: 2 Years</p>
@@ -66,7 +76,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/cow/C3.html"><img class="i1" src="../../assets/images/cattles/c3.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C3.html"><img class="i1" src="../../assets/images/cattles/c3.jpg" alt = "Kankrej Cow"></a>
                 <div class = "bspace">
                     <p class = "pname"> Kankrej Cow K006 </p>
                     <p> Age: 1 Year</p>
@@ -75,7 +85,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/cow/C4.html"><img class="i1" src="../../assets/images/cattles/c4.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C4.html"><img class="i1" src="../../assets/images/cattles/c4.jpg" alt = "Tharparkar Cow"></a>
                 <div class = "bspace">
                     <p class = "pname"> Tharparkar Cow T035 </p>
                     <p> Age: 3 Years</p>
@@ -84,7 +94,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/cow/C5.html"><img class="i1" src="../../assets/images/cattles/c5.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C5.html"><img class="i1" src="../../assets/images/cattles/c5.jpg" alt = "Red Sindhi Cow"></a>
                 <div class = "bspace">
                     <p class = "pname"> Red Sindhi R021 </p>
                     <p> Age: 4 Years</p>
@@ -93,7 +103,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/cow/C6.html"><img class="i1" src="../../assets/images/cattles/c6.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C6.html"><img class="i1" src="../../assets/images/cattles/c6.jpg" alt = "Sahiwal Cow"></a>
                 <div class = "bspace">
                     <p class = "pname"> Sahiwal Cow S139 </p>
                     <p> Age: 3 Years</p>
@@ -102,7 +112,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/cow/C7.html"><img class="i1" src="../../assets/images/cattles/c7.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C7.html"><img class="i1" src="../../assets/images/cattles/c7.jpg" alt = "Jersey Cow"></a>
                 <div class = "bspace">
                     <p class = "pname"> Jersey Cow J006 </p>
                     <p> Age: 5 Year</p>
@@ -111,7 +121,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/cow/C8.html"><img class="i1" src="../../assets/images/cattles/c8.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C8.html"><img class="i1" src="../../assets/images/cattles/c8.jpg" alt = "Rathi Heifer Cow"></a>
                 <div class = "bspace">
                     <p class = "pname"> Rathi Heifer Cow R036 </p>
                     <p> Age: 1 Year</p>
@@ -120,7 +130,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/cow/C9.html"><img class="i1" src="../../assets/images/cattles/c9.jpg" alt = "cow"></a>        
+                <a href = "../cattle details/cow/C9.html"><img class="i1" src="../../assets/images/cattles/c9.jpg" alt = "Ongole Cow"></a>        
                 <div class = "bspace">
                     <p class = "pname"> Ongole Cow OC5 </p>
                     <p> Age: 6 Years</p>
@@ -129,7 +139,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/cow/C10.html"><img class="i1" src="../../assets/images/cattles/c10.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C10.html"><img class="i1" src="../../assets/images/cattles/c10.jpg" alt = "Deoni Cow"></a>
                 <div class = "bspace">
                     <p class = "pname"> Deoni Cow D001 </p>
                     <p> Age: 5 Years</p>
@@ -138,7 +148,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/cow/C11.html"><img class="i1" src="../../assets/images/cattles/c11.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C11.html"><img class="i1" src="../../assets/images/cattles/c11.jpg" alt = "Kapila Cow"></a>
                 <div class = "bspace">
                     <p class = "pname"> Kapila Cow K111 </p>
                     <p> Age: 5 Years</p>
@@ -147,14 +157,14 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/cow/C12.html"><img class="i1" src="../../assets/images/cattles/c12.jpg" alt = "cow"></a>
+                <a href = "../cattle details/cow/C12.html"><img class="i1" src="../../assets/images/cattles/c12.jpg" alt = "Vilwadri Cow"></a>
                 <div class = "bspace">
                     <p class = "pname"> Vilwadri Cow V002 </p>
                     <p> Age: 1 Year</p>
                     <p> Gender: Female</p>
                     <a href = "../cattle details/cow/C12.html"><button> Know More </button></a>
                 </div>
-            </div>
+            </div>-->
         </div>
     </main>
 
@@ -181,6 +191,169 @@
             </div>
         </div>
     </footer>
+
+    <script>
+
+        let div_p1;
+        let cattle_image;
+        let div_bspace;
+        let p_name;
+        let p_age; 
+        let p_gender;
+
+        const cattle_card = [
+            {
+                "name": "Gir Cow G018",
+                "image":{
+                    "source": "../../assets/images/cattles/c1.jpg",
+                    "alt": "Gir Cow",
+                },
+                "age": 4,
+                "gender": "Female"
+            },
+            {
+                "name": "HF Cow H165",
+                "image":{
+                    "source": "../../assets/images/cattles/c2.jpg",
+                    "alt": "HF Cow",
+                },
+                "age": 2,
+                "gender": "Female"
+            },
+            {
+                "name": "Kankrej Cow K006",
+                "image":{
+                    "source": "../../assets/images/cattles/c3.jpg",
+                    "alt": "Kankrej Cow",
+                },
+                "age": 1,
+                "gender": "Female"
+            },
+            {
+                "name": "Tharparkar Cow T035",
+                "image":{
+                    "source": "../../assets/images/cattles/c4.jpg",
+                    "alt": "Tharparkar Cow",
+                },
+                "age": 3,
+                "gender": "Female"
+            },
+            {
+                "name": "Red Sindhi R021",
+                "image":{
+                    "source": "../../assets/images/cattles/c5.jpg",
+                    "alt": "Red Sindhi R021",
+                },
+                "age": 4,
+                "gender": "Female"
+            },
+            {
+                "name": "Sahiwal Cow S139",
+                "image":{
+                    "source": "../../assets/images/cattles/c6.jpg",
+                    "alt": "Sahiwal Cow S139",
+                },
+                "age": 3,
+                "gender": "Female"
+            },
+            {
+                "name": "Jersey Cow J006",
+                "image":{
+                    "source": "../../assets/images/cattles/c7.jpg",
+                    "alt": "Jersey Cow J006",
+                },
+                "age": 5,
+                "gender": "Male"
+            },
+            {
+                "name": "Rathi Heifer Cow R036",
+                "image":{
+                    "source": "../../assets/images/cattles/c8.jpg",
+                    "alt": "Rathi Heifer Cow",
+                },
+                "age": 1,
+                "gender": "Female"
+            },
+            {
+                "name": "Ongole Cow OC5",
+                "image":{
+                    "source": "../../assets/images/cattles/c9.jpg",
+                    "alt": "Ongole Cow OC5",
+                },
+                "age": 6,
+                "gender": "Female"
+            },
+            {
+                "name": "Deoni Cow D001",
+                "image":{
+                    "source": "../../assets/images/cattles/c10.jpg",
+                    "alt": "Deoni Cow",
+                },
+                "age": 5,
+                "gender": "Female"
+            },
+            {
+                "name": "Kapila Cow K111",
+                "image":{
+                    "source": "../../assets/images/cattles/c11.jpg",
+                    "alt": "Kapila Cow",
+                },
+                "age": 5,
+                "gender": "Female"
+            },
+            {
+                "image": "../../assets/images/cattles/c12.jpg",
+                "alt_name": "Vilwadri Cow",
+                "name": "Vilwadri Cow V002",
+                "image":{
+                    "source": "../../assets/images/cattles/c12.jpg",
+                    "alt": "Vilwadri Cow",
+                },
+                "age": 1,
+                "gender": "Female"
+            },
+        ]
+
+        for(i=0; i<cattle_card.length; i++){
+
+            // cattle container
+            div_p1 = document.createElement("div");
+            div_p1.setAttribute("class","p1");
+
+            // cattle image
+            cattle_image = document.createElement("img");
+            cattle_image.setAttribute("src",cattle_card[i]["image"]["source"]);
+            cattle_image.setAttribute("alt",cattle_card[i]["image"]["alt"]);
+            cattle_image.setAttribute("class","i1");
+            div_p1.append(cattle_image)
+
+            // cattle info container
+            div_bspace = document.createElement("div");
+            div_bspace.setAttribute("class","bspace");
+            div_p1.append(div_bspace)
+
+            // cattle info
+            p_name = document.createElement("p");
+            p_name.setAttribute("class","pname");
+            p_name.innerText = cattle_card[i]["name"];
+            div_bspace.append(p_name)
+
+            p_age = document.createElement("p");
+            p_age.innerText = "Age: " + cattle_card[i]["age"] + " Year(s)";
+            div_bspace.append(p_age)
+
+            p_gender = document.createElement("p");
+            p_gender.innerText = "Gender: " + cattle_card[i]["gender"];
+            div_bspace.append(p_gender)
+
+            button_know = document.createElement("button");
+            button_know.innerText = "Know More";
+            div_bspace.append(button_know)
+
+            document.querySelector("div.ho7").append(div_p1)
+        }
+
+    </script>
 
 </body>
 

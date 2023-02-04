@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>Home Page</title>
 
-    
+    <link rel="stylesheet" href="assets/js/main.js">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/homepage.css">
     <link rel="stylesheet" href="assets/css/header_footer.css">
+    <script src = "assets/js/main.js"></script>
     <link rel="icon" href="assets/images/cattles/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
@@ -23,11 +24,18 @@
             <div class="logodiv"><a href = "index.html"><img class = "logo" src="assets/images/cattles/logo.png" alt="logo"></a></div>
             <div class="lotit"><a href = "index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <a href = "#" class = "toggle-button">
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-        </a>
+
+        <div id="mySidenav" class="sidenav">
+             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> 
+            <ul class = "navbar">
+                <li><a href="pages/cattle/cattle_index.html">Cattles</a></li>
+                <li><a href="pages/agro pro/agro.html">Agro Products</a></li>
+                <li><a href="pages/about.html">About Us</a></li>
+                <li class = "logbutton"><a href="./pages/sign in.html"><button class = "btn"> LOGIN </button></a></li>
+            </ul>
+        </div> 
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
         <div class = "link_container">
             <ul class = "navbar">
                 <li><a href="pages/cattle/cattle_index.html">Cattles</a></li>
@@ -35,106 +43,110 @@
                 <li><a href="pages/about.html">About Us</a></li>
             </ul>
         </div>
+
         <div class = "butcot"><div class = "butspace"><a href="./pages/sign in.html"><button class = "btn"> LOGIN </button></a></div>
+
         
     </header>
     
     <main>
-        <div class="ho1">
-            <h1 class="ho5"> Buy or Sell Livestock Online </h1>
-        </div>
+        
+            <div class="ho1">
+                <h1 class="ho5"> Buy or Sell Livestock Online </h1>
+            </div>
 
-        <h1 class="ho6"> Our Best Cattles</h1>
-        <div class="ho7">
-            <div class="p1">
-                <a href = "pages/cattle details/cow/C1.html"><img class="i1" src="assets/images/cattles/c1.jpg" alt = "cow"></a>      
-                <div class = "bspace">
-                    <p class = "pname"> Gir Cow G018 </p>
-                    <p> Age: 4 Years</p>
-                    <p> Gender: Female</p>
-                    <a href="pages/cattle details/cow/C1.html"><button> Know More </button></a>
+            <h1 class="ho6"> Our Best Cattles</h1>
+            <div class="ho7">
+                <div class="p1">
+                    <a href = "pages/cattle details/cow/C1.html"><img class="i1" src="assets/images/cattles/c1.jpg" alt = "cow"></a>      
+                    <div class = "bspace">
+                        <p class = "pname"> Gir Cow G018 </p>
+                        <p> Age: 4 Years</p>
+                        <p> Gender: Female</p>
+                        <a href="pages/cattle details/cow/C1.html"><button> Know More </button></a>
+                    </div>
+                </div>
+                <div class="p1">
+                    <a href = "pages/cattle details/cow/C3.html"><img class="i1" src="assets/images/cattles/c3.jpg" alt = "cow"></a>
+                    <div class = "bspace">
+                        <p class = "pname"> Kankrej Cow K006 </p>
+                        <p> Age: 1 Year</p>
+                        <p> Gender: Female</p>
+                        <a href = "pages/cattle details/cow/C3.html"><button> Know More </button></a>
+                    </div>
+                </div>
+                <div class="p1">
+                    <a href = "pages/cattle details/buffalo/B1.html"><img class="i1" src="assets/images/cattles/b1.jpg" alt = "buffalo"></a>
+                    <div class = "bspace">
+                        <p class = "pname"> Surti Buffalo S101 </p>
+                        <p> Age: 6 Years</p>
+                        <p> Gender: Female</p>
+                        <a href = "pages/cattle details/buffalo/B1.html"><button> Know More </button></a>
+                    </div>
+                </div>
+                <div class="p1">
+                    <a href = "pages/cattle details/goat/G1.html"><img class="i1" src="assets/images/cattles/g1.jpg" alt = "goat"></a>
+                    <div class = "bspace">
+                        <p class = "pname"> Malabari Goat M080 </p>
+                        <p> Age: 3 Years</p>
+                        <p> Gender: Male</p>
+                        <a href = "pages/cattle details/goat/G1.html"><button> Know More </button></a>
+                    </div>
+                </div>
+                <div class="p1">
+                    <a href = "pages/cattle details/sheep/S1.html"><img class="i1" src="assets/images/cattles/s1.jpg" alt = "sheep"></a>
+                    <div class = "bspace">
+                        <p class = "pname"> Bannur Sheep B023 </p>
+                        <p> Age: 1 Year</p>
+                        <p> Gender: Male</p>
+                        <a href = "pages/cattle details/sheep/S1.html"><button> Know More </button></a>
+                    </div>
+                </div>
+                <div class="p1">
+                    <a href = "pages/cattle details/ox/O1.html"><img class="i1" src="assets/images/cattles/o1.jpg" alt = "ox"></a>   
+                    <div class = "bspace">
+                        <p class = "pname"> Ongole Ox O107 </p>
+                        <p> Age: 4 Years</p>
+                        <p> Gender: Male</p>
+                        <a href = "pages/cattle details/ox/O1.html"><button> Know More </button></a>
+                    </div>
                 </div>
             </div>
-            <div class="p1">
-                <a href = "pages/cattle details/cow/C3.html"><img class="i1" src="assets/images/cattles/c3.jpg" alt = "cow"></a>
-                <div class = "bspace">
-                    <p class = "pname"> Kankrej Cow K006 </p>
-                    <p> Age: 1 Year</p>
-                    <p> Gender: Female</p>
-                    <a href = "pages/cattle details/cow/C3.html"><button> Know More </button></a>
-                </div>
-            </div>
-            <div class="p1">
-                <a href = "pages/cattle details/buffalo/B1.html"><img class="i1" src="assets/images/cattles/b1.jpg" alt = "buffalo"></a>
-                <div class = "bspace">
-                    <p class = "pname"> Surti Buffalo S101 </p>
-                    <p> Age: 6 Years</p>
-                    <p> Gender: Female</p>
-                    <a href = "pages/cattle details/buffalo/B1.html"><button> Know More </button></a>
-                </div>
-            </div>
-            <div class="p1">
-                <a href = "pages/cattle details/goat/G1.html"><img class="i1" src="assets/images/cattles/g1.jpg" alt = "goat"></a>
-                <div class = "bspace">
-                    <p class = "pname"> Malabari Goat M080 </p>
-                    <p> Age: 3 Years</p>
-                    <p> Gender: Male</p>
-                    <a href = "pages/cattle details/goat/G1.html"><button> Know More </button></a>
-                </div>
-            </div>
-            <div class="p1">
-                <a href = "pages/cattle details/sheep/S1.html"><img class="i1" src="assets/images/cattles/s1.jpg" alt = "sheep"></a>
-                <div class = "bspace">
-                    <p class = "pname"> Bannur Sheep B023 </p>
-                    <p> Age: 1 Year</p>
-                    <p> Gender: Male</p>
-                    <a href = "pages/cattle details/sheep/S1.html"><button> Know More </button></a>
-                </div>
-            </div>
-            <div class="p1">
-                <a href = "pages/cattle details/ox/O1.html"><img class="i1" src="assets/images/cattles/o1.jpg" alt = "ox"></a>   
-                <div class = "bspace">
-                    <p class = "pname"> Ongole Ox O107 </p>
-                    <p> Age: 4 Years</p>
-                    <p> Gender: Male</p>
-                    <a href = "pages/cattle details/ox/O1.html"><button> Know More </button></a>
-                </div>
-            </div>
-        </div>
-        <hr>
+            <hr>
 
-        <h1 class="ho6"> Best Agro Products</h1>
+            <h1 class="ho6"> Best Agro Products</h1>
 
-        <div class="ho7">
-            <div class="p1">
-                <a href = "pages/agro details/cowfeed/cowfeeddetail9.html"><img class="i1" src="assets/images/agro/cf9.jpg" alt = "cattle feed"></a>
-                <div class = "bspace">
-                    <p class = "pname"> Growel Growmin Feed Premix </p>
-                    <p> Quantity: 5 kg</p>
-                    <p> Price: Rs.899</p>
-                    <a href = "pages/agro details/cowfeed/cowfeeddetail9.html"><button> Know More </button></a>
+            <div class="ho7">
+                <div class="p1">
+                    <a href = "pages/agro details/cowfeed/cowfeeddetail9.html"><img class="i1" src="assets/images/agro/cf9.jpg" alt = "cattle feed"></a>
+                    <div class = "bspace">
+                        <p class = "pname"> Growel Growmin Feed Premix </p>
+                        <p> Quantity: 5 kg</p>
+                        <p> Price: Rs.899</p>
+                        <a href = "pages/agro details/cowfeed/cowfeeddetail9.html"><button> Know More </button></a>
+                    </div>
+                </div>
+                <div class="p1">
+                    <a href = "pages/agro details/fertilizer/fertilizer7.html"><img class="i1" src="assets/images/agro/f7.jpg" alt = "fertilizer"></a>
+                    <div class = "bspace">
+                        <p class = "pname"> TrustBasket Neem Fertilizer</p>
+                        <p> Quantity: 500g</p>
+                        <p> Price: Rs.180</p>
+                        <a href = "pages/agro details/fertilizer/fertilizer7.html"><button> Know More </button></a>
+                    </div>
+                </div>
+                <div class="p1">
+                    <a href = "pages/agro details/manure/manure8.html"><img class="i1" src="assets/images/agro/m8.jpg" alt = "manure"></a>
+                    <div class = "bspace">
+                        <p class = "pname"> TrustBasket Organic Manure </p>
+                        <p> Quantity: 1Kg</p>
+                        <p> Price: Rs.249</p>
+                        <a href = "pages/agro details/manure/manure8.html"><button> Know More </button></a>
+                    </div>
                 </div>
             </div>
-            <div class="p1">
-                <a href = "pages/agro details/fertilizer/fertilizer7.html"><img class="i1" src="assets/images/agro/f7.jpg" alt = "fertilizer"></a>
-                <div class = "bspace">
-                    <p class = "pname"> TrustBasket Neem Fertilizer</p>
-                    <p> Quantity: 500g</p>
-                    <p> Price: Rs.180</p>
-                    <a href = "pages/agro details/fertilizer/fertilizer7.html"><button> Know More </button></a>
-                </div>
-            </div>
-            <div class="p1">
-                <a href = "pages/agro details/manure/manure8.html"><img class="i1" src="assets/images/agro/m8.jpg" alt = "manure"></a>
-                <div class = "bspace">
-                    <p class = "pname"> TrustBasket Organic Manure </p>
-                    <p> Quantity: 1Kg</p>
-                    <p> Price: Rs.249</p>
-                    <a href = "pages/agro details/manure/manure8.html"><button> Know More </button></a>
-                </div>
-            </div>
-        </div>
-       <img class = "gif" src = "assets/images/gif1.gif" alt = "gif">
+            <img class = "gif" src = "assets/images/gif1.gif" alt = "gif">
+        
     </main>
 
     <footer>
@@ -161,7 +173,88 @@
         </div>
     </footer>
 
-    <script src = "/assets/js/main.js"></script>
+    <!--<script>
+
+        const cattle_card = [
+                {
+                    "image": "assets/images/cattles/c1.jpg",
+                    "alt_name": "Gir Cow",
+                    "name": "Gir Cow G018",
+                    "age": "Age: 4 Years",
+                    "gender": "Gender: Female"
+                },
+                {
+                    "image": "assets/images/cattles/c3.jpg",
+                    "alt_name": "Kankrej Cow",
+                    "name": "Kankrej Cow K006",
+                    "age": "Age: 1 Year",
+                    "gender": "Gender: Female"
+                },
+                {
+                    "image": "assets/images/cattles/b1.jpg",
+                    "alt_name": "Surti Buffalo",
+                    "name": "Surti Buffalo S101",
+                    "age": "Age: 6 Years",
+                    "gender": "Gender: Female"
+                },
+                {
+                    "image": "assets/images/cattles/g1.jpg",
+                    "alt_name": "Malabari Goat",
+                    "name": "Malabari Goat M080",
+                    "age": "Age: 3 Years",
+                    "gender": "Gender: Male"
+                },
+                {
+                    "image": "assets/images/cattles/s1.jpg",
+                    "alt_name": "Bannur Sheep",
+                    "name": "Bannur Sheep B023",
+                    "age": "Age: 1 Year",
+                    "gender": "Gender: Male"
+                },
+                {
+                    "image": "assets/images/cattles/o1.jpg",
+                    "alt_name": "Ongole Ox",
+                    "name": "Ongole Ox O107",
+                    "age": "Age: 4 Years",
+                    "gender": "Gender: Male"
+                }
+            ]
+
+            for(i=0;i<6;i++){
+                // cattle container
+                div_p1 = document.createElement("div");
+                div_p1.setAttribute("class","p1");
+
+                // cattle image
+                cattle_image = document.createElement("img");
+                cattle_image.setAttribute("src",cattle_card[i]["image"]);
+                cattle_image.setAttribute("alt",cattle_card[i]["alt_name"]);
+                cattle_image.setAttribute("class","i1");
+                div_p1.append(cattle_image)
+
+                // cattle info container
+                div_bspace = document.createElement("div");
+                div_bspace.setAttribute("class","bspace");
+                div_p1.append(div_bspace)
+
+                // cattle info
+                p_name = document.createElement("p");
+                p_name.setAttribute("class","pname");
+                p_name.innerText = cattle_card[i]["name"];
+                div_bspace.append(p_name)
+
+                p_age = document.createElement("p");
+                p_age.innerText = cattle_card[i]["age"];
+                div_bspace.append(p_age)
+
+                p_gender = document.createElement("p");
+                p_gender.innerText = cattle_card[i]["gender"];
+                div_bspace.append(p_gender)
+
+                document.querySelector("div.ho7").append(div_p1)
+            }
+        
+    </script>-->
 
 </body>
 

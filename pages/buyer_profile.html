@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/buyer_profile.css">
     <link rel="stylesheet" href="../assets/css/header_footer.css">
+    <script src = "../assets/js/main.js"></script>
     <link rel="icon" href="../assets/images/cattles/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
@@ -21,11 +22,17 @@
             <div class="logodiv"><a href = "../index.html"><img class = "logo" src="../assets/images/cattles/logo.png" alt="logo"></a></div>
             <div class="lotit"><a href = "../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <a href = "#" class = "toggle-button">
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-        </a>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class = "navbar">
+                <li><a href="cattle/cattle_index.html">Cattles</a></li>
+                <li><a href="agro pro/agro.html">Agro Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class = "logbutton"><a href="cattle/profile.html"><button class = "sell"> SELLER </button></a></li>
+                <li class = "profile_icon"><a href = "#"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </div> 
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
         <div class = "link_container">
             <ul class="navbar">
                 <li><a href="cattle/cattle_index.html">Cattles</a></li>
@@ -47,10 +54,22 @@
                             <img class = "prologo" src = "../assets/images/profile_logo.png" alt = "profile_logo">
                             <p class = "name"> Hi, XXX </p>
                         </div>
-                        <div class = "myorder"><i class="fa-solid fa-star" id = "ic"></i> <h2 class = "head1"><a href = "cattle/favourites.html"> Favourites </a></h2></div>
-                        <div class = "myorder"><i class="fa-solid fa-bag-shopping" id = "ic"></i> <h2 class = "head1"><a href = "agro pro/order.html"> My orders </a></h2></div>
-                        <div class = "myorder"><i class="fa-solid fa-cart-shopping" id = "ic"></i> <h2 class = "head1"><a href = "agro pro/cart.html"> Cart </a></h2></div>
-                        <div class = "myorder"><i class="fa-solid fa-right-from-bracket" id = "ic"></i> <h2 class = "head1"><a href = "../index.html"> Log out </a></h2></a></div>
+                        <div class = "myorder">
+                            <div class = "ic1"> <i class="fa-solid fa-star" id = "ic"></i> </div>
+                            <h2 class = "head1"><a href = "cattle/favourites.html"> Favourites </a></h2>
+                        </div>
+                        <div class = "myorder">
+                            <div class = "ic1"> <i class="fa-solid fa-bag-shopping" id = "ic"></i> </div>
+                            <h2 class = "head1"><a href = "agro pro/order.html"> My orders </a></h2>
+                        </div>
+                        <div class = "myorder">
+                            <div class = "ic1"> <i class="fa-solid fa-cart-shopping" id = "ic"></i> </div>
+                            <h2 class = "head1"><a href = "agro pro/cart.html"> Cart </a></h2>
+                        </div>
+                        <div class = "myorder">
+                            <div class = "ic1"> <i class="fa-solid fa-right-from-bracket" id = "ic"></i> </div>
+                            <h2 class = "head1"><a href = "../index.html"> Log out </a></h2>
+                        </div>
                     </div>
                     <div class = "s2 divs">
                         <div class = "details divs">
@@ -61,11 +80,11 @@
                             </div>
                             <div class = "divs">
                                 <label> Ph.no </label><br>
-                                <input readonly required = "tel" maxlength = "10">
+                                <input readonly required = "tel" maxlength = "10" id = "phone_no">
                             </div>
                             <div class = "divs">
                                 <label> Email </label><br>
-                                <input placeholder = "abc@gmail.com" readonly required = "Email">
+                                <input placeholder = "abc@gmail.com" readonly required = "Email" id = "email">
                             </div>
                             <div class = "divs">
                                 <label> Address line 1</label><br>
@@ -115,8 +134,13 @@
 
         <script>
             const name = localStorage.getItem("user_name");
-            console.log("name");
-            document.getElementById("name").value = name
+            document.getElementById("name").value = name;
+
+            const phone_no = localStorage.getItem("user_phone_no");
+            document.getElementById("phone_no").value = phone_no;
+
+            const email = localStorage.getItem("user_email");
+            document.getElementById("email").value = email;
         </script>
 
 </body>

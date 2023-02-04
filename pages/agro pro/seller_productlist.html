@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/seller_productlist.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
+    <script src = "../../assets/js/main.js"></script>
     <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
@@ -21,11 +22,17 @@
             <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
             <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <a href = "#" class = "toggle-button">
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-        </a>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class = "navbar">
+                <li><a href="../cattle/cattle_index.html">Cattles</a></li>
+                <li><a href="agro.html">Agro Products</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li class = "logbutton"><a href="seller_profile.html"><button class = "sell"> SELLER </button></a></li>
+                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </div> 
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
         <div class = "link_container">
             <ul class="navbar">
                 <li><a href="../cattle/cattle_index.html">Cattles</a></li>
@@ -71,7 +78,7 @@
             </div>
             <div class="p1" id = "p1s">
                 <a href = "#"><img class = "new" src = "../../assets/images/new.png" alt = "add"></a>
-                <h2 class = "name" id = "name2"> Add new cattles </h2>
+                <h2 class = "name" id = "name2"> Add new products </h2>
                 <div><a href = "#"><button id = "btn1"> Add </button></a></div>
             </div>
         </div>

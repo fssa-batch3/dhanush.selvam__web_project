@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/agro/cart.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
+    <script src = "../../assets/js/main.js"></script>
     <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
@@ -19,17 +20,28 @@
     <header>
         <div class="navbar">
             <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "../../index.html"><h1> KowMart </h1></a></div>
+            <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class = "navbar">
+                <li><a href="../cattle/cattle_index.html">Cattles</a></li>
+                <li><a href="agro.html">Agro Products</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li class = "logbutton"><a href="seller_profile.html"><button class = "sell"> SELLER </button></a></li>
+                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </div> 
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
+        <div class = "link_container">
             <ul class="navbar">
                 <li><a href="../cattle/cattle_index.html">Cattles</a></li>
                 <li><a href="agro.html">Agro Products</a></li>
                 <li><a href="../about.html">About Us</a></li>
             </ul>
         </div>
-        <div class = "navbar">
-            <div><a href = "seller_profile.html"> <button class = "sell"> SELLER </button> </a></div>
+        <div class = "navbar butcot" id = "sellpro">
+            <div class = "butspace"><a href = "seller_profile.html"> <button class = "sell"> SELLER </button> </a></div>
             <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
         </div>
     </header>
@@ -78,7 +90,7 @@
                             <p> Delivery Charges </p>
                             <p> Free </p>
                         </div>
-                        <hr>
+                        <hr class = "line1">
                         <div class = "price">
                             <p> Total Amount </p>
                             <p> <span> &#8377</span> 180 </p>
@@ -98,7 +110,7 @@
                     full potential while ensuring livestock wellbeing.</p>
             </div>
             <div class="foot2">
-                <h2> CONNECT WITH US</h2>
+                <h2 class = "connect"> CONNECT WITH US</h2>
                 <div class = "fspace">
                     <p class = "p1"> Email: info@kowmart.com</p>
                     <p class = "p1"> Ph.no: 1234567890</p>

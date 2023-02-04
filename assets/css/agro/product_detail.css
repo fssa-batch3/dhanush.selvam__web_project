@@ -21,29 +21,31 @@ p{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 40px;
+    padding-left: 13%;
+    padding-right: 10%;
 }
 
 .s1{
-    background-color: #f8f8f8;
-    margin-left: 200px;
+    background-color: white;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .s2{
-    padding-left: 50px;
-	padding-right: 145px;
+    padding-left: 5%;
+    padding-top: 2%;
 }
 
 .i01{
 	width: 500px;
-	height: 450px;
+    height: 500px;
 }
 
 .b2{
 	margin-top: 30px;
-	margin-left: 280px;
+    width: 61%;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -88,8 +90,8 @@ button{
     font-size: 20px;
     font-weight: bold;
     background-color: orange;
+    border: 2px solid orange;
     color: white;
-    border-style: none;
     border-radius: 10px;
 }
 
@@ -100,11 +102,11 @@ button{
 div.bspace1 >a >button:hover{
     background-color: white;
     color: orange;
-    border: 2px solid orange;
 }
 
 .btn{
     background-color: #007662;
+    border-style: none;
 }
 
 .price{
@@ -127,16 +129,19 @@ div.bspace1 >a >button:hover{
 
 .btn2{
 	background-color: yellow;
+    border-style: none;
 	padding: 15px 40px;
     color: black;
 }
 
 .btn3{
 	padding: 15px 40px;
+    border-style: none;
 }
 
 .btn3s{
     margin-left: 40px;
+    border-style: none;
 }
 
 .btn3 img {
@@ -146,8 +151,7 @@ div.bspace1 >a >button:hover{
 
 .ho6 {
     text-align: center;
-    margin-top: 70px;
-    margin-bottom: 30px;
+    margin: 2% 0%;
 }
 
 .ho7 {
@@ -155,15 +159,14 @@ div.bspace1 >a >button:hover{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 20px 100px;
+    margin: 20px 120px;
 }
 
 .p1 {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    margin-right: 40px;
     margin-bottom: 20px;
     width: 280px;
-    padding: 10px 20px;
+    padding: 10px 20px 15px 20px;
     background-color: white;
 }
 
@@ -198,6 +201,7 @@ div.bspace1 >a >button:hover{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     border-radius: 0px;
     margin-right: 20px;
+    border-style: none;
 }
 
 .btn4:hover{
@@ -214,4 +218,83 @@ i.fa-regular:hover{
 
 span{
     font-family: serif;
+}
+
+.pname{
+    color: orange;
+}
+
+.hline{
+    margin: 20px 0px;
+}
+
+@media screen and (max-width: 480px) {
+
+    .bspace{
+        display: none;
+    }
+
+    .p1{
+        width: 250px;
+        margin-bottom: 50px;
+    }
+
+    .i1{
+        width: 240px;
+        height: 260px;
+    }
+
+    .ho7{
+        flex-direction: column;
+        align-content: center;
+        margin: 0px;
+        margin-bottom: -40px;
+    }
+
+    .b1{
+        display: block;
+        padding: 0% 7%;
+    }
+
+    .s2{
+        padding-right: 5%;
+    }
+
+    .head{
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .buttons{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn2{
+        padding: 15px 100px;
+    }
+
+    .btn3s{
+        margin-top: 25px;
+        margin-left: 0px;
+    }
+
+    .btn3{
+        padding: 15px 70px;
+    }
+
+    .b2{
+        display: none;
+    }
+
+    .ho6{
+        margin: 8% 0% 5% 0%;
+        font-size: 28px;
+    }
+
+    .i01{
+        width: 340px;
+        height: 380px;
+    }
+
 }

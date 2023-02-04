@@ -47,7 +47,7 @@
         
 
         <div class="ho7">
-            <div class="p1">
+            <!--<div class="p1">
                 <a href = "../agro details/manure/manure1.html"><img class="i1" src="../../assets/images/agro/m1.jpg" alt = "manure"></a>
                 <div class = "bspace">  
                     <p class = "pname"> Leafy Tales Manure </p>
@@ -127,7 +127,7 @@
                     <p> Price: Rs.85</p>
                     <a href = "../agro details/manure/manure9.html"><button> Know More </button></a>
                 </div>
-            </div>
+            </div>-->
         </div>
     </main>
 
@@ -154,6 +154,136 @@
             </div>
         </div>
     </footer>
+
+    <script>
+
+        let div_p1;
+        let product_image;
+        let div_bspace;
+        let p_name;
+        let p_quantity; 
+        let p_price;
+
+        const product_card = [
+            {
+                "name": "Leafy Tales Manure",
+                "image":{
+                    "source": "../../assets/images/agro/m1.jpg",
+                    "alt": "Leafy Tales Manure",
+                },
+                "quantity": "Quantity: 1Kg",
+                "price": "Price: Rs.81"
+            },
+            {
+                "name": "Babique Cow Dung Manure",
+                "image":{
+                    "source": "../../assets/images/agro/m2.jpg",
+                    "alt": "Babique Cow Dung Manure",
+                },
+                "quantity": "Quantity: 1Kg",
+                "price": "Price: Rs.68"
+            },
+            {
+                "name": "Garden Genie Poultry Manure",
+                "image":{
+                    "source": "../../assets/images/agro/m3.jpg",
+                    "alt": "Garden Genie Poultry Manure",
+                },
+                "quantity": "Quantity: 1Kg",
+                "price": "Price: Rs.99"
+            },
+            {
+                "name": "Green Roots Manure",
+                "image":{
+                    "source": "../../assets/images/agro/m4.jpg",
+                    "alt": "Green Roots Manure",
+                },
+                "quantity": "Quantity: 3Kg",
+                "price": "Price: Rs.350"
+            },
+            {
+                "name": "Trust basket Cow Manure",
+                "image":{
+                    "source": "../../assets/images/agro/m5.jpg",
+                    "alt": "Trust basket Cow Manure",
+                },
+                "quantity": "Quantity: 5Kg",
+                "price": "Price: Rs.349"
+            },
+            {
+                "name": "Cocogarden Natural Manure",
+                "image":{
+                    "source": "../../assets/images/agro/m6.jpg",
+                    "alt": "Cocogarden Natural Manure",
+                },
+                "quantity": "Quantity: 5Kg",
+                "price": "Price: Rs.399"
+            },
+            {
+                "name": "Ugaoo Cow Dung Manure",
+                "image":{
+                    "source": "../../assets/images/agro/m7.jpg",
+                    "alt": "Ugaoo Cow Dung Manure",
+                },
+                "quantity": "Quantity: 5Kg",
+                "price": "Price: Rs.299"
+            },
+            {
+                "name": "TrustBasket Organic Manure",
+                "image":{
+                    "source": "../../assets/images/agro/m8.jpg",
+                    "alt": "TrustBasket Organic Manure",
+                },
+                "quantity": "Quantity: 1Kg",
+                "price": "Price: Rs.249"
+            },
+            {
+                "name": "Leafy Tales Manure",
+                "image":{
+                    "source": "../../assets/images/agro/m9.jpg",
+                    "alt": "Leafy Tales Manure",
+                },
+                "quantity": "Quantity: 1Kg",
+                "price": "Price: Rs.85"
+            },
+        ]
+
+        for(i=0;i<9;i++){
+
+            // product container
+            div_p1 = document.createElement("div");
+            div_p1.setAttribute("class","p1");
+
+            // product image
+            product_image = document.createElement("img");
+            product_image.setAttribute("src",product_card[i]["image"]["source"]);
+            product_image.setAttribute("alt",product_card[i]["image"]["alt"]);
+            product_image.setAttribute("class","i1");
+            div_p1.append(product_image)
+
+            // product info container
+            div_bspace = document.createElement("div");
+            div_bspace.setAttribute("class","bspace");
+            div_p1.append(div_bspace)
+
+            // product info
+            p_name = document.createElement("p");
+            p_name.setAttribute("class","pname");
+            p_name.innerText = product_card[i]["name"];
+            div_bspace.append(p_name)
+
+            p_quantity = document.createElement("p");
+            p_quantity.innerText = product_card[i]["quantity"];
+            div_bspace.append(p_quantity)
+
+            p_price = document.createElement("p");
+            p_price.innerText = product_card[i]["price"];
+            div_bspace.append(p_price)
+
+            document.querySelector("div.ho7").append(div_p1)
+        }
+
+    </script>
 
 </body>
 

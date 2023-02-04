@@ -24,17 +24,18 @@ button{
     background-color: #00a651;
     color: white;
     border-style: none;
+    border: 2px solid #00a651;
     border-radius: 10px;
 }
 
 div.bspace1 >a >button:hover{
     background-color: white;
     color: #00a651;
-    border: 2px solid #00a651;
 }
 
 .btn{
     background-color: #0075A3;
+    border-style: none;
 }
 
 .content{
@@ -124,6 +125,7 @@ hr{
 .check{
     font-size: 18px;
     background-color: yellowgreen;
+    border-style: none;
     padding: 8px;
     border-radius: 4px;
 }
@@ -139,22 +141,12 @@ hr{
     font-size: 20px;
     width:100%;
     background-color: #0075A3;
+    border: 3px solid #0075A3;
 }
 
 button#favourite:hover, button#view:hover{
     background-color: white;
     color: #0075A3;
-    border: 2px solid #0075A3;
-}
-
-button#chat:hover{
-    border: 4px solid black;
-}
-
-#view{
-    font-size: 20px;
-    width: 100%;
-    background-color: #0075A3;
 }
 
 .cash{
@@ -187,6 +179,10 @@ h4{
     background-color: white;
     border: 2px solid black;
     color: #406367; 
+}
+
+button#chat:hover{
+    border: 4px solid black;
 }
 
 .address{

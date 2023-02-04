@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../../assets/css/style.css">
     <link rel="stylesheet" href="../../../assets/css/cattle details/cattle_productpage.css">
     <link rel="stylesheet" href="../../../assets/css/header_footer.css">
+    <script src = "../../../assets/js/main.js"></script>
     <link rel="icon" href="../../../assets/images/cattles/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
@@ -22,11 +23,17 @@
             <div class="logodiv"><a href = "../../../index.html"><img class = "logo" src="../../../assets/images/cattles/logo.png" alt="logo"></a></div>
             <div class="lotit"><a href = "../../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <a href = "#" class = "toggle-button">
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-        </a>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class = "navbar">
+                <li><a href="../../cattle/cattle_index.html">Cattles</a></li>
+                <li><a href="../../agro pro/agro.html">Agro Products</a></li>
+                <li><a href="../../about.html">About Us</a></li>
+                <li class = "logbutton"><a href="../../create_profile.html"><button class = "sell"> SELLER </button></a></li>
+                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </div> 
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
         <div class = "link_container">
             <ul class="navbar">
                 <li><a href="../../cattle/cattle_index.html">Cattles</a></li>
@@ -41,17 +48,17 @@
     </header>
 
     <main>
-        <div class = "bspace"><a href = "../../cattle/cattle_list1.html"><button class = "btn"> BACK </button></a></div>
-        <div class = "ibg"><img class = "image" src="../../../assets/images/cattles/c1.jpg" alt = "cow"></div>
+        <div class = "bspace"><button class = "btn" onclick="window.history.back()"> BACK </button></a></div>
+        <div class = "ibg"> <!--<img class = "image" src="../../../assets/images/cattles/c1.jpg" alt = "cow"> --> </div>
     
         <div class = "content">
             <div class = "product">
                 <div class = "product_name">
                     <button class = "check"> VERIFIED CATTLE </button>
-                    <h1 class = "name"> Gir Cow G018 </h1>
+                    <h1 class = "name"> <!-- Gir Cow G018 --> </h1>
                     <div class = "years">
-                        <p class = "gf"> 4 Years </p>
-                        <p class = "gf1"> Female </p>
+                        <p class = "gf"> <!-- 4 Years --> </p>
+                        <p class = "gf1"> <!-- Female --> </p>
                     </div>
                 </div>
                 <div class = "product_details">
@@ -60,39 +67,39 @@
                     <div class = "overview">
                         <div class = "gf2">
                             <p> Milk per day </p>
-                            <p class = "color"> 12 litres </p>
+                            <p class = "color"> <!-- 12 litres --> </p>
                         </div>
                         <div class = "gf2">
                             <p> Lactation </p>
-                            <p class = "color"> 2 </p>
+                            <p class = "color"> <!-- 2 --> </p>
                         </div>   
                         <div class = "gf2">
                             <p> Weight (kg) </p>
-                            <p class = "color"> 400Kg </p>
+                            <p class = "color"> <!-- 400Kg --> </p>
                         </div>    
                     </div>
                 </div>
                 <div class = "description">
                     <h1 class = "over"> Description </h1><hr>
-                    <p id = "p3"> Quality Gir Cow of 4 year(s) age is available in Chennai, Tamil Nadu. The price of the cattle is Rs. 70000/-. The Cow is in 2nd lactation. It Produces 12 Litres of milk on daily basis. </p>
+                    <p id = "p3"> <!-- Quality Gir Cow of 4 year(s) age is available in Chennai, Tamil Nadu. The price of the cattle is Rs. 70000/-. The Cow is in 2nd lactation. It Produces 12 Litres of milk on daily basis. --> </p>
                 </div>
             </div>
             
             <div class = "seller">
                 <div class = "price">
-                    <h1 class = "cash"><span> &#8377</span> 70,000</h1>
+                    <h1 class = "cash"> <!-- 70,000 --> </h1>
                     <div class = "bspace2"><a href = "../../cattle/favourites.html"><button id = "favourite" class = "check"> Add to Favourite </button></a></div>
                 </div>
                 <div class = "sellerdetails">
                     <h4> SOLD BY </h4>
-                    <h2 class = "sellername"> INBA LOKESH </h2>
-                    <h4> Posted On: 15/11/2022</h4>
+                    <h2 class = "sellername"> <!-- INBA LOKESH --> </h2>
+                    <h4> <!-- Posted On: 15/11/2022 --> </h4>
                     <div class = "bspace2"><a href = "https://api.whatsapp.com/qr/XQYMHVSSYORIN1?autoload=1&app_absent=0"><button id = "chat" class = "check"> Chat with Seller </button></a></div>
-                    <p> +91 1234567890</p>
-                    <p class = "address"> No.727, RK Road, Kannatur, Chennai, Tamil Nadu.</p>
+                    <p> <!-- +91 1234567890 --> </p>
+                    <p class = "address"> <!-- No.727, RK Road, Kannatur, Chennai, Tamil Nadu. --> </p>
                 </div>
                 <div class = "profile">
-                    <div class = "bspace2"><a href = "../../cattle/b-sprofile.html"><button id = "view" class = "check"> View Seller Profile </button></a></div>
+                    <div class = "bspace2"><a href = "../../cattle/b-sprofile.html"><button id = "favourite" class = "check"> View Seller Profile </button></a></div>
                 </div>
             </div>
         </div>
@@ -101,7 +108,7 @@
         <h1 class="ho6"> More Cows </h1>
 
         <div class="ho7">
-            <div class="p1">
+            <!-- <div class="p1">
                 <a href = "C2.html"><img class="i1" src="../../../assets/images/cattles/c2.jpg" alt = "cow"></a>
                 <div class = "bspace1">
                     <p class = "p2 pname"> HF Cow H165 </p>
@@ -127,7 +134,7 @@
                     <p class = "p2"> Gender: Female</p>
                     <a href = "C4.html"><button> Know More </button></a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </main>
 
@@ -154,6 +161,169 @@
             </div>
         </div>
     </footer>
+
+    <script>
+
+        let cattle_image;
+        let cattle_name;
+        let cattle_age;
+        let cattle_gender;
+        let milk; 
+        let lactation; 
+        let weight;
+        let description;
+        let price;
+        let seller_name;
+        let uploaded_date;
+        let phone_no;
+        let address;
+
+        const cattle_detail = 
+            {
+                "image": {
+                    "source": "../../../assets/images/cattles/c1.jpg",
+                    "alt": "Gir cow",
+                },
+                "name": "Gir Cow G018",
+                "age": 4,
+                "gender": "Female",
+                "milk_per_day": 12,
+                "lactation": 2,
+                "weight": 400,
+                "desc": "Quality Gir Cow of 4 year(s) age is available in Chennai, Tamil Nadu. The price of the cattle is Rs. 70000/-. The Cow is in 2nd lactation. It Produces 12 Litres of milk on daily basis.",
+                "price": 70000,
+                "seller_name": "Inba Lokesh",
+                "posted_date": "15/11/2022",
+                "phone_no": 1234567890,
+                "address": "No.727, RK Road, Kannatur, Chennai, Tamil Nadu."
+            }
+
+        // cattle image
+        cattle_image = document.createElement("img");
+        cattle_image.setAttribute("src",cattle_detail["image"]["source"]);
+        cattle_image.setAttribute("alt",cattle_detail["image"]["alt"]);
+        cattle_image.setAttribute("class","image");
+        document.querySelector("div.ibg").append(cattle_image)
+
+        // cattle details
+
+        cattle_name = document.querySelector("h1.name");
+        cattle_name.innerText = cattle_detail["name"];
+
+        cattle_age = document.querySelector("p.gf");
+        cattle_age.innerText = cattle_detail["age"] + " Years";
+
+        cattle_gender = document.querySelector("p.gf1");
+        cattle_gender.innerText = cattle_detail["gender"];
+
+        milk = document.querySelector("p.color");
+        milk.innerText = cattle_detail["milk_per_day"] + " litres";
+
+        // lactation = document.querySelector("p.color");
+        // lactation.innerText = cattle_detail["lactation"];
+
+        // weight = document.querySelector("p.color");
+        // weight.innerText = cattle_detail["weight"] + "Kg";
+
+        description = document.querySelector("p#p3");
+        description.innerText = cattle_detail["desc"];
+
+        price = document.querySelector("h1.cash");
+        price.innerText = cattle_detail["price"];
+
+        // seller details
+
+        seller_name = document.querySelector("h2.sellername");
+        seller_name.innerText = cattle_detail["seller_name"];
+
+        // uploaded_date = document.querySelector("h4");
+        // uploaded_date.innerText = cattle_detail["posted_date"];
+
+        // phone_no = document.querySelector("p");
+        // phone_no.innerText = cattle_detail["phone_no"];
+        
+        address = document.querySelector("p.address");
+        address.innerText = cattle_detail["address"];
+
+        let div_p1;
+        let cat_image;
+        let div_bspace1;
+        let p_name;
+        let p_age; 
+        let p_gender;
+
+        const cattle_card = [
+            {
+                "name": "HF Cow H165",
+                "image":{
+                    "source": "../../../assets/images/cattles/c2.jpg",
+                    "alt": "HF Cow",
+                },
+                "age": 2,
+                "gender": "Female"
+            },
+            {
+                "name": "Kankrej Cow K006",
+                "image":{
+                    "source": "../../../assets/images/cattles/c3.jpg",
+                    "alt": "Kankrej Cow",
+                },
+                "age": 1,
+                "gender": "Female"
+            },
+            {
+                "name": "Tharparkar Cow T035",
+                "image":{
+                    "source": "../../../assets/images/cattles/c4.jpg",
+                    "alt": "Tharparkar Cow",
+                },
+                "age": 3,
+                "gender": "Female"
+            },
+        ]
+
+        for(i=0; i<cattle_card.length; i++){
+
+            // cattle container
+            div_p1 = document.createElement("div");
+            div_p1.setAttribute("class","p1");
+
+            // cattle image
+            cat_image = document.createElement("img");
+            cat_image.setAttribute("src",cattle_card[i]["image"]["source"]);
+            cat_image.setAttribute("alt",cattle_card[i]["image"]["alt"]);
+            cat_image.setAttribute("class","i1");
+            div_p1.append(cat_image)
+
+            // cattle info container
+            div_bspace1 = document.createElement("div");
+            div_bspace1.setAttribute("class","bspace1");
+            div_p1.append(div_bspace1)
+
+            // cattle info
+            p_name = document.createElement("p");
+            p_name.setAttribute("class","p2 pname");
+            p_name.innerText = cattle_card[i]["name"];
+            div_bspace1.append(p_name)
+
+            p_age = document.createElement("p");
+            p_age.setAttribute("class","p2");
+            p_age.innerText = "Age: " + cattle_card[i]["age"] + " Year(s)";
+            div_bspace1.append(p_age)
+
+            p_gender = document.createElement("p");
+            p_gender.setAttribute("class","p2");
+            p_gender.innerText = "Gender: " + cattle_card[i]["gender"];
+            div_bspace1.append(p_gender)
+
+            button_know = document.createElement("button");
+            button_know.innerText = "Know More";
+            div_bspace1.append(button_know)
+
+            document.querySelector("div.ho7").append(div_p1)
+        }
+        
+    </script>
     
 </body>
 

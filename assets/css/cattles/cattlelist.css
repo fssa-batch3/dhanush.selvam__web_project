@@ -70,21 +70,22 @@ button{
     padding: 10px 20px;
     font-size: 20px;
     font-weight: bold;
+    border-style: none;
+    border: 2px solid #00a651;
     background-color: #00a651;
     color: white;
-    border-style: none;
     border-radius: 10px;
 }
 
 div.bspace >a >button:hover {
     background-color: white;
     color: #00a651;
-    border: 2px solid #00a651;
 }
 
 .btn{
     margin-top: 10px;
     background-color: #0075A3;
+    border-style: none;
 }
 
 .bspace{

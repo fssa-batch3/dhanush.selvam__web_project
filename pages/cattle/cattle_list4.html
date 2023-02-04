@@ -46,8 +46,8 @@
         </div>
 
         <div class="ho7">
-            <div class="p1">
-                <a href = "../cattle details/sheep/S1.html"><img class="i1" src="../../assets/images/cattles/s1.jpg" alt = "sheep"></a>
+            <!--<div class="p1">
+                <a href = "../cattle details/sheep/S1.html"><img class="i1" src="../../assets/images/cattles/s1.jpg" alt = "Bannur Sheep"></a>
                 <div class = "bspace">
                     <p class = "pname"> Bannur Sheep B023 </p>
                     <p> Age: 1 Year</p>
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/sheep/S2.html"><img class="i1" src="../../assets/images/cattles/s2.jpg" alt = "sheep"></a>
+                <a href = "../cattle details/sheep/S2.html"><img class="i1" src="../../assets/images/cattles/s2.jpg" alt = "Neelore Jodipi Sheep"></a>
                 <div class = "bspace">
                     <p class = "pname"> Neelore Jodipi Sheep N107</p>
                     <p> Age: 4 Years</p>
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/sheep/S3.html"><img class="i1" src="../../assets/images/cattles/s3.jpg" alt = "sheep"></a>
+                <a href = "../cattle details/sheep/S3.html"><img class="i1" src="../../assets/images/cattles/s3.jpg" alt = "Sindhanoor Sheep"></a>
                 <div class = "bspace">
                     <p class = "pname"> Sindhanoor Sheep S001 </p>
                     <p> Age: 1 Year</p>
@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/sheep/S4.html"><img class="i1" src="../../assets/images/cattles/s4.jpg" alt = "sheep"></a>
+                <a href = "../cattle details/sheep/S4.html"><img class="i1" src="../../assets/images/cattles/s4.jpg" alt = "Deccani Sheep"></a>
                 <div class = "bspace">
                     <p class = "pname"> Deccani Sheep D001 </p>
                     <p> Age: 1 Year</p>
@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/sheep/S5.html"><img class="i1" src="../../assets/images/cattles/s5.jpg" alt = "sheep"></a>
+                <a href = "../cattle details/sheep/S5.html"><img class="i1" src="../../assets/images/cattles/s5.jpg" alt = "Bannur Sheep"></a>
                 <div class = "bspace">
                     <p class = "pname"> Bannur B001 </p>
                     <p> Age: 1 Year</p>
@@ -92,7 +92,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/sheep/S6.html"><img class="i1" src="../../assets/images/cattles/s6.jpg" alt = "sheep"></a>
+                <a href = "../cattle details/sheep/S6.html"><img class="i1" src="../../assets/images/cattles/s6.jpg" alt = "Neelore Jodipi Sheep"></a>
                 <div class = "bspace">
                     <p class = "pname"> Neelore Jodipi Sheep N111 </p>
                     <p> Age: 1 Year</p>
@@ -101,7 +101,7 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/sheep/S7.html"><img class="i1" src="../../assets/images/cattles/s7.jpg" alt = "sheep"></a>
+                <a href = "../cattle details/sheep/S7.html"><img class="i1" src="../../assets/images/cattles/s7.jpg" alt = "Coimbatore Sheep"></a>
                 <div class = "bspace">
                     <p class = "pname"> Coimbatore C001 </p>
                     <p> Age: 1 Year</p>
@@ -110,23 +110,23 @@
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/sheep/S8.html"><img class="i1" src="../../assets/images/cattles/s8.jpg" alt = "sheep"></a>
+                <a href = "../cattle details/sheep/S8.html"><img class="i1" src="../../assets/images/cattles/s8.jpg" alt = "Deccani Sheep"></a>
                 <div class = "bspace">
-                    <p class = "pname"> Deccani Sheep Sheep D108 </p>
+                    <p class = "pname"> Deccani Sheep D108 </p>
                     <p> Age: 1 Year</p>
                     <p> Gender: Male</p>
                     <a href = "../cattle details/sheep/S8.html"><button> Know More </button></a>
                 </div>
             </div>
             <div class="p1">
-                <a href = "../cattle details/sheep/S9.html"><img class="i1" src="../../assets/images/cattles/s9.jpg" alt = "sheep"></a>
+                <a href = "../cattle details/sheep/S9.html"><img class="i1" src="../../assets/images/cattles/s9.jpg" alt = "Neelore Jodipi Sheep"></a>
                 <div class = "bspace">
                     <p class = "pname"> Neelore Jodipi N001</p>
                     <p> Age: 1 Year</p>
                     <p> Gender: NA</p>
                     <a href = "../cattle details/sheep/S9.html"><button> Know More </button></a>
                 </div>
-            </div>
+            </div>-->
         </div>
     </main>
 
@@ -153,6 +153,135 @@
             </div>
         </div>
     </footer>
+
+    <script>
+
+        let div_p1;
+        let cattle_image;
+        let div_bspace;
+        let p_name;
+        let p_age; 
+        let p_gender;
+
+        const cattle_card = [
+            {
+                "name": "Bannur Sheep B023",
+                "image":{
+                    "source": "../../assets/images/cattles/s1.jpg",
+                    "alt": "Bannur Sheep",
+                },
+                "age": "Age: 1 Year",
+                "gender": "Gender: Male"
+            },
+            {
+                "name": "Neelore Jodipi Sheep N107",
+                "image":{
+                    "source": "../../assets/images/cattles/s2.jpg",
+                    "alt": "Neelore Jodipi Sheep",
+                },
+                "age": "Age: 4 Years",
+                "gender": "Gender: Female"
+            },
+            {
+                "name": "Sindhanoor Sheep S001",
+                "image":{
+                    "source": "../../assets/images/cattles/s3.jpg",
+                    "alt": "Sindhanoor Sheep",
+                },
+                "age": "Age: 1 Year",
+                "gender": "Gender: NA"
+            },
+            {
+                "name": "Deccani Sheep D001",
+                "image":{
+                    "source": "../../assets/images/cattles/s4.jpg",
+                    "alt": "Deccani Sheep",
+                },
+                "age": "Age: 1 Year",
+                "gender": "Gender: NA"
+            },
+            {
+                "name": "Bannur B001",
+                "image":{
+                    "source": "../../assets/images/cattles/s5.jpg",
+                    "alt": "Bannur Sheep",
+                },
+                "age": "Age: 1 Year",
+                "gender": "Gender: Female"
+            },
+            {
+                "name": "Neelore Jodipi Sheep N111",
+                "image":{
+                    "source": "../../assets/images/cattles/s6.jpg",
+                    "alt": "Neelore Jodipi Sheep",
+                },
+                "age": "Age: 1 Year",
+                "gender": "Gender: Male"
+            },
+            {
+                "name": "Coimbatore C001",
+                "image":{
+                    "source": "../../assets/images/cattles/s7.jpg",
+                    "alt": "Coimbatore Sheep",
+                },
+                "age": "Age: 1 Year",
+                "gender": "Gender: Male"
+            },
+            {
+                "name": "Deccani Sheep D108",
+                "image":{
+                    "source": "../../assets/images/cattles/s8.jpg",
+                    "alt": "Deccani Sheep",
+                },
+                "age": "Age: 1 Year",
+                "gender": "Gender: Male"
+            },
+            {
+                "name": "Neelore Jodipi N001",
+                "image":{
+                    "source": "../../assets/images/cattles/s9.jpg",
+                    "alt": "Neelore Jodipi Sheep",
+                },
+                "age": "Age: 1 Year",
+                "gender": "Gender: NA"
+            },
+        ]
+
+        for(i=0;i<12;i++){
+            // cattle container
+            div_p1 = document.createElement("div");
+            div_p1.setAttribute("class","p1");
+
+            // cattle image
+            cattle_image = document.createElement("img");
+            cattle_image.setAttribute("src",cattle_card[i]["image"]["source"]);
+            cattle_image.setAttribute("alt",cattle_card[i]["image"]["alt"]);
+            cattle_image.setAttribute("class","i1");
+            div_p1.append(cattle_image)
+
+            // cattle info container
+            div_bspace = document.createElement("div");
+            div_bspace.setAttribute("class","bspace");
+            div_p1.append(div_bspace)
+
+            // cattle info
+            p_name = document.createElement("p");
+            p_name.setAttribute("class","pname");
+            p_name.innerText = cattle_card[i]["name"];
+            div_bspace.append(p_name)
+
+            p_age = document.createElement("p");
+            p_age.innerText = cattle_card[i]["age"];
+            div_bspace.append(p_age)
+
+            p_gender = document.createElement("p");
+            p_gender.innerText = cattle_card[i]["gender"];
+            div_bspace.append(p_gender)
+
+            document.querySelector("div.ho7").append(div_p1)
+        }
+
+    </script>
 
 </body>
 

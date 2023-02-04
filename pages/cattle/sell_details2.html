@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/cattles/selldetails1&2.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
+    <script src = "../../assets/js/main.js"></script>
     <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
@@ -21,11 +22,17 @@
             <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
             <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <a href = "#" class = "toggle-button">
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-        </a>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class = "navbar">
+                <li><a href="cattle_index.html">Cattles</a></li>
+                <li><a href="../agro pro/agro.html">Agro Products</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li class = "logbutton"><a href="profile.html"><button class = "sell"> SELLER </button></a></li>
+                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </div> 
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
         <div class = "link_container">
             <ul class="navbar">
                 <li><a href="cattle_index.html">Cattles</a></li>
@@ -42,14 +49,14 @@
     <main>
         <div class = "d0">  
             <div><a href = "sell_details1.html"><button> BACK </button></a></div>
-            <h1 class = "h11"> List Your LiveStock Here </div>
+            <h1 class = "h11"> List Your LiveStock Here </h1>
         </div>
             <h3 class = "h12"> Buy and Sell your Cattles easier!</h3>
             <img class = "choose" src = "../../assets/images/choose.png" alt = "choose">
             <h1 class = "h13"> Choose Breed </h1>
             <hr>
 
-            <div class = "d1">
+            <div class = "d1" id = "d2">
                 <div class = "d3">
                     <div class = "ispace"><a href = "sell_details3.html"><img class = "i2" src = "../../assets/images/cattles/c1.jpg" alt = "cow"></a></div>
                     <p> Gir </p>
@@ -66,9 +73,6 @@
                     <div class = "ispace"><a href = "sell_details3.html"><img class = "i2" src = "../../assets/images/cattles/c7.jpg" alt = "cow"></a></div>
                     <p> Jersey </p>
                 </div>
-            </div>
-
-            <div class = "d1">
                 <div class = "d3">
                     <div class = "ispace"><a href = "sell_details3.html"><img class = "i2" src = "../../assets/images/cattles/c8.jpg" alt = "cow"></a></div>
                     <p> Rathi Heifer </p>
@@ -85,9 +89,6 @@
                     <div class = "ispace"><a href = "sell_details3.html"><img class = "i2" src = "../../assets/images/cattles/c12.jpg" alt = "cow"></a></div>
                     <p> Vilwadri </p>
                 </div>
-            </div>
-            
-            <div class = "d1">
                 <div class = "d3">
                     <div class = "ispace"><a href = "sell_details3.html"><img class = "i2" src = "../../assets/images/cattles/c2.jpg" alt = "cow"></a></div>
                     <p> HF </p>

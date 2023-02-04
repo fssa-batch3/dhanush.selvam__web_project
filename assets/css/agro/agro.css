@@ -17,13 +17,13 @@ button{
     border-radius: 10px;
     border-style: none;
     background-color: orange;
+    border: 2px solid orange;
     color: white;
 }
 
 div.bspace >a >button:hover{
     background-color: white;
     color: orange;
-    border: 2px solid orange;
 }
 
 .btn{
@@ -32,6 +32,7 @@ div.bspace >a >button:hover{
 
 .btn1{
     background-color: #659B92;
+    border: 0px;
 }
 
 .bspace{
@@ -68,7 +69,7 @@ div.bspace >a >button:hover{
     margin-right: 40px;
     margin-bottom: 20px;
     width: 280px;
-    padding: 10px 20px;
+    padding: 10px 20px 15px 20px;
     background-color: white;
 }
 

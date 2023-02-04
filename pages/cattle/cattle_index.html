@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="../../assets/css/cattles/cattles.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
+    <script src = "../../assets/js/main.js"></script>
     <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
@@ -23,11 +24,19 @@
             <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
             <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <a href = "#" class = "toggle-button">
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-            <span class = "bar"></span>
-        </a>
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class = "navbar">
+                <li><a href="#">Cattles</a></li>
+                <li><a href="../agro pro/agro.html">Agro Products</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li class = "logbutton"><a href="../create_profile.html"><button class = "sell"> SELLER </button></a></li>
+                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </div> 
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
+
         <div class = "link_container">
             <ul class = "navbar">
                 <li><a href="#">Cattles</a></li>
@@ -35,6 +44,7 @@
                 <li><a href="../about.html">About Us</a></li>
             </ul>
         </div>
+        
         <div class = "navbar butcot" id = "sellpro">
             <div class = "butspace"><a href = "../create_profile.html"> <button class = "sell"> SELLER </button> </a></div>
             <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
@@ -279,6 +289,47 @@
             </div>
         </div>
     </footer>
+
+    <!--<script>
+
+        function cattle_container(){
+            // cattle container
+            div_p1 = document.createElement("div");
+            div_p1.setAttribute("class","p1");
+            document.querySelector("div.ho7").prepend(div_p1)
+
+            // cattle image
+            cattle_image = document.createElement("img");
+            cattle_image.setAttribute("src","../../assets/images/cattles/c6.jpg");
+            cattle_image.setAttribute("class","i1");
+            cattle_image.setAttribute("alt","cow");
+            div_p1.append(cattle_image)
+
+            // cattle info container
+            div_bspace = document.createElement("div");
+            div_bspace.setAttribute("class","bspace");
+            div_p1.append(div_bspace)
+
+            // cattle info
+            p_name = document.createElement("p");
+            p_name.setAttribute("class","pname");
+            p_name.innerText = "Sahiwal Cow S139";
+            div_bspace.append(p_name)
+
+            p_age = document.createElement("p");
+            p_age.innerText = "Age: 3 Years";
+            div_bspace.append(p_age)
+
+            p_gender = document.createElement("p");
+            p_gender.innerText = "Gender: Female";
+            div_bspace.append(p_gender)
+        }
+
+        for(i=0;i<3;i++){
+            cattle_container();
+        }
+
+    </script>-->
 
 </body>
 

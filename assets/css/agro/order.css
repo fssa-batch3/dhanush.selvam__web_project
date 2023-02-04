@@ -42,15 +42,12 @@ body{
 }
 
 .pro{
-    width: 200px;
-}
-
-.pro1{
-    width: 250px;    
+    width: 100%;
 }
 
 .image{
     background-color: white;
+    width: 17%;
     padding: 10px 0px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
@@ -173,4 +170,65 @@ i.fa-regular:hover{
 
 #ic1:hover{
     color: white;
+}
+
+@media screen and (max-width: 480px) {
+    
+    .head{
+        margin: 10% 0% 6% 0%;
+    }
+
+    .page ,.order ,.orderno ,.product ,.name{
+        display: block;
+    }
+
+    .content{
+        width: 100%;
+    }
+
+    .orderno{
+        width: 95%;
+        margin-left: 5%;
+        padding: 25px 0px 0px 0px;
+    }
+
+    .divbtn ,.status{
+        display: none;
+    }
+
+    .image{
+        display: block;
+        width: 55%;
+        margin: auto;
+    }
+
+    .name ,.delivery{
+        margin-left: 40px;
+    }
+
+    .qty{
+        display: none;
+    }
+
+    .total{
+        margin: 2% 4% 2% 4%;
+    }
+
+    .btn1{
+        background-color: #0075A3;
+    }
+
+    button.btn1 >a{
+        color: white;
+        font-size: 20px;
+    }
+
+    .fa-sharp {
+        padding-right: 8px;
+        font-size: 18px;
+    }
+
+    .tot{
+        margin: -10% 7% 0% 0%;
+    }
 }

@@ -16,15 +16,14 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 20px 100px;
+    margin: 20px 120px;
 }
 
 .p1{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    margin-right: 20px;
     margin-bottom: 20px;
     width: 280px;
-    padding: 10px 20px;
+    padding: 10px 20px 15px 20px;
     background-color: white;
 }
 
@@ -54,6 +53,7 @@ button{
     font-weight: bold;
     background-color: orange;
     border-style: none;
+    border: 2px solid orange;
     border-radius: 10px;
     color: white;
 }
@@ -61,11 +61,11 @@ button{
 div.bspace >a >button:hover{
     background-color: white;
     color: orange;
-    border: 2px solid orange;
 }
 
 .btn{
     background-color: #007662;
+    border-style: none;
 }
 
 .bspace{

@@ -30,6 +30,7 @@ form{
 .myorder{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     background-color: #e8f5ec;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     margin-bottom: 20px;
@@ -44,8 +45,7 @@ form{
 }
 
 .prologo{
-    width: 200px;
-    margin: block;
+    width: 75%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -139,8 +139,6 @@ button{
 }
 
 .fa-bag-shopping, .fa-cart-shopping, .fa-right-from-bracket, .fa-star{
-    padding-left: 60px;
-    padding-right: 30px;
     color: #0075A3;
 }
 
@@ -159,6 +157,10 @@ i.fa-regular:hover{
 
 #ic:hover{
     color: #0075A3;
+}
+
+.ic1{
+    margin: 0px 30px 0px 60px;
 }
 
 @media screen and (max-width: 480px) {
@@ -204,5 +206,9 @@ i.fa-regular:hover{
 
     .fa-bag-shopping, .fa-cart-shopping, .fa-right-from-bracket, .fa-star{
         font-size: 28px;
+    }
+
+    .prologo{
+        width: 60%;
     }
 }

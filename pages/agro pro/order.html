@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/agro/order.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
+    <script src = "../../assets/js/main.js"></script>
     <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
@@ -19,17 +20,28 @@
     <header>
         <div class="navbar">
             <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "../../index.html"><h1> KowMart </h1></a></div>
+            <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
-        <div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class = "navbar">
+                <li><a href="../cattle/cattle_index.html">Cattles</a></li>
+                <li><a href="agro.html">Agro Products</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li class = "logbutton"><a href="seller_profile.html"><button class = "sell"> SELLER </button></a></li>
+                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
+            </ul>
+        </div> 
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
+        <div class = "link_container">
             <ul class="navbar">
                 <li><a href="../cattle/cattle_index.html">Cattles</a></li>
                 <li><a href="agro.html">Agro Products</a></li>
                 <li><a href="../about.html">About Us</a></li>
             </ul>
         </div>
-        <div class = "navbar">
-            <div><a href = "seller_profile.html"> <button class = "sell"> SELLER </button> </a></div>
+        <div class = "navbar butcot" id = "sellpro">
+            <div class = "butspace"><a href = "seller_profile.html"> <button class = "sell"> SELLER </button> </a></div>
             <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
         </div>
     </header>
@@ -53,8 +65,8 @@
                     <div class = "name">
                         <h2 class = "cname"> TrustBasket Neem Fertilizer </h2>
                         <h2 class = "head1"> <span> &#8377</span> 180</h2>
-                        <p> Qty: 500g</p>
-                        <p> Seller: TrustBasket </p>
+                        <p class = "qty"> Qty: 500g</p>
+                        <p class = "qty"> Seller: TrustBasket </p>
                     </div>
                     <div class = "status">
                         <p> Status </p>
@@ -73,8 +85,8 @@
                     <div class = "name">
                         <h2 class = "cname"> Prions Biotech Milk Booster </h2>
                         <h2 class = "head1" id = "cash"> <span> &#8377</span> 450</h2>
-                        <p> Qty: 1Kg</p>
-                        <p> Seller: Prions </p>
+                        <p class = "qty"> Qty: 1Kg</p>
+                        <p class = "qty"> Seller: Prions </p>
                     </div>
                     <div class = "status">
                         <p> Status </p>
@@ -104,8 +116,8 @@
                     <div class = "name">
                         <h2 class = "cname"> Ugaoo Cow Dung Manure </h2>
                         <h2 class = "head1"> <span> &#8377</span> 299</h2>
-                        <p> Qty: 5Kg</p>
-                        <p> Seller: Ugaoo </p>
+                        <p class = "qty"> Qty: 5Kg</p>
+                        <p class = "qty"> Seller: Ugaoo </p>
                     </div>
                     <div class = "status">
                         <p> Status </p>
@@ -130,7 +142,7 @@
                     full potential while ensuring livestock wellbeing.</p>
             </div>
             <div class="foot2">
-                <h2> CONNECT WITH US</h2>
+                <h2 class = "connect"> CONNECT WITH US</h2>
                 <div class = "fspace">
                     <p class = "p1"> Email: info@kowmart.com</p>
                     <p class = "p1"> Ph.no: 1234567890</p>
