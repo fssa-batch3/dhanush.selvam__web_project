@@ -20,7 +20,7 @@
         <div class="lotit"><h1 class = "hd"> KowMart </h1></div>
     </div>
     <div class = "bg">
-        <form>
+        <form role = "form" onsubmit ="signIn(event);">
             <h1> LOGIN </h1>
             <div class = "order">
                 <div>
@@ -36,7 +36,7 @@
                     <input required type  = "password" id = "password">
                 </div>
                 <div class = "btn">
-                    <button type = "button" onclick = "sub()"> LOGIN </button></a>
+                    <button type = "submit"> LOGIN </button></a>
                 </div>
                 <div class = "new">
                     <p> New Customer? <a href = "register.html"> Start here </a></p>
@@ -45,7 +45,9 @@
         </form>
     </div>
 
-    <script>
+    <script src = "../assets/js/login.js"></script>
+
+    <!-- <script>
         function sub(){
             const phone_no = document.getElementById("phone_no").value
             const email = document.getElementById("email").value
@@ -54,9 +56,8 @@
             console.log(phone_no)
             console.log(email)
             console.log(password)
-            window.location.href = "../index.html"
         }
-    </script>
+    </script> -->
 
 </body>
 </html>

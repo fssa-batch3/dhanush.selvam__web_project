@@ -71,11 +71,11 @@
                         </div>
                         <div class = "gf2">
                             <p> Lactation </p>
-                            <p class = "color"> <!-- 2 --> </p>
+                            <p class = "color1"> <!-- 2 --> </p>
                         </div>   
                         <div class = "gf2">
                             <p> Weight (kg) </p>
-                            <p class = "color"> <!-- 400Kg --> </p>
+                            <p class = "color2"> <!-- 400Kg --> </p>
                         </div>    
                     </div>
                 </div>
@@ -87,13 +87,13 @@
             
             <div class = "seller">
                 <div class = "price">
-                    <h1 class = "cash"> <!-- 70,000 --> </h1>
+                    <h1 class = "cash">  <!-- 70,000 --> </h1>
                     <div class = "bspace2"><a href = "../../cattle/favourites.html"><button id = "favourite" class = "check"> Add to Favourite </button></a></div>
                 </div>
                 <div class = "sellerdetails">
                     <h4> SOLD BY </h4>
                     <h2 class = "sellername"> <!-- INBA LOKESH --> </h2>
-                    <h4> <!-- Posted On: 15/11/2022 --> </h4>
+                    <h4 class = "posted_date"> <!-- Posted On: 15/11/2022 --> </h4>
                     <div class = "bspace2"><a href = "https://api.whatsapp.com/qr/XQYMHVSSYORIN1?autoload=1&app_absent=0"><button id = "chat" class = "check"> Chat with Seller </button></a></div>
                     <p> <!-- +91 1234567890 --> </p>
                     <p class = "address"> <!-- No.727, RK Road, Kannatur, Chennai, Tamil Nadu. --> </p>
@@ -219,11 +219,11 @@
         milk = document.querySelector("p.color");
         milk.innerText = cattle_detail["milk_per_day"] + " litres";
 
-        // lactation = document.querySelector("p.color");
-        // lactation.innerText = cattle_detail["lactation"];
+        lactation = document.querySelector("p.color1");
+        lactation.innerText = cattle_detail["lactation"];
 
-        // weight = document.querySelector("p.color");
-        // weight.innerText = cattle_detail["weight"] + "Kg";
+        weight = document.querySelector("p.color2");
+        weight.innerText = cattle_detail["weight"] + "Kg";
 
         description = document.querySelector("p#p3");
         description.innerText = cattle_detail["desc"];
@@ -236,8 +236,8 @@
         seller_name = document.querySelector("h2.sellername");
         seller_name.innerText = cattle_detail["seller_name"];
 
-        // uploaded_date = document.querySelector("h4");
-        // uploaded_date.innerText = cattle_detail["posted_date"];
+        uploaded_date = document.querySelector("h4.posted_date");
+        uploaded_date.innerText = "Posted On: " + cattle_detail["posted_date"];
 
         // phone_no = document.querySelector("p");
         // phone_no.innerText = cattle_detail["phone_no"];

@@ -20,20 +20,20 @@
         <div class="lotit"><h1 class = "hd"> KowMart </h1></div>
     </div>
     <div class = "bg">
-        <form>
+        <form role = "form" onsubmit= "signUp(event);">
             <h1> REGISTER </h1>
             <div class = "order">
                 <div>
                     <label> Name </label><br>
-                    <input type = "text" id = "name">
+                    <input required type = "text" id = "name">
                 </div>
                 <div>
                     <label> Phone No. </label><br>
-                    <input required = "tel" id = "phone_no" maxlength = "10">
+                    <input required type = "tel" id = "phone_no" maxlength = "10">
                 </div>
                 <div>
                     <label> Email </label><br>
-                    <input type = "email" placeholder="abc@gmail.com" id = "email">
+                    <input required type = "email" placeholder="abc@gmail.com" id = "email">
                 </div>
                 <div>
                     <label> Password </label><br>
@@ -44,7 +44,7 @@
                     <input required type  = "password"  id = "confirm_password">
                 </div>
                 <div class = "btn">
-                    <button type = "button" onclick = "sub()"> SUBMIT </button>
+                    <button type = "submit"> SUBMIT </button>
                 </div> 
                 <div class = "new">
                     <p> Existing User? <a href = "sign in.html"> Login here </a></p>
@@ -52,24 +52,39 @@
             </div>
         </form>
     </div>
-    
 
+    <script src="../assets/js/login.js"></script>
+    
     <!-- <script>
+
+        const user_data = localStorage.getItem("users");
+
+        let users = user_data ? JSON.parse(user_data) : [];
+        
         function sub(){
+
             const name = document.getElementById("name").value
             const phone_no = document.getElementById("phone_no").value
             const email = document.getElementById("email").value
             const password = document.getElementById("password").value
             const confirm_password = document.getElementById("confirm_password").value
 
-            localStorage.setItem("user_name",name)
-            localStorage.setItem("user_phone_no",phone_no)
-            localStorage.setItem("user_email",email)
-            localStorage.setItem("user_password",password)
-            localStorage.setItem("user_confirm_password",confirm_password)
+            users.push({name, phone_no, email, password, confirm_password});
 
-            window.location.href = "../index.html"
+            localStorage.setItem("users", JSON.stringify(users));
+
+            alert("Register Successful");
+
+            window.location.href = "../index.html";
+
+            // localStorage.setItem("user_name",name)
+            // localStorage.setItem("user_phone_no",phone_no)
+            // localStorage.setItem("user_email",email)
+            // localStorage.setItem("user_password",password)
+            // localStorage.setItem("user_confirm_password",confirm_password)
+            
         }  
+
     </script> -->
 
 </body>
