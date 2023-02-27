@@ -9,13 +9,13 @@ Problem Statement: https://docs.google.com/document/d/1P6dlUbm7r-aCg9qh2hX-rndth
 FEATURES:
 
 1. USER CRUD
-    - Create
-    - Read
-    - Update
-    - Delete
+    - Create profile
+    - Read profile
+    - Update profile
+    - Delete profile
     
 2. CATTLE CRUD
-    - Create
-    - Read
-    - Update
-    - Delete
+    - Create (Upload cattle)
+    - Read (Read cattle)
+    - Update (Edit cattle)
+    - Delete (Delete cattle)
