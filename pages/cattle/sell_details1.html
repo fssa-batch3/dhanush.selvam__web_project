@@ -19,16 +19,16 @@
 <body>
     <header>
         <div class="navbar">
-            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
+            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo1.png" alt="logo"></a></div>
             <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <ul class = "navbar">
                 <li><a href="cattle_index.html">Cattles</a></li>
-                <li><a href="../agro pro/agro.html">Agro Products</a></li>
+                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
                 <li><a href="../about.html">About Us</a></li>
-                <li class = "logbutton"><a href="profile.html"><button class = "sell"> SELLER </button></a></li>
+                <li class = "logbutton"><a href="#"><button class = "sell"> SELL </button></a></li>
                 <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
             </ul>
         </div> 
@@ -36,45 +36,46 @@
         <div class = "link_container">
             <ul class="navbar">
                 <li><a href="cattle_index.html">Cattles</a></li>
-                <li><a href="../agro pro/agro.html">Agro Products</a></li>
+                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
                 <li><a href="../about.html">About Us</a></li>
             </ul>
         </div>
         <div class = "navbar butcot" id = "sellpro">
-            <div class = "butspace"><a href = "profile.html"> <button class = "sell"> SELLER </button> </a></div>
+            <div class = "butspace"><a href = "#"> <button class = "sell"> SELL </button> </a></div>
             <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
         </div>
     </header>
 
     <main>
         <div class = "d0">  
-            <div><a href = "../../pages/cattle/cattle_index.html"><button> BACK </button></a></div>
+            <div><button onclick="window.history.back()"> BACK </button></a></div>
             <h1 class = "h11"> List Your LiveStock Here</h1>
         </div>
             <h3 class = "h12"> Buy and Sell your Cattles easier!</h3>
-            <img class = "choose" src = "../../assets/images/choose.png" alt = "choose">
+            <img class = "choose" src = "../../assets/images/choose_category_active.png" alt = "choose">
             <h1 class = "h13"> Choose Category </h1>
             <hr>
 
-        <div class = "d1">
-            <div class = "d3">
-                <div class = "ispace"><a href = "sell_details2.html"><img class = "i2" src = "../../assets/images/cattles/ch1.jpg" alt = "cow"></a></div>                    <p> Cow </p>
-                </div>
-            <div class = "d3">
-                <div class = "ispace"><a href = "sell_details2_buf.html"><img class = "i2" src = "../../assets/images/cattles/ch2.jpg" alt = "buffalo"></a></div>
-                <p> Buffalo </p>
+        <div class = "d1" id = "category_container">
+            <div class = "d3" id = "Cow" onclick = "getId(this)">
+                <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/ch1.jpg" alt = "cow"></div>
+                <p class = "name"> Cow </p>
             </div>
-            <div class = "d3">
-                <div class = "ispace"><a href = "sell_details2_goat.html"><img class = "i2" src = "../../assets/images/cattles/ch3.jpg" alt = "goat"></a></div>
-                <p> Goat </p>
+            <div class = "d3" id = "Buffalo" onclick = "getId(this)">
+                <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/ch2.jpg" alt = "buffalo"></div>
+                <p class = "name"> Buffalo </p>
             </div>
-            <div class = "d3">
-                <div class = "ispace"><a href = "sell_details2_sheep.html"><img class = "i2" src = "../../assets/images/cattles/ch4.jpg" alt = "sheep"></a></div>
-                <p> Sheep </p>
+            <div class = "d3" id = "Goat" onclick = "getId(this)">
+                <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/ch3.jpg" alt = "goat"></div>
+                <p class = "name"> Goat </p>
             </div>
-            <div class = "d3">
-                <div class = "ispace"><a href = "sell_details2_ox.html"><img class = "i2" src = "../../assets/images/cattles/ch5.jpg" alt = "ox"></a></div>
-                <p> Ox </p>
+            <div class = "d3"  id = "Sheep" onclick = "getId(this)">
+                <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/ch4.jpg" alt = "sheep"></div>
+                <p class = "name"> Sheep </p>
+            </div>
+            <div class = "d3" id = "Ox" onclick = "getId(this)">
+                <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/ch5.jpg" alt = "ox"></div>
+                <p class = "name"> Ox </p>
             </div>
         </div>
     </main>
@@ -82,7 +83,7 @@
     <footer>
         <div class="foot">
             <div class="foot1">
-                <img class="logof" src="../../assets/images/cattles/logo.png" alt = "logo">
+                <img class="logof" src="../../assets/images/cattles/logo2.png" alt = "logo">
                 <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
                     Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
                     full potential while ensuring livestock wellbeing.</p>
@@ -95,11 +96,60 @@
                     <p> Insta: KowMart</p>
                 </div>
                 <div class = "contact">
-                    <i class="fa-regular fa-envelope"></i>
+                    <i class="fa-brands fa-facebook"></i>
                     <i class="fa-brands fa-whatsapp"></i>
                     <i class="fa-brands fa-instagram"></i>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+
+        function getId(div){
+            const cattle = div.id;
+            if (cattle == "Cow"){
+                window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details2.html?cattle=${cattle}`;;
+            }
+            else if (cattle == "Buffalo"){
+                window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details2_buf.html?cattle=${cattle}`;            
+            }
+            else if (cattle == "Goat"){
+                window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details2_goat.html?cattle=${cattle}`;            
+            }
+            else if (cattle == "Sheep"){
+                window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details2_sheep.html?cattle=${cattle}`;           
+            }
+            else {
+                window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details2_ox.html?cattle=${cattle}`;            
+            }
+        }        
+
+    </script>
+
+    <!-- <script>
+
+        const container = document.querySelector('#category_container');
+
+        container.addEventListener('click', function(event) {
+            let cattle = event.target.getAttribute('id');
+            if (cattle == "Cow"){
+                window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details2.html?cattle=${cattle}`;;
+            }
+            else if (cattle == "Buffalo"){
+                window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details2_buf.html?cattle=${cattle}`;            
+            }
+            else if (cattle == "Goat"){
+                window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details2_goat.html?cattle=${cattle}`;            
+            }
+            else if (cattle == "Sheep"){
+                window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details2_sheep.html?cattle=${cattle}`;           
+            }
+            else {
+                window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details2_ox.html?cattle=${cattle}`;            
+            }
+        });
+
+    </script> -->
+
 </body>

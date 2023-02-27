@@ -8,22 +8,23 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 40px;
-    margin-left: 100px;
+    margin-top: 2%;
+    margin-left: 10%;
 }
 
 button{
     padding: 10px 20px;
     font-size: 20px;
     font-weight: bold;
-    background-color: #0075A3;
-    border-style: none;
-    border-radius: 10px;
-    color: white;
+    background-color: white;
+    border: 2px solid #00a651;
+    border-radius: 5px;
+    color: #00a651;
 }
 
 .btn0{
     background-color: #00a651;
+    color: white;
 }
 
 .bspace{
@@ -33,12 +34,8 @@ button{
 }
 
 .h11{
-    width: 67%;
-    color: #00a651
-}
-
-.h14{
-    width: 62%;
+    width: 69%;
+    color: #00a387;
 }
 
 .h12{
@@ -49,18 +46,18 @@ button{
 .h13{
     margin-top: 10px;
     text-align: center;
+    color: darkslategray;
 }
 
 .choose{
-    width: 50px;
+    width: 38px;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 hr{
-    margin: 0px 100px;
-    margin-bottom: 30px;
+    margin: 0px 10% 30px 10%;
 }
 
 p {
@@ -81,15 +78,25 @@ input{
     margin-left: 10px;
     padding: 5px;
     font-size: 18px;
+    outline: none;
+}
+
+input:focus{
+    border: 1px solid #80bdff;
 }
 
 select{
-    height: 35px;
+    height: 38px;
     width: 165px;
     margin-top: 5px;
     margin-left: 10px;
     padding: 5px;
     font-size: 18px;
+    outline: none;
+}
+
+select:focus{
+    border: 1px solid #80bdff;
 }
 
 textarea{
@@ -99,6 +106,12 @@ textarea{
     margin-left: 10px;
     padding: 5px 10px;
     font-size: 18px;
+    outline: none;
+}
+
+textarea:focus{
+    border: 1px solid #80bdff;
+    box-shadow: 0 0 0 0.1rem rgb(0 123 255 / 10%);
 }
 
 .r1{
@@ -124,6 +137,8 @@ textarea{
     width: 71%;
 }
 
+/* Cattle Edit page */
+
 .sub{
     display: flex;
     justify-content: center;
@@ -131,27 +146,37 @@ textarea{
 }
 
 .btn1{
-    background-color: #F8E382;
-    color: black;
+    background-color: #00a651;
+    color: white;
+    padding: 10px 30px;
 }
 
 .btn2{
-    background-color: #D2D2FB;
-    color: black;
+    padding: 10px 30px;
+}
+
+.btn2:hover{
+    background-color: #00a651;
+    color: white;
 }
 
 .divbtn{
     width: 10%;
 }
 
+.h14{
+    width: 64%;
+    color: darkslategray;
+}
+
 @media screen and (max-width: 480px) {
-    div.d0 >div >a >button{
+    div.d0 >div >button{
         display: none;
     }
 
     .d0{
         margin: 0;
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     .h11{
@@ -178,7 +203,7 @@ textarea{
 
     .r1{
         justify-content: space-between;
-        padding: 0px 13px 20px 20px;
+        padding: 0px 18px 20px 18px;
     }
 
     .r2{
@@ -208,12 +233,31 @@ textarea{
         margin-top: 15px;
     }
 
+    input{
+        margin-left: 0;
+        margin-top: 7px;
+        width: 140px;
+    }
+
+    select{
+        margin-left: 0;
+        margin-top: 7px;
+        width: 155px;
+    }
+
+    textarea{
+        margin-top: -5px;
+        margin-left: 0;
+    }
+
+    /* Cattle detail page */
+
     .sub{
         margin-top: 10%;
     }
 
     .divbtn{
-        width: 30%;
+        width: 35%;
     }
 }
 

@@ -1,45 +1,21 @@
-# Folder_structure
+# dhanush.selvam__web_project
 
-    .
-    ├── assets                  # Compiled files 
-    ├── pages                   # Compiled files
-    ├── index.html
-    └── README.md
+This project is about selling and buying livestock in an online platform.
 
-## assets
+Flowchart: https://drive.google.com/file/d/1kOj5XsC-zJJxCsgyTX0Hxn971asxvXla/view
+Wireframe: https://drive.google.com/file/d/1nPHmLzhG7nhUF8cXNV9ZvJQE-F7SrkZJ/view
+Problem Statement: https://docs.google.com/document/d/1P6dlUbm7r-aCg9qh2hX-rndthBgPCGcN/edit
 
-    .
-    ├── assets                  # Compiled files 
-        ├── images              # Compiled files 
-        ├── css                 # Compiled files 
-        └── js                  # Compiled files 
+FEATURES:
 
-### assets/images
-
-    .
-    ├── images                  # Compiled files 
-        ├── logo.svg            # Compiled files 
-        └── banner.png          # Compiled files 
-
-### assets/css
-
-    .
-    ├── css                     # Compiled files 
-        ├── normalize.css       # Compiled files 
-        ├── style.css           # Compiled files 
-        ├── header.css          # Compiled files 
-        └── footer.css          # Compiled files 
-
-## pages
-
-    .
-    └── pages                         
-        └── Products                  
-            ├── product_list.html               # Compiled files
-            ├── new_product.html                # Compiled files
-            └── edit_product.html               # Compiled files
-        └── Orders                              
-            ├── order_list.html                 # Compiled files
-            ├── new_order.html                  # Compiled files
-            ├── edit_order.html                 # Compiled files
-            └── order_details.html              # Compiled files
+1. USER CRUD
+    - Create
+    - Read
+    - Update
+    - Delete
+    
+2. CATTLE CRUD
+    - Create
+    - Read
+    - Update
+    - Delete

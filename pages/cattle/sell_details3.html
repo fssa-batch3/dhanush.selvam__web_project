@@ -19,16 +19,16 @@
 <body>
     <header>
         <div class="navbar">
-            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
+            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo1.png" alt="logo"></a></div>
             <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <ul class = "navbar">
                 <li><a href="cattle_index.html">Cattles</a></li>
-                <li><a href="../agro pro/agro.html">Agro Products</a></li>
+                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
                 <li><a href="../about.html">About Us</a></li>
-                <li class = "logbutton"><a href="profile.html"><button class = "sell"> SELLER </button></a></li>
+                <li class = "logbutton"><a href="./sell_details1.html"><button class = "sell"> SELL </button></a></li>
                 <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
             </ul>
         </div> 
@@ -36,27 +36,27 @@
         <div class = "link_container">
             <ul class="navbar">
                 <li><a href="cattle_index.html">Cattles</a></li>
-                <li><a href="../agro pro/agro.html">Agro Products</a></li>
+                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
                 <li><a href="../about.html">About Us</a></li>
             </ul>
         </div>
         <div class = "navbar butcot" id = "sellpro">
-            <div class = "butspace"><a href = "profile.html"> <button class = "sell"> SELLER </button> </a></div>
+            <div class = "butspace"><a href = "./sell_details1.html"> <button class = "sell"> SELL </button> </a></div>
             <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
         </div>
     </header>
 
     <main>
         <div class = "d0">  
-            <div><a href = "../../pages/cattle/sell_details2.html"><button> BACK </button></a></div>
+            <div><button onclick="window.history.back()"> BACK </button></a></div>
             <h1 class = "h11"> List Your LiveStock Here</h1>
         </div>
             <h3 class = "h12"> Buy and Sell your Cattles easier!</h3>
-            <img class = "choose" src = "../../assets/images/choose.png"  alt = "choose">
+            <img class = "choose" src = "../../assets/images/choose_animals_active.png"  alt = "choose">
             <h1 class = "h13"> Animal Details  </h1>
             <hr>
 
-        <form>
+        <form onsubmit= "getValue(event);">
                 <div class = "r1">
                     <!--<div>
                         <label> Age </label><br>
@@ -75,76 +75,58 @@
                     </div>-->
                     <div>
                         <label> Age (in Years) </label><br>
-                        <input required type = "number" id = "age" onkeypress="return IsNumeric(event);">
+                        <input required type = "text" id = "age" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
                     </div>
                     <div>
                         <label> Gender </label><br>
-                        <select required>
-                            <option> Choose </option>
-                            <option> Male </option>
+                        <select required id = "gender" placeholder = "Select">
                             <option> Female </option>
+                            <option> Male </option>
                         </select>
                     </div>
                     <div class = "weight">
                         <label> Weight (kg) </label><br>
-                        <input required type = "number" id = "weight" onkeypress="return IsNumeric(event);">
+                        <input required type = "text" id = "weight" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "5">
                     </div>
                 </div>
                 
                 <div class = "r1">
                     <div>
                         <label> Milk per day (litres) </label><br>
-                        <input required type = "number" id = "litres">
+                        <input type = "text" id = "milk" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
                     </div>
                     <div>
                         <label> Price (Rs.) </label><br>
-                        <input required type = "number" id = "price">
+                        <input required type = "text" id = "price" oninput = "this.value = this.value.replace(/[^0-9]/g,'')">
                     </div>
                     <div class = "weight">
                         <label> Lactation </label><br>
-                        <input required type = "number" id = "lact">
+                        <input type = "text" id = "lact" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
                     </div>
                 </div>
 
                 <div class = "r2">
                     <label> Description </label><br>
-                    <textarea></textarea>
+                    <textarea id = "desc"></textarea>
                 </div>
                 <div class = "r3">
                     <div>
                         <label> Upload Photo: </label><br>
-                        <input required type = "file" multiple>
+                        <input required type = "url" multiple id = "image">
                     </div>  
                     <div>
                         <label> Upload Video: </label><br>
-                        <input required type = "file" multiple>
+                        <input type = "file" multiple>
                     </div>  
                 </div>
-                <div class="bspace"><a href="profile.html"><button class = "btn0" type = "button"> SUBMIT </button></a></div>
+                <div class="bspace"><button class = "btn0" type = "submit"> SUBMIT </button></div>
         </form>
     </main>
-
-    <script>
-        function sub(){
-            const name = document.getElementById("name").value
-            const phone_no = document.getElementById("phone_no").value
-            const email = document.getElementById("email").value
-            const password = document.getElementById("password").value
-            const confirm_password = document.getElementById("confirm_password").value<a 
-
-            console.log(name)
-            console.log(phone_no)
-            console.log(email)
-            console.log(password)
-            console.log(confirm_password)
-            window.location.href = "../cattle/profile.html"
-        }  
-    </script>
 
     <footer>
         <div class="foot">
             <div class="foot1">
-                <img class="logof" src="../../assets/images/cattles/logo.png" alt = "logo">
+                <img class="logof" src="../../assets/images/cattles/logo2.png" alt = "logo">
                 <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
                     Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
                     full potential while ensuring livestock wellbeing.</p>
@@ -157,14 +139,48 @@
                     <p> Insta: KowMart</p>
                 </div>
                 <div class = "contact">
-                    <i class="fa-regular fa-envelope"></i>
+                    <i class="fa-brands fa-facebook"></i>
                     <i class="fa-brands fa-whatsapp"></i>
                     <i class="fa-brands fa-instagram"></i>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+
+        function getValue(e) {
+            e.preventDefault();
+
+            const urlParams = new URLSearchParams(window.location.search);
+
+            let cattle = urlParams.get("cattle");
+                breed = urlParams.get("breed");
+                age = document.getElementById("age").value;
+                gender = document.getElementById("gender").value; 
+                weight = document.getElementById("weight").value; 
+                milk = document.getElementById("milk").value; 
+                price = document.getElementById("price").value; 
+                lactation = document.getElementById("lact").value; 
+                description = document.getElementById("desc").value;
+                image = document.getElementById("image").value;
+                cattle_uniqueId = uuidv4();
+
+            let cattle_details = JSON.parse(localStorage.getItem('cattle_details')) || [];     
+
+            cattle_details.push({cattle, breed, age, gender, weight, milk, price, lactation, description, image, cattle_uniqueId});
+            localStorage.setItem('cattle_details', JSON.stringify(cattle_details));
+            location.href = "./seller_cattlelist.html";
+            document.querySelector('form').reset();
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+
     
 </body>
 
 </html>
+
+<!-- https://iili.io/HMIqLcx.jpg -->
+<!-- https://iili.io/HM6dhla.jpg -->

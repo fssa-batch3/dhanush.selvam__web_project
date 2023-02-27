@@ -4,7 +4,7 @@ body {
 }
 
 .ho6{
-    width: 60%;
+    width: 62%;
 }
 
 .ho7 {
@@ -24,8 +24,8 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 40px;
-    margin-left: 100px;
+    margin-top: 2.5%;
+    margin-left: 10%;
 }
 
 .name{
@@ -67,7 +67,7 @@ button {
     background-color: #00a651;
     border-style: none;
     border: 2px solid #00a651;
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
 }
 
@@ -77,8 +77,8 @@ div.p1 >div >a >button:hover{
 }  
 
 .btn{
-    background-color: #0075A3;
-    border-style: none;
+    background-color: white;
+    color: #00a651;
     padding: 10px 20px;
 }
 

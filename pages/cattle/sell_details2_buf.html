@@ -57,24 +57,24 @@
             <hr>
 
             <div class = "d1">
-                <div class = "d3">
-                    <div class = "ispace"><a href = "sell_details3.html"><img class = "i2" src = "../../assets/images/cattles/b1.jpg" alt = "cow"></a></div>
+                <div class = "d3" onclick="getId(this)" id = "Surti">
+                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/b1.jpg" alt = "cow"></div>
                     <p> Surti </p>
                 </div>
-                <div class = "d3">
-                    <div class = "ispace"><a href = "sell_details3.html"><img class = "i2" src = "../../assets/images/cattles/b2.jpg" alt = "buffalo"></a></div>
+                <div class = "d3" onclick="getId(this)" id = "Nili">
+                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/b2.jpg" alt = "buffalo"></div>
                     <p> Nili </p>
                 </div>
-                <div class = "d3">
-                    <div class = "ispace"><a href = "sell_details3.html"><img class = "i2" src = "../../assets/images/cattles/b8.jpg" alt = "goat"></a></div>
+                <div class = "d3" onclick="getId(this)" id = "Banni">
+                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/b8.jpg" alt = "goat"></div>
                     <p> Banni </p>
                 </div>
-                <div class = "d3">
-                    <div class = "ispace"><a href = "sell_details3.html"><img class = "i2" src = "../../assets/images/cattles/b6.jpg" alt = "sheep"></a></div>
+                <div class = "d3" onclick="getId(this)" id = "Murrah">
+                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/b6.jpg" alt = "sheep"></div>
                     <p> Murrah </p>
                 </div>
-                <div class = "d3">
-                    <div class = "ispace"><a href = "sell_details3.html"><img class = "i2" src = "../../assets/images/cattles/ch6.jpg" alt = "ox"></a></div>
+                <div class = "d3" onclick="getId(this)" id = "Jafarabadi">
+                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/ch6.jpg" alt = "ox"></div>
                     <p> Jafarabadi </p>
                 </div>
             </div>
@@ -103,4 +103,18 @@
             </div>
         </div>
     </footer>
+
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+        let cattle = urlParams.get("cattle");
+    
+        function getId(div){
+            const breed = div.id;
+            window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details3.html?cattle=${cattle}&breed=${breed}`;
+        }
+
+    </script>
+
 </body>

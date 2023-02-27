@@ -16,7 +16,7 @@
 
 <body>
     <div class="navbar">
-        <div class="logodiv"><img class = "logo" src="../assets/images/cattles/logo.png" alt="logo"></div>
+        <div class="logodiv"><img class = "logo" src="../assets/images/cattles/logo1.png" alt="logo"></div>
         <div class="lotit"><h1 class = "hd"> KowMart </h1></div>
     </div>
     <div class = "bg">
@@ -25,35 +25,35 @@
             <div class = "order">
                 <div>
                     <label> Name </label><br>
-                    <input required type = "text" id = "name">
+                    <input required type = "text" id = "name" pattern = "[a-zA-Z]+" title = "Don't use Space and special characters">
+                    <!-- <input required type = "text" id = "name" oninput = "this.value = this.value.replace(/[^a-zA-Z]/0,'')">  -->
                 </div>
                 <div>
                     <label> Phone No. </label><br>
-                    <input required type = "tel" id = "phone_no" maxlength = "10">
-                </div>
-                <div>
-                    <label> Email </label><br>
-                    <input required type = "email" placeholder="abc@gmail.com" id = "email">
+                    <!-- <input required type = "text" id ="phone_no" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" minlength = "10" maxlength= "10"> -->
+                    <input required type = "tel" id ="phone_no" pattern="[0-9]+" minlength = "10" maxlength= "10" title = "Please enter your phone number">
+
                 </div>
                 <div>
                     <label> Password </label><br>
-                    <input required type  = "password" id = "password">
+                    <input required type = "password" id = "password" pattern = "[a-zA-Z0-9!-@]+" title = "Don't use Space">
                 </div>
                 <div>
                     <label> Confirm Password </label><br>
-                    <input required type  = "password"  id = "confirm_password">
+                    <input required type = "password"  id = "confirm_password" pattern = "[a-zA-Z0-9!-@]+" title = "Don't use Space">
                 </div>
                 <div class = "btn">
-                    <button type = "submit"> SUBMIT </button>
+                    <button type =  "submit"> SUBMIT </button>
                 </div> 
                 <div class = "new">
                     <p> Existing User? <a href = "sign in.html"> Login here </a></p>
-                </div> 
+                </div>
             </div>
         </form>
     </div>
 
     <script src="../assets/js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
     
     <!-- <script>
 

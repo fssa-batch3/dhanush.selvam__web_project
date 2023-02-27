@@ -20,36 +20,40 @@
 <body>
     <header>
         <div class="navbar">
-            <div class="logodiv"><a href = "../../../index.html"><img class = "logo" src="../../../assets/images/cattles/logo.png" alt="logo"></a></div>
+            <div class="logodiv"><a href = "../../../index.html"><img class = "logo" src="../../../assets/images/cattles/logo1.png" alt="logo"></a></div>
             <div class="lotit"><a href = "../../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <ul class = "navbar">
                 <li><a href="../../cattle/cattle_index.html">Cattles</a></li>
-                <li><a href="../../agro pro/agro.html">Agro Products</a></li>
+                <!-- <li><a href="../../agro pro/agro.html">Agro Products</a></li> -->
                 <li><a href="../../about.html">About Us</a></li>
-                <li class = "logbutton"><a href="../../create_profile.html"><button class = "sell"> SELLER </button></a></li>
-                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
+                <li class = "logbutton"><a href="../../cattle/sell_details1.html"><button class = "sell"> SELL </button></a></li>
+                <li class = "profile_icon"><a href = "../../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
             </ul>
         </div> 
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
         <div class = "link_container">
             <ul class="navbar">
                 <li><a href="../../cattle/cattle_index.html">Cattles</a></li>
-                <li><a href="../../agro pro/agro.html">Agro Products</a></li>
+                <!-- <li><a href="../../agro pro/agro.html">Agro Products</a></li> -->
                 <li><a href="../../about.html">About Us</a></li>
             </ul>
         </div>
         <div class = "navbar butcot" id = "sellpro">
-            <div class = "butspace"><a href = "../../cattle/profile.html"> <button class = "sell"> SELLER </button> </a></div>
-            <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
+            <div class = "butspace"><a href = "../../cattle/sell_details1.html"> <button class = "sell"> SELL </button> </a></div>
+            <div class = "user"><a href = "../../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
         </div>
     </header>
 
     <main>
         <div class = "bspace"><button class = "btn" onclick="window.history.back()"> BACK </button></a></div>
-        <div class = "ibg"> <!--<img class = "image" src="../../../assets/images/cattles/c1.jpg" alt = "cow"> --> </div>
+        <div class = "ibg"> 
+            <!--<img class = "image" src="../../../assets/images/cattles/c1.jpg" alt = "cow"> --> 
+            <button class = "chevron" id = "left"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class = "chevron" id = "right"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
     
         <div class = "content">
             <div class = "product">
@@ -74,7 +78,7 @@
                             <p class = "color1"> <!-- 2 --> </p>
                         </div>   
                         <div class = "gf2">
-                            <p> Weight (kg) </p>
+                            <p> Weight </p>
                             <p class = "color2"> <!-- 400Kg --> </p>
                         </div>    
                     </div>
@@ -87,7 +91,7 @@
             
             <div class = "seller">
                 <div class = "price">
-                    <h1 class = "cash">  <!-- 70,000 --> </h1>
+                    <h1 class = "cash"> <!-- 70,000 -->  </h1>
                     <div class = "bspace2"><a href = "../../cattle/favourites.html"><button id = "favourite" class = "check"> Add to Favourite </button></a></div>
                 </div>
                 <div class = "sellerdetails">
@@ -95,8 +99,8 @@
                     <h2 class = "sellername"> <!-- INBA LOKESH --> </h2>
                     <h4 class = "posted_date"> <!-- Posted On: 15/11/2022 --> </h4>
                     <div class = "bspace2"><a href = "https://api.whatsapp.com/qr/XQYMHVSSYORIN1?autoload=1&app_absent=0"><button id = "chat" class = "check"> Chat with Seller </button></a></div>
-                    <p> <!-- +91 1234567890 --> </p>
-                    <p class = "address"> <!-- No.727, RK Road, Kannatur, Chennai, Tamil Nadu. --> </p>
+                    <p class = "phone_no"> <i class="fa-solid fa-phone"></i> <!-- +91 1234567890 --> </p>
+                    <p class = "address"> <!-- <i class="fa-solid fa-location-dot"></i> --> <i class="fa-solid fa-house"></i> <!-- No.727, RK Road, Kannatur, Chennai, Tamil Nadu. --> </p>
                 </div>
                 <div class = "profile">
                     <div class = "bspace2"><a href = "../../cattle/b-sprofile.html"><button id = "favourite" class = "check"> View Seller Profile </button></a></div>
@@ -104,44 +108,51 @@
             </div>
         </div>
 
-        <hr class = "hr1">
-        <h1 class="ho6"> More Cows </h1>
-
         <div class="ho7">
-            <!-- <div class="p1">
-                <a href = "C2.html"><img class="i1" src="../../../assets/images/cattles/c2.jpg" alt = "cow"></a>
-                <div class = "bspace1">
-                    <p class = "p2 pname"> HF Cow H165 </p>
-                    <p class = "p2"> Age: 2 Years</p>
-                    <p class = "p2"> Gender: Female</p>
-                    <a href = "C2.html"><button> Know More </button></a>
+            <hr class = "hr1">
+            <h1 class="ho6"> More Cows </h1>
+            <div class = "cattles_container">
+                <!-- <div class="p1">
+                    <div class = "img_container">
+                        <a href = "C2.html"><img class="i1" src="../../../assets/images/cattles/c2.jpg" alt = "cow"></a>
+                    </div>
+                    <div class = "bspace1">
+                        <p class = "p2 pname"> HF Cow H165 </p>
+                        <p class = "p2"> Age: 2 Years</p>
+                        <p class = "p2"> Gender: Female</p>
+                        <a href = "C2.html"><button> Know More </button></a>
+                    </div>
                 </div>
+                <div class="p1">
+                    <div class = "img_container">
+                        <a href = "C3.html"><img class="i1" src="../../../assets/images/cattles/c3.jpg" alt = "cow"></a>
+                    </div>
+                    <div class = "bspace1">
+                        <p class = "p2 pname"> Kankrej Cow K006 </p>
+                        <p class = "p2"> Age: 1 Year</p>
+                        <p class = "p2"> Gender: Female</p>
+                        <a href = "C3.html"><button> Know More </button></a>
+                    </div>
+                </div>
+                <div class="p1">
+                    <div class = "img_container">
+                        <a href = "C4.html"><img class="i1" src="../../../assets/images/cattles/c4.jpg" alt = "cow"></a>
+                    </div>
+                    <div class = "bspace1">
+                        <p class = "p2 pname"> Tharparkar Cow T035 </p>
+                        <p class = "p2"> Age: 3 Years</p>
+                        <p class = "p2"> Gender: Female</p>
+                        <a href = "C4.html"><button> Know More </button></a>
+                    </div>
+                </div> -->
             </div>
-            <div class="p1">
-                <a href = "C3.html"><img class="i1" src="../../../assets/images/cattles/c3.jpg" alt = "cow"></a>
-                <div class = "bspace1">
-                    <p class = "p2 pname"> Kankrej Cow K006 </p>
-                    <p class = "p2"> Age: 1 Year</p>
-                    <p class = "p2"> Gender: Female</p>
-                    <a href = "C3.html"><button> Know More </button></a>
-                </div>
-            </div>
-            <div class="p1">
-                <a href = "C4.html"><img class="i1" src="../../../assets/images/cattles/c4.jpg" alt = "cow"></a>
-                <div class = "bspace1">
-                    <p class = "p2 pname"> Tharparkar Cow T035 </p>
-                    <p class = "p2"> Age: 3 Years</p>
-                    <p class = "p2"> Gender: Female</p>
-                    <a href = "C4.html"><button> Know More </button></a>
-                </div>
-            </div> -->
         </div>
     </main>
 
     <footer>
         <div class="foot">
             <div class="foot1">
-                <img class="logof" src="../../../assets/images/cattles/logo.png" alt = "logo">
+                <img class="logof" src="../../../assets/images/cattles/logo2.png" alt = "logo">
                 <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
                     Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
                     full potential while ensuring livestock wellbeing.</p>
@@ -154,7 +165,7 @@
                     <p class = "p2"> Insta: KowMart</p>
                 </div>
                 <div class = "contact">
-                    <i class="fa-regular fa-envelope"></i>
+                    <i class="fa-brands fa-facebook"></i>
                     <i class="fa-brands fa-whatsapp"></i>
                     <i class="fa-brands fa-instagram"></i>
                 </div>
@@ -184,7 +195,8 @@
                     "source": "../../../assets/images/cattles/c1.jpg",
                     "alt": "Gir cow",
                 },
-                "name": "Gir Cow G018",
+                "name": "Gir Cow" ,
+                "id": "G018",
                 "age": 4,
                 "gender": "Female",
                 "milk_per_day": 12,
@@ -208,7 +220,7 @@
         // cattle details
 
         cattle_name = document.querySelector("h1.name");
-        cattle_name.innerText = cattle_detail["name"];
+        cattle_name.innerText = cattle_detail["name"] + " " + cattle_detail["id"];
 
         cattle_age = document.querySelector("p.gf");
         cattle_age.innerText = cattle_detail["age"] + " Years";
@@ -229,7 +241,7 @@
         description.innerText = cattle_detail["desc"];
 
         price = document.querySelector("h1.cash");
-        price.innerText = cattle_detail["price"];
+        price.innerText = "₹ " + cattle_detail["price"]; 
 
         // seller details
 
@@ -239,13 +251,14 @@
         uploaded_date = document.querySelector("h4.posted_date");
         uploaded_date.innerText = "Posted On: " + cattle_detail["posted_date"];
 
-        // phone_no = document.querySelector("p");
-        // phone_no.innerText = cattle_detail["phone_no"];
+        phone_no = document.querySelector("p.phone_no");
+        phone_no.innerText = cattle_detail["phone_no"];
         
         address = document.querySelector("p.address");
         address.innerText = cattle_detail["address"];
 
         let div_p1;
+        let div_img_container
         let cat_image;
         let div_bspace1;
         let p_name;
@@ -288,12 +301,17 @@
             div_p1 = document.createElement("div");
             div_p1.setAttribute("class","p1");
 
+            // image container
+            div_img_container = document.createElement("div");
+            div_img_container.setAttribute("class","img_container");
+            div_p1.append(div_img_container)
+
             // cattle image
             cat_image = document.createElement("img");
             cat_image.setAttribute("src",cattle_card[i]["image"]["source"]);
             cat_image.setAttribute("alt",cattle_card[i]["image"]["alt"]);
             cat_image.setAttribute("class","i1");
-            div_p1.append(cat_image)
+            div_img_container.append(cat_image)
 
             // cattle info container
             div_bspace1 = document.createElement("div");
@@ -320,10 +338,66 @@
             button_know.innerText = "Know More";
             div_bspace1.append(button_know)
 
-            document.querySelector("div.ho7").append(div_p1)
+            document.querySelector("div.cattles_container").append(div_p1)
         }
         
     </script>
+
+    <!-- <script>
+
+        let cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
+
+        for(i=0; i<cattle_details.length; i++){
+
+            // cattle image
+            cattle_image = document.createElement("img");
+            cattle_image.setAttribute("src",cattle_details[i]["image"]);
+            cattle_image.setAttribute("alt",cattle_details[i]["breed"] + " " + cattle_details[i]["cattle"]);
+            cattle_image.setAttribute("class","image");
+            document.querySelector("div.ibg").append(cattle_image)
+
+            // cattle details
+
+            cattle_name = document.querySelector("h1.name");
+            cattle_name.innerText = cattle_details[i]["breed"] + " " + cattle_details[i]["cattle"];
+
+            cattle_age = document.querySelector("p.gf");
+            cattle_age.innerText = cattle_details[i]["age"] + " Years";
+
+            cattle_gender = document.querySelector("p.gf1");
+            cattle_gender.innerText = cattle_details[i]["gender"];
+
+            milk = document.querySelector("p.color");
+            milk.innerText = cattle_details[i]["milk"] + " litres";
+
+            lactation = document.querySelector("p.color1");
+            lactation.innerText = cattle_details[i]["lactation"];
+
+            weight = document.querySelector("p.color2");
+            weight.innerText = cattle_details[i]["weight"] + " Kg";
+
+            description = document.querySelector("p#p3");
+            description.innerText = cattle_details[i]["description"];
+
+            price = document.querySelector("h1.cash");
+            price.innerText = "₹ " + cattle_details[i]["price"]; 
+
+            // seller details
+
+            // seller_name = document.querySelector("h2.sellername");
+            // seller_name.innerText = cattle_detail["seller_name"];
+
+            // uploaded_date = document.querySelector("h4.posted_date");
+            // uploaded_date.innerText = "Posted On: " + cattle_detail["posted_date"];
+
+            // phone_no = document.querySelector("p.phone_no");
+            // phone_no.innerText = cattle_detail["phone_no"];
+            
+            // address = document.querySelector("p.address");
+            // address.innerText = cattle_detail["address"];
+        }
+
+    </script> -->
     
 </body>
 

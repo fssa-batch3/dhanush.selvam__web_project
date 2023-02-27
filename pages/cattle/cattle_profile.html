@@ -19,16 +19,16 @@
 <body>
     <header>
         <div class="navbar">
-            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
+            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo1.png" alt="logo"></a></div>
             <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <ul class = "navbar">
                 <li><a href="cattle_index.html">Cattles</a></li>
-                <li><a href="../agro pro/agro.html">Agro Products</a></li>
+                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
                 <li><a href="../about.html">About Us</a></li>
-                <li class = "logbutton"><a href="profile.html"><button class = "sell"> SELLER </button></a></li>
+                <li class = "logbutton"><a href="./sell_details1.html"><button class = "sell"> SELL </button></a></li>
                 <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
             </ul>
         </div> 
@@ -36,19 +36,19 @@
         <div class = "link_container">
             <ul class="navbar">
                 <li><a href="cattle_index.html">Cattles</a></li>
-                <li><a href="../agro pro/agro.html">Agro Products</a></li>
+                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
                 <li><a href="../about.html">About Us</a></li>
             </ul>
         </div>
         <div class = "navbar butcot" id = "sellpro">
-            <div class = "butspace"><a href = "profile.html"> <button class = "sell"> SELLER </button> </a></div>
+            <div class = "butspace"><a href = "./sell_details1.html"> <button class = "sell"> SELL </button> </a></div>
             <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
         </div>
     </header>
 
     <main>
         <div class = "d0">  
-            <div><a href = "seller_cattlelist.html"><button> BACK </button></a></div>
+            <div><button onclick="window.history.back()"> BACK </button></a></div>
             <h1 class = "h14"> Cattle Details </h1>
         </div>
         <hr>
@@ -56,43 +56,42 @@
             <div class = "r1">
                 <div>
                     <label> Age </label><br>
-                    <input required type = "number" value = "4"\>
+                    <input required type = "text" id = "age" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
                 </div>
                 <div>
                     <label> Gender </label><br>
-                    <select required>
-                        <option> Choose </option>
+                    <select required id = "gender">
 					    <option> Male </option>
 					    <option selected> Female </option>
 				    </select>
                 </div>
                 <div class = "weight">
                     <label> Weight (kg) </label><br>
-                    <input required type = "number" value = "400"\>
+                    <input required type = "text" id = "weight" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "5">
                 </div>
             </div>
             <div class = "r1">
                 <div>
                     <label> Milk per day (litres) </label><br>
-                    <input required type = "number"  value = "12"\>
+                    <input required type = "text" id = "milk" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
                 </div>
                 <div>
                     <label> Price (Rs.) </label><br>
-                    <input required type = "number"  value = "70000"\>
+                    <input required type = "text" id = "price" oninput = "this.value = this.value.replace(/[^0-9]/g,'')">
                 </div>
                 <div class = "weight">
                     <label> Lactation </label><br>
-                    <input required type = "number" value = "2"\>
+                    <input required type = "text" id = "lact" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
                 </div>
             </div>
             <div class = "r2">
                 <label> Description </label><br>
-                <textarea></textarea>
+                <textarea id = "desc"></textarea>
             </div>
             <div class = "r3" id = "r31">
                 <div>
 				    <label> Add or Remove Photo: </label><br>
-				    <input type = "file" multiple>
+				    <input type = "url" multiple>
                 </div>  
                 <div>
 				    <label> Add or Remove Video: </label><br>
@@ -101,7 +100,7 @@
 			</div>
             <div class = "sub">
                 <div class = "divbtn"><a href = "cattle_index.html"><button class = "btn2" type = "button"> Sold </button></a></div>
-                <div><a href = "cattle_index.html"><button class = "btn1" type = "button"> Save </button></a></div>
+                <div><a href = "./seller_cattlelist.html"><button class = "btn1" type = "button"> Save </button></a></div>
             </div>
         </form>
     </main>
@@ -109,7 +108,7 @@
     <footer>
         <div class="foot">
             <div class="foot1">
-                <img class="logof" src="../../assets/images/cattles/logo.png" alt = "logo">
+                <img class="logof" src="../../assets/images/cattles/logo2.png" alt = "logo">
                 <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
                     Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
                     full potential while ensuring livestock wellbeing.</p>
@@ -122,13 +121,29 @@
                     <p> Insta: KowMart</p>
                 </div>
                 <div class = "contact">
-                    <i class="fa-regular fa-envelope"></i>
+                    <i class="fa-brands fa-facebook"></i>
                     <i class="fa-brands fa-whatsapp"></i>
                     <i class="fa-brands fa-instagram"></i>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+
+
+        let cattle_details = JSON.parse(localStorage.getItem('cattle_details'));
+
+        document.getElementById("age").value = cattle_details['age'];
+        document.getElementById("gender").value = cattle_details['gender'];
+        document.getElementById("weight").value = cattle_details['weight'];            
+        document.getElementById("milk").value = cattle_details['milk'];
+        document.getElementById("milk").value = cattle_details['milk'];
+        document.getElementById("price").value = cattle_details['price'];
+        document.getElementById("lact").value = cattle_details['lact'];
+        document.getElementById("desc").value = cattle_details['desc'];
+
+    </script>
     
 </body>
 </html>

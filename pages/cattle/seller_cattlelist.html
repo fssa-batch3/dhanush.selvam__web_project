@@ -9,7 +9,7 @@
     <title> Cattles List </title>
 
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/seller_productlist.css">
+    <link rel="stylesheet" href="../../assets/css/cattles/cattlelist.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
     <script src = "../../assets/js/main.js"></script>
     <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
@@ -19,16 +19,16 @@
 <body>
     <header>
         <div class="navbar">
-            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo.png" alt="logo"></a></div>
+            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo1.png" alt="logo"></a></div>
             <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <ul class = "navbar">
                 <li><a href="cattle_index.html">Cattles</a></li>
-                <li><a href="../agro pro/agro.html">Agro Products</a></li>
+                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
                 <li><a href="../about.html">About Us</a></li>
-                <li class = "logbutton"><a href="profile.html"><button class = "sell"> SELLER </button></a></li>
+                <li class = "logbutton"><a href="./sell_details1.html"><button class = "sell"> SELL </button></a></li>
                 <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
             </ul>
         </div> 
@@ -36,50 +36,63 @@
         <div class = "link_container">
             <ul class="navbar">
                 <li><a href="cattle_index.html">Cattles</a></li>
-                <li><a href="../agro pro/agro.html">Agro Products</a></li>
+                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
                 <li><a href="../about.html">About Us</a></li>
             </ul>
         </div>
         <div class = "navbar butcot" id = "sellpro">
-            <div class = "butspace"><a href = "profile.html"> <button class = "sell"> SELLER </button> </a></div>
+            <div class = "butspace"><a href = "./sell_details1.html"> <button class = "sell"> SELL </button> </a></div>
             <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
         </div>
     </header>
 
     <main>
-        <div class = "titbut">
-            <div><a href = "profile.html"><button class = "btn"> BACK </button></a></div>
-            <div class="ho6"><h1> Cattle List </h1></div>
-        </div>
-        
-
         <div class="ho7">
-            <div class="p1">
-                <a href = "../cattle details/cow/C1.html"><img class="i1" src="../../assets/images/cattles/c1.jpg" alt = "cow"></a>
-                <h2 class = "name"> Gir Cow G018 </h2>
-                <div><a href = "cattle_profile.html"><button> Edit </button></a></div>     
+            <div class = "titbut">
+                <div><button class = "btn" onclick="window.history.back()"> BACK </button></div>
+                <div class="ho6_edit"><h1 class = "title_color"> Cattle List </h1></div>
             </div>
-            <div class="p1">
-                <a href = "../cattle details/buffalo/B2.html"><img class="i1" src="../../assets/images/cattles/b2.jpg" alt = "buffalo"></a>
-                <h2 class = "name"> Nilli Ravi Buffalo N115 </h2>
-                <div><a href = "cattle_profile.html"><button> Edit </button></a></div>
-            </div>
-            <div class="p1">
-                <a href = "../cattle details/goat/G2.html"><img class="i1" src="../../assets/images/cattles/g2.jpg" alt = "goat"></a>
-                <h2 class = "name"> Sirohi Goat S055 </h2>
-                <div><a href = "cattle_profile.html"><button> Edit </button></a></div>
-            </div>
-        </div>
-        <div class = "ho7" id = "ho8">
-            <div class="p1">
-                <a href = "../cattle details/sheep/S1.html"><img class="i1" src="../../assets/images/cattles/s1.jpg" alt = "sheep"></a>
-                <h2 class = "name"> Bannur Sheep B023 </h2>
-                <div><a href = "cattle_profile.html"><button> Edit </button></a></div>
-            </div>
-            <div class="p1">
-                <a href = "sell_details1.html"><img class = "new" src = "../../assets/images/new.png" alt = "add"></a>
-                <h2 class = "name" id = "name1"> Add new cattles </h2>
-                <div><a href = "sell_details1.html"><button> Add </button></a></div>
+            <div class = "cattles_container">
+                <!-- <div class="p12">
+                    <div class = "img_container">
+                        <a href = "../cattle details/cow/C1.html"><img class="i1" src="../../assets/images/cattles/c1.jpg" alt = "cow"></a>
+                    </div>
+                    <h2> Gir Cow G018 </h2>
+                    <div><a href = "cattle_profile.html"><button class = "edit_button"> Edit </button></a></div>     
+                </div>
+
+                <div class="p12">
+                    <div class = "img_container">
+                        <a href = "../cattle details/buffalo/B2.html"><img class="i1" src="../../assets/images/cattles/b2.jpg" alt = "buffalo"></a>
+                    </div>
+                    <h2> Nilli Ravi Buffalo N115 </h2>
+                    <div><a href = "cattle_profile.html"><button class = "edit_button"> Edit </button></a></div>
+                </div>
+
+                <div class="p12">
+                    <div class = "img_container">
+                        <a href = "../cattle details/goat/G2.html"><img class="i1" src="../../assets/images/cattles/g2.jpg" alt = "goat"></a>
+                    </div>
+                    <h2> Sirohi Goat S055 </h2>
+                    <div><a href = "cattle_profile.html"><button class = "edit_button"> Edit </button></a></div>
+                </div>
+
+                <div class="p12">
+                    <div class = "img_container">
+                        <a href = "../cattle details/sheep/S1.html"><img class="i1" src="../../assets/images/cattles/s1.jpg" alt = "sheep"></a>
+                    </div>
+                    <h2> Bannur Sheep B023 </h2>
+                    <a href = "cattle_profile.html"><button class = "edit_button"> Edit </button></a>
+                </div> -->
+                
+                <!-- <div class="p12">
+                    <div class = "img_container">
+                        <a href = "sell_details1.html"><img class = "new" src = "../../assets/images/new.png" alt = "add"></a>
+                    </div>
+                    <h2> Add new cattles </h2>
+                    <div><a href = "sell_details1.html"><button class = "edit_button"> Add </button></a></div>
+                </div> -->
+                
             </div>
         </div>
     </main>
@@ -87,7 +100,7 @@
     <footer>
         <div class="foot">
             <div class="foot1">
-                <img class="logof" src="../../assets/images/cattles/logo.png" alt = "logo">
+                <img class="logof" src="../../assets/images/cattles/logo2.png" alt = "logo">
                 <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
                     Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
                     full potential while ensuring livestock wellbeing.</p>
@@ -100,13 +113,60 @@
                     <p> Insta: KowMart</p>
                 </div>
                 <div class = "contact">
-                    <i class="fa-regular fa-envelope"></i>
+                    <i class="fa-brands fa-facebook"></i>
                     <i class="fa-brands fa-whatsapp"></i>
                     <i class="fa-brands fa-instagram"></i>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+
+        let cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
+
+        for(i=0; i<cattle_details.length; i++){
+
+            // cattle container
+            div_p12 = document.createElement("div");
+            div_p12.setAttribute("class","p12");
+
+            // image container
+            div_img_container = document.createElement("div");
+            div_img_container.setAttribute("class","img_container");
+            div_p12.append(div_img_container)
+            
+            // cattle image
+            cattle_image = document.createElement("img");
+            cattle_image.setAttribute("src",cattle_details[i]["image"]);
+            cattle_image.setAttribute("alt",cattle_details[i]["breed"] + " " + cattle_details[i]["cattle"]);
+            cattle_image.setAttribute("class","i1");
+            cattle_image.setAttribute("onclick","image()")
+            div_img_container.append(cattle_image)
+
+            // cattle info
+            h2_name = document.createElement("h2");
+            h2_name.innerText = cattle_details[i]["breed"] + " " + cattle_details[i]["cattle"];
+            div_p12.append(h2_name)
+
+            button_know = document.createElement("button");
+            button_know.setAttribute("class","edit_button")
+            button_know.setAttribute("onclick","edit()")
+            button_know.innerText = "Edit";
+            div_p12.append(button_know)
+
+            document.querySelector("div.cattles_container").append(div_p12)
+        }
+
+        function edit(){
+            window.location.href = "cattle_profile.html";
+        }
+
+        // function image(){
+        //     window.location.href = "../cattle details/cow/C1.html";
+        // }
+
+    </script>
 
 </body>
 

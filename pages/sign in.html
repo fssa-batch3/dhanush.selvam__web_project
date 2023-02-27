@@ -16,20 +16,20 @@
 
 <body>
     <div class="navbar">
-        <div class="logodiv"><img class = "logo" src="../assets/images/cattles/logo.png" alt="logo"></div>
+        <div class="logodiv"><img class = "logo" src="../assets/images/cattles/logo1.png" alt="logo"></div>
         <div class="lotit"><h1 class = "hd"> KowMart </h1></div>
     </div>
     <div class = "bg">
         <form role = "form" onsubmit ="signIn(event);">
             <h1> LOGIN </h1>
             <div class = "order">
-                <div>
-                    <label> Email </label><br>
+                <!-- <div>
+                    <label> Email </label><br> 
                     <input type = "email" placeholder="abc@gmail.com" id = "email">
-                </div>
+                </div> -->
                 <div>
                     <label> Phone No. </label><br>
-                    <input required = "tel" maxlength = "10" id = "phone_no">
+                    <input required = "text" id ="phone_no" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" minlength = "10" maxlength= "10">
                 </div>
                 <div>
                     <label> Password </label><br>

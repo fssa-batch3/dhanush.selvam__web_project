@@ -22,8 +22,12 @@ main {
     border-radius: 50px;
 }
 
+.chln:hover{
+    color: #00a651;
+}
+
 .chi:hover{
-    transform: scale(1.2)
+    transform: scale(1.1);
 }
 
 .ispace{
@@ -40,13 +44,22 @@ main {
     display: flex;
     flex-direction: row;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 10px 30px;
     width: 400px;
-    height: 40px;
+    height: 35px;
     font-size: 20px;
     align-items: center;
     justify-content: space-between;
+    border: 1px solid #00a651;
+}
+
+.chl2:hover{
+    border: 2px solid #00a651;
+}
+
+input{
+    background-color: white;
 }
 
 input{
@@ -59,6 +72,7 @@ input{
     display: flex;
     flex-direction: column;  
     text-align: center;
+    overflow: hidden;
 }
 
 button{
@@ -66,7 +80,7 @@ button{
     font-weight: bold;
     padding: 10px 20px;
     border-style: none;
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
 }
 
@@ -75,7 +89,10 @@ button{
 }
 
 .btn1{
-    background-color: #5F9AA5;
+    /* background-color: #5F9AA5; */
+    background-color: white;
+    border: 2px solid #00a651;
+    color: #00a651;
 }
 
 .btn2{
@@ -108,18 +125,28 @@ div.p1 >div.bspace >a >button:hover {
 }
 
 .ho7{
+    margin: 0% 10%;
+}
+
+.ho8{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cattles_container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px 120px 10px 120px;
+    justify-content: space-between;
+    margin: 10px 0px 15px 0px;
 }
 
 .p1{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     margin-bottom: 20px;
-    width: 280px;
-    padding: 10px 20px 15px 20px;
+    padding: 15px 20px 15px 20px;
+    border-radius: 5px;
     background-color: white;
  }
 
@@ -128,36 +155,29 @@ div.p1 >div.bspace >a >button:hover {
  }
 
  .p1:hover {
-    box-shadow: 0 0 1px 1px #00a651;
+    box-shadow: #57d192 3px 3px 3px;
 }
  
- .i1 {
-    width: 270px;
+.i1 {
+    width: 280px;
     height: 255px;
-    padding: 10px 5px;
 }
 
+.img_container {
+    width: 280px;
+    height: 255px;
+    overflow: hidden;
+} 
+
 .i1:hover{
-    transform: scale(1.1);
+    transform: scale(1.2);
+    transition: all 800ms;
 }
 
  p{
     line-height: 15px;
     font-weight: bold;
     font-size: 18px;
-}
-
-.ho8{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0px 100px;
-    margin-bottom: -15px;
-    align-items: center;
-}
-
-hr{
-    margin: 0px 100px;
 }
 
 .gif {
@@ -170,16 +190,20 @@ hr{
 }
 
 .fa-magnifying-glass{
-    color: darkgrey;
+    color: #00a651;
+    font-size: 25px;
 }
 
 .fa-magnifying-glass:hover{
-    transform: scale(1);
-    color: darkgrey;
+    color: #00a651;
 }
 
 .pname{
     color:#00a651;
+}
+
+.title_color {
+    color: darkslategray;
 }
 
 @keyframes running_cow {
@@ -194,27 +218,27 @@ hr{
 
 @media screen and (max-width: 480px) {
 
-    .p1{
-        width: 250px;
-        margin: 20px 20px 50px 20px;
-    }
-
-    .i1{
-        width: 240px;
-        height: 260px;
-    }
-
-
     .ho7{
-        width: 370px;
+        margin: 0;
+    }
+
+    .ho8{
+        margin: 0px 40px -10px 35px; 
+    }
+
+    .cattles_container{
         flex-wrap: nowrap;
-        justify-content: flex-start;
         overflow-x: scroll;
-        margin: 0px;
+        width: 393px;
+        margin: 0;
+    }
+
+    .p1{
+        margin: 20px 40px 50px 35px;
     }
 
     hr{
-        margin: -10px 35px 0px 35px;
+        margin: -15px 35px 5px 35px;
     }
 
     .gif{
@@ -254,11 +278,6 @@ hr{
     div.chln >p{
         font-size: 18px;
         line-height: 10px;
-    }
-
-    .ho8{
-        margin-left: 25px;
-        margin-right: 25px;
     }
 
     .ho5{
