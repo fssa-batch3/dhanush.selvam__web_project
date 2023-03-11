@@ -57,15 +57,15 @@
             <hr>
 
             <div class = "d1" id = "d2">
-                <div class = "d3" id = "Gir" onclick="getId(this)">
+                <!-- <div class = "d3" id = "Gir">
                     <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c1.jpg" alt = "cow"></div>
                     <p> Gir </p>
                 </div>
-                <div class = "d3" id = "Red sindhi" onclick="getId(this)">
+                <div class = "d3" id = "Red sindhi">
                     <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c5.jpg" alt = "cow"></div>
                     <p> Red Sindhi </p>
                 </div>
-                <div class = "d3" id = "Kankrej" onclick="getId(this)">
+                <div class = "d3" id = "Kankrej">
                     <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c3.jpg" alt = "cow"></div>
                     <p> Kankrej </p>
                 </div>
@@ -73,11 +73,11 @@
                     <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c7.jpg" alt = "cow"></div>
                     <p> Jersey </p>
                 </div>
-                <div class = "d3" id = "Jersey">
+                <div class = "d3" id = "Rathi Heifer">
                     <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c8.jpg" alt = "cow"></div>
                     <p> Rathi Heifer </p>
                 </div>
-                <div class = "d3" id = "Jersey">
+                <div class = "d3" id = "Ongole">
                     <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c9.jpg" alt = "cow"></div>
                     <p> Ongole </p>
                 </div>
@@ -104,7 +104,7 @@
                 <div class = "d3" id = "Deoni">
                     <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c10.jpg" alt = "cow"></div>
                     <p> Deoni </p>
-                </div>
+                </div> -->
             </div>
     </main>
 
@@ -132,45 +132,334 @@
         </div>
     </footer>
 
-    <!-- <script>
-        function getId(div){
-            
-            let cattle_unique = JSON.parse(localStorage.getItem('cattle_unique_id'));
-            let cattle_details= JSON.parse(localStorage.getItem('cattle_details'));
-        
-            function check(e){
-                return e.cattle_uniqueId == cattle_unique;
-            }
-
-            cattle_data = cattle_details.find(check);
-            breed = div.id;
-            location.href = "./sell_details3.html";         
-        }
-    </script> -->
-
-    <!-- <script>
-        function getId(div){
-            let breed = div.id;
-                
-            let cattle_details = JSON.parse(sessionStorage.getItem('cattle_details')) || [];     
-
-            cattle_details.push({breed});
-            sessionStorage.setItem('cattle_details', JSON.stringify(cattle_details));
-            location.href = "./sell_details3.html"
-        }
-    </script> -->
-
     <script>
 
-        const urlParams = new URLSearchParams(window.location.search);
+        const category_list = [
+        {
+                "image":{
+                    "source": "../../assets/images/cattles/c1.jpg",
+                    "alt": "gir cow"
+                },
+                "name": "Gir",
+                "category": "Cow"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/c5.jpg",
+                    "alt": "red sindhi cow"
+                },
+                "name": "Red sindhi",
+                "category": "Cow"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/c3.jpg",
+                    "alt": "kankrej cow"
+                },
+                "name": "Kankrej",
+                "category": "Cow"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/c7.jpg",
+                    "alt": "jersey cow"
+                },
+                "name": "Jersey",
+                "category": "Cow"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/c8.jpg",
+                    "alt": "rathi heifer cow"
+                },
+                "name": "Rathi Heifer",
+                "category": "Cow"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/c9.jpg",
+                    "alt": "ongole cow"
+                },
+                "name": "Ongole",
+                "category": "Cow"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/c11.jpg",
+                    "alt": "kapila cow"
+                },
+                "name": "Kapila",
+                "category": "Cow"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/c12.jpg",
+                    "alt": "vilwadri cow"
+                },
+                "name": "Vilwadri",
+                "category": "Cow"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/c2.jpg",
+                    "alt": "hf cow"
+                },
+                "name": "HF",
+                "category": "Cow"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/c4.jpg",
+                    "alt": "tharparkar cow"
+                },
+                "name": "Tharparkar",
+                "category": "Cow"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/c6.jpg",
+                    "alt": "sahiwal cow"
+                },
+                "name": "Sahiwal",
+                "category": "Cow"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/c10.jpg",
+                    "alt": "deoni cow"
+                },
+                "name": "Deoni",
+                "category": "Cow"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/b1.jpg",
+                    "alt": "surti buffalo"
+                },
+                "name": "Surti",
+                "category": "Buffalo"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/b2.jpg",
+                    "alt": "nili buffalo"
+                },
+                "name": "Nili",
+                "category": "Buffalo"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/b8.jpg",
+                    "alt": "banni buffalo"
+                },
+                "name": "Banni",
+                "category": "Buffalo"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/b6.jpg",
+                    "alt": "murrah buffalo"
+                },
+                "name": "Murrah",
+                "category": "Buffalo"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/ch6.jpg",
+                    "alt": "jafarabadi buffalo"
+                },
+                "name": "Jafarabadi",
+                "category": "Buffalo"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/g1.jpg",
+                    "alt": "malabari goat"
+                },
+                "name": "Malabari",
+                "category": "Goat"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/g2.jpg",
+                    "alt": "sirohi goat"
+                },
+                "name": "Sirohi",
+                "category": "Goat"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/g3.jpg",
+                    "alt": "kota goat"
+                },
+                "name": "Kota",
+                "category": "Goat"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/g4.jpg",
+                    "alt": "beetal goat"
+                },
+                "name": "Beetal",
+                "category": "Goat"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/g5.jpg",
+                    "alt": "sannen goat"
+                },
+                "name": "Sannen",
+                "category": "Goat"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/g6.jpg",
+                    "alt": "jamunapari goat"
+                },
+                "name": "Jamunapari",
+                "category": "Goat"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/g7.jpg",
+                    "alt": "boer goat"
+                },
+                "name": "Boer",
+                "category": "Goat"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/g8.jpg",
+                    "alt": "sojat goat"
+                },
+                "name": "Sojat",
+                "category": "Goat"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/g9.jpg",
+                    "alt": "barbari goat"
+                },
+                "name": "Barbari",
+                "category": "Goat"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/g10.jpg",
+                    "alt": "gujri goat"
+                },
+                "name": "Gujri",
+                "category": "Goat"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/g11.jpg",
+                    "alt": "jakhrana goat"
+                },
+                "name": "Jakhrana",
+                "category": "Goat"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/s1.jpg",
+                    "alt": "bannur sheep"
+                },
+                "name": "Bannur",
+                "category": "Sheep"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/s2.jpg",
+                    "alt": "neelore jodipi sheep"
+                },
+                "name": "Neelore Jodipi",
+                "category": "Sheep"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/s3.jpg",
+                    "alt": "sindhanoor sheep"
+                },
+                "name": "Sindhanoor",
+                "category": "Sheep"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/s8.jpg",
+                    "alt": "deccani sheep"
+                },
+                "name": "Deccani",
+                "category": "Sheep"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/ch7.jpg",
+                    "alt": "coimbatore sheep"
+                },
+                "name": "Coimbatore",
+                "category": "Sheep"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/o1.jpg",
+                    "alt": "ongole ox"
+                },
+                "name": "Ongole",
+                "category": "Ox"
+            },
+            {
+                "image":{
+                    "source": "../../assets/images/cattles/o2.jpg",
+                    "alt": "brahma ox"
+                },
+                "name": "Brahma",
+                "category": "Ox"
+            },
+        ]
 
+        const urlParams = new URLSearchParams(window.location.search);
         let cattle = urlParams.get("cattle");
-    
-        function getId(div){
-            const breed = div.id;
-            window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details3.html?cattle=${cattle}&breed=${breed}`;
+
+        const category_filter = category_list.filter(e => e.category == cattle);
+
+        for(i=0; i<category_filter.length; i++){
+
+            // container
+            container = document.createElement("div");
+            container.setAttribute("class","d3");
+            container.setAttribute("id",category_filter[i]["name"]);
+
+            // image container
+            img_container = document.createElement("div");
+            img_container.setAttribute("class","ispace");
+            container.append(img_container)
+
+            // cattle image
+            image = document.createElement("img");
+            image.setAttribute("src",category_filter[i]["image"]["source"]);
+            image.setAttribute("alt",category_filter[i]["image"]["cattle"]);
+            image.setAttribute("class","i2");
+            img_container.append(image)
+
+            // cattle name
+            namee = document.createElement("p");
+            namee.innerText = category_filter[i]["name"];
+            container.append(namee);
+
+            document.querySelector("div.d1").append(container);
         }
 
+        const parentDiv = document.querySelector("#d2");
+        const childDiv = parentDiv.children;
+
+        for (let i = 0; i < childDiv.length; i++) {
+            const element = childDiv[i];
+            element.addEventListener("click", function(event) {
+                let breed = event.currentTarget.getAttribute('id');
+                window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details3.html?cattle=${cattle}&breed=${breed}`;            
+            });
+        }
+    
     </script>
 
 </body>

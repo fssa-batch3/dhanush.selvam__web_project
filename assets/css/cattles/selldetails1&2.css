@@ -111,7 +111,8 @@ div.d3 >a{
     }
 
     .h11{
-        width: 86%;
+        width: 100%;
+        text-align: center;
         font-size: 24px;
     }
 

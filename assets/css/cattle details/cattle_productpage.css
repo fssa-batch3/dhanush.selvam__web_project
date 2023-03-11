@@ -145,7 +145,7 @@ hr{
     width:100%;
     /* background-color: #0075A3;
     border: 3px solid #0075A3; */
-    height: 45px;
+    height: fit-content;
     background-color: teal;
     border: 3px solid teal;
 }
@@ -187,11 +187,13 @@ h4{
     background-color: white;
     border: 2px solid black;
     color: teal; 
-    height: 47px;
+    height: fit-content;
 }
 
 button#chat:hover{
     border: 4px solid black;
+    height: 43px;
+    padding-top: 6px;
 }
 
 .address{
@@ -210,6 +212,7 @@ button#chat:hover{
 }
 
 .image{
+    display: none;
     width: 43%;
     height: 30rem;
     /* width: 50%;
@@ -243,10 +246,13 @@ button#chat:hover{
 }
 
 .cattles_container{
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 0px 115px;
 }
 
 .p1 {
@@ -255,6 +261,7 @@ button#chat:hover{
     border-radius: 5px;
     padding: 15px 20px 15px 20px;
     background-color: white;
+    width: fit-content;
 }
 
 .p1:hover {
@@ -302,17 +309,17 @@ span{
     position: absolute;
     top: 21.3em;
     color: black;
-    height: 45px;
+    height: 40px;
     width: 40px;
     border-radius: 50%;
 }
 
 #left{
-    left: 20em;
+    left: 20.2em;
 }
 
 #right{
-    right: 20em;
+    right: 20.2em;
 }
 
 .fa-chevron-left{
@@ -337,7 +344,7 @@ span{
     }
 
     .cattles_container{
-        justify-content: center;
+        justify-items: center;
     }
 
     .ho7{
@@ -363,12 +370,12 @@ span{
     }
 
     .ibg{
-        margin: 30px;
+        margin: 45px 30px 30px 30px;
     }
 
     .image{
-        width: 100%;
-        height: 23rem;
+        width: 90%;
+        height: 20rem;
     }
 
     .btn{
@@ -423,7 +430,7 @@ span{
     .chevron{
         top: 13.5em;
         height: 35px;
-        width: 35px;
+        width: 38px;
     }
 
     .fa-chevron-left ,.fa-chevron-right{
@@ -432,11 +439,11 @@ span{
     }
 
     #left{
-        left: 7px;
+        left: 20px;
     }
 
     #right{
-        right: 8px;
+        right: 20px;
     }
   
 }

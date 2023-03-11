@@ -58,21 +58,6 @@
 
         <form onsubmit= "getValue(event);">
                 <div class = "r1">
-                    <!--<div>
-                        <label> Age </label><br>
-                        <select required aria-placeholder = "Choose">
-                            <option> Choose </option>
-                            <option> below 1 Year </option>
-                            <option> 1-2 Years </option>
-                            <option> 2-3 Years </option>
-                            <option> 3-4 Years </option>
-                            <option> 4-5 Years </option>
-                            <option> 5-6 Years </option>
-                            <option> 6-7 Years </option>
-                            <option> 7-8 Years </option>
-                            <option> above 8 Years </option>
-                        </select>
-                    </div>-->
                     <div>
                         <label> Age (in Years) </label><br>
                         <input required type = "text" id = "age" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
@@ -101,18 +86,22 @@
                     </div>
                     <div class = "weight">
                         <label> Lactation </label><br>
-                        <input type = "text" id = "lact" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
+                        <input type = "text" id = "lactation" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
                     </div>
                 </div>
 
                 <div class = "r2">
                     <label> Description </label><br>
-                    <textarea id = "desc"></textarea>
+                    <textarea id = "description"></textarea>
                 </div>
                 <div class = "r3">
                     <div>
                         <label> Upload Photo: </label><br>
-                        <input required type = "url" multiple id = "image">
+                        <input required type = "url" id = "image">
+                    </div>
+                    <div>
+                        <label> Upload Photo: </label><br>
+                        <input type = "url" id = "image1">
                     </div>  
                     <div>
                         <label> Upload Video: </label><br>
@@ -161,14 +150,18 @@
                 weight = document.getElementById("weight").value; 
                 milk = document.getElementById("milk").value; 
                 price = document.getElementById("price").value; 
-                lactation = document.getElementById("lact").value; 
-                description = document.getElementById("desc").value;
+                lactation = document.getElementById("lactation").value; 
+                description = document.getElementById("description").value;
                 image = document.getElementById("image").value;
+                image1 = document.getElementById("image1").value;
                 cattle_uniqueId = uuidv4();
-
+                id = cattle[0] + breed[0];
+                user_id = JSON.parse(localStorage.getItem("phone_no_id"));
+                userId = user_id;
+                
             let cattle_details = JSON.parse(localStorage.getItem('cattle_details')) || [];     
 
-            cattle_details.push({cattle, breed, age, gender, weight, milk, price, lactation, description, image, cattle_uniqueId});
+            cattle_details.push({cattle, breed, age, gender, weight, milk, price, lactation, description, image, id, cattle_uniqueId, userId, image1});
             localStorage.setItem('cattle_details', JSON.stringify(cattle_details));
             location.href = "./seller_cattlelist.html";
             document.querySelector('form').reset();
@@ -182,5 +175,11 @@
 
 </html>
 
-<!-- https://iili.io/HMIqLcx.jpg -->
-<!-- https://iili.io/HM6dhla.jpg -->
+<!-- 
+https://iili.io/HWccpp9.jpg
+https://iili.io/HWclJLb.jpg 
+https://iili.io/HWcc6In.jpg
+https://iili.io/HW8a8Q9.jpg
+https://iili.io/HW8MJvs.jpg 
+https://iili.io/HX7wu7S.jpg
+-->

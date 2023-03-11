@@ -4,16 +4,17 @@ body {
     width: fit-content
 }
 
+.titbut{
+    margin-top: 45px;
+}
+
 .ho6{
-    width: 55.5%;
+    margin-top: -5%;
 }
 
-.ho6b{
-    width: 58%;
-}
-
-.ho6s{
-    width: 60%;
+.title_color {
+    color: darkslategray;
+    text-align: center;
 }
 
 .ho7 {
@@ -21,10 +22,9 @@ body {
 }
 
 .cattles_container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 0px 115px;
 }
 
 .p1 ,.p12{
@@ -33,6 +33,7 @@ body {
     border-radius: 5px;
     padding: 15px 20px 15px 20px;
     background-color: white;
+    width: fit-content;
 }
 
 .p1:hover ,.p12:hover{
@@ -42,6 +43,7 @@ body {
 .i1 {
     width: 280px;
     height: 255px;
+    cursor: pointer;
 }
 
 .img_container {
@@ -76,7 +78,7 @@ button{
     border-radius: 5px;
 }
 
-div.bspace >a >button:hover {
+div.bspace >button:hover {
     background-color: white;
     color: #00a651;
 }
@@ -92,28 +94,9 @@ div.bspace >a >button:hover {
     margin-left: 20px;
 }
 
-.titbut{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
 .pname{
     color:#00a651;
 }
-
-.title_color {
-    color: darkslategray;
-}
-
-/* Favourites page */
-
-.ho6f{
-    width: 60%;
-    color: darkslategray;
-} 
 
 /* Buyer to Seller page */
 
@@ -162,7 +145,7 @@ button.edit_button:hover{
     }
 
     .cattles_container{
-        justify-content: center;
+        justify-items: center;
     }
 
     .bspace{
@@ -170,29 +153,12 @@ button.edit_button:hover{
         margin: 0px;
     }
 
-    div.titbut >div >button.btn{
+    div.titbut >button.btn{
         display: none;
     }
 
-    .titbut{
-        margin: 20px 0px 7px 0px;
-        justify-content: center;
-    }
-
     .ho6{
-        width: 32%;
-    }
-
-    .ho6b{
-        width: 45%;
-    }
-
-    .ho6s{
-        width: 37%;
-    }
-
-    .ho6f{
-        width: 54%;
+        margin: -3% 0% 5% 0%;
     }
 
     h1{
@@ -201,11 +167,5 @@ button.edit_button:hover{
 
     footer{
         margin-top: -40px;
-    }
-
-    /* Seller Product List */
-
-    .ho6_edit{
-        width: 38%;
     }
 }

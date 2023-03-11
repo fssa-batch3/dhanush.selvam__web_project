@@ -26,9 +26,9 @@ main {
     color: #00a651;
 }
 
-.chi:hover{
+/* .chi:hover{
     transform: scale(1.1);
-}
+} */
 
 .ispace{
     padding: 15px 10px 0px 15px;
@@ -54,7 +54,7 @@ main {
     border: 1px solid #00a651;
 }
 
-.chl2:hover{
+.chl2:focus-within{
     border: 2px solid #00a651;
 }
 
@@ -135,11 +135,14 @@ div.p1 >div.bspace >a >button:hover {
 }
 
 .cattles_container{
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 10px 0px 15px 0px;
+    justify-content: space-between; */
+    margin: 10px 0px 15px 0px; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 0px 115px;
 }
 
 .p1{
@@ -148,6 +151,7 @@ div.p1 >div.bspace >a >button:hover {
     padding: 15px 20px 15px 20px;
     border-radius: 5px;
     background-color: white;
+    width: fit-content;
  }
 
 .divspace{
@@ -227,7 +231,10 @@ div.p1 >div.bspace >a >button:hover {
     }
 
     .cattles_container{
-        flex-wrap: nowrap;
+        /* flex-wrap: nowrap; */
+        grid-auto-flow: column;
+        grid-gap: 0;
+        grid-template-columns: repeat(auto-fit, minmax(395px, 1fr));
         overflow-x: scroll;
         width: 393px;
         margin: 0;

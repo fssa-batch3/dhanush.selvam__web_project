@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../assets/css/buyer_profile.css">
     <link rel="stylesheet" href="../assets/css/header_footer.css">
     <script src = "../assets/js/main.js"></script>
-    <link rel="icon" href="../assets/images/cattles/logo.png" type="image/x-icon">
+    <link rel="icon" href="../assets/images/cattles/logo1.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
 
@@ -55,8 +55,8 @@
                             <!-- <p class = "name"> Hi, XXX </p> -->
                         </div>
                         <div class = "myorder">
-                            <!-- <div class = "ic1"> <i class="fa-solid fa-cow" id = "ic"></i> </div> -->
-                            <div class = "ic1"> <a href = "cattle/seller_cattlelist.html"><i class="fa-solid fa-list" id = "ic"></i></a> </div>
+                            <div class = "ic1"> <i class="fa-solid fa-paw" id = "ic"></i> </div>
+                            <!-- <div class = "ic1"> <a href = "cattle/seller_cattlelist.html"><i class="fa-solid fa-list" id = "ic"></i></a> </div> -->
                             <h2><a href = "cattle/seller_cattlelist.html"> Cattle List </a></h2>
                         </div>
                         <div class = "myorder">
@@ -76,7 +76,7 @@
                             <h2><a href = "../index.html"> Log out </a></h2>
                         </div>
                         <div class = "myorder">
-                            <div class = "ic1"> <i class="fa-solid fa-trash" id = "ic"></i> </div>
+                            <div class = "ic2"> <i class="fa-solid fa-trash" id = "ic"></i> </div>
                             <h2 class = "head1" id="delete">Delete Account</h2>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
             function login_data(e){
                 return e.phone_no == phone_id;
             }
-
+            
             person_data = userData.find(login_data);
             document.getElementById("name").value = person_data['name'];
             document.getElementById("phone_no").value = person_data["phone_no"];
@@ -193,7 +193,7 @@
             }
 
             function deleteaccount(e){
-                if(confirm("Are you sure you want to delete the account"))
+                if(confirm("Are you sure you want to delete the account?"))
                 {
                     let phone_id = JSON.parse(localStorage.getItem("phone_no_id"));
                     let userData = JSON.parse(localStorage.getItem("userData"));

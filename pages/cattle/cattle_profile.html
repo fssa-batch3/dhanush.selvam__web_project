@@ -81,17 +81,17 @@
                 </div>
                 <div class = "weight">
                     <label> Lactation </label><br>
-                    <input required type = "text" id = "lact" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
+                    <input required type = "text" id = "lactation" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
                 </div>
             </div>
             <div class = "r2">
                 <label> Description </label><br>
-                <textarea id = "desc"></textarea>
+                <textarea id = "description"></textarea>
             </div>
             <div class = "r3" id = "r31">
                 <div>
 				    <label> Add or Remove Photo: </label><br>
-				    <input type = "url" multiple>
+				    <input type = "url" multiple id = "image">
                 </div>  
                 <div>
 				    <label> Add or Remove Video: </label><br>
@@ -99,8 +99,8 @@
                 </div>  
 			</div>
             <div class = "sub">
-                <div class = "divbtn"><a href = "cattle_index.html"><button class = "btn2" type = "button"> Sold </button></a></div>
-                <div><a href = "./seller_cattlelist.html"><button class = "btn1" type = "button"> Save </button></a></div>
+                <div class = "divbtn"><button class = "btn2" type = "button" id = "sold"> Sold </button></div>
+                <div><button class = "btn1" type = "button" id = "save"> Save </button></div>
             </div>
         </form>
     </main>
@@ -131,17 +131,67 @@
 
     <script>
 
+        // Edit page
 
-        let cattle_details = JSON.parse(localStorage.getItem('cattle_details'));
+        let uid = JSON.parse(localStorage.getItem("cattle_unique_Id"));
+        let cattle = JSON.parse(localStorage.getItem("cattle_details"));
+        
+        function find_data(e){
+            return e.cattle_uniqueId == uid;
+        }
 
-        document.getElementById("age").value = cattle_details['age'];
-        document.getElementById("gender").value = cattle_details['gender'];
-        document.getElementById("weight").value = cattle_details['weight'];            
-        document.getElementById("milk").value = cattle_details['milk'];
-        document.getElementById("milk").value = cattle_details['milk'];
-        document.getElementById("price").value = cattle_details['price'];
-        document.getElementById("lact").value = cattle_details['lact'];
-        document.getElementById("desc").value = cattle_details['desc'];
+        cattle_data = cattle.find(find_data);    
+
+        document.getElementById("age").value = cattle_data["age"];
+        document.getElementById("gender").value = cattle_data["gender"];
+        document.getElementById("weight").value = cattle_data["weight"];
+        document.getElementById("milk").value = cattle_data["milk"];
+        document.getElementById("price").value = cattle_data["price"];
+        document.getElementById("lactation").value = cattle_data["lactation"];
+        document.getElementById("description").value = cattle_data["description"];
+        document.getElementById("image").value = cattle_data["image"];
+
+        // Update function
+
+        function updateDetails() {
+
+            cattle_data["age"] = document.getElementById("age").value;
+            cattle_data["gender"] = document.getElementById("gender").value;
+            cattle_data["weight"] = document.getElementById("weight").value;
+            cattle_data["milk"] = document.getElementById("milk").value;
+            cattle_data["price"] = document.getElementById("price").value;
+            cattle_data["lactation"] = document.getElementById("lactation").value;
+            cattle_data["description"] = document.getElementById("description").value;
+            cattle_data["image"] = document.getElementById("image").value;
+
+            localStorage.setItem("cattle_details",JSON.stringify(cattle));
+        
+        }
+
+        document.getElementById("save").addEventListener("click",updateDetails);
+
+        // Delete function
+
+        function deleteDetails(){
+            if(confirm("Are you sure you want to remove this cattle?"))
+            {
+                let uid = JSON.parse(localStorage.getItem("cattle_unique_Id"));
+                let cattle = JSON.parse(localStorage.getItem("cattle_details"));
+
+                function find_data(e){
+                    return e.cattle_uniqueId == uid;
+                }
+
+                cattle_data = cattle.find(find_data);
+                const removedata = cattle.indexOf(cattle_data);
+
+                cattle.splice(removedata,1);
+                localStorage.setItem("cattle_details",JSON.stringify(cattle));
+                window.location.href = "./seller_cattlelist.html";
+            }
+        }
+
+        document.getElementById("sold").addEventListener("click",deleteDetails);
 
     </script>
     

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title> Cow 1 details </title>
 
-    <script src = "assets/js/toggle_button.js" defer></script>
+    <!-- <script src = "assets/js/toggle_button.js" defer></script> -->
     <link rel="stylesheet" href="../../../assets/css/style.css">
     <link rel="stylesheet" href="../../../assets/css/cattle details/cattle_productpage.css">
     <link rel="stylesheet" href="../../../assets/css/header_footer.css">
@@ -50,9 +50,9 @@
     <main>
         <div class = "bspace"><button class = "btn" onclick="window.history.back()"> BACK </button></a></div>
         <div class = "ibg"> 
-            <!--<img class = "image" src="../../../assets/images/cattles/c1.jpg" alt = "cow"> --> 
-            <button class = "chevron" id = "left"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class = "chevron" id = "right"><i class="fa-solid fa-chevron-right"></i></button>
+            <!-- <img class = "image" src="../../../assets/images/cattles/c1.jpg" alt = "cow">  -->
+            <button class = "chevron" id = "left" onclick="plusDivs(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class = "chevron" id = "right" onclick="plusDivs(1)"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
     
         <div class = "content">
@@ -175,87 +175,102 @@
 
     <script>
 
-        let cattle_image;
-        let cattle_name;
-        let cattle_age;
-        let cattle_gender;
-        let milk; 
-        let lactation; 
-        let weight;
-        let description;
-        let price;
-        let seller_name;
-        let uploaded_date;
-        let phone_no;
-        let address;
+        // let cattle_image;
+        // let cattle_name;
+        // let cattle_age;
+        // let cattle_gender;
+        // let milk; 
+        // let lactation; 
+        // let weight;
+        // let description;
+        // let price;
+        // let seller_name;
+        // let uploaded_date;
+        // let phone_no;
+        // let address;
 
-        const cattle_detail = 
-            {
-                "image": {
-                    "source": "../../../assets/images/cattles/c1.jpg",
-                    "alt": "Gir cow",
-                },
-                "name": "Gir Cow" ,
-                "id": "G018",
-                "age": 4,
-                "gender": "Female",
-                "milk_per_day": 12,
-                "lactation": 2,
-                "weight": 400,
-                "desc": "Quality Gir Cow of 4 year(s) age is available in Chennai, Tamil Nadu. The price of the cattle is Rs. 70000/-. The Cow is in 2nd lactation. It Produces 12 Litres of milk on daily basis.",
-                "price": 70000,
-                "seller_name": "Inba Lokesh",
-                "posted_date": "15/11/2022",
-                "phone_no": 1234567890,
-                "address": "No.727, RK Road, Kannatur, Chennai, Tamil Nadu."
-            }
+        // const cattle_detail = 
+        //     {
+        //         "image": {
+        //             "source": "../../../assets/images/cattles/c1.jpg",
+        //             "alt": "Gir cow",
+        //         },
+        //         "name": "Gir Cow" ,
+        //         "id": "G018",
+        //         "age": 4,
+        //         "gender": "Female",
+        //         "milk_per_day": 12,
+        //         "lactation": 2,
+        //         "weight": 400,
+        //         "desc": "Quality Gir Cow of 4 year(s) age is available in Chennai, Tamil Nadu. The price of the cattle is Rs. 70000/-. The Cow is in 2nd lactation. It Produces 12 Litres of milk on daily basis.",
+        //         "price": 70000,
+        //         "seller_name": "Inba Lokesh",
+        //         "posted_date": "15/11/2022",
+        //         "phone_no": 1234567890,
+        //         "address": "No.727, RK Road, Kannatur, Chennai, Tamil Nadu."
+        //     }
 
-        // cattle image
+        const urlParams = new URLSearchParams(window.location.search);
+        const cattle_id = urlParams.get('cattle_id')
+        const user_id = urlParams.get('user_id');
+
+        let cattle_detail = JSON.parse(localStorage.getItem("cattle_details"));
+        const cattle = cattle_detail.filter(e => e.cattle_uniqueId == cattle_id);
+
+        let user_detail = JSON.parse(localStorage.getItem("userData")); 
+        const user = user_detail.find(e => e.phone_no == user_id);
+
         cattle_image = document.createElement("img");
-        cattle_image.setAttribute("src",cattle_detail["image"]["source"]);
-        cattle_image.setAttribute("alt",cattle_detail["image"]["alt"]);
+        cattle_image.setAttribute("src",cattle[0]["image"]);
+        cattle_image.setAttribute("alt",cattle[0]["breed"] + " " + cattle[0]["cattle"]);
         cattle_image.setAttribute("class","image");
-        document.querySelector("div.ibg").append(cattle_image)
+        document.querySelector("div.ibg").append(cattle_image);
 
-        // cattle details
+        if (cattle[0]["image1"]!=""){
+            cattle_image1 = document.createElement("img");
+            cattle_image1.setAttribute("src",cattle[0]["image1"]);
+            cattle_image1.setAttribute("alt","poster");
+            cattle_image1.setAttribute("class","image");
+            document.querySelector("div.ibg").append(cattle_image1);    
+        }
 
         cattle_name = document.querySelector("h1.name");
-        cattle_name.innerText = cattle_detail["name"] + " " + cattle_detail["id"];
+        cattle_name.innerText = cattle[0]["breed"] + " " + cattle[0]["cattle"];
 
         cattle_age = document.querySelector("p.gf");
-        cattle_age.innerText = cattle_detail["age"] + " Years";
+        cattle_age.innerText = cattle[0]["age"] + " Years";
 
         cattle_gender = document.querySelector("p.gf1");
-        cattle_gender.innerText = cattle_detail["gender"];
+        cattle_gender.innerText = cattle[0]["gender"];
 
         milk = document.querySelector("p.color");
-        milk.innerText = cattle_detail["milk_per_day"] + " litres";
+        milk.innerText = cattle[0]["milk"] + " litres";
 
         lactation = document.querySelector("p.color1");
-        lactation.innerText = cattle_detail["lactation"];
+        lactation.innerText = cattle[0]["lactation"];
 
         weight = document.querySelector("p.color2");
-        weight.innerText = cattle_detail["weight"] + "Kg";
+        weight.innerText = cattle[0]["weight"] + "Kg";
 
         description = document.querySelector("p#p3");
-        description.innerText = cattle_detail["desc"];
+        description.innerText = cattle[0]["description"];
 
         price = document.querySelector("h1.cash");
-        price.innerText = "₹ " + cattle_detail["price"]; 
+        price.innerText = "₹ " + cattle[0]["price"]; 
 
         // seller details
 
         seller_name = document.querySelector("h2.sellername");
-        seller_name.innerText = cattle_detail["seller_name"];
+        seller_name.innerText = user["name"];
 
         uploaded_date = document.querySelector("h4.posted_date");
         uploaded_date.innerText = "Posted On: " + cattle_detail["posted_date"];
 
         phone_no = document.querySelector("p.phone_no");
-        phone_no.innerText = cattle_detail["phone_no"];
+        phone_no.innerText = user["phone_no"];
         
         address = document.querySelector("p.address");
-        address.innerText = cattle_detail["address"];
+        address.innerText = user["address_line1"] + "," + user["address_line2"] + "," + user["pincode"];
 
         let div_p1;
         let div_img_container
@@ -341,6 +356,24 @@
             document.querySelector("div.cattles_container").append(div_p1)
         }
         
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("image");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            x[slideIndex-1].style.display = "block";  
+        }
+
     </script>
 
     <!-- <script>

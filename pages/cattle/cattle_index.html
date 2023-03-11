@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>Cattles</title>
 
-    <script src = "assets/js/toggle_button.js" defer></script>
+    <!-- <script src = "../../assets/js/toggle_button.js" defer></script> -->
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/normalize.css">
+    <!-- <link rel="stylesheet" href="../../assets/css/normalize.css"> -->
     <link rel="stylesheet" href="../../assets/css/cattles/cattles.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
     <script src = "../../assets/js/main.js"></script>
@@ -59,23 +59,23 @@
             </div>
             <div class="chl1">
                 <div class="chln">
-                    <div class = "ispace"><a href = "cattle_list1.html"><img class="chi" src="../../assets/images/cattles/ch1.jpg" alt = "cow"></a></div>
-                    <p> COW </p></a>
+                    <div class = "ispace"><img class="chi" src="../../assets/images/cattles/ch1.jpg" alt = "cow" id = "Cow"></div>
+                    <p> COW </p>
                 </div>
                 <div class="chln">
-                    <div class = "ispace"><a href = "cattle_list2.html"><img class="chi" src="../../assets/images/cattles/ch2.jpg" alt = "buffalo"></a></div>
+                    <div class = "ispace"><img class="chi" src="../../assets/images/cattles/ch2.jpg" alt = "buffalo" id = "Buffalo"></div>
                     <p> BUFFALO </p>
                 </div>
                 <div class="chln">
-                    <div class = "ispace"><a href = "cattle_list3.html"><img class="chi" src="../../assets/images/cattles/ch3.jpg" alt = "goat"></a></div>
+                    <div class = "ispace"><img class="chi" src="../../assets/images/cattles/ch3.jpg" alt = "goat" id = "Goat"></div>
                     <p> GOAT </p>
                 </div>
                 <div class="chln">
-                    <div class = "ispace"><a href = "cattle_list4.html"><img class="chi" src="../../assets/images/cattles/ch4.jpg" alt = "sheep"></a></div>
+                    <div class = "ispace"><img class="chi" src="../../assets/images/cattles/ch4.jpg" alt = "sheep" id = "Sheep"></div>
                     <p> SHEEP </p>
                 </div>
                 <div class="chln">
-                    <div class = "ispace"><a href = "cattle_list5.html"><img class="chi" src="../../assets/images/cattles/ch5.jpg" alt = "ox"></a></div>
+                    <div class = "ispace"><img class="chi" src="../../assets/images/cattles/ch5.jpg" alt = "ox"  id = "Ox"></div>
                     <p> OX </p>
                 </div>
             </div>
@@ -366,6 +366,19 @@
         }
 
     </script>-->
+
+    <script>
+
+        const category = document.querySelectorAll('.chi');
+        category.forEach(each => {  
+            each.addEventListener('click', (event) => {
+                const id = each.id;
+                
+                window.location.href = `./cattle_list1.html?cattle_details=${id}`;
+            });
+        });
+
+    </script>
 
 </body>
 
