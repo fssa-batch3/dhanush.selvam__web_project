@@ -2,6 +2,7 @@ body {
     background-color: #e8f5ec;
     font-family: 'PT Serif', serif;    
     width: fit-content;
+    position: static;
 }
 
 main {

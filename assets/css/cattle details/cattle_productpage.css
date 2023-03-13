@@ -28,7 +28,7 @@ button{
     border-radius: 5px;
 }
 
-div.bspace1 >a >button:hover{
+div.bspace1 >button:hover{
     background-color: white;
     color: #00a651;
 }
@@ -212,12 +212,9 @@ button#chat:hover{
 }
 
 .image{
-    display: none;
-    width: 43%;
-    height: 30rem;
-    /* width: 50%;
-    height: 38rem; */
     display: block;
+    width: 43%;
+    height: 30rem; 
     margin: auto;
 }
 

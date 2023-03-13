@@ -110,7 +110,7 @@
 
         <div class="ho7">
             <hr class = "hr1">
-            <h1 class="ho6"> More Cows </h1>
+            <div class = "ho6"><h1> <!-- More Cows --> </h1></div>
             <div class = "cattles_container">
                 <!-- <div class="p1">
                     <div class = "img_container">
@@ -211,6 +211,7 @@
         //     }
 
         const urlParams = new URLSearchParams(window.location.search);
+        const cattle_category = urlParams.get('cattle');
         const cattle_id = urlParams.get('cattle_id')
         const user_id = urlParams.get('user_id');
 
@@ -229,7 +230,7 @@
         if (cattle[0]["image1"]!=""){
             cattle_image1 = document.createElement("img");
             cattle_image1.setAttribute("src",cattle[0]["image1"]);
-            cattle_image1.setAttribute("alt","poster");
+            cattle_image1.setAttribute("alt",cattle[0]["breed"] + " " + cattle[0]["cattle"]);
             cattle_image1.setAttribute("class","image");
             document.querySelector("div.ibg").append(cattle_image1);    
         }
@@ -250,15 +251,15 @@
         lactation.innerText = cattle[0]["lactation"];
 
         weight = document.querySelector("p.color2");
-        weight.innerText = cattle[0]["weight"] + "Kg";
+        weight.innerText = cattle[0]["weight"] + " Kg";
 
         description = document.querySelector("p#p3");
         description.innerText = cattle[0]["description"];
 
         price = document.querySelector("h1.cash");
-        price.innerText = "₹ " + cattle[0]["price"]; 
+        price.innerText = "Rs." + cattle[0]["price"]; 
 
-        // seller details
+        // ₹ seller details
 
         seller_name = document.querySelector("h2.sellername");
         seller_name.innerText = user["name"];
@@ -270,47 +271,56 @@
         phone_no.innerText = user["phone_no"];
         
         address = document.querySelector("p.address");
-        address.innerText = user["address_line1"] + "," + user["address_line2"] + "," + user["pincode"];
+        address.innerText = user["address_line1"] + ", " + user["address_line2"] + ", " + user["pincode"] + ".";
 
-        let div_p1;
-        let div_img_container
-        let cat_image;
-        let div_bspace1;
-        let p_name;
-        let p_age; 
-        let p_gender;
+        // let div_p1;
+        // let div_img_container
+        // let cat_image;
+        // let div_bspace1;
+        // let p_name;
+        // let p_age; 
+        // let p_gender;
 
-        const cattle_card = [
-            {
-                "name": "HF Cow H165",
-                "image":{
-                    "source": "../../../assets/images/cattles/c2.jpg",
-                    "alt": "HF Cow",
-                },
-                "age": 2,
-                "gender": "Female"
-            },
-            {
-                "name": "Kankrej Cow K006",
-                "image":{
-                    "source": "../../../assets/images/cattles/c3.jpg",
-                    "alt": "Kankrej Cow",
-                },
-                "age": 1,
-                "gender": "Female"
-            },
-            {
-                "name": "Tharparkar Cow T035",
-                "image":{
-                    "source": "../../../assets/images/cattles/c4.jpg",
-                    "alt": "Tharparkar Cow",
-                },
-                "age": 3,
-                "gender": "Female"
-            },
-        ]
+        // const cattle_card = [
+        //     {
+        //         "name": "HF Cow H165",
+        //         "image":{
+        //             "source": "../../../assets/images/cattles/c2.jpg",
+        //             "alt": "HF Cow",
+        //         },
+        //         "age": 2,
+        //         "gender": "Female"
+        //     },
+        //     {
+        //         "name": "Kankrej Cow K006",
+        //         "image":{
+        //             "source": "../../../assets/images/cattles/c3.jpg",
+        //             "alt": "Kankrej Cow",
+        //         },
+        //         "age": 1,
+        //         "gender": "Female"
+        //     },
+        //     {
+        //         "name": "Tharparkar Cow T035",
+        //         "image":{
+        //             "source": "../../../assets/images/cattles/c4.jpg",
+        //             "alt": "Tharparkar Cow",
+        //         },
+        //         "age": 3,
+        //         "gender": "Female"
+        //     },
+        // ]
 
-        for(i=0; i<cattle_card.length; i++){
+        let category = JSON.parse(localStorage.getItem("cattle_details"));
+        let category_id = category.filter(e => e.cattle == cattle_category);
+        console.log(category_id)
+
+        // heading 
+        head = document.createElement("h1");
+        head.innerText = "More "  + cattle_category + "s";
+        document.querySelector("div.ho6").append(head);
+
+        for(let i=0; i<category_id.length; i++){
 
             // cattle container
             div_p1 = document.createElement("div");
@@ -321,10 +331,16 @@
             div_img_container.setAttribute("class","img_container");
             div_p1.append(div_img_container)
 
+            // a 
+
+            // cattle_imageContainer=document.createElement("a")
+            // cattle_imageContainer.setAttribute("href","../cattle details/cow/C1.html?cattle=" + category_id[i]["cattle"] + "&cattle_id=" + category_id[i]["cattle_uniqueId"] + "&user_id=" + category_id[i]["userId"]);
+            // div_img_container.append(cattle_imageContainer)
+
             // cattle image
             cat_image = document.createElement("img");
-            cat_image.setAttribute("src",cattle_card[i]["image"]["source"]);
-            cat_image.setAttribute("alt",cattle_card[i]["image"]["alt"]);
+            cat_image.setAttribute("src",category_id[i]["image"]);
+            cat_image.setAttribute("alt",category_id[i]["breed"] + " " + category_id[i]["cattle"]);
             cat_image.setAttribute("class","i1");
             div_img_container.append(cat_image)
 
@@ -336,17 +352,17 @@
             // cattle info
             p_name = document.createElement("p");
             p_name.setAttribute("class","p2 pname");
-            p_name.innerText = cattle_card[i]["name"];
+            p_name.innerText = category_id[i]["breed"] + " " + category_id[i]["cattle"] + " " + category_id[i]["id"];
             div_bspace1.append(p_name)
 
             p_age = document.createElement("p");
             p_age.setAttribute("class","p2");
-            p_age.innerText = "Age: " + cattle_card[i]["age"] + " Year(s)";
+            p_age.innerText = "Age: " + category_id[i]["age"] + " Year(s)";
             div_bspace1.append(p_age)
 
             p_gender = document.createElement("p");
             p_gender.setAttribute("class","p2");
-            p_gender.innerText = "Gender: " + cattle_card[i]["gender"];
+            p_gender.innerText = "Gender: " + category_id[i]["gender"];
             div_bspace1.append(p_gender)
 
             button_know = document.createElement("button");
@@ -356,7 +372,7 @@
             document.querySelector("div.cattles_container").append(div_p1)
         }
         
-        var slideIndex = 1;
+        let slideIndex = 1;
         showDivs(slideIndex);
 
         function plusDivs(n) {
@@ -364,8 +380,8 @@
         }
 
         function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("image");
+            let i;
+            let x = document.getElementsByClassName("image");
             if (n > x.length) {slideIndex = 1}
             if (n < 1) {slideIndex = x.length}
             for (i = 0; i < x.length; i++) {

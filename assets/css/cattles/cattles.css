@@ -13,22 +13,23 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 30px 100px;
+    margin: 30px 100px 15px 100px;
     align-items: center;
 }
 
 .chi{
     width: 100px;
     border-radius: 50px;
+    cursor: pointer;
+}
+
+#img_title{
+    line-height: 10px;
 }
 
 .chln:hover{
     color: #00a651;
 }
-
-/* .chi:hover{
-    transform: scale(1.1);
-} */
 
 .ispace{
     padding: 15px 10px 0px 15px;
@@ -109,7 +110,6 @@ div.p1 >div.bspace >a >button:hover {
     width: 100%;
     height: 50vh;
     background-image:url("../../images/cattles/ho4.jpg");
-    margin: 30px 0px;
     background-size: cover;
     background-position: center;
     display: flex;

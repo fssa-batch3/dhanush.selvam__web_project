@@ -13,6 +13,30 @@ header{
     z-index: 1;
 }
 
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+    display: none;
+}
+
+.goog-te-gadget .goog-te-combo {
+    margin: 0 !important;
+    margin-top: 12px !important;
+    padding: 8px;
+    border: 2px solid #00a651;
+    font-family: 'Poppins';
+    background: white;
+    border-radius: 10px;
+    width: 150px;
+    font-size: 12pt;
+}
+
+.goog-te-gadget{
+    color: transparent !important;
+}
+
+#google_translate_element{
+    margin-left: 30px;
+}
+
 .logo{
     width: 70px;
 }
