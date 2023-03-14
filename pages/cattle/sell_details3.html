@@ -142,7 +142,7 @@
             e.preventDefault();
 
             const urlParams = new URLSearchParams(window.location.search);
-
+            
             let cattle = urlParams.get("cattle");
                 breed = urlParams.get("breed");
                 age = document.getElementById("age").value;
@@ -155,16 +155,21 @@
                 image = document.getElementById("image").value;
                 image1 = document.getElementById("image1").value;
                 cattle_uniqueId = uuidv4();
-                id = cattle[0] + breed[0];
                 user_id = JSON.parse(localStorage.getItem("phone_no_id"));
                 userId = user_id;
                 
-            let cattle_details = JSON.parse(localStorage.getItem('cattle_details')) || [];     
+            let cattle_details = JSON.parse(localStorage.getItem('cattle_details')) || [];
+
+            let stock = cattle_details.filter(e => e.breed == breed).length.toString().padStart(3, '0');
+            let stock_no = parseInt(stock) + 1;
+
+                id = cattle[0] + breed[0] + stock_no;
 
             cattle_details.push({cattle, breed, age, gender, weight, milk, price, lactation, description, image, id, cattle_uniqueId, userId, image1});
             localStorage.setItem('cattle_details', JSON.stringify(cattle_details));
             location.href = "./seller_cattlelist.html";
             document.querySelector('form').reset();
+
         }
 
     </script>
@@ -177,7 +182,9 @@
 
 <!-- 
 https://iili.io/HWccpp9.jpg
-https://iili.io/HWclJLb.jpg 
+https://iili.io/HWclJLb.jpg
+https://iili.io/HXVHMgV.jpg 
+https://iili.io/HXVHjmF.jpg
 https://iili.io/HWcc6In.jpg
 https://iili.io/HW8a8Q9.jpg
 https://iili.io/HW8MJvs.jpg 

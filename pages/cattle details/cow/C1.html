@@ -109,7 +109,6 @@
         </div>
 
         <div class="ho7">
-            <hr class = "hr1">
             <div class = "ho6"><h1> <!-- More Cows --> </h1></div>
             <div class = "cattles_container">
                 <!-- <div class="p1">
@@ -175,43 +174,8 @@
 
     <script>
 
-        // let cattle_image;
-        // let cattle_name;
-        // let cattle_age;
-        // let cattle_gender;
-        // let milk; 
-        // let lactation; 
-        // let weight;
-        // let description;
-        // let price;
-        // let seller_name;
-        // let uploaded_date;
-        // let phone_no;
-        // let address;
-
-        // const cattle_detail = 
-        //     {
-        //         "image": {
-        //             "source": "../../../assets/images/cattles/c1.jpg",
-        //             "alt": "Gir cow",
-        //         },
-        //         "name": "Gir Cow" ,
-        //         "id": "G018",
-        //         "age": 4,
-        //         "gender": "Female",
-        //         "milk_per_day": 12,
-        //         "lactation": 2,
-        //         "weight": 400,
-        //         "desc": "Quality Gir Cow of 4 year(s) age is available in Chennai, Tamil Nadu. The price of the cattle is Rs. 70000/-. The Cow is in 2nd lactation. It Produces 12 Litres of milk on daily basis.",
-        //         "price": 70000,
-        //         "seller_name": "Inba Lokesh",
-        //         "posted_date": "15/11/2022",
-        //         "phone_no": 1234567890,
-        //         "address": "No.727, RK Road, Kannatur, Chennai, Tamil Nadu."
-        //     }
-
         const urlParams = new URLSearchParams(window.location.search);
-        const cattle_category = urlParams.get('cattle');
+        const breed_category = urlParams.get('breed');
         const cattle_id = urlParams.get('cattle_id')
         const user_id = urlParams.get('user_id');
 
@@ -273,54 +237,36 @@
         address = document.querySelector("p.address");
         address.innerText = user["address_line1"] + ", " + user["address_line2"] + ", " + user["pincode"] + ".";
 
-        // let div_p1;
-        // let div_img_container
-        // let cat_image;
-        // let div_bspace1;
-        // let p_name;
-        // let p_age; 
-        // let p_gender;
-
-        // const cattle_card = [
-        //     {
-        //         "name": "HF Cow H165",
-        //         "image":{
-        //             "source": "../../../assets/images/cattles/c2.jpg",
-        //             "alt": "HF Cow",
-        //         },
-        //         "age": 2,
-        //         "gender": "Female"
-        //     },
-        //     {
-        //         "name": "Kankrej Cow K006",
-        //         "image":{
-        //             "source": "../../../assets/images/cattles/c3.jpg",
-        //             "alt": "Kankrej Cow",
-        //         },
-        //         "age": 1,
-        //         "gender": "Female"
-        //     },
-        //     {
-        //         "name": "Tharparkar Cow T035",
-        //         "image":{
-        //             "source": "../../../assets/images/cattles/c4.jpg",
-        //             "alt": "Tharparkar Cow",
-        //         },
-        //         "age": 3,
-        //         "gender": "Female"
-        //     },
-        // ]
-
         let category = JSON.parse(localStorage.getItem("cattle_details"));
-        let category_id = category.filter(e => e.cattle == cattle_category);
-        console.log(category_id)
+        let category_id = category.filter(e => e.breed == breed_category);
+        
+        let index = category_id.find(e => e.cattle_uniqueId == cattle_id);
+        let index_no = category_id.indexOf(index);
+
+        let array = category_id.splice(0,index_no);  
+        
+        let new_array = category_id.concat(array);
+
+
+        if (breed_category == null){
+            document.getElementById("head").style.display = "none";
+            document.getElementById("hr1").style.display = "none";
+            // document.getElementsByClassName("ho7").style.display = "none";
+        }
 
         // heading 
+
+        line = document.createElement("hr");
+        line.setAttribute("id","hr1");
+        document.querySelector("div.ho6").append(line);
+
         head = document.createElement("h1");
-        head.innerText = "More "  + cattle_category + "s";
+        head.innerText = "More "  + breed_category;
+        head.setAttribute("id","head")
+        
         document.querySelector("div.ho6").append(head);
 
-        for(let i=0; i<category_id.length; i++){
+        for(let i = 1; i <= 3; i++){
 
             // cattle container
             div_p1 = document.createElement("div");
@@ -331,7 +277,7 @@
             div_img_container.setAttribute("class","img_container");
             div_p1.append(div_img_container)
 
-            // a 
+            // // a 
 
             // cattle_imageContainer=document.createElement("a")
             // cattle_imageContainer.setAttribute("href","../cattle details/cow/C1.html?cattle=" + category_id[i]["cattle"] + "&cattle_id=" + category_id[i]["cattle_uniqueId"] + "&user_id=" + category_id[i]["userId"]);
@@ -339,8 +285,8 @@
 
             // cattle image
             cat_image = document.createElement("img");
-            cat_image.setAttribute("src",category_id[i]["image"]);
-            cat_image.setAttribute("alt",category_id[i]["breed"] + " " + category_id[i]["cattle"]);
+            cat_image.setAttribute("src",new_array[i]["image"]);
+            cat_image.setAttribute("alt",new_array[i]["breed"] + " " + new_array[i]["cattle"]);
             cat_image.setAttribute("class","i1");
             div_img_container.append(cat_image)
 
@@ -352,17 +298,17 @@
             // cattle info
             p_name = document.createElement("p");
             p_name.setAttribute("class","p2 pname");
-            p_name.innerText = category_id[i]["breed"] + " " + category_id[i]["cattle"] + " " + category_id[i]["id"];
+            p_name.innerText = new_array[i]["breed"] + " " + new_array[i]["cattle"] + " " + new_array[i]["id"];
             div_bspace1.append(p_name)
 
             p_age = document.createElement("p");
             p_age.setAttribute("class","p2");
-            p_age.innerText = "Age: " + category_id[i]["age"] + " Year(s)";
+            p_age.innerText = "Age: " + new_array[i]["age"] + " Year(s)";
             div_bspace1.append(p_age)
 
             p_gender = document.createElement("p");
             p_gender.setAttribute("class","p2");
-            p_gender.innerText = "Gender: " + category_id[i]["gender"];
+            p_gender.innerText = "Gender: " + new_array[i]["gender"];
             div_bspace1.append(p_gender)
 
             button_know = document.createElement("button");
@@ -370,7 +316,7 @@
             div_bspace1.append(button_know)
 
             document.querySelector("div.cattles_container").append(div_p1)
-        }
+        }            
         
         let slideIndex = 1;
         showDivs(slideIndex);
@@ -389,64 +335,8 @@
             }
             x[slideIndex-1].style.display = "block";  
         }
-        console.log("Hello")
+        
     </script>
-
-    <!-- <script>
-
-        let cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
-
-        for(i=0; i<cattle_details.length; i++){
-
-            // cattle image
-            cattle_image = document.createElement("img");
-            cattle_image.setAttribute("src",cattle_details[i]["image"]);
-            cattle_image.setAttribute("alt",cattle_details[i]["breed"] + " " + cattle_details[i]["cattle"]);
-            cattle_image.setAttribute("class","image");
-            document.querySelector("div.ibg").append(cattle_image)
-
-            // cattle details
-
-            cattle_name = document.querySelector("h1.name");
-            cattle_name.innerText = cattle_details[i]["breed"] + " " + cattle_details[i]["cattle"];
-
-            cattle_age = document.querySelector("p.gf");
-            cattle_age.innerText = cattle_details[i]["age"] + " Years";
-
-            cattle_gender = document.querySelector("p.gf1");
-            cattle_gender.innerText = cattle_details[i]["gender"];
-
-            milk = document.querySelector("p.color");
-            milk.innerText = cattle_details[i]["milk"] + " litres";
-
-            lactation = document.querySelector("p.color1");
-            lactation.innerText = cattle_details[i]["lactation"];
-
-            weight = document.querySelector("p.color2");
-            weight.innerText = cattle_details[i]["weight"] + " Kg";
-
-            description = document.querySelector("p#p3");
-            description.innerText = cattle_details[i]["description"];
-
-            price = document.querySelector("h1.cash");
-            price.innerText = "₹ " + cattle_details[i]["price"]; 
-
-            // seller details
-
-            // seller_name = document.querySelector("h2.sellername");
-            // seller_name.innerText = cattle_detail["seller_name"];
-
-            // uploaded_date = document.querySelector("h4.posted_date");
-            // uploaded_date.innerText = "Posted On: " + cattle_detail["posted_date"];
-
-            // phone_no = document.querySelector("p.phone_no");
-            // phone_no.innerText = cattle_detail["phone_no"];
-            
-            // address = document.querySelector("p.address");
-            // address.innerText = cattle_detail["address"];
-        }
-
-    </script> -->
     
 </body>
 

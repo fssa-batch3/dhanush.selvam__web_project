@@ -121,7 +121,7 @@ hr{
     margin-top: -10px;
 }
 
-.hr1{
+#hr1{
     margin: 30px 0px;
 }
 
@@ -416,7 +416,7 @@ span{
         margin-right: 3px;
     }
 
-    .hr1{
+    #hr1{
         margin: 30px 35px;
     }
 
