@@ -5,3 +5,5 @@ function googleTranslateElementInit(){
         'google_translate_element'
     );
 }
+
+// <div id = "google_translate_element"></div>

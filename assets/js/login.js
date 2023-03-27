@@ -7,8 +7,7 @@ function signUp(e) {
         user_uniqueId = uuidv4();
         password = document.getElementById("password").value;
         confirm_password = document.getElementById("confirm_password").value;
-        address_line1 = "";
-        address_line2 = "";
+        address = "";
         pincode = "";
 
 
@@ -19,7 +18,7 @@ function signUp(e) {
 
     if (!exist) {
         if(password == confirm_password){ 
-            userData.push({ name, phone_no, password, confirm_password, address_line1, address_line2, pincode, user_uniqueId });
+            userData.push({ name, phone_no, password, confirm_password, address, pincode, user_uniqueId });
             localStorage.setItem('userData', JSON.stringify(userData));
             document.querySelector('form').reset();
             document.getElementById('phone_no').focus();
@@ -45,8 +44,7 @@ function signIn(e) {
     let userData = JSON.parse(localStorage.getItem('userData')) || [];
 
     let exist = JSON.parse(localStorage.getItem('userData')).some(data =>
-            data.phone_no.toLowerCase() == phone_no.toLowerCase() &&
-            data.password == password);
+            data.phone_no == phone_no && data.password == password);
 
     if (!exist) {
         alert("Incorrect login credentials");

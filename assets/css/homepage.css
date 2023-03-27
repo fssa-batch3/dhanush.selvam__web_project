@@ -131,6 +131,16 @@ hr{
     color:#00a651;
 }
 
+/* .poster_container{
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 10%;
+}
+
+.poster{
+    width: 48%;
+} */
+
 @keyframes running_cow {
     0% {
         left: calc(0% - 100px);

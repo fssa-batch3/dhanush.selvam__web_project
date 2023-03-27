@@ -17,35 +17,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo1.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
-        </div>
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <ul class = "navbar">
-                <li><a href="cattle_index.html">Cattles</a></li>
-                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="../about.html">About Us</a></li>
-                <li class = "logbutton"><a href="./sell_details1.html"><button class = "sell"> SELL </button></a></li>
-                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
-            </ul>
-        </div> 
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
-        <div class = "link_container">
-            <ul class="navbar">
-                <li><a href="cattle_index.html">Cattles</a></li>
-                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="../about.html">About Us</a></li>
-            </ul>
-        </div>
-        <div class = "navbar butcot" id = "sellpro">
-            <div class = "butspace"><a href = "./sell_details1.html"> <button class = "sell"> SELL </button> </a></div>
-            <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
-        </div>
-    </header>
-
+    
     <main>
         <div class = "d0">  
             <div><button onclick="window.history.back()"> BACK </button></a></div>
@@ -94,7 +66,7 @@
                     <label> Description </label><br>
                     <textarea id = "description"></textarea>
                 </div>
-                <div class = "r3">
+                <div class = "r1">
                     <div>
                         <label> Upload Photo: </label><br>
                         <input required type = "url" id = "image">
@@ -103,9 +75,9 @@
                         <label> Upload Photo: </label><br>
                         <input type = "url" id = "image1">
                     </div>  
-                    <div>
+                    <div class = "weight">
                         <label> Upload Video: </label><br>
-                        <input type = "file" multiple>
+                        <input type = "url" multiple>
                     </div>  
                 </div>
                 <div class="bspace"><button class = "btn0" type = "submit"> SUBMIT </button></div>
@@ -136,6 +108,8 @@
         </div>
     </footer>
 
+    <script src="../../assets/js/header.js"></script>
+
     <script>
 
         function getValue(e) {
@@ -157,6 +131,8 @@
                 cattle_uniqueId = uuidv4();
                 user_id = JSON.parse(localStorage.getItem("phone_no_id"));
                 userId = user_id;
+                date = new Date();
+                console.log(date);
                 
             let cattle_details = JSON.parse(localStorage.getItem('cattle_details')) || [];
 
@@ -165,7 +141,7 @@
 
                 id = cattle[0] + breed[0] + stock_no;
 
-            cattle_details.push({cattle, breed, age, gender, weight, milk, price, lactation, description, image, id, cattle_uniqueId, userId, image1});
+            cattle_details.push({cattle, breed, age, gender, weight, milk, price, lactation, description, image, id, cattle_uniqueId, userId, image1, date});
             localStorage.setItem('cattle_details', JSON.stringify(cattle_details));
             location.href = "./seller_cattlelist.html";
             document.querySelector('form').reset();
@@ -179,14 +155,3 @@
 </body>
 
 </html>
-
-<!-- 
-https://iili.io/HWccpp9.jpg
-https://iili.io/HWclJLb.jpg
-https://iili.io/HXVHMgV.jpg 
-https://iili.io/HXVHjmF.jpg
-https://iili.io/HWcc6In.jpg
-https://iili.io/HW8a8Q9.jpg
-https://iili.io/HW8MJvs.jpg 
-https://iili.io/HX7wu7S.jpg
--->

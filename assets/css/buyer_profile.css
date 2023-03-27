@@ -45,7 +45,7 @@ form{
 }
 
 .prologo{
-    width: 55%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -74,9 +74,15 @@ h2 >a:hover{
     padding: 15px;
 }
 
+.divs1{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
 .head{
     margin-top: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 50px;
     color: #00a387;
     text-align: center;
@@ -99,15 +105,28 @@ label{
 }
 
 input{
-    margin-top: 10px;
-    width: 60%;
-    margin-left: 30px;
+    width: 90%;
     padding-left: 10px;
     height: 40px;   
     font-size: 22px;
     /* border: none;
     border-bottom: 1px solid gray; */
     outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.lab_input{
+    width: 33%;
+    margin-left: 10px;
+}
+
+.lab_input1{
+    width: 67%;
+}
+
+.lab_input2{
+    width: 5%;
 }
 
 select{
@@ -122,7 +141,6 @@ select{
 .sub{
     display: flex;
     justify-content: center;
-    margin-bottom: -10px;
 }
 
 button{
@@ -139,6 +157,10 @@ button{
     background-color: white;
     border: 2px solid #00a651;
     color: #00a651;
+}
+
+#save{
+    border: 2px solid #00a651;
 }
 
 .btn1:hover{
@@ -188,6 +210,17 @@ p{
 
 .fa-trash{
     cursor: pointer;
+}
+
+#address{
+    height: 90px;
+    width: 335px;
+    resize: none;
+    font-size: 20px;
+    line-height: normal;
+    outline: none;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 @media screen and (max-width: 480px) {
@@ -255,5 +288,28 @@ p{
 
     .hello{
         padding: 20px 0px;
+    }
+
+    .divs1{
+        display: block;
+        margin: 0;
+    }
+
+    .lab_input{
+        margin-left: 0px;
+        width: 0;
+    }
+
+    .lab_input2{
+        display: none;
+    }
+
+    .lab_input1{
+        width: 93%;
+        margin-top: 8px;
+    }
+
+    #address{
+        width: 275px;
     }
 }

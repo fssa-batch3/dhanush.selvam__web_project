@@ -30,7 +30,7 @@ button{
 .bspace{
     display: flex;
     justify-content: flex-end;
-    width: 73%;
+    width: 70%;
 }
 
 .h11{
@@ -130,12 +130,12 @@ textarea:focus{
     padding-bottom: 20px;
 }
 
-.r3{
+/* .r3{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 71%;
-}
+} */
 
 /* Cattle Edit page */
 
@@ -221,9 +221,7 @@ textarea:focus{
     }
 
     .bspace{
-        width: 100%;
-        justify-content: center;
-        margin-top: 30px;
+        width: 78%;
     }
 
     textarea{

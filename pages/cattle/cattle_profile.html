@@ -17,35 +17,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo1.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
-        </div>
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <ul class = "navbar">
-                <li><a href="cattle_index.html">Cattles</a></li>
-                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="../about.html">About Us</a></li>
-                <li class = "logbutton"><a href="./sell_details1.html"><button class = "sell"> SELL </button></a></li>
-                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
-            </ul>
-        </div> 
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
-        <div class = "link_container">
-            <ul class="navbar">
-                <li><a href="cattle_index.html">Cattles</a></li>
-                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="../about.html">About Us</a></li>
-            </ul>
-        </div>
-        <div class = "navbar butcot" id = "sellpro">
-            <div class = "butspace"><a href = "./sell_details1.html"> <button class = "sell"> SELL </button> </a></div>
-            <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
-        </div>
-    </header>
-
+    
     <main>
         <div class = "d0">  
             <div><button onclick="window.history.back()"> BACK </button></a></div>
@@ -88,14 +60,18 @@
                 <label> Description </label><br>
                 <textarea id = "description"></textarea>
             </div>
-            <div class = "r3" id = "r31">
+            <div class = "r1">
                 <div>
 				    <label> Add or Remove Photo: </label><br>
 				    <input type = "url" multiple id = "image">
-                </div>  
+                </div> 
                 <div>
+				    <label> Add or Remove Photo: </label><br>
+				    <input type = "url" multiple id = "image1">
+                </div>  
+                <div class = "weight">
 				    <label> Add or Remove Video: </label><br>
-				    <input type = "file" multiple>
+				    <input type = "url" multiple>
                 </div>  
 			</div>
             <div class = "sub">
@@ -129,6 +105,8 @@
         </div>
     </footer>
 
+    <script src="../../assets/js/header.js"></script>
+
     <script>
 
         // Edit page
@@ -150,22 +128,27 @@
         document.getElementById("lactation").value = cattle_data["lactation"];
         document.getElementById("description").value = cattle_data["description"];
         document.getElementById("image").value = cattle_data["image"];
+        document.getElementById("image1").value = cattle_data["image1"];
 
         // Update function
 
         function updateDetails() {
 
-            cattle_data["age"] = document.getElementById("age").value;
-            cattle_data["gender"] = document.getElementById("gender").value;
-            cattle_data["weight"] = document.getElementById("weight").value;
-            cattle_data["milk"] = document.getElementById("milk").value;
-            cattle_data["price"] = document.getElementById("price").value;
-            cattle_data["lactation"] = document.getElementById("lactation").value;
-            cattle_data["description"] = document.getElementById("description").value;
-            cattle_data["image"] = document.getElementById("image").value;
+            if (confirm("Are you sure you want to save the details")) {
+                cattle_data["age"] = document.getElementById("age").value;
+                cattle_data["gender"] = document.getElementById("gender").value;
+                cattle_data["weight"] = document.getElementById("weight").value;
+                cattle_data["milk"] = document.getElementById("milk").value;
+                cattle_data["price"] = document.getElementById("price").value;
+                cattle_data["lactation"] = document.getElementById("lactation").value;
+                cattle_data["description"] = document.getElementById("description").value;
+                cattle_data["image"] = document.getElementById("image").value;
+                cattle_data["image1"] = document.getElementById("image1").value;
 
-            localStorage.setItem("cattle_details",JSON.stringify(cattle));
-        
+                localStorage.setItem("cattle_details",JSON.stringify(cattle));
+                window.location.href = "./seller_cattlelist.html";
+            }
+
         }
 
         document.getElementById("save").addEventListener("click",updateDetails);

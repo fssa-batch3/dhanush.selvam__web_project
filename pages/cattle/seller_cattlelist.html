@@ -17,34 +17,6 @@
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo1.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
-        </div>
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <ul class = "navbar">
-                <li><a href="cattle_index.html">Cattles</a></li>
-                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="../about.html">About Us</a></li>
-                <li class = "logbutton"><a href="./sell_details1.html"><button class = "sell"> SELL </button></a></li>
-                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
-            </ul>
-        </div> 
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
-        <div class = "link_container">
-            <ul class="navbar">
-                <li><a href="cattle_index.html">Cattles</a></li>
-                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="../about.html">About Us</a></li>
-            </ul>
-        </div>
-        <div class = "navbar butcot" id = "sellpro">
-            <div class = "butspace"><a href = "./sell_details1.html"> <button class = "sell"> SELL </button> </a></div>
-            <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
-        </div>
-    </header>
 
     <main>
         <div class="ho7">
@@ -52,48 +24,7 @@
             <div class = "titbut"><button class = "btn" onclick="window.history.back()"> BACK </button></div>
             <div class="ho6"><h1 class = "title_color"> Cattle List </h1></div>
            
-            <div class = "cattles_container">
-                <!-- <div class="p12">
-                    <div class = "img_container">
-                        <a href = "../cattle details/cow/C1.html"><img class="i1" src="../../assets/images/cattles/c1.jpg" alt = "cow"></a>
-                    </div>
-                    <h2> Gir Cow G018 </h2>
-                    <div><a href = "cattle_profile.html"><button class = "edit_button"> Edit </button></a></div>     
-                </div>
-
-                <div class="p12">
-                    <div class = "img_container">
-                        <a href = "../cattle details/buffalo/B2.html"><img class="i1" src="../../assets/images/cattles/b2.jpg" alt = "buffalo"></a>
-                    </div>
-                    <h2> Nilli Ravi Buffalo N115 </h2>
-                    <div><a href = "cattle_profile.html"><button class = "edit_button"> Edit </button></a></div>
-                </div>
-
-                <div class="p12">
-                    <div class = "img_container">
-                        <a href = "../cattle details/goat/G2.html"><img class="i1" src="../../assets/images/cattles/g2.jpg" alt = "goat"></a>
-                    </div>
-                    <h2> Sirohi Goat S055 </h2>
-                    <div><a href = "cattle_profile.html"><button class = "edit_button"> Edit </button></a></div>
-                </div>
-
-                <div class="p12">
-                    <div class = "img_container">
-                        <a href = "../cattle details/sheep/S1.html"><img class="i1" src="../../assets/images/cattles/s1.jpg" alt = "sheep"></a>
-                    </div>
-                    <h2> Bannur Sheep B023 </h2>
-                    <a href = "cattle_profile.html"><button class = "edit_button"> Edit </button></a>
-                </div> -->
-                
-                <!-- <div class="p12">
-                    <div class = "img_container">
-                        <a href = "sell_details1.html"><img class = "new" src = "../../assets/images/new.png" alt = "add"></a>
-                    </div>
-                    <h2> Add new cattles </h2>
-                    <div><a href = "sell_details1.html"><button class = "edit_button"> Add </button></a></div>
-                </div> -->
-                
-            </div>
+            <div class = "cattles_container"> </div>
         </div>
     </main>
 
@@ -121,6 +52,8 @@
         </div>
     </footer>
 
+    <script src="../../assets/js/header.js"></script>
+    
     <script>
 
         let user_UniqueId = JSON.parse(localStorage.getItem("phone_no_id"))

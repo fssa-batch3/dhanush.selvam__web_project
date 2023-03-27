@@ -19,55 +19,22 @@
 
 <body>
 
-    <header>
-        <div class="navbar">
-            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo1.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
-        </div>
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <ul class = "navbar">
-                <li><a href="cattle_index.html">Cattles</a></li>
-                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="../about.html">About Us</a></li>
-                <li class = "logbutton"><a href="./sell_details1.html"><button class = "sell"> SELL </button></a></li>
-                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
-            </ul>
-        </div> 
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
-        <div class = "link_container">
-            <ul class="navbar">
-                <li><a href = "cattle_index.html">Cattles</a></li>
-                <!-- <li><a href = "../agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="../about.html">About Us</a></li>
-            </ul>
-        </div>
-        <div class = "navbar butcot" id = "sellpro">
-            <div class = "butspace"><a href = "./sell_details1.html"> <button class = "sell"> SELL </button> </a></div>
-            <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
-        </div>
-    </header>
-
     <main>
         <div class = "bg divs">
             <form class = "form1">
                 <h1 class = "head"> Profile </h1>
                 <div class = "order divs">
                     <div class = "divs">
-                        <label> Seller ID </label>
-                        <input value = "S001" readonly \>
-                    </div>
-                    <div class = "divs">
                         <label> Name </label>
-                        <input value = "Inba Lokesh" readonly required = "text"  \>
+                        <input required = "text" readonly>
                     </div>
                     <div class = "divs">
                         <label> Phone No. </label>
-                        <input  value = "1234567890" readonly required = "tel" maxlength = "10"\>
+                        <input required = "tel" maxlength = "10" readonly>
                     </div>
                     <div class = "divs">
                         <label> Address </label>
-                        <input value = "No.727, RK Road, Kannatur, Chennai, Tamil Nadu." readonly required = "text"\>
+                        <input required = "text" readonly>
                     </div>
                 </div>
             </form>
@@ -76,7 +43,7 @@
         <div class="ho7">
             <div class = "ho6cat"><h1> Other Cattles </h1></div>
             <div class = "cattles_container">
-                <div class="p1">
+                <!-- <div class="p1">
                     <div class = "img_container">
                         <a href = "../cattle details/buffalo/B2.html"><img class="i1" src="../../assets/images/cattles/b2.jpg" alt = "buffalo"></a>
                     </div>
@@ -110,7 +77,7 @@
                         <p> Gender: Male</p>
                         <a href = "../cattle details/sheep/S1.html"><button> Know More </button></a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>
@@ -138,6 +105,62 @@
             </div>
         </div>
     </footer>
+
+    <script src="../../assets/js/header.js"></script>
+
+    <script>
+
+        for(i=0; i<category_id.length; i++){
+
+            // cattle container
+            div_p1 = document.createElement("div");
+            div_p1.setAttribute("class","p1");
+
+            // image container
+            div_img_container = document.createElement("div");
+            div_img_container.setAttribute("class","img_container");
+            div_p1.append(div_img_container)
+
+            // a cattle=" + category_id[i]["cattle"] + "&
+
+            cattle_imageContainer=document.createElement("a")
+            cattle_imageContainer.setAttribute("href","../cattle details/cow/C1.html?breed=" + category_id[i]["breed"] + "&cattle_id=" + category_id[i]["cattle_uniqueId"] + "&user_id=" + category_id[i]["userId"]);
+            div_img_container.append(cattle_imageContainer)
+
+            // cattle image
+            cattle_image = document.createElement("img");
+            cattle_image.setAttribute("src",category_id[i]["image"]);
+            cattle_image.setAttribute("alt",category_id[i]["breed"] + " " + category_id[i]["cattle"]); 
+            cattle_image.setAttribute("class","i1");    
+            cattle_imageContainer.append(cattle_image)
+           
+            // cattle info container
+            div_bspace = document.createElement("div");
+            div_bspace.setAttribute("class","bspace");
+            div_p1.append(div_bspace)
+
+            // cattle info
+            p_name = document.createElement("p");
+            p_name.setAttribute("class","pname");
+            p_name.innerText = category_id[i]["breed"] + " " + category_id[i]["cattle"] + " " + category_id[i]["id"];
+            div_bspace.append(p_name)
+
+            p_age = document.createElement("p");
+            p_age.innerText = "Age: " + category_id[i]["age"] + " Year(s)";
+            div_bspace.append(p_age)
+
+            p_gender = document.createElement("p");
+            p_gender.innerText = "Gender: " + category_id[i]["gender"];
+            div_bspace.append(p_gender)
+
+            button_know = document.createElement("button");
+            button_know.innerText = "Know More";
+            div_bspace.append(button_know)
+
+            document.querySelector("div.cattles_container").append(div_p1)
+        }
+    
+    </script>
 
 </body>
 </html>
