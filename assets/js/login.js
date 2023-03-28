@@ -18,7 +18,7 @@ function signUp(e) {
 
     if (!exist) {
         if(password == confirm_password){ 
-            userData.push({ name, phone_no, password, confirm_password, address, pincode, user_uniqueId });
+            userData.push({ name, phone_no, password, address, pincode, user_uniqueId });
             localStorage.setItem('userData', JSON.stringify(userData));
             document.querySelector('form').reset();
             document.getElementById('phone_no').focus();

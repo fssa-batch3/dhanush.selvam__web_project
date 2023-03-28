@@ -364,8 +364,28 @@ const cattle_data = [{
 },]
 // --------------------------------------------
 
-let cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
+const user_data = [{
+    name: "Dhanush",
+    phone_no: "1111111111",
+    password: "123",
+    address: "No.03/25, Gandhi Street, Kamarajar Salai, Anna Nager, Chennai",
+    pincode: "600018",
+    user_uniqueId: "9e6c8ef1-d606-4d19-9c1c-96c50518d039",
+},
+{
+    name: "Ram",
+    phone_no: "2222222222",
+    password: "123",
+    address: "No.03/25, Raghavan Colony, MGR Salai, KK Nager, Chennai",
+    pincode: "600045",
+    user_uniqueId: "9e6c8ef1-d606-4d19-9c1c-96c50518d038",
+},
+]
 
-if(!cattle_details){
+let cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
+let userData = JSON.parse(localStorage.getItem("userData"));
+
+if(!cattle_details && !userData){
     localStorage.setItem("cattle_details",JSON.stringify(cattle_data));
+    localStorage.setItem("userData",JSON.stringify(user_data));
 }
