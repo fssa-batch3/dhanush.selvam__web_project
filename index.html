@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/homepage.css">
     <link rel="stylesheet" href="assets/css/header_footer.css">
     <script src="assets/js/main.js"></script>
+    <script src = "assets/js/index.js"></script>
     <link rel="icon" href="assets/images/cattles/logo1.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +30,7 @@
         <div class="ho7">
             <h1 class="ho6"> Our Best Cattles</h1>
             <div class="cattles_container">
-                <div class="p1">
+                <!-- <div class="p1">
                     <div class = "img_container">
                         <a href = "pages/cattle details/cow/C1.html"><img class="i1" src="assets/images/cattles/c1.jpg" alt = "cow"></a>      
                     </div>
@@ -53,8 +54,8 @@
                 </div>
                 <div class="p1">
                     <div class = "img_container">
-                    <a href = "pages/cattle details/buffalo/B1.html"><img class="i1" src="assets/images/cattles/b1.jpg" alt = "buffalo"></a>
-                </div>
+                        <a href = "pages/cattle details/buffalo/B1.html"><img class="i1" src="assets/images/cattles/b1.jpg" alt = "buffalo"></a>
+                    </div>
                     <div class = "bspace">
                         <p class = "pname"> Surti Buffalo S101 </p>
                         <p> Age: 6 Years</p>
@@ -64,8 +65,8 @@
                 </div>
                 <div class="p1">
                     <div class = "img_container">
-                    <a href = "pages/cattle details/goat/G1.html"><img class="i1" src="assets/images/cattles/g1.jpg" alt = "goat"></a>
-                </div>
+                        <a href = "pages/cattle details/goat/G1.html"><img class="i1" src="assets/images/cattles/g1.jpg" alt = "goat"></a>
+                    </div>
                     <div class = "bspace">
                         <p class = "pname"> Malabari Goat M080 </p>
                         <p> Age: 3 Years</p>
@@ -75,8 +76,8 @@
                 </div>
                 <div class="p1">
                     <div class = "img_container">
-                    <a href = "pages/cattle details/sheep/S1.html"><img class="i1" src="assets/images/cattles/s1.jpg" alt = "sheep"></a>
-                </div>
+                        <a href = "pages/cattle details/sheep/S1.html"><img class="i1" src="assets/images/cattles/s1.jpg" alt = "sheep"></a>
+                    </div>
                     <div class = "bspace">
                         <p class = "pname"> Bannur Sheep B023 </p>
                         <p> Age: 1 Year</p>
@@ -86,15 +87,15 @@
                 </div>
                 <div class="p1">
                     <div class = "img_container">
-                    <a href = "pages/cattle details/ox/O1.html"><img class="i1" src="assets/images/cattles/o1.jpg" alt = "ox"></a>   
-                </div>
+                        <a href = "pages/cattle details/ox/O1.html"><img class="i1" src="assets/images/cattles/o1.jpg" alt = "ox"></a>   
+                    </div>
                     <div class = "bspace">
                         <p class = "pname"> Ongole Ox O107 </p>
                         <p> Age: 4 Years</p>
                         <p> Gender: Male</p>
                         <a href = "pages/cattle details/ox/O1.html"><button> Know More </button></a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- <div class = "poster_container">
@@ -137,11 +138,11 @@
     <!-- <script src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src = "assets/js/languages.js"></script> -->
 
-    <!-- <script>
+    <script>
 
-        let best_cattle_list = JSON.parse(localStorage.getItem("cattle_details"));
+        let best_cattle_data = JSON.parse(localStorage.getItem("cattle_details"));
         
-        for (i = 0; i < best_cattle_list.length; i++) {
+        for (i = 0; i < 6.; i++) {
 
             // cattle container
             div_p1 = document.createElement("div");
@@ -155,13 +156,13 @@
             // a
 
             cattle_imageContainer = document.createElement("a")
-            cattle_imageContainer.setAttribute("href", "pages/cattle details/cow/C1.html?cattle_id=" + best_cattle_list[i]["cattle_uniqueId"] + "&user_id=" + best_cattle_list[i]["userId"]);
+            cattle_imageContainer.setAttribute("href", "pages/cattle details/cow/C1.html?cattle_id=" + best_cattle_data[i]["cattle_uniqueId"] + "&user_id=" + best_cattle_data[i]["userId"]);
             div_img_container.append(cattle_imageContainer)
 
             // cattle image
             cattle_image = document.createElement("img");
-            cattle_image.setAttribute("src", best_cattle_list[i]["image"]);
-            cattle_image.setAttribute("alt", best_cattle_list[i]["breed"] + " " + best_cattle_list[i]["cattle"]);
+            cattle_image.setAttribute("src", best_cattle_data[i]["image"]);
+            cattle_image.setAttribute("alt", best_cattle_data[i]["breed"] + " " + best_cattle_data[i]["cattle"]);
             cattle_image.setAttribute("class", "i1");
             cattle_imageContainer.append(cattle_image)
 
@@ -173,21 +174,21 @@
             // cattle info
             p_name = document.createElement("p");
             p_name.setAttribute("class", "pname");
-            p_name.innerText = best_cattle_list[i]["breed"] + " " + best_cattle_list[i]["cattle"] + " " + best_cattle_list[i]["id"];
+            p_name.innerText = best_cattle_data[i]["breed"] + " " + best_cattle_data[i]["cattle"] + " " + best_cattle_data[i]["id"];
             div_bspace.append(p_name)
 
             p_age = document.createElement("p");
-            p_age.innerText = "Age: " + best_cattle_list[i]["age"] + " Year(s)";
+            p_age.innerText = "Age: " + best_cattle_data[i]["age"] + " Year(s)";
             div_bspace.append(p_age)
 
             p_gender = document.createElement("p");
-            p_gender.innerText = "Gender: " + best_cattle_list[i]["gender"];
+            p_gender.innerText = "Gender: " + best_cattle_data[i]["gender"];
             div_bspace.append(p_gender)
 
             // a
 
             buttonContainer = document.createElement("a")
-            buttonContainer.setAttribute("href", "pages/cattle details/cow/C1.html?cattle_id=" + best_cattle_list[i]["cattle_uniqueId"] + "&user_id=" + best_cattle_list[i]["userId"]);
+            buttonContainer.setAttribute("href", "pages/cattle details/cow/C1.html?cattle_id=" + best_cattle_data[i]["cattle_uniqueId"] + "&user_id=" + best_cattle_data[i]["userId"]);
             div_bspace.append(buttonContainer)
 
             button_know = document.createElement("button");
@@ -197,7 +198,7 @@
             document.querySelector("div.cattles_container").append(div_p1)
         }    
 
-    </script> -->
+    </script>
 
 </body>
 

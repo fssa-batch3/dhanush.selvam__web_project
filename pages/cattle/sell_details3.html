@@ -71,14 +71,14 @@
                         <label> Upload Photo: </label><br>
                         <input required type = "url" id = "image">
                     </div>
-                    <div>
+                    <!-- <div>
                         <label> Upload Photo: </label><br>
                         <input type = "url" id = "image1">
                     </div>  
                     <div class = "weight">
                         <label> Upload Video: </label><br>
                         <input type = "url" multiple>
-                    </div>  
+                    </div>   -->
                 </div>
                 <div class="bspace"><button class = "btn0" type = "submit"> SUBMIT </button></div>
         </form>
@@ -127,11 +127,12 @@
                 lactation = document.getElementById("lactation").value; 
                 description = document.getElementById("description").value;
                 image = document.getElementById("image").value;
-                image1 = document.getElementById("image1").value;
+                // image1 = document.getElementById("image1").value;
                 cattle_uniqueId = uuidv4();
                 user_id = JSON.parse(localStorage.getItem("phone_no_id"));
                 userId = user_id;
-                date = new Date();
+                timestamp = new Date();
+                date = timestamp.toLocaleDateString(); 
                 console.log(date);
                 
             let cattle_details = JSON.parse(localStorage.getItem('cattle_details')) || [];
@@ -141,7 +142,7 @@
 
                 id = cattle[0] + breed[0] + stock_no;
 
-            cattle_details.push({cattle, breed, age, gender, weight, milk, price, lactation, description, image, id, cattle_uniqueId, userId, image1, date});
+            cattle_details.push({cattle, breed, age, gender, weight, milk, price, lactation, description, image, id, cattle_uniqueId, userId, date});
             localStorage.setItem('cattle_details', JSON.stringify(cattle_details));
             location.href = "./seller_cattlelist.html";
             document.querySelector('form').reset();

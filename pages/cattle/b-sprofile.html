@@ -12,37 +12,42 @@
     <link rel="stylesheet" href="../../assets/css/create_profile.css">
     <link rel="stylesheet" href="../../assets/css/cattles/cattlelist.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
-    <script src = "../../assets/js/main.js"></script>
+    <script src="../../assets/js/main.js"></script>
     <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
     <main>
-        <div class = "bg divs">
-            <form class = "form1">
-                <h1 class = "head"> Profile </h1>
-                <div class = "order divs">
-                    <div class = "divs">
+        <div class="bg divs">
+            <form class="form1">
+                <h1 class="head"> Profile </h1>
+                <div class="order divs">
+                    <div class="divs">
                         <label> Name </label>
-                        <input required = "text" readonly>
+                        <input readonly id="name">
                     </div>
-                    <div class = "divs">
+                    <div class="divs">
                         <label> Phone No. </label>
-                        <input required = "tel" maxlength = "10" readonly>
+                        <input readonly id="phone">
                     </div>
-                    <div class = "divs">
+                    <div class="divs">
                         <label> Address </label>
-                        <input required = "text" readonly>
+                        <textarea readonly id="address"></textarea>
                     </div>
                 </div>
             </form>
         </div>
 
         <div class="ho7">
-            <div class = "ho6cat"><h1> Other Cattles </h1></div>
-            <div class = "cattles_container">
+            <div class="ho6cat">
+                <h1> Other Cattles </h1>
+            </div>
+            <div class="cattles_container">
                 <!-- <div class="p1">
                     <div class = "img_container">
                         <a href = "../cattle details/buffalo/B2.html"><img class="i1" src="../../assets/images/cattles/b2.jpg" alt = "buffalo"></a>
@@ -85,19 +90,19 @@
     <footer>
         <div class="foot">
             <div class="foot1">
-                <img class="logof" src="../../assets/images/cattles/logo2.png" alt = "logo">
+                <img class="logof" src="../../assets/images/cattles/logo2.png" alt="logo">
                 <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
                     Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
                     full potential while ensuring livestock wellbeing.</p>
             </div>
             <div class="foot2">
-                <h2 class = "connect"> CONNECT WITH US</h2>
-                <div class = "fspace">
+                <h2 class="connect"> CONNECT WITH US</h2>
+                <div class="fspace">
                     <p> Email: info@kowmart.com</p>
                     <p> Ph.no: 1234567890</p>
                     <p> Insta: KowMart</p>
                 </div>
-                <div class = "contact">
+                <div class="contact">
                     <i class="fa-brands fa-facebook"></i>
                     <i class="fa-brands fa-whatsapp"></i>
                     <i class="fa-brands fa-instagram"></i>
@@ -110,57 +115,81 @@
 
     <script>
 
-        for(i=0; i<category_id.length; i++){
+        const urlParams = new URLSearchParams(window.location.search);
+        const user_id = urlParams.get('user-id');
+
+        let user_data = JSON.parse(localStorage.getItem("userData"));
+
+        function find_data(e) {
+            return e.phone_no == user_id;
+        }
+        user = user_data.find(find_data);
+
+        document.getElementById("name").value = user["name"];
+        document.getElementById("phone").value = user["phone_no"];
+        document.getElementById("address").value = user["address"] + "- " + user["pincode"] + ".";
+
+        let cattle_list = JSON.parse(localStorage.getItem("cattle_details"))
+        let user_cattle_list = cattle_list.filter(e => e.userId == user_id);
+
+        for (i = 0; i < user_cattle_list.length; i++) {
 
             // cattle container
             div_p1 = document.createElement("div");
-            div_p1.setAttribute("class","p1");
+            div_p1.setAttribute("class", "p1");
 
             // image container
             div_img_container = document.createElement("div");
-            div_img_container.setAttribute("class","img_container");
+            div_img_container.setAttribute("class", "img_container");
             div_p1.append(div_img_container)
 
-            // a cattle=" + category_id[i]["cattle"] + "&
+            // a
 
-            cattle_imageContainer=document.createElement("a")
-            cattle_imageContainer.setAttribute("href","../cattle details/cow/C1.html?breed=" + category_id[i]["breed"] + "&cattle_id=" + category_id[i]["cattle_uniqueId"] + "&user_id=" + category_id[i]["userId"]);
+            cattle_imageContainer = document.createElement("a")
+            cattle_imageContainer.setAttribute("href", "../cattle details/cow/C1.html?breed=" + user_cattle_list[i]["breed"] + "&cattle_id=" + user_cattle_list[i]["cattle_uniqueId"] + "&user_id=" + user_cattle_list[i]["userId"]);
             div_img_container.append(cattle_imageContainer)
 
             // cattle image
             cattle_image = document.createElement("img");
-            cattle_image.setAttribute("src",category_id[i]["image"]);
-            cattle_image.setAttribute("alt",category_id[i]["breed"] + " " + category_id[i]["cattle"]); 
-            cattle_image.setAttribute("class","i1");    
+            cattle_image.setAttribute("src", user_cattle_list[i]["image"]);
+            cattle_image.setAttribute("alt", user_cattle_list[i]["breed"] + " " + user_cattle_list[i]["cattle"]);
+            cattle_image.setAttribute("class", "i1");
             cattle_imageContainer.append(cattle_image)
-           
+
             // cattle info container
             div_bspace = document.createElement("div");
-            div_bspace.setAttribute("class","bspace");
+            div_bspace.setAttribute("class", "bspace");
             div_p1.append(div_bspace)
 
             // cattle info
             p_name = document.createElement("p");
-            p_name.setAttribute("class","pname");
-            p_name.innerText = category_id[i]["breed"] + " " + category_id[i]["cattle"] + " " + category_id[i]["id"];
+            p_name.setAttribute("class", "pname");
+            p_name.innerText = user_cattle_list[i]["breed"] + " " + user_cattle_list[i]["cattle"] + " " + user_cattle_list[i]["id"];
             div_bspace.append(p_name)
 
             p_age = document.createElement("p");
-            p_age.innerText = "Age: " + category_id[i]["age"] + " Year(s)";
+            p_age.innerText = "Age: " + user_cattle_list[i]["age"] + " Year(s)";
             div_bspace.append(p_age)
 
             p_gender = document.createElement("p");
-            p_gender.innerText = "Gender: " + category_id[i]["gender"];
+            p_gender.innerText = "Gender: " + user_cattle_list[i]["gender"];
             div_bspace.append(p_gender)
+
+            // a
+
+            buttonContainer = document.createElement("a")
+            buttonContainer.setAttribute("href", "../cattle details/cow/C1.html?breed=" + user_cattle_list[i]["breed"] + "&cattle_id=" + user_cattle_list[i]["cattle_uniqueId"] + "&user_id=" + user_cattle_list[i]["userId"]);
+            div_bspace.append(buttonContainer)
 
             button_know = document.createElement("button");
             button_know.innerText = "Know More";
-            div_bspace.append(button_know)
+            buttonContainer.append(button_know)
 
             document.querySelector("div.cattles_container").append(div_p1)
         }
-    
+
     </script>
 
 </body>
+
 </html>

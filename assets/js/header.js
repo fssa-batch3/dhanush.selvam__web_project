@@ -66,13 +66,9 @@ if (phone_id) {
     const logout_button = document.querySelector("#logOut");
     logout_button?.addEventListener("click", () => {
         if (confirm("Are you sure you want to logout")) {
-            // let favourites = JSON.parse(localStorage.getItem("favourites"));
-            // favourites = favourites.filter(e => e.user_unique_id == phone_id);
-            // favourites.disabled = true;
-            // localStorage.setItem("favourites", JSON.stringify(favourites));
             localStorage.removeItem("phone_no_id");
             document.body.innerHTML = beforeLogin;
-            // window.location.href = "../../index.html"
+            window.location.href = "../../index.html"
         }
     })
 

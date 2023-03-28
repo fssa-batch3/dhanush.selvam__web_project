@@ -105,6 +105,7 @@
         edit.forEach(function (findId) {
             findId.addEventListener('click', function () {
                 const id = this.dataset.id;
+                console.log(id);
                 
                 localStorage.setItem("cattle_unique_Id", JSON.stringify(id));
                 window.location.href = "./cattle_profile.html";

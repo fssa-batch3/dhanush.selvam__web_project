@@ -29,8 +29,8 @@
                 <!-- <img src="../../../assets/images/cattles/b1.jpg" class="image">
                 <img src="../../../assets/images/cattles/b10.jpg" class="image"> -->
             </div>
-            <button class="chevron" id="left" onclick="plusDivs(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="chevron" id="right" onclick="plusDivs(1)"><i class="fa-solid fa-chevron-right"></i></button>
+            <!-- <button class="chevron" id="left" onclick="plusDivs(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="chevron" id="right" onclick="plusDivs(1)"><i class="fa-solid fa-chevron-right"></i></button> -->
         </div>
 
         <div class="content">
@@ -150,13 +150,13 @@
         cattle_image.setAttribute("class", "image");
         document.querySelector("div.ibg").append(cattle_image);
 
-        if (cattle[0]["image1"] != "") {
-            cattle_image1 = document.createElement("img");
-            cattle_image1.setAttribute("src", cattle[0]["image1"]);
-            cattle_image1.setAttribute("alt", cattle[0]["breed"] + " " + cattle[0]["cattle"]);
-            cattle_image1.setAttribute("class", "image");
-            document.querySelector("div.ibg").append(cattle_image1);
-        }
+        // if (cattle[0]["image1"] != "") {
+        //     cattle_image1 = document.createElement("img");
+        //     cattle_image1.setAttribute("src", cattle[0]["image1"]);
+        //     cattle_image1.setAttribute("alt", cattle[0]["breed"] + " " + cattle[0]["cattle"]);
+        //     cattle_image1.setAttribute("class", "image");
+        //     document.querySelector("div.ibg").append(cattle_image1);
+        // }
 
         cattle_name = document.querySelector("h1.name");
         cattle_name.innerText = cattle[0]["breed"] + " " + cattle[0]["cattle"];
@@ -208,28 +208,46 @@
                 let cattleId = event.currentTarget.getAttribute('custom-id');
 
                 let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
-
-                let exist = favourites.some(e => e.cattleId == cattleId);
-
-                let cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
-                const favourite_id = cattle_details.filter(e => e.cattle_uniqueId == cattleId);
-
                 let user_unique_id = JSON.parse(localStorage.getItem("phone_no_id"));
 
-                if (!exist) {
-                    favourites.push({ cattleId, user_unique_id });
-                    localStorage.setItem('favourites', JSON.stringify(favourites));
-                    window.location.href = "../../cattle/favourites.html"
+                for (let i = 0; i < favourites.length; i++) {
+                    if (!user_unique_id) {
+                        alert("Please Log In");
+                        return;
+                    }
+                    else if (cattleId == favourites[i].cattleId && favourites[i].user_unique_id == user_unique_id) {
+                        alert("Already added in the list");
+                        return;
+                    }
                 }
-                else {
-                    alert("Already added in the list")
-                }
-            }
-            )
+                alert("Added to your Favourites list");
+                favourites.push({ cattleId, user_unique_id });
+                localStorage.setItem('favourites', JSON.stringify(favourites));
+                window.location.href = "../../cattle/favourites.html"; 
+                return;
+
+
+                // let cattle_id_exist = favourites.some(e => e.cattleId == cattleId);
+                // // let user_id_exist = favourites.some(e => e.user_unique_id == user_unique_id);
+                // // console.log(user_id_exist);
+                // console.log(cattle_id_exist);
+
+                // let cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
+                // const favourite_id = cattle_details.filter(e => e.cattle_uniqueId == cattleId);
+
+                // if (!cattle_id_exist){
+                //     favourites.push({ cattleId, user_unique_id });
+                //     localStorage.setItem('favourites', JSON.stringify(favourites));
+                //     // window.location.href = "../../cattle/favourites.html"
+                // }
+                // else {
+                //     alert("Already added in the list")
+                // }
+            })
         }
 
         uploaded_date = document.querySelector("h4.posted_date");
-        uploaded_date.innerText = "Posted On: " + cattle_detail["date"];
+        uploaded_date.innerText = "Posted On: " + cattle[0]["date"];
 
         icon = document.createElement("i");
 
@@ -242,13 +260,17 @@
         seller_profile = document.createElement("button");
         seller_profile.setAttribute("class", "check");
         seller_profile.setAttribute("id", "seller_profile");
-        seller_profile.innerText = "View Seller Profile";
         seller_profile.setAttribute("onclick", getId1())
+        // seller_profile.setAttribute("custom-id", user_id);
+        seller_profile.innerText = "View Seller Profile";
         document.querySelector(".bspace3").append(seller_profile);
 
-        // function getId1(){
-        //     window.location.href = "../../cattle/b-sprofile.html";
-        // }
+        function getId1(){
+            seller_profile.addEventListener("click", function (event) {
+                window.location.href = `../../cattle/b-sprofile.html?user-id=${user_id}`;
+                return;
+            })
+        }
 
         let category = JSON.parse(localStorage.getItem("cattle_details"));
         let category_id = category.filter(e => e.breed == breed_category);
@@ -346,11 +368,11 @@
         function showSlides(n) {
             let i;
             let slides = document.getElementsByClassName("image");
-            if (n > slides.length){ 
-                slideIndex = 1 
+            if (n > slides.length) {
+                slideIndex = 1
             }
-            if (n < 1){
-                slideIndex = slides.length 
+            if (n < 1) {
+                slideIndex = slides.length
             }
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";

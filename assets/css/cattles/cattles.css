@@ -116,6 +116,7 @@ div.p1 >div.bspace >a >button:hover {
     flex-direction: row;
     justify-content: center; 
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .ho5{
@@ -134,7 +135,7 @@ div.p1 >div.bspace >a >button:hover {
     align-items: center;
 }
 
-.cattles_container{
+.cattles_container1 ,.cattles_container2 ,.cattles_container3 ,.cattles_container4 ,.cattles_container5{
     /* display: flex;
     flex-direction: row;
     flex-wrap: wrap;
