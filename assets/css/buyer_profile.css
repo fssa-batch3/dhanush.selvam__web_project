@@ -3,7 +3,7 @@ body{
     background-color: #e8f5ec;
 }
 
-.dmain{
+.form_container{
     display: flex;
     justify-content: center;
     margin-top: 50px;
@@ -15,7 +15,7 @@ form{
     width: 80%;
 }
 
-.hello{
+.profile_img_container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,7 +26,7 @@ form{
     border-radius: 5px;
 }
 
-.myorder{
+.links_container{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -38,13 +38,13 @@ form{
     text-align: center;
 }
 
-.details{
+.user_details{
     background-color: white;
     border-radius: 5px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-.prologo{
+.profile_img{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -60,21 +60,21 @@ h2 >a:hover{
     color: #00a387;
 }
 
-.s1{
+.left_section{
     width: 30%;
     display: flex;
     flex-direction: column;
 }
 
-.s2{
+.right_section{
     width: 55%;
 }
 
-.divs{
+.divspace{
     padding: 15px;
 }
 
-.divs1{
+.divspace1{
     display: flex;
     align-items: center;
     margin-top: 10px;
@@ -92,13 +92,6 @@ h2 >a:hover{
     text-align: center;
 }
 
-/* .name{
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: #309393;
-} */
-
 label{
     font-size: 22px;
     font-weight: bold;
@@ -109,23 +102,27 @@ input{
     padding-left: 10px;
     height: 40px;   
     font-size: 22px;
-    /* border: none;
-    border-bottom: 1px solid gray; */
     outline: none;
     border: none;
     border-bottom: 1px solid black;
 }
 
-.lab_input{
+#image{
+    padding: 0;
+    height: 0;
+    border: 0;
+}
+
+.label_container{
     width: 33%;
     margin-left: 10px;
 }
 
-.lab_input1{
+.input_container{
     width: 67%;
 }
 
-.lab_input2{
+.colon_container{
     width: 5%;
 }
 
@@ -138,7 +135,7 @@ select{
     font-size: 18px;
 }
 
-.sub{
+.btn_container{
     display: flex;
     justify-content: center;
 }
@@ -153,7 +150,7 @@ button{
     border-radius: 5px;
 }
 
-.btn1{
+.edit_btn{
     background-color: white;
     border: 2px solid #00a651;
     color: #00a651;
@@ -163,7 +160,7 @@ button{
     border: 2px solid #00a651;
 }
 
-.btn1:hover{
+.edit_btn:hover{
     background-color: #00a651;
     color: white;
 }
@@ -177,34 +174,26 @@ p{
     font-weight: bold;
 }
 
-/* i.fa-brands:hover{
-    color: #00a651;  
-} */
-
-/* i.fa-regular:hover{
-    color: #00a651;  
-} */
-
-#ic:hover{
+#icon:hover{
     color: #00a387;
 }
 
-.ic1{
+.icon_container1{
     margin: 0px 30px 0px 45px;
 }
 
-.ic2{
+.icon_container2{
     margin: 0px 35px 0px 45px;
 }
 
-.head1{
+.links_head{
     font-size: 30px;
     margin: 20px 0px 20px 0px;
     cursor: pointer;
     color: darkslategray;
 }
 
-.head1:hover{
+.links_head:hover{
     color: #00a387;
 }
 
@@ -214,7 +203,7 @@ p{
 
 #address{
     height: 90px;
-    width: 335px;
+    width: 90%;
     resize: none;
     font-size: 20px;
     line-height: normal;
@@ -230,16 +219,16 @@ p{
         width: auto;
     }
 
-    .dmain{
+    .form_container{
         display: block;
-        margin: 25px 0px -10px 0px;
+        margin: 25px 0px 25px 0px;
     }
 
-    .divs{
+    .divspace{
         padding: 10px;
     }
 
-    .sub{
+    .btn_container{
         margin: 10px 0px 0px 0px;
     }
 
@@ -247,11 +236,11 @@ p{
         font-size: 20px;
     }
 
-    .s1{
+    .left_section{
         width: auto;
     }
 
-    .s2{
+    .right_section{
         width: auto;
     }
 
@@ -262,19 +251,15 @@ p{
     }
 
     button{
-        padding: 10px 25px;
-        font-size: 22px;
-    }
-
-    h2 >a{
-        font-size: 28px;
+        padding: 8px 20px;
+        font-size: 20px;
     }
 
     .fa-bag-shopping, .fa-cart-shopping, .fa-right-from-bracket, .fa-star{
         font-size: 28px;
     }
 
-    .prologo{
+    .profile_img{
         width: 45%;
     }
 
@@ -282,29 +267,29 @@ p{
         margin-bottom: 15px;
     }
 
-    .head1{
+    .links_head{
         font-size: 28px;
     }
 
-    .hello{
+    .profile_img_container{
         padding: 20px 0px;
     }
 
-    .divs1{
+    .divspace1{
         display: block;
         margin: 0;
     }
 
-    .lab_input{
+    .label_container{
         margin-left: 0px;
         width: 0;
     }
 
-    .lab_input2{
+    .colon_container{
         display: none;
     }
 
-    .lab_input1{
+    .input_container{
         width: 93%;
         margin-top: 8px;
     }

@@ -8,13 +8,13 @@ p{
     font-weight: bold;
 }
 
-.bspace{
+.back_button_container{
     margin-top: 2.5%;
     margin-left: 10%;
 }
 
-.bspace1{
-    margin-left: 20px;
+.info_container{
+    padding-left: 20px;
 }
 
 button{
@@ -28,75 +28,73 @@ button{
     border-radius: 5px;
 }
 
-div.bspace1 >a >button:hover{
+div.info_container >a >button:hover{
     background-color: white;
     color: #00a651;
     cursor: pointer;
 }
 
-.btn{
-    /* background-color: #0075A3;
-    border-style: none; */
+.back_btn{
     background-color: white;
     color: #00a651;
 }
 
-.content{
+.details_container{
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 2%;
 }
 
-.product{
+.cattle_details_container{
     width: 40%;
     margin-right: 2%;
 }
 
-.seller{
+.seller_container{
     width: 25%;
 }
 
-.product_name{
+.cattle_details1_container{
     background-color: white;
     border-radius: 5px;
     padding: 20px 0px 0px 20px;
 }
 
-.product_details{
+.cattle_details2_container{
     background-color: white;
     border-radius: 5px;
 }
 
-.name{
+.cat_name{
    margin-bottom: 0px;
 }
 
-.years{
+.age_gender_container{
     display: flex;
     flex-direction: row;
 }
 
-.gf{
+.cat_age{
     border-right: 1px solid grey;
     padding-right: 15px;
     color: teal;
 }
 
-.gf1{
+.cat_gender{
     padding-left: 15px;
     color: teal;
 }
 
-.gf2{
+.cattle_milk_container{
     text-align: center;
 }
 
-.color, .color1, .color2{
+.cattle_milk, .cattle_lact, .cattle_weight{
     color: teal;
 }
 
-.overview{
+.cattle_other_details_container{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -107,13 +105,12 @@ div.bspace1 >a >button:hover{
     margin-top: -10px;
 }
 
-.description{
+.description_container{
     background-color: white;
     border-radius: 5px;
-    height: 208px;
 }
 
-.over{
+.details_container_head{
     padding: 20px 0px 0px 20px;
     color: #406367;
 }
@@ -126,7 +123,7 @@ hr{
     margin: 30px 0px;
 }
 
-.check{
+.fav_btn ,.verified{
     font-size: 18px;
     background-color: yellowgreen;
     border-style: none;
@@ -134,7 +131,7 @@ hr{
     border-radius: 5px;
 }
 
-.price{
+.price_container{
     background-color: white;
     font-size: 1.5rem;
     border-radius: 5px;
@@ -144,8 +141,6 @@ hr{
 #favourite ,#seller_profile{
     font-size: 20px;
     width:100%;
-    /* background-color: #0075A3;
-    border: 3px solid #0075A3; */
     height: fit-content;
     background-color: teal;
     border: 3px solid teal;
@@ -154,16 +149,14 @@ hr{
 button#favourite:hover, button#view:hover, button#seller_profile:hover{
     background-color: white;
     color: teal;
-    /* color: #00a651; */
 }
 
-.cash{
+.price{
     margin-top: 0px;
     margin-bottom: 15px;
-    /* color: teal; */
 }
 
-.sellerdetails{
+.sellerdetails_container{
     background-color: white;
     border-radius: 5px;
     padding-left: 20px;
@@ -175,7 +168,7 @@ h4{
     font-weight: normal;
 }
 
-.sellername{
+.seller_name{
     color: teal;
     font-size: 1.8em;
     margin-top: -15px;
@@ -202,14 +195,14 @@ button#chat:hover{
     margin: 0;
 }
 
-.profile{
+.seller_profile_container{
     background-color: white;
     border-radius: 5px;
     padding: 20px;
     margin-top: 21.5px;
 }
   
-.ibg{
+.cattle_image_container{
     margin: 20px 0px; 
 }
 
@@ -220,12 +213,13 @@ button#chat:hover{
     margin: auto;
 }
 
-.p2{
-    font-size: 18px;
+.cattle_age ,.cattle_name{
     line-height: 15px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-#p3{
+.description{
     line-height: 2.2rem;
     padding: 0px 15px 10px 30px;
 }
@@ -234,26 +228,22 @@ button#chat:hover{
     padding-left: 40px;
 }
 
-.ho6 {
+#cattle_title {
     text-align: center;
     color: darkslategray;
 }
 
-.ho7 {
+.products_section {
     margin: 2% 10%;
 }
 
 .cattles_container{
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     grid-gap: 0px 115px;
 }
 
-.p1 {
+.cattle_container {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -262,11 +252,11 @@ button#chat:hover{
     width: fit-content;
 }
 
-.p1:hover {
+.cattle_container:hover {
     box-shadow: #57d192 3px 3px 3px;
 }
 
-.i1 {
+.cattle_image {
     width: 280px;
     height: 255px;
 }
@@ -277,7 +267,7 @@ button#chat:hover{
     overflow: hidden;
 } 
 
-.i1:hover{
+.cattle_img:hover{
     transform: scale(1.2);
     transition: all 800ms;
 }
@@ -286,7 +276,7 @@ span{
     font-family: serif;
 }
 
-.pname{
+.cattle_name{
     color:#00a651;
 }
 
@@ -340,19 +330,19 @@ span{
     transform: scale(1);
 } 
 
-.phone_icon{
+.seller_phoneno_container{
     display: flex;
     align-items: center;
 }
 
-.address_icon{
+.seller_address_container{
     display: flex;
     align-items: baseline;
 }
 
 @media screen and (max-width: 480px) {
 
-    .p1{
+    .cattle_container{
         margin-bottom: 50px;
     }
 
@@ -360,29 +350,25 @@ span{
         justify-items: center;
     }
 
-    .ho7{
-        margin: 0px;
+    .products_section{
+        margin: 10% 10% 8% 10%;
     }
 
-    .bspace1{
+    .info_container{
         text-align: center;
+        padding: 0px;
+    }
+
+    .back_button_container{
         margin: 0px;
     }
 
-    .bspace{
-        margin: 0px;
-    }
-
-    .ho6{
-        font-size: 16px;
-    }
-
-    .content{
+    .details_container{
         flex-direction: column;
         margin-top: -30px;
     }
 
-    .ibg{
+    .cattle_image_container{
         margin: 45px 30px 30px 30px;
     }
 
@@ -391,19 +377,19 @@ span{
         height: 20rem;
     }
 
-    .btn{
+    .back_btn{
         display: none;
     }
 
-    .product ,.seller{
+    .cattle_details_container ,.seller_container{
         width: 85%;
         margin-left: auto;
         margin-right: auto;
         margin-top: 30px;
     }
 
-    .seller{
-        margin-top: 20px;
+    .seller_container{
+        margin-top: 10px;
     }
 
     #favourite, #chat, #seller_profile{
@@ -422,7 +408,7 @@ span{
         font-size: 18px;
     }
 
-    #p3{
+    .description{
         line-height: 2rem;
         padding-left: 20px;
     }
@@ -457,10 +443,6 @@ span{
 
     #right{
         right: 20px;
-    }
-
-    .description{
-        height: 300px;
     }
   
 }

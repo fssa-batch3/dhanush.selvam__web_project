@@ -15,45 +15,52 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="logodiv"><img class = "logo" src="../assets/images/cattles/logo1.png" alt="logo"></div>
-        <div class="lotit"><h1 class = "hd"> KowMart </h1></div>
+
+    <div class = "navbar">
+        <div class = "logo_container"> <img class = "logo" src = "../assets/images/cattles/logo1.png" alt = "logo"> </div>
+        <div class = "logo_name_container"> <h1 class = "logo_name"> KowMart </h1> </div>
     </div>
-    <div class = "bg">
+
+    <div class = "form_container">
+
         <form role = "form" onsubmit= "signUp(event);">
+
             <h1> REGISTER </h1>
-            <div class = "order">
+            <div class = "details_container">
+
                 <div>
-                    <label> Name </label><br>
+                    <label> Name </label> <br>
                     <input required type = "text" id = "name" pattern = "[a-zA-Z]+" title = "Don't use Space and special characters">
-                    <!-- <input required type = "text" id = "name" oninput = "this.value = this.value.replace(/[^a-zA-Z]/0,'')">  -->
                 </div>
                 <div>
-                    <label> Phone No. </label><br>
-                    <!-- <input required type = "text" id ="phone_no" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" minlength = "10" maxlength= "10"> -->
+                    <label> Phone No. </label> <br>
                     <input required type = "tel" id ="phone_no" pattern="[0-9]+" minlength = "10" maxlength= "10" title = "Please enter your phone number">
 
                 </div>
                 <div>
-                    <label> Password </label><br>
+                    <label> Password </label> <br>
                     <input required type = "password" id = "password" pattern = "[a-zA-Z0-9!-@]+" title = "Don't use Space">
                 </div>
                 <div>
-                    <label> Confirm Password </label><br>
+                    <label> Confirm Password </label> <br>
                     <input required type = "password"  id = "confirm_password" pattern = "[a-zA-Z0-9!-@]+" title = "Don't use Space">
                 </div>
-                <div class = "btn">
+                <div class = "submit_btn_container">
                     <button type =  "submit"> SUBMIT </button>
                 </div> 
-                <div class = "new">
-                    <p> Existing User? <a href = "sign in.html"> Login here </a></p>
+                <div class = "link_container">
+                    <p> Existing User? <a href = "sign in.html"> Login here </a> </p>
                 </div>
+
             </div>
+
         </form>
+
     </div>
 
     <script src="../assets/js/login.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
    
 </body>
+
 </html>

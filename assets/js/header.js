@@ -1,8 +1,8 @@
 const root = window.location.origin;
 
 const beforeLogin = `<header>
-        <div class="navbar">
-            <div class="logodiv"><a href = "${root}/index.html"><img class = "logo" src="${root}/assets/images/cattles/logo1.png" alt="logo"></a></div>
+        <div class = "navbar">
+            <div class = "logodiv"><a href = "${root}/index.html"><img class = "logo" src="${root}/assets/images/cattles/logo1.png" alt="logo"></a></div>
             <div class="lotit"><a href = "${root}/index.html"><h1 class = "hd"> KowMart </h1></a></div>
         </div>
 
@@ -38,9 +38,9 @@ const afterLogin = `<header>
             <ul class="navbar">
                 <li><a href="${root}/pages/cattle/cattle_index.html">Cattles</a></li>
                 <li><a href="${root}/pages/about.html">About Us</a></li>
-                <li class="logbutton"><a href="${root}/cattle/sell_details1.html"><button class="sell"> SELL </button></a>
+                <li class="logbutton"><a href="${root}/pages/cattle/sell_details1.html"><button class="sell"> SELL </button></a>
                 </li>
-                <li class="profile_icon"><a href="${root}/#"><i class="fa-solid fa-user"></i></a></li>
+                <li class="profile_icon"><a href="${root}/pages/buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
             </ul>
         </div>
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>

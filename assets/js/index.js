@@ -367,7 +367,7 @@ const cattle_data = [{
 const user_data = [{
     name: "Dhanush",
     phone_no: "1111111111",
-    password: "123",
+    password: "Don123",
     address: "No.03/25, Gandhi Street, Kamarajar Salai, Anna Nager, Chennai",
     pincode: "600018",
     user_uniqueId: "9e6c8ef1-d606-4d19-9c1c-96c50518d039",
@@ -375,7 +375,7 @@ const user_data = [{
 {
     name: "Ram",
     phone_no: "2222222222",
-    password: "123",
+    password: "Don123",
     address: "No.03/25, Raghavan Colony, MGR Salai, KK Nager, Chennai",
     pincode: "600045",
     user_uniqueId: "9e6c8ef1-d606-4d19-9c1c-96c50518d038",

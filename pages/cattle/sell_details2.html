@@ -19,96 +19,35 @@
 <body>
 
     <main>
-        <div class = "d0">  
-            <div><button onclick="window.history.back()"> BACK </button></a></div>
-            <h1 class = "h11"> List Your LiveStock Here </h1>
-        </div>
-            <h3 class = "h12"> Buy and Sell your Cattles easier!</h3>
-            <img class = "choose" src = "../../assets/images/choose_breed_active.png" alt = "choose">
-            <h1 class = "h13"> Choose Breed </h1>
-            <hr>
 
-            <div class = "d1" id = "d2">
-                <!-- <div class = "d3" id = "Gir">
-                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c1.jpg" alt = "cow"></div>
-                    <p> Gir </p>
-                </div>
-                <div class = "d3" id = "Red sindhi">
-                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c5.jpg" alt = "cow"></div>
-                    <p> Red Sindhi </p>
-                </div>
-                <div class = "d3" id = "Kankrej">
-                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c3.jpg" alt = "cow"></div>
-                    <p> Kankrej </p>
-                </div>
-                <div class = "d3" id = "Jersey">
-                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c7.jpg" alt = "cow"></div>
-                    <p> Jersey </p>
-                </div>
-                <div class = "d3" id = "Rathi Heifer">
-                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c8.jpg" alt = "cow"></div>
-                    <p> Rathi Heifer </p>
-                </div>
-                <div class = "d3" id = "Ongole">
-                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c9.jpg" alt = "cow"></div>
-                    <p> Ongole </p>
-                </div>
-                <div class = "d3" id = "Kapila">
-                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c11.jpg" alt = "cow"></div>
-                    <p> Kapila </p>
-                </div>
-                <div class = "d3" id = "Vilwadri">
-                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c12.jpg" alt = "cow"></div>
-                    <p> Vilwadri </p>
-                </div>
-                <div class = "d3" id = "HF">
-                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c2.jpg" alt = "cow"></div>
-                    <p> HF </p>
-                </div>
-                <div class = "d3" id = "Tharparkar">
-                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c4.jpg" alt = "cow"></div>
-                    <p> Tharparkar </p>
-                </div>
-                <div class = "d3" id = "Sahiwal">
-                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c6.jpg" alt = "cow"></div>
-                    <p> Sahiwal </p>
-                </div>
-                <div class = "d3" id = "Deoni">
-                    <div class = "ispace"><img class = "i2" src = "../../assets/images/cattles/c10.jpg" alt = "cow"></div>
-                    <p> Deoni </p>
-                </div> -->
-            </div>
+        <!-- back button section -->
+
+        <div class = "back_btn_container">  
+            <div> <button onclick = "window.history.back()"> BACK </button> </div>
+            <h1 class = "title1"> List Your LiveStock Here </h1>
+        </div>
+
+        <!-- title section -->
+
+        <h3 class = "title2"> Buy and Sell your Cattles easier! </h3>
+        <img class = "choose" src = "../../assets/images/choose_breed_active.png" alt = "choose">
+        <h1 class = "title3"> Choose Breed </h1>
+        <hr>
+
+        <!-- categories section -->
+
+        <div class = "categories_container" id = "breed_container"> </div>
+    
     </main>
 
-    <footer>
-        <div class="foot">
-            <div class="foot1">
-                <img class="logof" src="../../assets/images/cattles/logo2.png" alt = "logo">
-                <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
-                    Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
-                    full potential while ensuring livestock wellbeing.</p>
-            </div>
-            <div class="foot2">
-                <h2 class = "connect"> CONNECT WITH US</h2>
-                <div class = "fspace">
-                    <p> Email: info@kowmart.com</p>
-                    <p> Ph.no: 1234567890</p>
-                    <p> Insta: KowMart</p>
-                </div>
-                <div class = "contact">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../../assets/js/header.js"></script>
+    <script src = "../../assets/js/header.js"></script>
+    <script src = "../../assets/js/footer.js"></script>
 
     <script>
 
-        const category_list = [
+        // breeds json
+
+        const breed_list = [
         {
                 "image":{
                     "source": "../../assets/images/cattles/c1.jpg",
@@ -394,43 +333,46 @@
         const urlParams = new URLSearchParams(window.location.search);
         let cattle = urlParams.get("cattle");
 
-        const category_filter = category_list.filter(e => e.category == cattle);
+        const category_filter = breed_list.filter(e => e.category == cattle);
 
-        for(i=0; i<category_filter.length; i++){
+        for(i = 0; i < category_filter.length; i++){
 
             // container
             container = document.createElement("div");
-            container.setAttribute("class","d3");
+            container.setAttribute("class","category_container");
             container.setAttribute("id",category_filter[i]["name"]);
 
             // image container
             img_container = document.createElement("div");
-            img_container.setAttribute("class","ispace");
+            img_container.setAttribute("class","catimg_container");
             container.append(img_container)
 
             // cattle image
             image = document.createElement("img");
             image.setAttribute("src",category_filter[i]["image"]["source"]);
             image.setAttribute("alt",category_filter[i]["image"]["cattle"]);
-            image.setAttribute("class","i2");
+            image.setAttribute("class","cat_img");
             img_container.append(image)
 
             // cattle name
             namee = document.createElement("p");
             namee.innerText = category_filter[i]["name"];
+            namee.setAttribute("class","category_title")
             container.append(namee);
 
-            document.querySelector("div.d1").append(container);
+            document.querySelector("div.categories_container").append(container);
         }
 
-        const parentDiv = document.querySelector("#d2");
+        // Passing breed value to the details page
+
+        const parentDiv = document.querySelector(".categories_container");
         const childDiv = parentDiv.children;
 
         for (let i = 0; i < childDiv.length; i++) {
             const element = childDiv[i];
             element.addEventListener("click", function(event) {
                 let breed = event.currentTarget.getAttribute('id');
-                window.location.href = `http://127.0.0.1:5500/pages/cattle/sell_details3.html?cattle=${cattle}&breed=${breed}`;            
+                window.location.href = `./sell_details3.html?cattle=${cattle}&breed=${breed}`;            
             });
         }
     

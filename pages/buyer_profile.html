@@ -15,125 +15,94 @@
     <link rel="icon" href="../assets/images/cattles/logo1.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <main>
-        <div class="dmain divs">
+
+        <div class = "form_container divspace">
+
             <form>
-                <div class="s1 divs">
-                    <div class="hello">
-                        <img class="prologo" src="../assets/images/profile_logo.png" alt="profile_logo">
-                        <!-- <p class = "name"> Hi, XXX </p> -->
+
+                <!-- left section -->
+
+                <div class = "left_section divspace">
+
+                    <div class = "profile_img_container">
+                        <img class = "profile_img" src = "../assets/images/profile_logo.png" alt = "profile_img">
+                        <input type = "url" id = "image">
                     </div>
-                    <div class="myorder">
-                        <div class="ic1"> <i class="fa-solid fa-paw" id="ic"></i> </div>
-                        <!-- <div class = "ic1"> <a href = "cattle/seller_cattlelist.html"><i class="fa-solid fa-list" id = "ic"></i></a> </div> -->
-                        <h2><a href="cattle/seller_cattlelist.html"> Cattle List </a></h2>
+
+                    <div class = "links_container">
+                        <div class = "icon_container1"> <i class = "fa-solid fa-paw" id = "icon"></i> </div>
+                        <h2> <a href = "cattle/seller_cattlelist.html"> Cattle List </a> </h2>
                     </div>
-                    <div class="myorder">
-                        <div class="ic1"> <a href="cattle/favourites.html"><i class="fa-solid fa-star" id="ic"></i></a>
-                        </div>
-                        <h2><a href="cattle/favourites.html"> Favourites </a></h2>
+
+                    <div class = "links_container">
+                        <div class = "icon_container1"> <i class = "fa-solid fa-star" id = "icon"></i> </div>
+                        <h2> <a href = "cattle/favourites.html"> Favourites </a> </h2>
                     </div>
-                    <!-- <div class = "myorder">
-                            <div class = "ic1"> <i class="fa-solid fa-bag-shopping" id = "ic"></i> </div>
-                            <h2 class = "head1"><a href = "agro pro/order.html"> My orders </a></h2>
-                        </div>
-                        <div class = "myorder">
-                            <div class = "ic1"> <i class="fa-solid fa-cart-shopping" id = "ic"></i> </div>
-                            <h2 class = "head1"><a href = "agro pro/cart.html"> Cart </a></h2>
-                        </div> -->
-                    <div class="myorder">
-                        <div class="ic1"> <a href="../index.html"><i class="fa-solid fa-right-from-bracket"
-                                    id="ic"></i></a> </div>
-                        <h2 class="head1" id="logOut"> Log out </h2>
+
+                    <div class = "links_container">
+                        <div class = "icon_container1"> <i class = "fa-solid fa-right-from-bracket" id = "icon"></i> </div>
+                        <h2 class = "links_head" id = "logOut"> Log out </h2>
                     </div>
-                    <div class="myorder">
-                        <div class="ic2"> <i class="fa-solid fa-trash" id="ic"></i> </div>
-                        <h2 class="head1" id="delete">Delete Account</h2>
+
+                    <div class = "links_container">
+                        <div class="icon_container2"> <i class="fa-solid fa-trash" id = "icon"></i> </div>
+                        <h2 class = "links_head" id = "delete">Delete Account</h2>
                     </div>
+
                 </div>
-                <div class="s2 divs">
-                    <div class="details divs">
-                        <h1 class="head"> Profile </h1>
-                        <div class="divs divs1">
-                            <div class="lab_input"><label> Name </label></div>
-                            <div class="lab_input2">:</div>
-                            <div class="lab_input1"><input required type="text" id="name" readonly></div>
+
+                 <!-- right section -->
+
+                <div class = "right_section divspace">
+
+                    <div class = "user_details divspace">
+                        <h1 class = "head"> Profile </h1>
+                        <div class = "divspace divspace1">
+                            <div class = "label_container"> <label> Name </label> </div>
+                            <div class = "colon_container"> : </div>
+                            <div class = "input_container"> <input required type = "text" id = "name" readonly></div>
                         </div>
-                        <div class="divs divs1">
-                            <div class="lab_input"><label> Phone.No </label></div>
-                            <div class="lab_input2">:</div>
-                            <div class="lab_input1"><input required type="tel" maxlength="10" id="phone_no" disabled>
-                            </div>
+
+                        <div class = "divspace divspace1">
+                            <div class = "label_container"><label> Phone.No </label></div>
+                            <div class = "colon_container"> : </div>
+                            <div class = "input_container"> <input required type = "tel" maxlength = "10" id = "phone_no" disabled> </div>
                         </div>
-                        <!-- <div class = "divs">
-                                <label> Email </label><br>
-                                <input placeholder = "abc@gmail.com" readonly required = "Email" id = "email">
-                            </div> -->
-                        <!-- <div class="divs divs1">
-                            <div class="lab_input"><label> Address line 1</label></div>
-                            <div class="lab_input2">:</div>
-                            <div class="lab_input1"><input required type="text" id="address_line1" readonly> </div>
+
+                        <div class = "divspace divspace1">
+                            <div class = "label_container"><label> Address </label></div>
+                            <div class = "colon_container"> : </div>
+                            <div class = "input_container"> <textarea id = "address" readonly></textarea> </div>
                         </div>
-                        <div class="divs divs1">
-                            <div class="lab_input"><label> Address line 2</label></div>
-                            <div class="lab_input2">:</div>
-                            <div class="lab_input1"><input required type="text" id="address_line2" readonly></div>
-                        </div> -->
-                        <div class="divs divs1">
-                            <div class="lab_input"><label> Address </label></div>
-                            <div class="lab_input2">:</div>
-                            <div class="lab_input1"><textarea id="address" readonly> </textarea></div>
+
+                        <div class = "divspace divspace1">
+                            <div class = "label_container"><label> Pincode </label></div>
+                            <div class = "colon_container"> : </div>
+                            <div class = "input_container"> <input required type = "text" id = "pincode" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" minlength = "6" maxlength = "6" readonly> </div>
                         </div>
-                        <div class="divs divs1">
-                            <div class="lab_input"><label> Pincode </label></div>
-                            <div class="lab_input2">:</div>
-                            <div class="lab_input1"><input required type="text" id="pincode"
-                                    oninput="this.value = this.value.replace(/[^0-9]/g,'')" minlength="6" maxlength="6"
-                                    readonly></div>
-                        </div>
-                        <div class="sub divs">
-                            <div class="divs"><button class="btn1" type="submit" id="editButton"> Edit </button></div>
-                            <div class="divs"><button type="submit" id="save"> Save </button></div>
+
+                        <div class = "btn_container divspace">
+                            <div class = "divspace"><button class = "edit_btn" type = "submit" id = "editButton"> Edit </button></div>
+                            <div class = "divspace"><button type = "submit" id = "save"> Save </button></div>
                         </div>
                     </div>
+
                 </div>
 
             </form>
+
         </div>
 
     </main>
 
-    <footer>
-        <div class="foot">
-            <div class="foot1">
-                <img class="logof" src="../assets/images/cattles/logo2.png" alt="logo">
-                <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
-                    Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
-                    full potential while ensuring livestock wellbeing.</p>
-            </div>
-            <div class="foot2">
-                <h2 class="connect"> CONNECT WITH US</h2>
-                <div class="fspace">
-                    <p> Email: info@kowmart.com</p>
-                    <p> Ph.no: 1234567890</p>
-                    <p> Insta: KowMart</p>
-                </div>
-                <div class="contact">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../assets/js/header.js"></script>
+    <script src = "../assets/js/header.js"></script>
+    <script src = "../assets/js/footer.js"></script>
 
     <script>
         let phone_id1 = JSON.parse(localStorage.getItem('phone_no_id'));
@@ -151,6 +120,8 @@
 
         document.getElementById("editButton").addEventListener("click", enableInput);
 
+        // function for enabling input
+
         function enableInput(e) {
             e.preventDefault()
             if (confirm("Are you sure you want to edit the details")) {
@@ -160,6 +131,8 @@
             }
         }
 
+        // function for updating details
+
         function updateDetails(e) {
             document.getElementById("name").setAttribute("readonly", "true");
             document.getElementById("address").setAttribute("readonly", "true");
@@ -167,6 +140,8 @@
         }
 
         document.getElementById("save").addEventListener("click", disableInput);
+
+        // function for disabling input
 
         function disableInput(e) {
             if (confirm("Are you sure you want to save the details")) {
@@ -179,6 +154,8 @@
                 location.reload();
             }
         }
+
+        // function for deleting account
 
         function deleteaccount(e) {
             if (confirm("Are you sure you want to delete the account?")) {

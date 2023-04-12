@@ -1,24 +1,86 @@
 body {
     background-color: #e8f5ec;
     font-family: 'PT Serif', serif;
-    width: fit-content
 }
 
-.titbut{
+.back_button_container{
     margin-top: 45px;
+    /* margin-top: 15px; */
 }
 
-.ho6{
+.title_container{
+    /* margin-left: 6.3rem; */
+    text-align: center;
     margin-top: -5%;
 }
 
 .title_color {
     color: darkslategray;
-    text-align: center;
 }
 
-.ho7 {
-    margin: 2% 10%;
+.products_section {
+    margin: 2% 10% 2.5% 10%;
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+/* .filter_cattles_container{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.filter_container{
+    width: 100%;
+    background-color: #ffffffbf; 
+    background-color: black;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    height: 40rem;
+    border-radius: 5px;
+    margin-top: 18px;
+}
+
+.breed_filter_container ,.state_filter_container{
+    background-color: white;
+    margin: auto;
+    width: 80%;
+    height: 28%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 5px;
+    margin-top: 2rem;
+    overflow-y: scroll;
+}
+
+.topic_container{
+    padding-left: 30px;
+    margin-bottom: -5px;
+}
+
+.topic{
+    font-size: 22px;
+}
+
+.breed_list_container ,.state_list_container{
+    padding-left: 30px;
+}
+
+.breed_container ,.state_container{
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+input{
+    margin-right: 10px;
+}
+
+label{
+    font-size: 18px;
+} */
+
+.cattles_title_container{
+    display: flex;
+    flex-direction: column;
+    width: 64%;
 }
 
 .cattles_container{
@@ -27,20 +89,21 @@ body {
     grid-gap: 0px 115px;
 }
 
-.p1 ,.p12{
+.cattle_container {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     margin-bottom: 20px;
     border-radius: 5px;
     padding: 15px 20px 15px 20px;
     background-color: white;
     width: fit-content;
+    height: fit-content;
 }
 
-.p1:hover ,.p12:hover{
+.cattle_container:hover {
     box-shadow: #57d192 3px 3px 3px;
 }
 
-.i1 {
+.cattle_image {
     width: 280px;
     height: 255px;
 }
@@ -51,7 +114,7 @@ body {
     overflow: hidden;
 } 
 
-.i1:hover{
+.cattle_image:hover{
     transform: scale(1.2);
     transition: all 800ms;
 }
@@ -60,10 +123,6 @@ p{
     line-height: 15px;
     font-weight: bold;
     font-size: 18px;
-}
-
-.divspace{
-    padding-left: 40px;
 }
 
 button{
@@ -77,24 +136,21 @@ button{
     border-radius: 5px;
 }
 
-div.bspace >a >button:hover {
+div.info_container >a >button:hover {
     background-color: white;
     color: #00a651;
-    cursor: pointer;
 }
 
 .btn{
-    /* background-color: #0075A3;
-    border-style: none; */
     background-color: white;
     color: #00a651
 }
 
-.bspace{
+.info_container{
     margin-left: 20px;
 }
 
-.pname{
+.cattle_name{
     color:#00a651;
 }
 
@@ -126,43 +182,34 @@ div.bspace >a >button:hover {
     cursor: pointer;
 }
 
-.p12{
+#edit_cattle_container{
     text-align: center;
-}
-
-.new{
-    margin-top: 20px;
-    width: 70%;
-}
-
-.ho6_edit{
-    width: 57%;
 }
 
 @media screen and (max-width: 480px) {
 
-    .p1 ,.p12{
+    .cattle_container {
         margin-bottom: 35px;
     }
 
-    .ho7{
-        margin: 0px;
+    .products_section{
+        margin: 0% 0% 12% 0%;
     }
 
     .cattles_container{
         justify-items: center;
     }
 
-    .bspace{
+    .info_container{
         text-align: center;
         margin: 0px;
     }
 
-    div.titbut >button.btn{
+    div.back_button_container >button.btn{
         display: none;
     }
 
-    .ho6{
+    .title_container{
         margin: -3% 0% 5% 0%;
     }
 

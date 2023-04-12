@@ -11,139 +11,130 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/cattles/cattlelist.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
-    <script src = "../../assets/js/main.js"></script>
+    <script src="../../assets/js/main.js"></script>
     <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    
-    <main>    
 
-        <div class="ho7">
-            
-            <div class = "titbut"><button class = "btn" onclick="window.history.back()"> BACK </button></a></div>
-            <div class="ho6"><h1 class = "title_color"> Your Favourites </h1></div>
-            
-            <div class = "cattles_container"></div>
+    <main>
+
+        <!-- Cattles Section -->
+
+        <div class="products_section">
+
+            <div class="back_button_container">
+                <button class="btn" onclick="window.history.back()"> BACK </button>
+            </div>
+
+            <div class="title_container">
+                <h1 class="title_color"> Your Favourites </h1>
+            </div>
+            <div class="cattles_container"></div>
+
         </div>
+
     </main>
 
-    <footer>
-        <div class="foot">
-            <div class="foot1">
-                <img class="logof" src="../../assets/images/cattles/logo2.png" alt = "logo">
-                <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
-                    Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
-                    full potential while ensuring livestock wellbeing.</p>
-            </div>
-            <div class="foot2">
-                <h2 class = "connect"> CONNECT WITH US</h2>
-                <div class = "fspace">
-                    <p> Email: info@kowmart.com</p>
-                    <p> Ph.no: 1234567890</p>
-                    <p> Insta: KowMart</p>
-                </div>
-                <div class = "contact">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../../assets/js/header.js"></script>
+    <script src = "../../assets/js/header.js"></script>
+    <script src = "../../assets/js/footer.js"></script>
 
     <script>
 
         let cattle_detail = JSON.parse(localStorage.getItem("cattle_details"));
         let favourites = JSON.parse(localStorage.getItem("favourites"));
         let user_UniqueId = JSON.parse(localStorage.getItem("phone_no_id"));
-        
+
         let users_FavCattle = favourites.filter(e => e.user_unique_id == user_UniqueId);
-       
+
         let favourite_id = cattle_detail.filter(e => users_FavCattle.some(uuid => uuid.cattleId === e.cattle_uniqueId));
 
-        for(i=0; i<favourite_id.length; i++){
+        for (i = 0; i < favourite_id.length; i++) {
 
             // cattle container
-            div_p1 = document.createElement("div");
-            div_p1.setAttribute("class","p1");
+            cattle_container = document.createElement("div");
+            cattle_container.setAttribute("class", "cattle_container");
 
             // image container
-            div_img_container = document.createElement("div");
-            div_img_container.setAttribute("class","img_container");
-            div_p1.append(div_img_container)
+            cattle_img_container = document.createElement("div");
+            cattle_img_container.setAttribute("class", "img_container");
+            cattle_container.append(cattle_img_container)
 
             // a 
 
-            cattle_imageContainer=document.createElement("a");
-            cattle_imageContainer.setAttribute("href","../cattle details/cow/C1.html?breed=" + favourite_id[i]["breed"] + "&cattle_id=" + favourite_id[i]["cattle_uniqueId"] + "&user_id=" + favourite_id[i]["userId"]);
-            div_img_container.append(cattle_imageContainer)
+            cattle_anchor = document.createElement("a");
+            cattle_anchor.setAttribute("href", "../cattle details/cow/C1.html?breed=" + favourite_id[i]["breed"] + "&cattle_id=" + favourite_id[i]["cattle_uniqueId"] + "&user_id=" + favourite_id[i]["userId"]);
+            cattle_img_container.append(cattle_anchor)
 
             // cattle image
             cattle_image = document.createElement("img");
-            cattle_image.setAttribute("src",favourite_id[i]["image"]);
-            cattle_image.setAttribute("alt",favourite_id[i]["breed"] + " " + favourite_id[i]["cattle"]); 
-            cattle_image.setAttribute("class","i1");    
-            cattle_imageContainer.append(cattle_image)
-           
+            cattle_image.setAttribute("src", favourite_id[i]["image"]);
+            cattle_image.setAttribute("alt", favourite_id[i]["breed"] + " " + favourite_id[i]["cattle"]);
+            cattle_image.setAttribute("class", "cattle_image");
+            cattle_anchor.append(cattle_image)
+
             // cattle info container
-            div_bspace = document.createElement("div");
-            div_bspace.setAttribute("class","bspace");
-            div_p1.append(div_bspace)
+            info_container = document.createElement("div");
+            info_container.setAttribute("class", "info_container");
+            cattle_container.append(info_container)
 
             // cattle info
-            p_name = document.createElement("p");
-            p_name.setAttribute("class","pname");
-            p_name.innerText = favourite_id[i]["breed"] + " " + favourite_id[i]["cattle"] + " " + favourite_id[i]["id"];
-            div_bspace.append(p_name)
+            cattle_name = document.createElement("p");
+            cattle_name.setAttribute("class", "cattle_name");
+            cattle_name.innerText = favourite_id[i]["breed"] + " " + favourite_id[i]["cattle"] + " " + favourite_id[i]["id"];
+            info_container.append(cattle_name)
 
-            p_age = document.createElement("p");
-            p_age.innerText = "Age: " + favourite_id[i]["age"] + " Year(s)";
-            div_bspace.append(p_age)
+            cattle_age = document.createElement("p");
+            cattle_age.innerText = "Age: " + favourite_id[i]["age"] + " Year(s)";
+            info_container.append(cattle_age)
 
-            p_gender = document.createElement("p");
-            p_gender.innerText = "Gender: " + favourite_id[i]["gender"];
-            div_bspace.append(p_gender)
+            cattle_gender = document.createElement("p");
+            cattle_gender.innerText = "Gender: " + favourite_id[i]["gender"];
+            info_container.append(cattle_gender)
 
             button_know = document.createElement("button");
-            button_know.setAttribute("class","remove_button");
-            button_know.setAttribute("data-id",favourite_id[i]["cattle_uniqueId"]);
+            button_know.setAttribute("class", "remove_button");
+            button_know.setAttribute("data-id", favourite_id[i]["cattle_uniqueId"]);
             button_know.innerText = "Remove";
-            div_bspace.append(button_know);
+            info_container.append(button_know);
 
-            document.querySelector("div.cattles_container").append(div_p1)
+            document.querySelector("div.cattles_container").append(cattle_container)
         }
 
+        // function for dislike
+
         const remove = document.querySelectorAll('button.remove_button');
-        
+
         remove.forEach(function (findId) {
             findId.addEventListener('click', function () {
-                if(confirm("Are you sure you want to remove")){
+                if (confirm("Are you sure you want to remove")) {
                     const id = this.dataset.id;
 
                     let favourites = JSON.parse(localStorage.getItem("favourites"));
-                    
-                    function find_data(e){
+
+                    function find_data(e) {
                         return e.cattleId == id;
                     }
 
                     favourite_data = favourites.find(find_data);
                     console.log(favourite_data);
-                    
+
                     const removedata = favourites.indexOf(favourite_data);
                     console.log(removedata);
-                    favourites.splice(removedata,1);
-                    localStorage.setItem("favourites",JSON.stringify(favourites));
+                    favourites.splice(removedata, 1);
+                    localStorage.setItem("favourites", JSON.stringify(favourites));
                     location.reload();
                 }
-                
+
             });
         });
 
     </script>
 
 </body>
+
 </html>

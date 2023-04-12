@@ -19,93 +19,84 @@
 <body>
     
     <main>
-        <div class = "d0">  
-            <div><button onclick="window.history.back()"> BACK </button></a></div>
-            <h1 class = "h14"> Cattle Details </h1>
+
+        <!-- back button section -->
+
+        <div class = "back_btn_container">  
+            <div> <button onclick = "window.history.back()"> BACK </button> </div>
+            <h1 class = "title4"> Cattle Details </h1>
         </div>
+
         <hr>
+
+        <!-- Details section -->
+
         <form>  
-            <div class = "r1">
+
+            <div class = "details_section">
                 <div>
                     <label> Age </label><br>
                     <input required type = "text" id = "age" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
                 </div>
                 <div>
-                    <label> Gender </label><br>
+                    <label> Gender </label> <br>
                     <select required id = "gender">
 					    <option> Male </option>
 					    <option selected> Female </option>
 				    </select>
                 </div>
                 <div class = "weight">
-                    <label> Weight (kg) </label><br>
+                    <label> Weight (kg) </label> <br>
                     <input required type = "text" id = "weight" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "5">
                 </div>
             </div>
-            <div class = "r1">
+
+            <div class = "details_section">
                 <div>
-                    <label> Milk per day (litres) </label><br>
+                    <label> Milk per day (litres) </label> <br>
                     <input required type = "text" id = "milk" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
                 </div>
                 <div>
-                    <label> Price (Rs.) </label><br>
+                    <label> Price (Rs.) </label> <br>
                     <input required type = "text" id = "price" oninput = "this.value = this.value.replace(/[^0-9]/g,'')">
                 </div>
                 <div class = "weight">
-                    <label> Lactation </label><br>
+                    <label> Lactation </label> <br>
                     <input required type = "text" id = "lactation" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
                 </div>
             </div>
-            <div class = "r2">
-                <label> Description </label><br>
+
+            <div class = "description_section">
+                <label> Description </label> <br>
                 <textarea id = "description"></textarea>
             </div>
-            <div class = "r1">
+
+            <div class = "details_section">
                 <div>
-				    <label> Add or Remove Photo: </label><br>
+				    <label> Add or Remove Photo: </label> <br>
 				    <input type = "url" multiple id = "image">
                 </div> 
                 <div>
-				    <label> Add or Remove Photo: </label><br>
+				    <label> Add or Remove Photo: </label> <br>
 				    <input type = "url" multiple id = "image1">
                 </div>  
                 <div class = "weight">
-				    <label> Add or Remove Video: </label><br>
+				    <label> Add or Remove Video: </label> <br>
 				    <input type = "url" multiple>
                 </div>  
 			</div>
-            <div class = "sub">
-                <div class = "divbtn"><button class = "btn2" type = "button" id = "sold"> Sold </button></div>
-                <div><button class = "btn1" type = "button" id = "save"> Save </button></div>
+
+            <div class = "btn_container">
+                <div class = "sold_btn_container"> <button id = "sold_btn" type = "button"> Sold </button> </div>
+                <div> <button class = "submit_btn" type = "button" id = "save_btn"> Save </button> </div>
             </div>
+
         </form>
+
     </main>
 
-    <footer>
-        <div class="foot">
-            <div class="foot1">
-                <img class="logof" src="../../assets/images/cattles/logo2.png" alt = "logo">
-                <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
-                    Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
-                    full potential while ensuring livestock wellbeing.</p>
-            </div>
-            <div class="foot2">
-                <h2 class = "connect"> CONNECT WITH US</h2>
-                <div class = "fspace">
-                    <p> Email: info@kowmart.com</p>
-                    <p> Ph.no: 1234567890</p>
-                    <p> Insta: KowMart</p>
-                </div>
-                <div class = "contact">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../../assets/js/header.js"></script>
+    <script src = "../../assets/js/header.js"></script>
+    <script src = "../../assets/js/footer.js"></script>
 
     <script>
 
@@ -150,7 +141,7 @@
             }
         }
 
-        document.getElementById("save").addEventListener("click",updateDetails);
+        document.getElementById("save_btn").addEventListener("click",updateDetails);
 
         // Delete function
 
@@ -173,7 +164,7 @@
             }
         }
 
-        document.getElementById("sold").addEventListener("click",deleteDetails);
+        document.getElementById("sold_btn").addEventListener("click",deleteDetails);
 
     </script>
     

@@ -15,49 +15,43 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="logodiv"><img class = "logo" src="../assets/images/cattles/logo1.png" alt="logo"></div>
-        <div class="lotit"><h1 class = "hd"> KowMart </h1></div>
+
+    <div class = "navbar">
+        <div class = "logo_container"> <img class = "logo" src = "../assets/images/cattles/logo1.png" alt = "logo"> </div>
+        <div class = "logo_name_container"> <h1 class = "logo_name"> KowMart </h1> </div>
     </div>
-    <div class = "bg">
+
+    <div class = "form_container">
+
         <form role = "form" onsubmit ="signIn(event);">
+
             <h1> LOGIN </h1>
-            <div class = "order">
-                <!-- <div>
-                    <label> Email </label><br> 
-                    <input type = "email" placeholder="abc@gmail.com" id = "email">
-                </div> -->
+            <div class = "details_container">
+                
                 <div>
                     <label> Phone No. </label><br>
-                    <input required = "text" id ="phone_no" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" minlength = "10" maxlength= "10">
+                    <input required = "text" id = "phone_no" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" minlength = "10" maxlength= "10">
                 </div>
                 <div>
                     <label> Password </label><br>
                     <input required type  = "password" id = "password">
                 </div>
-                <div class = "btn">
-                    <button type = "submit"> LOGIN </button></a>
+
+                <div class = "submit_btn_container">
+                    <button type = "submit"> LOGIN </button>
                 </div>
-                <div class = "new">
-                    <p> New Customer? <a href = "register.html"> Start here </a></p>
+                <div class = "link_container">
+                    <p> New Customer? <a href = "register.html"> Start here </a> </p>
                 </div>
+
             </div>
+
         </form>
+
     </div>
 
     <script src = "../assets/js/login.js"></script>
 
-    <!-- <script>
-        function sub(){
-            const phone_no = document.getElementById("phone_no").value
-            const email = document.getElementById("email").value
-            const password = document.getElementById("password").value
-
-            console.log(phone_no)
-            console.log(email)
-            console.log(password)
-        }
-    </script> -->
-
 </body>
+
 </html>

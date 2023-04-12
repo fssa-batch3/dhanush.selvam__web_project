@@ -3,7 +3,7 @@ body{
     font-family: 'PT Serif', serif;    
 }
 
-.page{
+.content_container{
     display: flex;
     justify-content: center;
 }
@@ -11,11 +11,12 @@ body{
 .content ,.content1{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 70%;
     margin: 5%;
 }
 
-.s2{
+.text_container{
     width: 50%;
 }
 
@@ -25,13 +26,13 @@ p{
     line-height: 15px;
 }
 
-.p1{
+.info_text{
     font-size: 22px;
     line-height: 3rem;
     font-weight: normal;
 }
 
-.head{
+.heading{
     line-height: 3rem;
 }
 
@@ -39,7 +40,7 @@ p{
     border-radius: 10px;
 }
 
-.ho1 {
+.banner_container {
     height: 450px;
     background-image: url("../images/cattles/ho3.jpg");
     margin-top: 60px;
@@ -51,18 +52,19 @@ p{
     align-items: center;
 }
 
-.ho5 {
+.banner_title {
     background-color: #ffffff80;
     padding: 15px 20px;
 }
 
 @media screen and (max-width: 480px) {
-    .ho1{
+
+    .banner_container{
         height: 36vh;
         background-position: 0;
     }
 
-    .ho5{
+    .banner_title{
         padding: 5px 10px;
         font-size: 22px;
         text-align: center;
@@ -80,11 +82,11 @@ p{
         margin: auto;
     }
 
-    .s2{
+    .text_container{
         width: 100%;
     }
 
-    .p1{
+    .info_text{
         font-size: 20px;
         line-height: 2.5rem;
     }

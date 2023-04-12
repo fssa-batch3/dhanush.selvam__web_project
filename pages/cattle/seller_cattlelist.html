@@ -19,40 +19,24 @@
 <body>
 
     <main>
-        <div class="ho7">
+
+         <!-- Cattles Section -->
+
+        <div class = "products_section">
             
-            <div class = "titbut"><button class = "btn" onclick="window.history.back()"> BACK </button></div>
-            <div class="ho6"><h1 class = "title_color"> Cattle List </h1></div>
-           
+            <div class = "back_button_container">
+                <button class = "btn" onclick = "window.history.back()"> BACK </button>
+            </div>
+
+            <div class = "title_container"> <h1 class = "title_color"> Cattle List </h1> </div>
             <div class = "cattles_container"> </div>
+
         </div>
+
     </main>
 
-    <footer>
-        <div class="foot">
-            <div class="foot1">
-                <img class="logof" src="../../assets/images/cattles/logo2.png" alt = "logo">
-                <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
-                    Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
-                    full potential while ensuring livestock wellbeing.</p>
-            </div>
-            <div class="foot2">
-                <h2 class = "connect"> CONNECT WITH US</h2>
-                <div class = "fspace">
-                    <p> Email: info@kowmart.com</p>
-                    <p> Ph.no: 1234567890</p>
-                    <p> Insta: KowMart</p>
-                </div>
-                <div class = "contact">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../../assets/js/header.js"></script>
+    <script src = "../../assets/js/header.js"></script>
+    <script src = "../../assets/js/footer.js"></script>
     
     <script>
 
@@ -61,42 +45,43 @@
         let cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
         let usersCattle = cattle_details.filter(e => e.userId == user_UniqueId);
 
-        for(i=0; i<usersCattle.length; i++){
+        for(i = 0; i < usersCattle.length; i++){
 
             // cattle container
-            div_p12 = document.createElement("div");
-            div_p12.setAttribute("class","p12");
+            cattle_container = document.createElement("div");
+            cattle_container.setAttribute("class","cattle_container");
+            cattle_container.setAttribute("id","edit_cattle_container")
 
             // image container
-            div_img_container = document.createElement("div");
-            div_img_container.setAttribute("class","img_container");
-            div_p12.append(div_img_container)
+            cattle_img_container = document.createElement("div");
+            cattle_img_container.setAttribute("class","img_container");
+            cattle_container.append(cattle_img_container)
 
             // a 
 
-            cattle_imageContainer=document.createElement("a")
-            cattle_imageContainer.setAttribute("href","../cattle details/cow/C1.html?cattle_id=" + usersCattle[i]["cattle_uniqueId"] + "&user_id=" + usersCattle[i]["userId"]);
-            div_img_container.append(cattle_imageContainer)
+            cattle_anchor = document.createElement("a")
+            cattle_anchor.setAttribute("href","../cattle details/cow/C1.html?cattle_id=" + usersCattle[i]["cattle_uniqueId"] + "&user_id=" + usersCattle[i]["userId"]);
+            cattle_img_container.append(cattle_anchor)
             
             // cattle image
             cattle_image = document.createElement("img");
             cattle_image.setAttribute("src",usersCattle[i]["image"]);
             cattle_image.setAttribute("alt",usersCattle[i]["breed"] + " " + usersCattle[i]["cattle"]);
-            cattle_image.setAttribute("class","i1");
-            cattle_imageContainer.append(cattle_image)
+            cattle_image.setAttribute("class","cattle_image");
+            cattle_anchor.append(cattle_image)
 
             // cattle info
-            h2_name = document.createElement("h2");
-            h2_name.innerText = usersCattle[i]["breed"] + " " + usersCattle[i]["cattle"] + " " + usersCattle[i]["id"];
-            div_p12.append(h2_name)
+            cattle_name = document.createElement("h2");
+            cattle_name.innerText = usersCattle[i]["breed"] + " " + usersCattle[i]["cattle"] + " " + usersCattle[i]["id"];
+            cattle_container.append(cattle_name)
 
             button_know = document.createElement("button");
             button_know.setAttribute("class","edit_button");
             button_know.setAttribute("data-id",usersCattle[i]["cattle_uniqueId"]);
             button_know.innerText = "Edit";
-            div_p12.append(button_know)
+            cattle_container.append(button_know)
 
-            document.querySelector("div.cattles_container").append(div_p12)
+            document.querySelector("div.cattles_container").append(cattle_container)
         }
 
         // Function for edit button 
