@@ -6,25 +6,62 @@ header{
     align-items: center;
     background-color: white;
     box-shadow: #00a651 4px 4px 4px;
-    padding: 0px 50px 0px 30px;
+    padding: 0px 50px 0px 40px;
     width: auto;
     position: sticky;
     top: 0;
     z-index: 1;
 }
 
-#login{
-    padding: 10px 20px;
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.logo_container{
+    padding: 15px 20px 0px 0px;
+}
+
+.logo{
+    width: 70px;
+}
+
+.navbar>div >a{
     font-size: 20px;
+    text-decoration: none;
+    color: #00a651;
+}
+
+li {
+    padding: 20px;
+    list-style: none;
+}
+
+li >a{
+    font-size: 22px;
+    text-decoration: none;
     font-weight: bold;
+    color: #00a651;
+}
+
+li >a:hover{
+    color: orange;
+}
+
+.login{
     border: 2px solid #00a651;
     background-color: white;
     color: #00a651;
     border-radius: 10px;
 }
 
-#login:hover{
+.login:hover{
     color: orange;
+}
+
+#sell{
+    padding: 10px 25px;
 }
 
 .VIpgJd-ZVi9od-ORHb-OEVmcd {
@@ -49,46 +86,6 @@ header{
 
 #google_translate_element{
     margin-left: 30px;
-}
-
-.logo{
-    width: 70px;
-}
-
-.logodiv{
-    padding: 15px;
-    padding-right: 30px;
-}
-
-.navbar {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.lotit >a{
-    font-size: 20px;
-    text-decoration: none;
-    color: #00a651;
-}
-
-li >a{
-    font-size: 22px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #00a651;
-}
-
-li >a:hover{
-    color: orange;
-}
-
-ul{ 
-    margin-left: -60px;
-}
-
-li {
-    padding: 20px 20px;
-    list-style: none;
 }
 
 footer {
@@ -157,27 +154,12 @@ i:hover{
     padding-left: 40px;
 }
 
-.sell{
-    background-color: white;
-    border: 2px solid #00a651;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px 25px;
-    border-radius: 10px;
-    color: #00a651;
-}
-
-.sell:hover {
-    color: orange;
-    /* border-style: none; */
-}
-
-.user{
+.user_icon_container{
     margin-left: 30px;
 }
 
 .sidenav {
-    height: 42%;
+    height: 36%;
     width: 0;
     position: fixed;
     z-index: 1;
@@ -208,14 +190,13 @@ i:hover{
     top: 0;
     right: 25px;
     font-size: 36px;
-    margin-left: 50px;
   }
 
   span{
     display: none;
     position: absolute;
     left: 21rem;
-    top: 25px;
+    top: 23px;
     color: #00a651;
   }
 
@@ -232,12 +213,12 @@ i:hover{
         width: 60px;
     }
 
-    .logodiv{
-        padding: 20px 15px 0px 20px;
+    .logo_container{
+        padding: 18px 15px 0px 20px;
         margin-top: -7px;
     }
 
-    .hd{
+    .logo_head{
         font-size: 2rem;
     }
 
@@ -247,7 +228,7 @@ i:hover{
         width: 100%;
     }
 
-    .butcot{
+    .btn_container{
         display: none;
         background-color: #f1f1f1;
         margin-top: -10px;
@@ -265,29 +246,22 @@ i:hover{
     .sidenav a{
         font-size: 20px;
     }
-
-    ul.navbar{
-        display: flex;
-        flex-direction: column;
-    }
     
     li {
         padding: 13px 15px;
     }
 
-    .logbutton{
-        padding: 0px 10px;
+    .btn_con{
+        padding: 5px 10px;
     }
 
     .profile_icon{
-        padding: 5px 10px;
+        padding: 5px 11px;
     }
 
     footer{
         display: block;
         padding: 0px;
-        background-color: #00a651;
-        color: white;
     }
 
     .left_foot{
@@ -319,7 +293,7 @@ i:hover{
         padding: 20px 0px 30px 0px;
     }
 
-    .btn ,.sell{
+    .login {
         background-color: transparent;
         font-size: 25px;
         padding: 7px 15px;
@@ -327,8 +301,9 @@ i:hover{
         border: 2px solid teal;
     }
 
-    #sellpro{
-        flex-direction: column;
+    #sell{
+        padding: 7px 20px;
+        font-weight: bold;
     }
 
     .fa-user{
@@ -336,7 +311,7 @@ i:hover{
         font-size: 30px;
     }
 
-    .user{
+    .user_icon_container{
         margin: 0px 0px 20px 40px;
     }
 

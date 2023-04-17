@@ -1,33 +1,44 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
 body {
     background-color: #e8f5ec;
-    font-family: 'PT Serif', serif;
+    font-family: 'Questrial', sans-serif;
 }
 
-.back_button_container{
-    margin-top: 45px;
-    /* margin-top: 15px; */
+.back_button_container1{
+    margin-top: 15px;
+}
+
+.title_container1{
+    margin-left: 6.3rem;
+    /* margin-left: 8rem; */
 }
 
 .title_container{
-    /* margin-left: 6.3rem; */
     text-align: center;
-    margin-top: -5%;
+    margin-top: -4rem;
 }
 
 .title_color {
     color: darkslategray;
 }
 
-.products_section {
+.products_section1 {
     margin: 2% 10% 2.5% 10%;
-    /* display: flex;
-    justify-content: space-between; */
+    display: flex;
+    justify-content: space-between;
 }
 
-/* .filter_cattles_container{
-    display: flex;
-    flex-direction: column;
+.products_section{
+    margin: 3% 10% 2.5% 10%;
+}
+
+.filter_cattles_container{
     width: 25%;
+    height: 100%;
+    position: sticky;
+    top: 129px;
 }
 
 .filter_container{
@@ -38,6 +49,8 @@ body {
     height: 40rem;
     border-radius: 5px;
     margin-top: 18px;
+    box-sizing: border-box;
+    padding: 1px;
 }
 
 .breed_filter_container ,.state_filter_container{
@@ -67,6 +80,7 @@ body {
 .breed_container ,.state_container{
     padding-top: 5px;
     padding-bottom: 15px;
+    display: flex;
 }
 
 input{
@@ -75,18 +89,26 @@ input{
 
 label{
     font-size: 18px;
-} */
+}
+
+.range_container{
+    background-color: white;
+}
 
 .cattles_title_container{
     display: flex;
     flex-direction: column;
     width: 64%;
+    /* width: 70%; */
 }
 
 .cattles_container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     grid-gap: 0px 115px;
+    /* padding: 3% 5%;
+    width: 91%;
+    background-color: #ffffffbf; */
 }
 
 .cattle_container {
@@ -156,10 +178,8 @@ div.info_container >a >button:hover {
 
 /* Buyer to Seller page */
 
-.ho6cat{
-    margin-bottom: 2.5%;
+#other_cattles{
     text-align: center;
-    color: darkslategray;
 }
 
 /* Seller Product List */
@@ -192,8 +212,27 @@ div.info_container >a >button:hover {
         margin-bottom: 35px;
     }
 
+    .products_section1{
+        display: block;
+        margin: 3% 0%;
+    }
+
+    .filter_cattles_container{
+        display: none;
+    }
+
+    .title_container1{
+        margin: 0;
+        text-align: center;
+    }
+
+    .cattles_title_container{
+        width: 100%;
+    }
+
     .products_section{
-        margin: 0% 0% 12% 0%;
+        margin: 0% 0% 3% 0%;
+        padding-top: 5%;
     }
 
     .cattles_container{
@@ -205,7 +244,7 @@ div.info_container >a >button:hover {
         margin: 0px;
     }
 
-    div.back_button_container >button.btn{
+    div.back_button_container {
         display: none;
     }
 
@@ -215,9 +254,5 @@ div.info_container >a >button:hover {
 
     h1{
         font-size: 28px;
-    }
-
-    footer{
-        margin-top: -40px;
     }
 }
