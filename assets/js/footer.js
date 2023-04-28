@@ -1,9 +1,7 @@
-
-const footer =
-    `<footer>
+const footer = `<footer>
 
         <div class = "left_foot">
-            <img class = "footer_logo" src = "${root}/assets/images/cattles/logo2.png" alt = "logo">
+            <img class = "footer_logo" src = "/assets/images/cattles/logo2.png" alt = "logo">
             <p class = "footer_content"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
                 Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
                 full potential while ensuring livestock wellbeing.</p>
@@ -23,6 +21,6 @@ const footer =
             </div>
         </div>
 
-    </footer>`
+    </footer>`;
 
 document.body.insertAdjacentHTML("beforeend", footer);

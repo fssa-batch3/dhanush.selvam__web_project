@@ -1,11 +1,13 @@
-const cattle_data = [{
+const cattle_data = [
+  {
     // ----------------------------- BEST CATTLES -----------------------
     age: "4",
     breed: "Gir",
     cattle: "Cow",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c1",
     date: "25-03-2023",
-    description: "Quality Gir Cow of 4 year(s) age is available in Chennai, TN. The price of the cattle is Rs. 70000/-. The Cow is in 2nd lactation. It Produces 12 Litres of milk on daily basis.",
+    description:
+      "Quality Gir Cow of 4 year(s) age is available in Chennai, TN. The price of the cattle is Rs. 70000/-. The Cow is in 2nd lactation. It Produces 12 Litres of milk on daily basis.",
     gender: "Female",
     id: "CG1",
     image: "https://iili.io/HWccpp9.jpg",
@@ -15,14 +17,15 @@ const cattle_data = [{
     price: "70000",
     userId: "1111111111",
     weight: "400",
-},
-{
+  },
+  {
     age: "1",
     breed: "Kankrej",
     cattle: "Cow",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c2",
     date: "25-03-2023",
-    description: "Quality Kankrej Cow of less than a year age is available in Chennai, Tamil Nadu. The price of the cattle is Rs. 100000/-. The Cow is in 3rd lactation. It Produces 14 Litres of milk on daily basis.",
+    description:
+      "Quality Kankrej Cow of less than a year age is available in Chennai, Tamil Nadu. The price of the cattle is Rs. 100000/-. The Cow is in 3rd lactation. It Produces 14 Litres of milk on daily basis.",
     gender: "Female",
     id: "CK1",
     image: "https://iili.io/HWclJLb.jpg",
@@ -32,14 +35,15 @@ const cattle_data = [{
     price: "100000",
     userId: "2222222222",
     weight: "",
-},
-{
+  },
+  {
     age: "6",
     breed: "Surti",
     cattle: "Buffalo",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c3",
     date: "25-03-2023",
-    description: "Quality Surti Buffalo of 6 year(s) age is available in Trichy, Tamil Nadu. The price of the cattle is Rs. 80000/-. The Buffalo is 9 month(s) pregnant The Buffalo is in 2nd lactation. It Produces 10 Litres of milk on daily basis.",
+    description:
+      "Quality Surti Buffalo of 6 year(s) age is available in Trichy, Tamil Nadu. The price of the cattle is Rs. 80000/-. The Buffalo is 9 month(s) pregnant The Buffalo is in 2nd lactation. It Produces 10 Litres of milk on daily basis.",
     gender: "Female",
     id: "BS1",
     image: "https://iili.io/HWcc6In.jpg",
@@ -49,14 +53,15 @@ const cattle_data = [{
     price: "80000",
     userId: "1111111111",
     weight: "350",
-},
-{
+  },
+  {
     age: "3",
     breed: "Malabari",
     cattle: "Goat",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c4",
     date: "25-03-2023",
-    description: "Quality Malabari Goat of 3 year(s) age is available in Coimbatore, Tamil Nadu. The price of the cattle is Rs. 10000/-.",
+    description:
+      "Quality Malabari Goat of 3 year(s) age is available in Coimbatore, Tamil Nadu. The price of the cattle is Rs. 10000/-.",
     gender: "Male",
     id: "GM1",
     image: "https://iili.io/HNe38YJ.jpg",
@@ -66,14 +71,15 @@ const cattle_data = [{
     price: "10000",
     userId: "2222222222",
     weight: "32",
-},
-{
+  },
+  {
     age: "1",
     breed: "Bannur",
     cattle: "Sheep",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c5",
     date: "26-03-2023",
-    description: "Quality Bannur Sheep of 1 year(s) age is available in Chennai, Tamil Nadu. The price of the cattle is Rs. 18000/-.",
+    description:
+      "Quality Bannur Sheep of 1 year(s) age is available in Chennai, Tamil Nadu. The price of the cattle is Rs. 18000/-.",
     gender: "Male",
     id: "SB1",
     image: "https://iili.io/HW8MJvs.jpg",
@@ -83,14 +89,15 @@ const cattle_data = [{
     price: "18000",
     userId: "1111111111",
     weight: "25",
-},
-{
+  },
+  {
     age: "4",
     breed: "Ongole",
     cattle: "Ox",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c6",
     date: "27-03-2023",
-    description: "Quality Ongole Ox of 4 year(s) age is available in Chennai, Tamil Nadu. The price of the cattle is Rs. 35000/-.",
+    description:
+      "Quality Ongole Ox of 4 year(s) age is available in Chennai, Tamil Nadu. The price of the cattle is Rs. 35000/-.",
     gender: "Male",
     id: "OO1",
     image: "https://iili.io/HX7wu7S.jpg",
@@ -100,16 +107,17 @@ const cattle_data = [{
     price: "35000",
     userId: "2222222222",
     weight: "280",
-},
+  },
 
-// --------------------- GIR ------------------
-{
+  // --------------------- GIR ------------------
+  {
     age: "4",
     breed: "Gir",
     cattle: "Cow",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c7",
     date: "27-03-2023",
-    description: "Quality Gir Cow of 4 year(s) age is available in Lucknow, UP. The price of the cattle is Rs. 150000/-. The Cow is in 2nd lactation. It Produces 12 Litres of milk on daily basis.",
+    description:
+      "Quality Gir Cow of 4 year(s) age is available in Lucknow, UP. The price of the cattle is Rs. 150000/-. The Cow is in 2nd lactation. It Produces 12 Litres of milk on daily basis.",
     gender: "Female",
     id: "CG2",
     image: "https://iili.io/HNea6Jf.jpg",
@@ -119,14 +127,15 @@ const cattle_data = [{
     price: "150000",
     userId: "1111111111",
     weight: "520",
-},
-{
+  },
+  {
     age: "2",
     breed: "Gir",
     cattle: "Cow",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c8",
     date: "25-03-2023",
-    description: "Quality Gir Cow of 2 year(s) age is available in MYSURU, KARNATAKA. The price of the cattle is Rs. 30000/-. ",
+    description:
+      "Quality Gir Cow of 2 year(s) age is available in MYSURU, KARNATAKA. The price of the cattle is Rs. 30000/-. ",
     gender: "Female",
     id: "CG3",
     image: "https://iili.io/HNelH4n.md.jpg",
@@ -136,14 +145,15 @@ const cattle_data = [{
     price: "150000",
     userId: "2222222222",
     weight: "110",
-},
-{
+  },
+  {
     age: "3",
     breed: "Gir",
     cattle: "Cow",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c9",
     date: "26-03-2023",
-    description: "Quality Gir Cow of 3 year(s) age is available in AHMADABAD, GUJARAT. The price of the cattle is Rs. 50000/-. The Cow is 7 month(s) pregnant The Cow is in 2nd lactation. It Produces 10 Litres of milk on daily basis.",
+    description:
+      "Quality Gir Cow of 3 year(s) age is available in AHMADABAD, GUJARAT. The price of the cattle is Rs. 50000/-. The Cow is 7 month(s) pregnant The Cow is in 2nd lactation. It Produces 10 Litres of milk on daily basis.",
     gender: "Female",
     id: "CG4",
     image: "https://iili.io/HNelywQ.md.jpg",
@@ -153,15 +163,16 @@ const cattle_data = [{
     price: "50000",
     userId: "1111111111",
     weight: "400",
-},
-// --------------------- HF ------------------
-{
+  },
+  // --------------------- HF ------------------
+  {
     age: "4",
     breed: "HF1",
     cattle: "Cow",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a1",
     date: "26-03-2023",
-    description: "Quality HF Cow of 4 year(s) age is available in Karnal, Haryana. The price of the cattle is Rs. 82000/-. The Cow is in 2nd lactation. It Produces 20 Litres of milk on daily basis.",
+    description:
+      "Quality HF Cow of 4 year(s) age is available in Karnal, Haryana. The price of the cattle is Rs. 82000/-. The Cow is in 2nd lactation. It Produces 20 Litres of milk on daily basis.",
     gender: "Female",
     id: "CH1",
     image: "https://iili.io/HNe0otp.md.jpg",
@@ -171,14 +182,15 @@ const cattle_data = [{
     price: "82000",
     userId: "2222222222",
     weight: "520",
-},
-{
+  },
+  {
     age: "3",
     breed: "HF2",
     cattle: "Cow",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a2",
     date: "28-03-2023",
-    description: "Quality HF Cow of 3 year(s) age is available in THRISSUR, KERALA. The price of the cattle is Rs. 80000/-. The Cow is in 2nd lactation. It Produces 10 Litres of milk on daily basis.",
+    description:
+      "Quality HF Cow of 3 year(s) age is available in THRISSUR, KERALA. The price of the cattle is Rs. 80000/-. The Cow is in 2nd lactation. It Produces 10 Litres of milk on daily basis.",
     gender: "Female",
     id: "CH2",
     image: "https://iili.io/HNe0Uf1.md.jpg",
@@ -188,14 +200,15 @@ const cattle_data = [{
     price: "80000",
     userId: "1111111111",
     weight: "500",
-},
-{
+  },
+  {
     age: "2",
     breed: "HF3",
     cattle: "Cow",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a3",
     date: "26-03-2023",
-    description: "Quality HF Cow of 2 year(s) age is available in Kapurthala, Punjab. The price of the cattle is Rs. 150000/-. The Cow is 8 month(s) pregnant The Cow is in 1st lactation. It Produces 35 Litres of milk on daily basis.",
+    description:
+      "Quality HF Cow of 2 year(s) age is available in Kapurthala, Punjab. The price of the cattle is Rs. 150000/-. The Cow is 8 month(s) pregnant The Cow is in 1st lactation. It Produces 35 Litres of milk on daily basis.",
     gender: "Female",
     id: "CH3",
     image: "https://iili.io/HNe19Js.jpg",
@@ -205,15 +218,16 @@ const cattle_data = [{
     price: "150000",
     userId: "2222222222",
     weight: "530",
-},
-// --------------------- JERSEY ------------------
-{
+  },
+  // --------------------- JERSEY ------------------
+  {
     age: "3",
     breed: "Jersey",
     cattle: "Cow",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a4",
     date: "26-03-2023",
-    description: "Quality Jersey Cow of 5 year(s) age is available in RAMGARH, JHARKHAND. The price of the cattle is Rs. 42000/-.",
+    description:
+      "Quality Jersey Cow of 5 year(s) age is available in RAMGARH, JHARKHAND. The price of the cattle is Rs. 42000/-.",
     gender: "Female",
     id: "CJ1",
     image: "https://iili.io/HNe1B19.md.jpg",
@@ -223,14 +237,15 @@ const cattle_data = [{
     price: "50000",
     userId: "1111111111",
     weight: "300",
-},
-{
+  },
+  {
     age: "5",
     breed: "Jersey",
     cattle: "Cow",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a5",
     date: "27-03-2023",
-    description: "Quality Jersey Cow of 5 year(s) age is available in RAMGARH, JHARKHAND. The price of the cattle is Rs. 42000/-.",
+    description:
+      "Quality Jersey Cow of 5 year(s) age is available in RAMGARH, JHARKHAND. The price of the cattle is Rs. 42000/-.",
     gender: "Male",
     id: "CJ2",
     image: "https://iili.io/HNeE2Yg.md.jpg",
@@ -240,14 +255,15 @@ const cattle_data = [{
     price: "42000",
     userId: "2222222222",
     weight: "210",
-},
-{
+  },
+  {
     age: "5",
     breed: "Jersey",
     cattle: "Cow",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a6",
     date: "28-03-2023",
-    description: "Quality Jersey Cow of 5 year(s) age is available in BUXAR, BIHAR. The price of the cattle is Rs. 65000/-. The Cow is 9 month(s) pregnant The Cow is in 2nd lactation. It Produces 24 Litres of milk on daily basis.",
+    description:
+      "Quality Jersey Cow of 5 year(s) age is available in BUXAR, BIHAR. The price of the cattle is Rs. 65000/-. The Cow is 9 month(s) pregnant The Cow is in 2nd lactation. It Produces 24 Litres of milk on daily basis.",
     gender: "Female",
     id: "CJ3",
     image: "https://iili.io/HNe1RLB.md.jpg",
@@ -257,15 +273,16 @@ const cattle_data = [{
     price: "42000",
     userId: "1111111111",
     weight: "650",
-},
-// --------------------- MURRAH ------------------
-{
+  },
+  // --------------------- MURRAH ------------------
+  {
     age: "3",
     breed: "Murrah",
     cattle: "Buffalo",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a7",
     date: "29-03-2023",
-    description: "Quality Murrah Buffalo of 3 year(s) age is available in BIDAR, KARNATAKA. The price of the cattle is Rs. 45000/-. The Buffalo is 2 month(s) pregnant It Produces 10 Litres of milk on daily basis.",
+    description:
+      "Quality Murrah Buffalo of 3 year(s) age is available in BIDAR, KARNATAKA. The price of the cattle is Rs. 45000/-. The Buffalo is 2 month(s) pregnant It Produces 10 Litres of milk on daily basis.",
     gender: "Female",
     id: "BS1",
     image: "https://iili.io/HNe1WLN.md.jpg",
@@ -275,14 +292,15 @@ const cattle_data = [{
     price: "45000",
     userId: "2222222222",
     weight: "250",
-},
-{
+  },
+  {
     age: "1",
     breed: "Murrah",
     cattle: "Buffalo",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a8",
     date: "27-03-2023",
-    description: "Quality Murrah Buffalo of 1 year(s) age is available in THRISSUR, KERALA. The price of the cattle is Rs. 60000/-. ",
+    description:
+      "Quality Murrah Buffalo of 1 year(s) age is available in THRISSUR, KERALA. The price of the cattle is Rs. 60000/-. ",
     gender: "Male",
     id: "BS2",
     image: "https://iili.io/HNeEYZl.md.jpg",
@@ -292,14 +310,15 @@ const cattle_data = [{
     price: "60000",
     userId: "1111111111",
     weight: "250",
-},
-{
+  },
+  {
     age: "2",
     breed: "Murrah",
     cattle: "Buffalo",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a9",
     date: "26-03-2023",
-    description: "Quality Murrah Buffalo of 2 year(s) age is available in Ayodhya , Uttar Pradesh . The price of the cattle is Rs. 30000/-",
+    description:
+      "Quality Murrah Buffalo of 2 year(s) age is available in Ayodhya , Uttar Pradesh . The price of the cattle is Rs. 30000/-",
     gender: "Female",
     id: "BS3",
     image: "https://iili.io/HNeEhwx.md.jpg",
@@ -309,15 +328,16 @@ const cattle_data = [{
     price: "30000",
     userId: "2222222222",
     weight: "370",
-},
-// --------------------- SIROHI ------------------
-{
+  },
+  // --------------------- SIROHI ------------------
+  {
     age: "1",
     breed: "Sirohi",
     cattle: "Goat",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085b1",
     date: "24-03-2023",
-    description: "Quality Sirohi Goat of less than a year age is available in AJMER, RAJASTHAN. The price of the cattle is Rs. 20000/-",
+    description:
+      "Quality Sirohi Goat of less than a year age is available in AJMER, RAJASTHAN. The price of the cattle is Rs. 20000/-",
     gender: "Male",
     id: "GS1",
     image: "https://iili.io/HNeE4wv.md.jpg",
@@ -327,14 +347,15 @@ const cattle_data = [{
     price: "20000",
     userId: "1111111111",
     weight: "50",
-},
-{
+  },
+  {
     age: "1",
     breed: "Sirohi",
     cattle: "Goat",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085b2",
     date: "26-03-2023",
-    description: "Quality Sirohi Goat of less than a year age is available in CHANDAULI, UTTAR PRADESH. The price of the cattle is Rs. 30000/-.",
+    description:
+      "Quality Sirohi Goat of less than a year age is available in CHANDAULI, UTTAR PRADESH. The price of the cattle is Rs. 30000/-.",
     gender: "Male",
     id: "GS2",
     image: "https://iili.io/HNeGaRa.md.jpg",
@@ -344,14 +365,15 @@ const cattle_data = [{
     price: "30000",
     userId: "2222222222",
     weight: "150",
-},
-{
+  },
+  {
     age: "2",
     breed: "Sirohi",
     cattle: "Goat",
     cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085b3",
     date: "27-03-2023",
-    description: "Quality Sirohi Goat of 2 year(s) age is available in Campirganj, UP. The price of the cattle is Rs. 27000/-",
+    description:
+      "Quality Sirohi Goat of 2 year(s) age is available in Campirganj, UP. The price of the cattle is Rs. 27000/-",
     gender: "Male",
     id: "GS3",
     image: "https://iili.io/HNeGkx4.md.jpg",
@@ -361,31 +383,33 @@ const cattle_data = [{
     price: "27000",
     userId: "1111111111",
     weight: "30",
-},]
+  },
+];
 // --------------------------------------------
 
-const user_data = [{
+const user_data = [
+  {
     name: "Dhanush",
     phone_no: "1111111111",
     password: "Don123",
     address: "No.03/25, Gandhi Street, Kamarajar Salai, Anna Nager, Chennai",
     pincode: "600018",
     user_uniqueId: "9e6c8ef1-d606-4d19-9c1c-96c50518d039",
-},
-{
+  },
+  {
     name: "Ram",
     phone_no: "2222222222",
     password: "Don123",
     address: "No.03/25, Raghavan Colony, MGR Salai, KK Nager, Chennai",
     pincode: "600045",
     user_uniqueId: "9e6c8ef1-d606-4d19-9c1c-96c50518d038",
-},
-]
+  },
+];
 
-let cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
-let userData = JSON.parse(localStorage.getItem("userData"));
+const cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
+const userData = JSON.parse(localStorage.getItem("userData"));
 
-if(!cattle_details && !userData){
-    localStorage.setItem("cattle_details",JSON.stringify(cattle_data));
-    localStorage.setItem("userData",JSON.stringify(user_data));
+if (!cattle_details && !userData) {
+  localStorage.setItem("cattle_details", JSON.stringify(cattle_data));
+  localStorage.setItem("userData", JSON.stringify(user_data));
 }

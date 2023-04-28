@@ -1,58 +1,61 @@
 function signUp(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    let name = document.getElementById("name").value;
-        phone_no = document.getElementById("phone_no").value;
-        // email = document.getElementById("email").value,
-        user_uniqueId = uuidv4();
-        password = document.getElementById("password").value;
-        confirm_password = document.getElementById("confirm_password").value;
-        address = "";
-        pincode = "";
+  const name = document.getElementById("name").value;
+  const phone_no = document.getElementById("phone_no").value;
+  const user_uniqueId = uuidv4();
+  const password = document.getElementById("password").value;
+  const confirm_password = document.getElementById("confirm_password").value;
+  const address = "";
+  const state = "";
+  const pincode = "";
 
+  const userData = JSON.parse(localStorage.getItem("userData")) || [];
 
-    let userData = JSON.parse(localStorage.getItem('userData')) || [];     
+  const exist = userData.some((data) => data.phone_no === phone_no);
 
-    let exist = userData.some( data =>
-        data.phone_no == phone_no);
-
-    if (!exist) {
-        if(password == confirm_password){ 
-            userData.push({ name, phone_no, password, address, pincode, user_uniqueId });
-            localStorage.setItem('userData', JSON.stringify(userData));
-            document.querySelector('form').reset();
-            document.getElementById('phone_no').focus();
-            // document.getElementById('email').focus();
-            alert("Account Created Successfully");
-            location.href = "../../pages/sign in.html";
-        }  
-        else{  
-            alert("Password doesn't matched!");  
-        }          
+  if (!exist) {
+    if (password === confirm_password) {
+      userData.push({
+        name,
+        phone_no,
+        password,
+        address,
+        state,
+        pincode,
+        user_uniqueId,
+      });
+      localStorage.setItem("userData", JSON.stringify(userData));
+      document.querySelector("form").reset();
+      document.getElementById("phone_no").focus();
+      alert("Account Created Successfully");
+      window.location.href = "../../pages/sign in.html";
+    } else {
+      alert("Password doesn't matched!");
     }
-    else {
-        alert("Ooopppssss... Duplicate found! You have already signed up");
-    }
+  } else {
+    alert("Ooopppssss... Duplicate found! You have already signed up");
+  }
 }
 
 function signIn(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    let phone_no = document.getElementById('phone_no').value;
-        password = document.getElementById('password').value;
+  const phone_no = document.getElementById("phone_no").value;
+  const password = document.getElementById("password").value;
 
-    let userData = JSON.parse(localStorage.getItem('userData')) || [];
+  const userData = JSON.parse(localStorage.getItem("userData")) || [];
 
-    let exist = JSON.parse(localStorage.getItem('userData')).some(data =>
-            data.phone_no == phone_no && data.password == password);
+  const exist = JSON.parse(localStorage.getItem("userData")).some(
+    (data) => data.phone_no === phone_no && data.password === password
+  );
 
-    if (!exist) {
-        alert("Incorrect login credentials");
-    }
-    else {
-        localStorage.setItem("phone_no_id",JSON.stringify(phone_no));
-        alert("Successfully logined");
-        location.href = "../../pages/buyer_profile.html";
-        document.querySelector('form').reset();
-    }
+  if (!exist) {
+    alert("Incorrect login credentials");
+  } else {
+    localStorage.setItem("phone_no_id", JSON.stringify(phone_no));
+    alert("Successfully logined");
+    window.location.href = "../../pages/buyer_profile.html";
+    document.querySelector("form").reset();
+  }
 }

@@ -1,57 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <title> Login </title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <title> Login </title>
 
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/signin.css">
-    <link rel="icon" href="../assets/images/cattles/logo.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
-</head>
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/signin.css">
+        <link rel="icon" href="../assets/images/cattles/logo.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    </head>
 
-<body>
+    <body>
 
-    <div class = "navbar">
-        <div class = "logo_container"> <img class = "logo" src = "../assets/images/cattles/logo1.png" alt = "logo"> </div>
-        <div class = "logo_name_container"> <h1 class = "logo_name"> KowMart </h1> </div>
-    </div>
-
-    <div class = "form_container">
-
-        <form role = "form" onsubmit ="signIn(event);">
-
-            <h1> LOGIN </h1>
-            <div class = "details_container">
-                
-                <div>
-                    <label> Phone No. </label><br>
-                    <input required = "text" id = "phone_no" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" minlength = "10" maxlength= "10">
-                </div>
-                <div>
-                    <label> Password </label><br>
-                    <input required type  = "password" id = "password">
-                </div>
-
-                <div class = "submit_btn_container">
-                    <button type = "submit"> LOGIN </button>
-                </div>
-                <div class = "link_container">
-                    <p> New Customer? <a href = "register.html"> Start here </a> </p>
-                </div>
-
+        <div class = "navbar">
+            <div class = "logo_container">
+                <img class = "logo" src = "../assets/images/cattles/logo1.png" alt = "logo"> 
             </div>
+            <div class = "logo_name_container">
+                <h1 class = "logo_name"> KowMart </h1> 
+            </div>
+        </div>
 
-        </form>
+        <div class = "form_container">
 
-    </div>
+            <form role = "form" onsubmit ="signIn(event);">
 
-    <script src = "../assets/js/login.js"></script>
+                <h1> LOGIN </h1>
+                <div class = "details_container">
+                
+                    <div>
+                        <label> Phone No. </label>
+                        <br>
+                        <input required = "text" id = "phone_no" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" minlength = "10" maxlength= "10">
+                    </div>
+                    <div>
+                        <label> Password </label>
+                        <br>
+                        <input required type  = "password" id = "password">
+                    </div>
 
-</body>
+                    <div class = "submit_btn_container">
+                        <button type = "submit"> LOGIN </button>
+                    </div>
+                    <div class = "link_container">
+                        <p>
+                            New Customer? <a href = "register.html"> Start here </a> 
+                        </p>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <script src = "../assets/js/login.js"></script>
+
+    </body>
 
 </html>

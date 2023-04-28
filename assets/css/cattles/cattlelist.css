@@ -53,10 +53,10 @@ body {
     padding: 1px;
 }
 
-.breed_filter_container ,.state_filter_container{
+.breed_filter_container{
     background-color: white;
     margin: auto;
-    width: 80%;
+    width: 85%;
     height: 28%;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     border-radius: 5px;
@@ -66,6 +66,7 @@ body {
 
 .topic_container{
     padding-left: 30px;
+    padding-top: 1px;
     margin-bottom: -5px;
 }
 
@@ -73,11 +74,11 @@ body {
     font-size: 22px;
 }
 
-.breed_list_container ,.state_list_container{
+.breed_list_container, .state_list_container {
     padding-left: 30px;
 }
 
-.breed_container ,.state_container{
+.breed_container, .state_container {
     padding-top: 5px;
     padding-bottom: 15px;
     display: flex;
@@ -91,8 +92,48 @@ label{
     font-size: 18px;
 }
 
+.pincode_container {
+    background-color: white;
+    width: 85%;
+    margin: auto;
+    margin-top: 2rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 5px;
+}
+
+.search_bar_container{
+    display: flex;
+    padding: 0px 0px 15px 30px;
+    align-items: center;
+}
+
+div.search_bar_container >input{
+    margin: 0;
+    outline: none;
+    border: none;
+    width: 70%;
+    font-size: 20px;
+    border-bottom: 2px solid gray;
+    padding-left: 10px;
+}
+
+.fa-magnifying-glass{
+    font-size: 20px;
+    margin-left: 23px;
+    color: #00a651;
+}
+
+.fa-magnifying-glass:hover{
+    transform: scale(1.0);
+    color: #00a651;
+}
+
 .range_container{
     background-color: white;
+}
+
+.no_result{
+    width: 90%;
 }
 
 .cattles_title_container{

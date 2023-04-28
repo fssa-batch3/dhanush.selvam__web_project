@@ -27,7 +27,7 @@ const beforeLogin = `<header>
         
         <div class = "btn_container"> <a href = "${root}/pages/sign in.html"> <button class = "login"> LOGIN </button> </a> </div>
     
-    </header>`
+    </header>`;
 
 const afterLogin = `<header>
 
@@ -60,28 +60,32 @@ const afterLogin = `<header>
             <div class = "user_icon_container"> <a href = ${root}/pages/buyer_profile.html> <i class = "fa-solid fa-user"> </i> </a> </div>
         </div>
 
-    </header>`
+    </header>`;
 
-let phone_id = JSON.parse(localStorage.getItem("phone_no_id"));
+const phone_id = JSON.parse(localStorage.getItem("phone_no_id"));
 
 if (phone_id) {
-    document.body.insertAdjacentHTML("afterbegin", afterLogin);
-    const login_button = document.getElementById("login");
-    login_button?.addEventListener("click", () => document.body.innerHTML = beforeLogin)
+  document.body.insertAdjacentHTML("afterbegin", afterLogin);
+  const login_button = document.getElementById("login");
+  login_button?.addEventListener(
+    "click",
+    () => (document.body.innerHTML = beforeLogin)
+  );
 
-    const logout_button = document.querySelector("#logOut");
-    logout_button?.addEventListener("click", () => {
-        if (confirm("Are you sure you want to logout")) {
-            localStorage.removeItem("phone_no_id");
-            document.body.innerHTML = beforeLogin;
-            window.location.href = "../../index.html"
-        }
-    })
-
-}
-else {
-    document.body.insertAdjacentHTML("afterbegin", beforeLogin);
-    const logout_button = document.getElementById("logOut");
-    logout_button?.removeEventListener("click", () => document.body.innerHTML = afterLogin);
-    localStorage.removeItem("phone_no_id");
+  const logout_button = document.querySelector("#logOut");
+  logout_button?.addEventListener("click", () => {
+    if (confirm("Are you sure you want to logout")) {
+      localStorage.removeItem("phone_no_id");
+      document.body.innerHTML = beforeLogin;
+      window.location.href = "../../index.html";
+    }
+  });
+} else {
+  document.body.insertAdjacentHTML("afterbegin", beforeLogin);
+  const logout_button = document.getElementById("logOut");
+  logout_button?.removeEventListener(
+    "click",
+    () => (document.body.innerHTML = afterLogin)
+  );
+  localStorage.removeItem("phone_no_id");
 }

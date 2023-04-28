@@ -54,6 +54,8 @@ li >a:hover{
     background-color: white;
     color: #00a651;
     border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .login:hover{
