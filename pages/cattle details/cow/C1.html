@@ -1,141 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-        <title> Cow 1 details </title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title> Cow 1 details </title>
 
-        <link rel="stylesheet" href="../../../assets/css/style.css">
-        <link rel="stylesheet" href="../../../assets/css/cattle details/cattle_productpage.css">
-        <link rel="stylesheet" href="../../../assets/css/header_footer.css">
-        <script src="../../../assets/js/main.js"></script>
-        <link rel="icon" href="../../../assets/images/cattles/logo.png" type="image/x-icon">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
-    </head>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/cattle details/cattle_productpage.css">
+    <link rel="stylesheet" href="../../../assets/css/header_footer.css">
+    <script src="../../../assets/js/main.js"></script>
+    <link rel="icon" href="../../../assets/images/cattles/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap"
+        rel="stylesheet">
+</head>
 
-    <body>
+<body>
 
-        <main>
+    <main>
 
-            <!-- Back button section -->
+        <!-- Back button section -->
 
-            <div class = "back_button_container">
-                <button class = "back_btn" onclick = "window.history.back()"> BACK </button> 
-            </div>
+        <div class="back_button_container">
+            <button class="back_btn" onclick="window.history.back()"> BACK </button>
+        </div>
 
-            <!-- Cattle image section -->
+        <!-- Cattle image section -->
 
-            <div class = "slide_container">
-                <div class = "cattle_image_container"> </div>
-                <button class = "chevron" id = "left">
-                    <i class = "fa-solid fa-chevron-left"></i>
-                </button>
-                <button class = "chevron" id = "right">
-                    <i class = "fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
+        <div class="slide_container">
+            <div class="cattle_image_container"> </div>
+            <button class="chevron" id="left">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="chevron" id="right">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
 
-            <!-- Cattle details section -->
+        <!-- Cattle details section -->
 
-            <div class = "details_container">
+        <div class="details_container">
 
-                <div class = "cattle_details_container">
+            <div class="cattle_details_container">
 
-                    <!-- Cattle name section -->
+                <!-- Cattle name section -->
 
-                    <div class = "cattle_details1_container">
-                        <button class = "verified"> VERIFIED CATTLE </button>
-                        <h1 class = "cat_name"> </h1>
-                        <div class = "age_gender_container">
-                            <p class = "cat_age"> </p>
-                            <p class = "cat_gender"> </p>
-                        </div>
-                    </div>
-
-                    <!-- Cattle milk section -->
-
-                    <div class = "cattle_details2_container">
-                        <h1 class = "details_container_head"> Details </h1>
-                        <hr>
-                        <div class = "cattle_other_details_container">
-                            <div class = "cattle_milk_container">
-                                <p> Milk per day </p>
-                                <p class = "cattle_milk"> </p>
-                            </div>
-                            <div class = "cattle_milk_container">
-                                <p> Lactation </p>
-                                <p class = "cattle_lact"> </p>
-                            </div>
-                            <div class= "cattle_milk_container">
-                                <p> Weight </p>
-                                <p class = "cattle_weight"> </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Cattle description section -->
-
-                    <div class = "description_container">
-                        <h1 class = "details_container_head"> Description </h1>
-                        <hr>
-                        <p class = "description"> </p>
+                <div class="cattle_details1_container">
+                    <button class="verified"> VERIFIED CATTLE </button>
+                    <h1 class="cat_name"> </h1>
+                    <div class="age_gender_container">
+                        <p class="cat_age"> </p>
+                        <p class="cat_gender"> </p>
                     </div>
                 </div>
 
-                <div class = "seller_container">
+                <!-- Cattle milk section -->
 
-                    <!-- Cattle price section -->
-
-                    <div class = "price_container">
-                        <h1 class = "price"> </h1>
-                        <div class = "fav_btn_container" id = "fav1"> </div>
-                    </div>
-
-                    <!-- Seller details section -->
-
-                    <div class = "sellerdetails_container">
-                        <h4> SOLD BY </h4>
-                        <h2 class = "seller_name"> </h2>
-                        <h4 class = "posted_date"> </h4>
-                        <div class = "fav_btn_container"> 
-                            <a href="https://api.whatsapp.com/qr/XQYMHVSSYORIN1?autoload=1&app_absent=0">
-                                <button id = "chat" class = "fav_btn"> Chat with Seller </button> 
-                            </a>
+                <div class="cattle_details2_container">
+                    <h1 class="details_container_head"> Details </h1>
+                    <hr>
+                    <div class="cattle_other_details_container">
+                        <div class="cattle_milk_container">
+                            <p> Milk per day </p>
+                            <p class="cattle_milk"> </p>
                         </div>
-                        <div class = "seller_phoneno_container">
-                            <i class = "fa-solid fa-phone"></i>
-                            <p class = "phone_no"></p>
+                        <div class="cattle_milk_container">
+                            <p> Lactation </p>
+                            <p class="cattle_lact"> </p>
                         </div>
-                        <div class = "seller_address_container">
-                            <i class = "fa-solid fa-location-dot"></i>
-                            <p class = "address"></p>
+                        <div class="cattle_milk_container">
+                            <p> Weight </p>
+                            <p class="cattle_weight"> </p>
                         </div>
-                    </div>
-
-                    <!-- Seller profile section -->
-
-                    <div class = "seller_profile_container">
-                        <div class = "seller_profile_btn"> </div>
                     </div>
                 </div>
 
+                <!-- Cattle description section -->
+
+                <div class="description_container">
+                    <h1 class="details_container_head"> Description </h1>
+                    <hr>
+                    <p class="description"> </p>
+                </div>
             </div>
 
-            <!-- Cattles Section -->
+            <div class="seller_container">
 
-            <div class = "products_section"> </div>
+                <!-- Cattle price section -->
 
-        </main>
+                <div class="price_container">
+                    <h1 class="price"> </h1>
+                    <div class="fav_btn_container" id="fav1"> </div>
+                </div>
 
-        <script src = "../../../assets/js/header.js"></script>
-        <script src = "../../../assets/js/footer.js"></script>
+                <!-- Seller details section -->
 
-        <script>const urlParams = new URLSearchParams(window.location.search);
+                <div class="sellerdetails_container">
+                    <h4> SOLD BY </h4>
+                    <h2 class="seller_name"> </h2>
+                    <h4 class="posted_date"> </h4>
+                    <div class="fav_btn_container">
+                        <a href="https://api.whatsapp.com/qr/XQYMHVSSYORIN1?autoload=1&app_absent=0">
+                            <button id="chat" class="fav_btn"> Chat with Seller </button>
+                        </a>
+                    </div>
+                    <div class="seller_phoneno_container">
+                        <i class="fa-solid fa-phone"></i>
+                        <p class="phone_no"></p>
+                    </div>
+                    <div class="seller_address_container">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p class="address"></p>
+                    </div>
+                </div>
+
+                <!-- Seller profile section -->
+
+                <div class="seller_profile_container">
+                    <div class="seller_profile_btn"> </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Cattles Section -->
+
+        <div class="products_section"> </div>
+
+    </main>
+
+    <script src="../../../assets/js/header.js"></script>
+    <script src="../../../assets/js/footer.js"></script>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
         const breed_category = urlParams.get("breed");
         const cattle_id = urlParams.get("cattle_id");
         const user_id = urlParams.get("user_id");
@@ -153,26 +155,26 @@
         document.querySelector("div.cattle_image_container").append(cattle_image);
 
         if (cattle[0].image1 != "") {
-          cattle_image1 = document.createElement("img");
-          cattle_image1.setAttribute("src", cattle[0].image1);
-          cattle_image1.setAttribute("alt", `${cattle[0].breed} ${cattle[0].cattle}`);
-  cattle_image1.setAttribute("class", "image");
+            cattle_image1 = document.createElement("img");
+            cattle_image1.setAttribute("src", cattle[0].image1);
+            cattle_image1.setAttribute("alt", `${cattle[0].breed} ${cattle[0].cattle}`);
+            cattle_image1.setAttribute("class", "image");
         } else {
-          document.getElementById("left").style.display = "none";
-          document.getElementById("right").style.display = "none";
+            document.getElementById("left").style.display = "none";
+            document.getElementById("right").style.display = "none";
         }
 
         // Function for toggling two cattle images
 
         function add(e) {
-  const imagesrc = document.querySelector(".image").getAttribute("src");
+            const imagesrc = document.querySelector(".image").getAttribute("src");
 
-  if (imagesrc == cattle[0].image) {
-            document.querySelector(".image").setAttribute("src", cattle[0].image1);
-  } else if (imagesrc == cattle[0].image1) {
-            document.querySelector(".image").setAttribute("src", cattle[0].image);
-  }
-}
+            if (imagesrc == cattle[0].image) {
+                document.querySelector(".image").setAttribute("src", cattle[0].image1);
+            } else if (imagesrc == cattle[0].image1) {
+                document.querySelector(".image").setAttribute("src", cattle[0].image);
+            }
+        }
 
         document.getElementById("left").addEventListener("click", add);
         document.getElementById("right").addEventListener("click", add);
@@ -196,11 +198,11 @@
         weight.innerText = `${cattle[0].weight} Kg`;
 
         if (cattle[0].description != "") {
-          description = document.querySelector("p.description");
-          description.innerText = cattle[0].description;
+            description = document.querySelector("p.description");
+            description.innerText = cattle[0].description;
         } else {
-          description = document.querySelector("p.description");
-          description.innerText = `Quality ${cattle[0].breed} ${cattle[0].cattle} of ${cattle[0].age} year(s) age is available. The price of the cattle is Rs. ${cattle[0].price} /-. The ${cattle[0].cattle} is in ${cattle[0].lactation} lactation. It Produces ${cattle[0].milk} Litres of milk on daily basis.`;
+            description = document.querySelector("p.description");
+            description.innerText = `Quality ${cattle[0].breed} ${cattle[0].cattle} of ${cattle[0].age} year(s) age is available. The price of the cattle is Rs. ${cattle[0].price} /-. The ${cattle[0].cattle} is in ${cattle[0].lactation} lactation. It Produces ${cattle[0].milk} Litres of milk on daily basis.`;
         }
 
         price = document.querySelector("h1.price");
@@ -221,30 +223,29 @@
         // Function for favourites
 
         favourite.addEventListener("click", function (event) {
-  const cattleId = event.currentTarget.getAttribute("custom-id");
-  console.log(cattleId);
+            const cattleId = event.currentTarget.getAttribute("custom-id");
 
-  const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
-  const user_unique_id = JSON.parse(localStorage.getItem("phone_no_id"));
+            const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+            const user_unique_id = JSON.parse(localStorage.getItem("phone_no_id"));
 
-  for (let i = 0; i < favourites.length; i++) {
-            if (!user_unique_id) {
-              alert("Please Log In");
-              return;
+            for (let i = 0; i < favourites.length; i++) {
+                if (!user_unique_id) {
+                    alert("Please Log In");
+                    return;
+                }
+                if (
+                    cattleId == favourites[i].cattleId &&
+                    favourites[i].user_unique_id == user_unique_id
+                ) {
+                    alert("Already added in the list");
+                    return;
+                }
             }
-            if (
-      cattleId == favourites[i].cattleId &&
-      favourites[i].user_unique_id == user_unique_id
-    ) {
-              alert("Already added in the list");
-              return;
-    }
-  }
-  alert("Added to your Favourites list");
-  favourites.push({ cattleId, user_unique_id });
-  localStorage.setItem("favourites", JSON.stringify(favourites));
-  // window.location.href = "../../cattle/favourites.html";
-});
+            alert("Added to your Favourites list");
+            favourites.push({ cattleId, user_unique_id });
+            localStorage.setItem("favourites", JSON.stringify(favourites));
+            // window.location.href = "../../cattle/favourites.html";
+        });
 
         uploaded_date = document.querySelector("h4.posted_date");
         uploaded_date.innerText = `Posted On: ${cattle[0].date}`;
@@ -268,11 +269,11 @@
         // Function for seller-profile
 
         function sellerId() {
-          seller_profile.addEventListener("click", function (event) {
-    window.location.href = `../../cattle/b-sprofile.html?user-id=${user_id}`;
-  });
+            seller_profile.addEventListener("click", function (event) {
+                window.location.href = `../../cattle/b-sprofile.html?user-id=${user_id}`;
+            });
         }
-        
+
         const user_unique_id = JSON.parse(localStorage.getItem("phone_no_id"));
         const category = JSON.parse(localStorage.getItem("cattle_details"));
         const category_id = category.filter((e) => e.breed == breed_category);
@@ -284,12 +285,11 @@
 
         const array1 = category_id.concat(array);
         const new_array = array1.filter((e) => e.userId != user_unique_id);
-        console.log(new_array);
 
         if (breed_category == null) {
-          document.getElementById("cattle_title").style.display = "none";
-          document.getElementById("line").style.display = "none";
-          // document.getElementById("fav1").style.display = "none";
+            document.getElementById("cattle_title").style.display = "none";
+            document.getElementById("line").style.display = "none";
+            // document.getElementById("fav1").style.display = "none";
         }
 
         // heading
@@ -305,73 +305,73 @@
         cattles_container.setAttribute("class", "cattles_container");
 
         document
-  .querySelector("div.products_section")
-  .append(line, head, cattles_container);
+            .querySelector("div.products_section")
+            .append(line, head, cattles_container);
 
         for (let i = 1; i <= 3; i++) {
-  // cattle container
-          cattle_container = document.createElement("div");
-          cattle_container.setAttribute("class", "cattle_container");
+            // cattle container
+            cattle_container = document.createElement("div");
+            cattle_container.setAttribute("class", "cattle_container");
 
-          // image container
-          cattle_img_container = document.createElement("div");
-          cattle_img_container.setAttribute("class", "img_container");
-          cattle_container.append(cattle_img_container);
+            // image container
+            cattle_img_container = document.createElement("div");
+            cattle_img_container.setAttribute("class", "img_container");
+            cattle_container.append(cattle_img_container);
 
-          // a
+            // a
 
-          cattle_anchor = document.createElement("a");
-          cattle_anchor.setAttribute(
-    "href",
-    `./C1.html?breed=${new_array[i].breed}&cattle_id=${new_array[i].cattle_uniqueId}&user_id=${new_array[i].userId}`
-          );
-  cattle_img_container.append(cattle_anchor);
+            cattle_anchor = document.createElement("a");
+            cattle_anchor.setAttribute(
+                "href",
+                `./C1.html?breed=${new_array[i].breed}&cattle_id=${new_array[i].cattle_uniqueId}&user_id=${new_array[i].userId}`
+            );
+            cattle_img_container.append(cattle_anchor);
 
-          // cattle image
-          cat_image = document.createElement("img");
-          cat_image.setAttribute("src", new_array[i].image);
-          cat_image.setAttribute("alt", `${new_array[i].breed} ${new_array[i].cattle}`);
-          cat_image.setAttribute("class", "cattle_image");
-          cattle_anchor.append(cat_image);
+            // cattle image
+            cat_image = document.createElement("img");
+            cat_image.setAttribute("src", new_array[i].image);
+            cat_image.setAttribute("alt", `${new_array[i].breed} ${new_array[i].cattle}`);
+            cat_image.setAttribute("class", "cattle_image");
+            cattle_anchor.append(cat_image);
 
-          // cattle info container
-          info_container = document.createElement("div");
-          info_container.setAttribute("class", "info_container");
-          cattle_container.append(info_container);
+            // cattle info container
+            info_container = document.createElement("div");
+            info_container.setAttribute("class", "info_container");
+            cattle_container.append(info_container);
 
-          // cattle info
-          cattle_name = document.createElement("p");
-          cattle_name.setAttribute("class", "cattle_name");
-          cattle_name.innerText = `${new_array[i].breed} ${new_array[i].cattle} ${new_array[i].id}`;
-          info_container.append(cattle_name);
+            // cattle info
+            cattle_name = document.createElement("p");
+            cattle_name.setAttribute("class", "cattle_name");
+            cattle_name.innerText = `${new_array[i].breed} ${new_array[i].cattle} ${new_array[i].id}`;
+            info_container.append(cattle_name);
 
-          cattle_age = document.createElement("p");
-          cattle_age.setAttribute("class", "cattle_age");
-          cattle_age.innerText = `Age: ${new_array[i].age} Year(s)`;
-          info_container.append(cattle_age);
+            cattle_age = document.createElement("p");
+            cattle_age.setAttribute("class", "cattle_age");
+            cattle_age.innerText = `Age: ${new_array[i].age} Year(s)`;
+            info_container.append(cattle_age);
 
-          cattle_gender = document.createElement("p");
-          cattle_gender.setAttribute("class", "cattle_age");
-          cattle_gender.innerText = `Gender: ${new_array[i].gender}`;
-          info_container.append(cattle_gender);
+            cattle_gender = document.createElement("p");
+            cattle_gender.setAttribute("class", "cattle_age");
+            cattle_gender.innerText = `Gender: ${new_array[i].gender}`;
+            info_container.append(cattle_gender);
 
-          // a
+            // a
 
-          buttonContainer = document.createElement("a");
-          buttonContainer.setAttribute(
-    "href",
-    `./C1.html?breed=${new_array[i].breed}&cattle_id=${new_array[i].cattle_uniqueId}&user_id=${new_array[i].userId}`
-          );
-  info_container.append(buttonContainer);
+            buttonContainer = document.createElement("a");
+            buttonContainer.setAttribute(
+                "href",
+                `./C1.html?breed=${new_array[i].breed}&cattle_id=${new_array[i].cattle_uniqueId}&user_id=${new_array[i].userId}`
+            );
+            info_container.append(buttonContainer);
 
-          button_know = document.createElement("button");
-          button_know.innerText = "Know More";
-          buttonContainer.append(button_know);
+            button_know = document.createElement("button");
+            button_know.innerText = "Know More";
+            buttonContainer.append(button_know);
 
-          document.querySelector("div.cattles_container").append(cattle_container);
+            document.querySelector("div.cattles_container").append(cattle_container);
         }
     </script>
 
-    </body>
+</body>
 
 </html>

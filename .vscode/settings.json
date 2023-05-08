@@ -1,0 +1,13 @@
+{
+    "liveServer.settings.port": 5501,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": false,
+    "eslint.validate": ["javascript", "html"],
+    "eslint.workingDirectories": [{ "mode": "auto" }],
+    "eslint.run": "onSave",
+    "prettier.configPath": ".prettierrc",
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "files.eol":"\n"
+  }
