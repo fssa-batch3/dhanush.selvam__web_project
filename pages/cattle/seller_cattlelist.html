@@ -42,7 +42,8 @@
         <script src = "../../assets/js/header.js"></script>
         <script src = "../../assets/js/footer.js"></script>
     
-        <script>const user_UniqueId = JSON.parse(localStorage.getItem("phone_no_id"));
+        <script>
+        const user_UniqueId = JSON.parse(localStorage.getItem("phone_no_id"));
         
         const cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
         const usersCattle = cattle_details.filter((e) => e.userId == user_UniqueId);

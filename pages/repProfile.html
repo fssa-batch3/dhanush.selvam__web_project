@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <title> Buyer Profile </title>
+    <title> Rep Profile </title>
 
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/buyer_profile.css">
@@ -36,75 +36,37 @@
                         <input type="url" id="image">
                     </div>
 
-                    <div id = "customer_portal">
-                        <div class="links_container">
-                            <div class="icon_container1">
-                                <i class="fa-solid fa-paw" id="icon"></i>
-                            </div>
-                            <h2>
-                                <a href="cattle/favourites.html?page=sellerCattleList"> Cattle List </a>
-                            </h2>
+                    <div class="links_container">
+                        <div class="icon_container1">
+                            <i class="fa-solid fa-paw" id="icon"></i>
                         </div>
-
-                        <div class="links_container">
-                            <div class="icon_container1">
-                                <i class="fa-solid fa-star" id="icon"></i>
-                            </div>
-                            <h2>
-                                <a href="cattle/favourites.html?page=favourites"> Favourites </a>
-                            </h2>
-                        </div>
-
-                        <div class="links_container">
-                            <div class="icon_container1">
-                                <i class="fa-solid fa-right-from-bracket" id="icon"></i>
-                            </div>
-                            <h2 class="links_head" id="customerLogOut"> Log out </h2>
-                        </div>
-
-                        <div class="links_container" id="delAccount">
-                            <div class="icon_container2">
-                                <i class="fa-solid fa-trash" id="icon"></i>
-                            </div>
-                            <h2 class="links_head" id="delete">Delete Account</h2>
-                        </div>
+                        <h2>
+                            <a href="#"> Cattle List </a>
+                        </h2>
                     </div>
 
-                    <div id = "rep_portal">
-                        <div class="links_container">
-                            <div class="icon_container1">
-                                <i class="fa-solid fa-list" id = "icon"></i>
-                            </div>
-                            <h2>
-                                <a href="cattle/favourites.html?page=repCattleList"> Cattle List </a>
-                            </h2>
+                    <div class="links_container">
+                        <div class="icon_container1">
+                            <i class="fa-solid fa-star" id="icon"></i>
                         </div>
-
-                        <div class="links_container">
-                            <div class="icon_container1">
-                                <i class="fa-regular fa-circle-check" id = "icon"></i>
-                            </div>
-                            <h2>
-                                <a href="cattle/favourites.html?page=verifiedCattles"> Verified Cattles </a>
-                            </h2>
-                        </div>
-
-                        <div class="links_container">
-                            <div class="icon_container1">
-                                <i class="fa-regular fa-circle-xmark" id = "icon"></i>
-                            </div>
-                            <h2>
-                                <a href="cattle/favourites.html?page=rejectedCattles"> Rejected Cattles </a>
-                            </h2>
-                        </div>
-
-                        <div class="links_container">
-                            <div class="icon_container1">
-                                <i class="fa-solid fa-right-from-bracket" id="icon"></i>
-                            </div>
-                            <h2 class="links_head" id="repLogOut"> Log out </h2>
-                        </div>
+                        <h2>
+                            <a href="#"> Favourites </a>
+                        </h2>
                     </div>
+
+                    <div class="links_container">
+                        <div class="icon_container1">
+                            <i class="fa-solid fa-right-from-bracket" id="icon"></i>
+                        </div>
+                        <h2 class="links_head" id="logOut"> Log out </h2>
+                    </div>
+
+                    <!-- <div class="links_container">
+                        <div class="icon_container2">
+                            <i class="fa-solid fa-trash" id="icon"></i>
+                        </div>
+                        <h2 class="links_head" id="delete">Delete Account</h2>
+                    </div> -->
 
                 </div>
 
@@ -134,7 +96,7 @@
                             </div>
                             <div class="colon_container"> : </div>
                             <div class="input_container">
-                                <input required type="tel" maxlength="10" id="phone_no" disabled>
+                                <input required type="tel" maxlength="10" id="phone_no" readonly>
                             </div>
                         </div>
 
@@ -154,7 +116,7 @@
                             </div>
                             <div class="colon_container"> : </div>
                             <div class="input_container">
-                                <select id="district" required>
+                                <select id="state" required>
                                     <option> Ariyalur </option>
                                     <option> Chengalpattu </option>
                                     <option> Chennai </option>
@@ -204,16 +166,18 @@
                             </div>
                             <div class="colon_container"> : </div>
                             <div class="input_container">
-                                <input required type="text" id="pincode" pattern="^[123456789]\d{5}$" oninput="this.value = this.value.replace(/[^0-9]/g,'')" minlength="6" maxlength="6" readonly>
+                                <input required type="text" id="pincode" pattern="^[123456789]\d{5}$"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g,'')" minlength="6" maxlength="6"
+                                    readonly>
                             </div>
                         </div>
 
-                        <div class="button_container divspace">
+                        <div class="btn_container divspace">
                             <div class="divspace">
                                 <button class="edit_btn" type="submit" id="editButton"> Edit </button>
                             </div>
                             <div class="divspace">
-                                <button type="button" id="save"> Save </button>
+                                <button type="submit" id="save"> Save </button>
                             </div>
                         </div>
                     </div>
@@ -231,18 +195,21 @@
 
     <script>
 
-        window.addEventListener("load", function () {
-            if (phone_id === null) {
-                document.getElementById("phone_no").removeAttribute("disabled");
-                document.getElementById("phone_no").setAttribute("readonly", true);
-                document.getElementById("customer_portal").style.display = "none";
-            }
-            else if (rep_id === null){
-                document.getElementById("rep_portal").style.display = "none";
-            }
-        });
+        const rep_id1 = JSON.parse(localStorage.getItem("rep_id"));
+        const repData = JSON.parse(localStorage.getItem("rep_details"));
 
-        const repData = repDetail.find(e => e.userId === rep_id);
+        function login_data(e) {
+            return e.userId == rep_id1;
+        }
+
+        person_data = repData.find(login_data);
+        document.getElementById("name").value = person_data.name;
+        document.getElementById("phone_no").value = person_data.phone_no;
+        document.getElementById("address").value = person_data.address;
+        document.getElementById("state").value = person_data.district;
+        document.getElementById("pincode").value = person_data.pincode;
+
+        document.getElementById("editButton").addEventListener("click", enableInput);
 
         // function for enabling input
 
@@ -250,88 +217,64 @@
             e.preventDefault();
             if (confirm("Are you sure you want to edit the details")) {
                 document.getElementById("name").removeAttribute("readonly");
-                document.getElementById("phone_no").removeAttribute("readonly")
+                document.getElementById("phone_no").removeAttribute("readonly");
                 document.getElementById("address").removeAttribute("readonly");
-                document.getElementById("district").removeAttribute("readonly");
+                document.getElementById("state").removeAttribute("readonly");
                 document.getElementById("pincode").removeAttribute("readonly");
             }
         }
 
         // function for updating details
 
-        function disableInput() {
-
-            if (rep_id === null) {
-
-                const person_data = userDetails.find(e => e.phone_no === phone_id);
-
-                if (confirm("Are you sure you want to save the details")) {
-                    person_data.name = document.getElementById("name").value;
-                    person_data.address = document.getElementById("address").value;
-                    person_data.district = document.getElementById("district").value;
-                    person_data.pincode = document.getElementById("pincode").value;
-
-                    localStorage.setItem("userData", JSON.stringify(userDetails));
-                }
-            }
-            else if (phone_id === null) {
-                if (confirm("Are you sure you want to save the details")) {
-                    repData.name = document.getElementById("name").value;
-                    repData.phone_no = document.getElementById("phone_no").value;
-                    repData.address = document.getElementById("address").value;
-                    repData.district = document.getElementById("district").value;
-                    repData.pincode = document.getElementById("pincode").value;
-
-                    localStorage.setItem("rep_details", JSON.stringify(repDetail));
-                }
-            }
-            window.location.reload();
+        function updateDetails(e) {
+            document.getElementById("name").setAttribute("readonly", "true");
+            document.getElementById("phone_no").setAttribute("readonly", "true");
+            document.getElementById("address").setAttribute("readonly", "true");
+            document.getElementById("state").setAttribute("readonly", "true");
+            document.getElementById("pincode").setAttribute("readonly", "true");
         }
 
-        if (rep_id === null) {
+        document.getElementById("save").addEventListener("click", disableInput);
 
-            const person_data = userDetails.find(e => e.phone_no === phone_id);
+        // function for disabling input
 
-            document.getElementById("name").value = person_data.name;
-            document.getElementById("phone_no").value = person_data.phone_no;
-            document.getElementById("address").value = person_data.address;
-            document.getElementById("district").value = person_data.district;
-            document.getElementById("pincode").value = person_data.pincode;
+        function disableInput(e) {
+            if (confirm("Are you sure you want to save the details")) {
+                person_data.name = document.getElementById("name").value;
+                person_data.phone_no = document.getElementById("phone_no").value;
+                person_data.address = document.getElementById("address").value;
+                person_data.state = document.getElementById("state").value;
+                person_data.pincode = document.getElementById("pincode").value;
 
-            document.getElementById("editButton").addEventListener("click", enableInput);
+                localStorage.setItem("rep_details", JSON.stringify(repData));
 
-            document.getElementById("save").addEventListener("click", disableInput);
-
-            // function for deleting account
-
-            function deleteaccount(e) {
-                if (confirm("Are you sure you want to delete the account?")) {
-
-                    const removedata = userDetails.indexOf(person_data);
-                    userDetails.splice(removedata, 1);
-                    localStorage.setItem("userData", JSON.stringify(userDetails));
-                    localStorage.removeItem("phone_no_id");
-                    window.location.href = "../index.html";
-                }
+                location.reload();
             }
-
-            const del = document.querySelector("#delete");
-            del.addEventListener("click", deleteaccount);
         }
 
-        else if (phone_id === null) {
+        // function for deleting account
 
-            document.getElementById("name").value = repData.name;
-            document.getElementById("phone_no").value = repData.phone_no;
-            document.getElementById("address").value = repData.address;
-            document.getElementById("district").value = repData.district;
-            document.getElementById("pincode").value = repData.pincode;
+        // function deleteaccount(e) {
+        //     if (confirm("Are you sure you want to delete the account?")) {
+        //         const phone_id = JSON.parse(localStorage.getItem("phone_no_id"));
+        //         const userData = JSON.parse(localStorage.getItem("userData"));
 
-            document.getElementById("editButton").addEventListener("click", enableInput);
+        //         function login_data(e) {
+        //             return e.phone_no == phone_id;
+        //         }
 
-            document.getElementById("save").addEventListener("click", disableInput);
+        //         person_data = userData.find(login_data);
+        //         const removedata = userData.indexOf(person_data);
 
-        }
+        //         userData.splice(removedata, 1);
+        //         localStorage.setItem("userData", JSON.stringify(userData));
+        //         localStorage.removeItem("phone_no_id");
+        //         window.location.href = "../index.html";
+        //     }
+        // }
+
+        // const del = document.querySelector("#delete");
+        // del.addEventListener("click", deleteaccount);
 
     </script>
 

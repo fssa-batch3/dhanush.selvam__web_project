@@ -56,6 +56,7 @@ li >a:hover{
     border-radius: 10px;
     font-size: 20px;
     font-weight: bold;
+    padding: 10px 20px;
 }
 
 .login:hover{
@@ -144,7 +145,6 @@ i:hover{
 }
 
 .fa-user{
-    padding-top: 8px;
     color: #00a651;
 }
 
@@ -202,6 +202,65 @@ i:hover{
     color: #00a651;
   }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #e8f5ec;
+    /* background-color: rgba(232, 245, 236, 0.9);; */
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 35%;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .overlay .closebtn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    left: auto;
+    font-size: 60px;
+    cursor: pointer;
+    color: gray;
+  }
+  
+  .overlay .closebtn:hover {
+    color: black;
+  }
+
+  .user_container{
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    width: 225px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
+
+  .user_container:hover {
+    box-shadow: #57d192 3px 3px 3px;
+  }
+
+  .user_container >h2 >a{
+    color: #00a651;
+    text-decoration: none;
+  }
+
+  .btn_container {
+    align-items: center;
+  }
 
 @media screen and (max-width: 480px) {
 
@@ -258,7 +317,7 @@ i:hover{
     }
 
     .profile_icon{
-        padding: 5px 11px;
+        padding: 0px 12px;
     }
 
     footer{

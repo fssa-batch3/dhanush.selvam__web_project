@@ -65,22 +65,23 @@
         <script>const urlParams = new URLSearchParams(window.location.search);
         const user_id = urlParams.get("user-id");
 
-        const user_data = JSON.parse(localStorage.getItem("userData"));
+        const repData = repDetail.find(e => e.userId === user_id);
 
-        function find_data(e) {
-          return e.phone_no == user_id;
+        document.getElementById("name").value = repData.name;
+        document.getElementById("phone").value = repData.phone_no;
+        document.getElementById("address").value = `${repData.address}, ${repData.address} ,${repData.pincode}.`;
+
+        const repCattlesId = verifiedCattleLists.filter(e => e.repUserId === user_id);
+        const repOtherCattles = [];
+
+        for (let i = 0; i < repCattlesId.length; i++){
+            let repOtherCattlesData = cattle_detail.find(e => e.cattle_uniqueId === repCattlesId[i]["cattle_uniqueId"]);
+            repOtherCattles.push(repOtherCattlesData);
         }
-        user = user_data.find(find_data);
 
-        document.getElementById("name").value = user.name;
-        document.getElementById("phone").value = user.phone_no;
-        document.getElementById("address").value = `${user.address}- ${user.pincode}.`;
+        for (i = 0; i < repOtherCattles.length; i++) {
 
-        const cattle_list = JSON.parse(localStorage.getItem("cattle_details"));
-        const user_cattle_list = cattle_list.filter((e) => e.userId == user_id);
-
-        for (i = 0; i < user_cattle_list.length; i++) {
-  // cattle container
+          // cattle container
           cattle_container = document.createElement("div");
           cattle_container.setAttribute("class", "cattle_container");
 
@@ -92,20 +93,14 @@
           // a
 
           cattle_anchor = document.createElement("a");
-          cattle_anchor.setAttribute(
-    "href",
-    `../cattle details/cow/C1.html?breed=${user_cattle_list[i].breed}&cattle_id=${user_cattle_list[i].cattle_uniqueId}&user_id=${user_cattle_list[i].userId}`
-          );
-  cattle_img_container.append(cattle_anchor);
+          cattle_anchor.setAttribute("href",`../cattle details/cow/C1.html?breed=${repOtherCattles[i].breed}&cattle_id=${repOtherCattles[i].cattle_uniqueId}&user_id=${user_id}`);
+          cattle_img_container.append(cattle_anchor);
 
           // cattle image
           cattle_image = document.createElement("img");
-          cattle_image.setAttribute("src", user_cattle_list[i].image);
-          cattle_image.setAttribute(
-    "alt",
-    `${user_cattle_list[i].breed} ${user_cattle_list[i].cattle}`
-          );
-  cattle_image.setAttribute("class", "cattle_image");
+          cattle_image.setAttribute("src", repOtherCattles[i].image);
+          cattle_image.setAttribute("alt",`${repOtherCattles[i].breed} ${repOtherCattles[i].cattle}`);
+          cattle_image.setAttribute("class", "cattle_image");
           cattle_anchor.append(cattle_image);
 
           // cattle info container
@@ -116,24 +111,21 @@
           // cattle info
           cattle_name = document.createElement("p");
           cattle_name.setAttribute("class", "cattle_name");
-          cattle_name.innerText = `${user_cattle_list[i].breed} ${user_cattle_list[i].cattle} ${user_cattle_list[i].id}`;
+          cattle_name.innerText = `${repOtherCattles[i].breed} ${repOtherCattles[i].cattle} ${repOtherCattles[i].id}`;
           info_container.append(cattle_name);
 
           cattle_age = document.createElement("p");
-          cattle_age.innerText = `Age: ${user_cattle_list[i].age} Year(s)`;
+          cattle_age.innerText = `Age: ${repOtherCattles[i].age} Year(s)`;
           info_container.append(cattle_age);
 
           cattle_gender = document.createElement("p");
-          cattle_gender.innerText = `Gender: ${user_cattle_list[i].gender}`;
+          cattle_gender.innerText = `Gender: ${repOtherCattles[i].gender}`;
           info_container.append(cattle_gender);
 
           // a
 
           buttonContainer = document.createElement("a");
-          buttonContainer.setAttribute(
-    "href",
-    `../cattle details/cow/C1.html?breed=${user_cattle_list[i].breed}&cattle_id=${user_cattle_list[i].cattle_uniqueId}&user_id=${user_cattle_list[i].userId}`
-  );
+          buttonContainer.setAttribute("href",`../cattle details/cow/C1.html?breed=${repOtherCattles[i].breed}&cattle_id=${repOtherCattles[i].cattle_uniqueId}&user_id=${user_id}`);
           info_container.append(buttonContainer);
 
           // Know more button

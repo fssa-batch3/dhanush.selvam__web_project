@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title> Notification </title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/notification.css">
+    <link rel="stylesheet" href="../assets/css/header_footer.css">
+    <script src="../assets/js/main.js"></script>
+    <link rel="icon" href="../assets/images/cattles/logo1.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+
+        <div class="container">
+            <h1 class="heading"> Notifications <i class="fa-solid fa-bell"></i></h1>
+            <div class="notificationsContainer"> </div>
+        </div>
+
+    </main>
+
+    <script src="../assets/js/header.js"></script>
+    <script src="../assets/js/footer.js"></script>
+
+    <script>
+
+        function createNotification(message) {
+            // noteContainer
+            const noteContainer = document.createElement("div");
+            noteContainer.setAttribute("class", "noteContainer");
+
+            // contentContainer
+            const contentContainer = document.createElement("div");
+            contentContainer.setAttribute("class", "contentContainer");
+            noteContainer.append(contentContainer);
+
+            // noteTitle
+            const noteTitle = document.createElement("h3");
+            noteTitle.setAttribute("class", "noteTitle")
+            noteTitle.innerText = message.messageTitle;
+            contentContainer.append(noteTitle);
+
+            // content
+            const content = document.createElement("p");
+            content.innerText = message.message + " .";
+            contentContainer.append(content);
+
+            // iconContainer
+            const iconContainer = document.createElement("div");
+            iconContainer.setAttribute("class", "iconContainer");
+            noteContainer.append(iconContainer);
+
+            // icon
+            const icon = document.createElement("i");
+            icon.setAttribute("class", "fa-solid fa-xmark");
+            iconContainer.append(icon);
+
+            document.querySelector("div.notificationsContainer").prepend(noteContainer);
+        }
+
+        if (phone_id === null) {
+            const repNotificationList = repDetail.find(e => e.userId === rep_id);
+
+            for (let i = 0; i < repNotificationList.notification.length; i++) {
+                const message = notificationList.find(e => e.notificationId === repNotificationList.notification[i]["notificationId"]);
+                createNotification(message);
+            }
+        } else if (rep_id === null) {
+            const userNotificationList = userDetails.find(e => e.phone_no === phone_id);
+
+            for (let i = 0; i < userNotificationList.notification.length; i++) {
+                const message = notificationList.find(e => e.notificationId === userNotificationList.notification[i]["notificationId"]);
+                createNotification(message);
+            }
+        }
+
+        // if (phone_id === null) {
+
+        //     const repNotificationList = repDetail.find(e => e.userId === rep_id);
+
+        //     for (let i = 0; i < repNotificationList.notification.length; i++) {
+
+        //         let message = notificationList.find(e => e.notificationId === repNotificationList.notification[i]["notificationId"]);
+
+        //         // noteContainer
+        //         noteContainer = document.createElement("div");
+        //         noteContainer.setAttribute("class", "noteContainer");
+
+        //         // contentContainer
+        //         contentContainer = document.createElement("div");
+        //         contentContainer.setAttribute("class", "contentContainer");
+        //         noteContainer.append(contentContainer);
+
+        //         // noteTitle
+        //         noteTitle = document.createElement("h3");
+        //         noteTitle.setAttribute("class", "noteTitle")
+        //         noteTitle.innerText = message.messageTitle;
+        //         contentContainer.append(noteTitle);
+
+        //         // content
+        //         content = document.createElement("p");
+        //         content.innerText = message.message + " .";
+        //         contentContainer.append(content);
+
+        //         // iconContainer
+        //         iconContainer = document.createElement("div");
+        //         iconContainer.setAttribute("class", "iconContainer");
+        //         noteContainer.append(iconContainer);
+
+        //         // icon
+        //         icon = document.createElement("i");
+        //         icon.setAttribute("class", "fa-solid fa-xmark");
+        //         iconContainer.append(icon);
+
+        //         document.querySelector("div.notificationsContainer").prepend(noteContainer)
+
+        //     }
+
+        // }
+
+        // else if (rep_id === null) {
+
+        //     const userNotificationList = userDetails.find(e => e.phone_no === phone_id);
+
+        //     for (let i = 0; i < userNotificationList.notification.length; i++) {
+
+        //         let message = notificationList.find(e => e.notificationId === userNotificationList.notification[i]["notificationId"]);
+
+        //         // noteContainer
+        //         noteContainer = document.createElement("div");
+        //         noteContainer.setAttribute("class", "noteContainer");
+
+        //         // contentContainer
+        //         contentContainer = document.createElement("div");
+        //         contentContainer.setAttribute("class", "contentContainer");
+        //         noteContainer.append(contentContainer);
+
+        //         // noteTitle
+        //         noteTitle = document.createElement("h3");
+        //         noteTitle.setAttribute("class", "noteTitle")
+        //         noteTitle.innerText = message.messageTitle;
+        //         contentContainer.append(noteTitle);
+
+        //         // content
+        //         content = document.createElement("p");
+        //         content.innerText = message.message + " .";
+        //         contentContainer.append(content);
+
+        //         // iconContainer
+        //         iconContainer = document.createElement("div");
+        //         iconContainer.setAttribute("class", "iconContainer");
+        //         noteContainer.append(iconContainer);
+
+        //         // icon
+        //         icon = document.createElement("i");
+        //         icon.setAttribute("class", "fa-solid fa-xmark");
+        //         iconContainer.append(icon);
+
+        //         document.querySelector("div.notificationsContainer").prepend(noteContainer)
+
+        //     }
+
+        // }
+
+    </script>
+
+</body>
+
+</html>

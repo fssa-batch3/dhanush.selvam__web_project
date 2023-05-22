@@ -406,10 +406,10 @@ const user_data = [
   },
 ];
 
-const cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
-const userData = JSON.parse(localStorage.getItem("userData"));
+// const cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
+// const userData = JSON.parse(localStorage.getItem("userData"));
 
-if (!cattle_details && !userData) {
-  localStorage.setItem("cattle_details", JSON.stringify(cattle_data));
-  localStorage.setItem("userData", JSON.stringify(user_data));
-}
+// if (!cattle_details && !userData) {
+//   localStorage.setItem("cattle_details", JSON.stringify(cattle_data));
+//   localStorage.setItem("userData", JSON.stringify(user_data));
+// }

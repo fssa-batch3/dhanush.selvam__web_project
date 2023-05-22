@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/css/homepage.css">
   <link rel="stylesheet" href="assets/css/header_footer.css">
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/index.js"></script>
+  <!-- <script src="assets/js/index.js"></script> -->
   <link rel="icon" href="assets/images/cattles/logo1.png" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +22,19 @@
 
 <body>
   <main>
+
+    <div id="myOverlay" class="overlay">
+      <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+      <div class="overlay-content">
+        <div class="user_container">
+          <h2> <a href="pages/signIn.html?user=customer"> Customer </a> </h2>
+        </div>
+        <div class="user_container">
+          <h2> <a href="pages/signIn.html?user=rep"> Rep </a> </h2>
+        </div>
+      </div>
+    </div>
+
     <!-- banner section -->
 
     <div class="banner_container">
@@ -47,12 +60,61 @@
   <script src = "assets/js/languages.js"></script> -->
 
   <script>
-    const user_unique_id = JSON.parse(localStorage.getItem("phone_no_id"));
-    const best_cattle_data = cattle_details.filter(
-      (e) => e.userId !== user_unique_id
-    );
 
-    for (let i = 0; i < 6; i++) {
+    // const rep_data = [
+    //   {
+    //     userId: "Rep1",
+    //     password: "Aa!12345",
+    //     name: "Rep A",
+    //     phone_no: "9999999999",
+    //     address: "No.1, Anna Street, Central",
+    //     district: "Chennai",
+    //     pincode: "600001",
+    //     user: "Rep",
+    //     notification: [],
+    //   },
+    //   {
+    //     userId: "Rep2",
+    //     password: "Aa!12345",
+    //     name: "Rep B",
+    //     phone_no: "8888888888",
+    //     address: "No.21, MGR Street, Avadi",
+    //     district: "Salem",
+    //     pincode: "600030",
+    //     user: "Rep",
+    //     notification: [],
+    //   },
+    //   {
+    //     userId: "Rep3",
+    //     password: "Aa!12345",
+    //     name: "Rep C",
+    //     phone_no: "7777777777",
+    //     address: "No.56, Kamarajar Street, Anakarai",
+    //     district: "Coimbatore",
+    //     pincode: "600041",
+    //     user: "Rep",
+    //     notification: [],
+    //   },
+    // ]
+
+    function openSearch() {
+      document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function closeSearch() {
+      document.getElementById("myOverlay").style.display = "none";
+    }
+
+    let cattleDetails = [];
+
+    for (let i = 0; i < verifiedCattleLists.length; i++){
+      let cattleData = cattle_detail.find(e => e.cattle_uniqueId === verifiedCattleLists[i]["cattle_uniqueId"]);
+      cattleData.rep_id = verifiedCattleLists[i]["repUserId"];
+      cattleDetails.push(cattleData);
+    }
+
+    for (let i = 0; i < cattleDetails.length; i++) {
+      
       // cattle container
       const cattle_container = document.createElement("div");
       cattle_container.setAttribute("class", "cattle_container");
@@ -65,19 +127,13 @@
       // a
 
       const cattle_anchor = document.createElement("a");
-      cattle_anchor.setAttribute(
-        "href",
-        `pages/cattle details/cow/C1.html?breed=${best_cattle_data[i].breed}&cattle_id=${best_cattle_data[i].cattle_uniqueId}&user_id=${best_cattle_data[i].userId}`
-      );
+      cattle_anchor.setAttribute("href", `pages/cattle details/cow/C1.html?breed=${cattleDetails[i].breed}&cattle_id=${cattleDetails[i].cattle_uniqueId}&user_id=${cattleDetails[i].rep_id}`);
       cattle_img_container.append(cattle_anchor);
 
       // cattle image
       const cattle_image = document.createElement("img");
-      cattle_image.setAttribute("src", best_cattle_data[i].image);
-      cattle_image.setAttribute(
-        "alt",
-        `${best_cattle_data[i].breed} ${best_cattle_data[i].cattle}`
-      );
+      cattle_image.setAttribute("src", cattleDetails[i].image);
+      cattle_image.setAttribute("alt", `${cattleDetails[i].breed} ${cattleDetails[i].cattle}`);
       cattle_image.setAttribute("class", "cattle_image");
       cattle_anchor.append(cattle_image);
 
@@ -89,24 +145,21 @@
       // cattle info
       const cattle_name = document.createElement("p");
       cattle_name.setAttribute("class", "cattle_name");
-      cattle_name.innerText = `${best_cattle_data[i].breed} ${best_cattle_data[i].cattle} ${best_cattle_data[i].id}`;
+      cattle_name.innerText = `${cattleDetails[i].breed} ${cattleDetails[i].cattle} ${cattleDetails[i].id}`;
       info_container.append(cattle_name);
 
       const cattle_age = document.createElement("p");
-      cattle_age.innerText = `Age: ${best_cattle_data[i].age} Year(s)`;
+      cattle_age.innerText = `Age: ${cattleDetails[i].age} Year(s)`;
       info_container.append(cattle_age);
 
       const cattle_gender = document.createElement("p");
-      cattle_gender.innerText = `Gender: ${best_cattle_data[i].gender}`;
+      cattle_gender.innerText = `Gender: ${cattleDetails[i].gender}`;
       info_container.append(cattle_gender);
 
       // a
 
       const buttonContainer = document.createElement("a");
-      buttonContainer.setAttribute(
-        "href",
-        `pages/cattle details/cow/C1.html?cattle_id=${best_cattle_data[i].cattle_uniqueId}&user_id=${best_cattle_data[i].userId}`
-      );
+      buttonContainer.setAttribute("href", `pages/cattle details/cow/C1.html?cattle_id=${cattleDetails[i].cattle_uniqueId}&user_id=${cattleDetails[i].rep_id}`);
       info_container.append(buttonContainer);
 
       // Know more button
@@ -118,118 +171,7 @@
       document.querySelector("div.cattles_container").append(cattle_container);
     }
   </script>
+
 </body>
 
 </html>
-
-<!-- function breedOnSelect(event) {
-  const element = event.target;
-  if (element.checked) {
-    selectedBreeds.push(element.id);
-  } else {
-    const index = selectedBreeds.indexOf(this.id);
-    selectedBreeds.splice(index, 1);
-  }
-
-  document.querySelector("div.cattles_container").innerHTML = "";
-
-  if (selectedBreeds.length == 0) {
-    for (let i = 0; i < category_id.length; i++) {
-      const cattle_container = cards(category_id[i]);
-      document
-        .querySelector("div.cattles_container")
-        .append(cattle_container);
-    }
-  } else {
-    const filtered_cattles = [];
-
-    for (let i = 0; i < selectedBreeds.length; i++) {
-      const filter_products = product_detail.filter(
-        (e) => e.breed == selectedBreeds[i]
-      );
-      const filtered_products = filter_products.filter(
-        (e) => e.userId != user_unique
-      );
-      filtered_cattles.push(filtered_products);
-
-      for (j = 0; j < filtered_products.length; j++) {
-        const cattle_filter_container = cards(filtered_products[j]);
-        document
-          .querySelector("div.cattles_container")
-          .append(cattle_filter_container);
-      }
-    }
-
-    let count = 0;
-
-    for (let k = 0; k < filtered_cattles.length; k++) {
-      if (filtered_cattles[k].length == 0) {
-        count++;
-      }
-    }
-
-    if (selectedBreeds.length == count) {
-      const no_image = document.createElement("img");
-      no_image.setAttribute("src", "../../assets/images/no_result.gif");
-      no_image.setAttribute("class", "no_result");
-      document.querySelector("div.cattles_container").append(no_image);
-    }
-  }
-}
-
-function stateOnSelect(event) {
-  const element = event.target;
-  if (element.checked) {
-    selectedStates.push(element.id);
-  } else {
-    const index = selectedStates.indexOf(this.id);
-    selectedStates.splice(index, 1);
-  }
-
-  document.querySelector("div.cattles_container").innerHTML = "";
-
-  if (selectedStates.length == 0) {
-    for (let i = 0; i < category_id.length; i++) {
-      const cattle_container = cards(category_id[i]);
-      document.querySelector("div.cattles_container").append(cattle_container);
-    }
-  } else {
-    const selectedUser = [];
-    const filtered_cattles = [];
-
-    for (let i = 0; i < selectedStates.length; i++) {
-      const filter_state = user_data.filter(
-        (e) => e.state == selectedStates[i]
-      );
-      filtered_cattles.push(filter_state);
-      const filter_user = filter_state.filter((e) => e.phone_no != user_unique);
-
-      for (let j = 0; j < filter_user.length; j++) {
-        selectedUser.push(filter_user[j].phone_no);
-      }
-    }
-
-    if (selectedUser.length == 0) {
-      const no_image = document.createElement("img");
-      no_image.setAttribute("src", "../../assets/images/no_result.gif");
-      no_image.setAttribute("class", "no_result");
-      document.querySelector("div.cattles_container").append(no_image);
-    }
-
-    for (let i = 0; i < selectedUser.length; i++) {
-      const selectedCattles = product_detail.filter(
-        (e) => e.userId == selectedUser[i]
-      );
-      const selectedBreeds = selectedCattles.filter(
-        (e) => e.cattle == cattle_details
-      );
-
-      for (let j = 0; j < selectedBreeds.length; j++) {
-        const cattle_filter_container = cards(selectedBreeds[j]);
-        document
-          .querySelector("div.cattles_container")
-          .append(cattle_filter_container);
-      }
-    }
-  }
-} -->
