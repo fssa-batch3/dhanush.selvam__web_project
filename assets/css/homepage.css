@@ -117,6 +117,131 @@ hr{
     color:#00a651;
 }
 
+.reviewsContainer {
+    background-color: #f8f9fa;
+    margin: 3% 10%;
+    padding: 2%;
+}
+
+.titleContainer {
+    display: flex;
+    align-items: center;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.text {
+    color: #00a651;
+}
+
+.iconContainer {
+    display: inline-block;
+    position: relative;
+    background: #00a651;
+    color: #fff;
+    font-size: 25px;
+    padding: 8px 0px;
+    border-radius: 3px;
+    margin-right: 20px;
+    width: 50px;
+    text-align: center;
+}
+
+.fa-user-edit {
+    font-size: 24px;
+}
+
+.fa-caret-right {
+    position: absolute;
+    left: 88%;
+    color: #00a651;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.container {
+    position: relative;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video {
+    width: 480px;
+    height: 300px;
+}
+
+h4 {
+    margin: 15px;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.descContainer {
+    width: 58%;
+    height: 7rem;
+}
+
+.desc {
+    line-height: 22px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #555;
+    margin: 10px 0px;
+}
+
+.left {
+    left: 2%
+}
+
+.right {
+    right: 2%;
+}
+
+div.nextContainer > button {
+    background: #e8f5ec;
+    position: absolute;
+    border-radius: 50%;
+    top: 30%;
+    padding: 0px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    color: darkslategray;
+    cursor: pointer;
+}
+
+.fa-chevron-left ,.fa-chevron-right {
+    font-size: 22px;
+}
+
+.dotsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.dots {
+    display: block;
+    border-radius: 30px;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.dots.active {
+    background-color: #00a651;
+  }
+
 @keyframes running_cow {
     0% {
         left: calc(0% - 100px);

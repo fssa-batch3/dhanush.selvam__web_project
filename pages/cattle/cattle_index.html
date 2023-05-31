@@ -122,12 +122,20 @@
 
     // Most breed section
 
-    seller_cattles = cattle_details.filter((e) => e.userId != phone_id);
-    most_breed_Gir = seller_cattles.filter((e) => e.breed == "Gir");
-    most_breed_Surti = seller_cattles.filter((e) => e.breed == "Surti");
-    most_breed_Malabari = seller_cattles.filter((e) => e.breed == "Malabari");
-    most_breed_Bannur = seller_cattles.filter((e) => e.breed == "Bannur");
-    most_breed_Ongole = seller_cattles.filter((e) => e.breed == "Ongole");
+    let cattleDetails = [];
+
+    for (let i = 0; i < verifiedCattleLists.length; i++){
+      let cattleData = cattle_detail.find(e => e.cattle_uniqueId === verifiedCattleLists[i]["cattle_uniqueId"]);
+      cattleData.rep_id = verifiedCattleLists[i]["repUserId"];
+      cattleDetails.push(cattleData);
+    }
+
+    seller_cattles = cattleDetails.filter((e) => e.userId != phone_id);
+    most_breed_Gir = cattleDetails.filter((e) => e.breed == "Gir");
+    most_breed_Surti = cattleDetails.filter((e) => e.breed == "Surti");
+    most_breed_Malabari = cattleDetails.filter((e) => e.breed == "Malabari");
+    most_breed_Bannur = cattleDetails.filter((e) => e.breed == "Bannur");
+    most_breed_Ongole = cattleDetails.filter((e) => e.breed == "Ongole");
 
     for (let i = 0; i < most_breed_Gir.length; i++) {
       if (i < 3) {
@@ -165,6 +173,7 @@
     }
 
     function cards(card) {
+
       // cattle container
       cattle_container = document.createElement("div");
       cattle_container.setAttribute("class", "cattle_container");
@@ -176,10 +185,7 @@
 
       // a
       cattle_anchor = document.createElement("a");
-      cattle_anchor.setAttribute(
-        "href",
-        `../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.userId}`
-      );
+      cattle_anchor.setAttribute("href",`../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.rep_id}`);
       cattle_img_container.append(cattle_anchor);
 
       // cattle image
@@ -211,10 +217,7 @@
       // a
 
       buttonContainer = document.createElement("a");
-      buttonContainer.setAttribute(
-        "href",
-        `../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.userId}`
-      );
+      buttonContainer.setAttribute("href",`../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.rep_id}`);
       info_container.append(buttonContainer);
 
       // Know more button
@@ -223,6 +226,7 @@
       buttonContainer.append(know_button);
 
       return cattle_container;
+
     }
 
     // Passing category value to the list page
@@ -238,14 +242,25 @@
     const mag_glass = document.querySelector(".fa-magnifying-glass");
     mag_glass.addEventListener("click", function () {
       const search_box = document.getElementById("search_input").value;
-      const search_cattle = cattle_details.find(e => e.id == search_box);
-      if (search_cattle === undefined) {
-        alert("NO")
+      if (search_box === ""){
+        alert("Please enter a ID")
+        return false;
+      }
+      
+      const searchCattle = cattle_detail.find(e => e.id === search_box);
+      if (searchCattle === undefined) {
+        alert("THERE is no cattle with this ID")
+        return false;
+      }
+
+      const checkVerify = verifiedCattleLists.find(e => e.cattle_uniqueId === searchCattle.cattle_uniqueId);
+      if (checkVerify === undefined) {
+        alert("THERE is no cattle with this ID")
       }
       else {
-        const cattle_breed = search_cattle["breed"];
-        const cattle_id = search_cattle["cattle_uniqueId"];
-        const user_id = search_cattle["userId"];
+        const cattle_breed = searchCattle["breed"];
+        const cattle_id = searchCattle["cattle_uniqueId"];
+        const user_id = checkVerify["repUserId"];
         window.location.href = `../cattle details/cow/C1.html?breed=${cattle_breed}&cattle_id=${cattle_id}&user_id=${user_id}`;
       }
     });

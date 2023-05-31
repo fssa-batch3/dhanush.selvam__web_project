@@ -56,6 +56,7 @@ li >a:hover{
     border-radius: 10px;
     font-size: 20px;
     font-weight: bold;
+    padding: 10px 20px;
 }
 
 .login:hover{
@@ -94,11 +95,12 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
     background-color: #00a651;
     color: white;
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 150px;
 }
 
 .left_foot {
@@ -119,8 +121,7 @@ footer {
 }
 
 .right_foot {
-    padding-top: 50px;
-    padding-right: 150px;
+    width: 20%;
 }
 
 .com_icons{
@@ -138,13 +139,12 @@ i{
     font-size: 30px;
 }
 
-i:hover{
+.fa-facebook:hover, .fa-whatsapp:hover, .fa-instagram:hover{
     transform: scale(1.2);
     color: white;
 }
 
 .fa-user{
-    padding-top: 8px;
     color: #00a651;
 }
 
@@ -154,6 +154,10 @@ i:hover{
 
 .com_info_container{
     padding-left: 40px;
+}
+
+.comAddress {
+    line-height: 22px;
 }
 
 .user_icon_container{
@@ -194,7 +198,7 @@ i:hover{
     font-size: 36px;
   }
 
-  span{
+  .navBar{
     display: none;
     position: absolute;
     left: 21rem;
@@ -202,6 +206,62 @@ i:hover{
     color: #00a651;
   }
 
+  .btn_container {
+    align-items: center;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #e8f5ec;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 35%;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: gray;
+  }
+  
+  .overlay .closebtn:hover {
+    color: black;
+  }
+
+  .user_container{
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    width: 225px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
+
+  .user_container:hover {
+    box-shadow: #57d192 3px 3px 3px;
+  }
+
+  .user_container >h2 >a{
+    color: #00a651;
+    text-decoration: none;
+  }
 
 @media screen and (max-width: 480px) {
 
@@ -237,7 +297,7 @@ i:hover{
         width: 100%;
     }
 
-    span{
+    .navBar{
         display: flex;
     }
 
@@ -258,7 +318,7 @@ i:hover{
     }
 
     .profile_icon{
-        padding: 5px 11px;
+        padding: 0px 12px;
     }
 
     footer{
@@ -320,4 +380,5 @@ i:hover{
     .list_page_foot{
         margin-top: 15px;
     }
+    
 }

@@ -34,16 +34,20 @@
                 <h1> REGISTER </h1>
                 <div class = "details_container">
 
+                    <div class = "userIdContainer">
+                        <label> User ID </label>
+                        <br>
+                        <input type = "text" id = "userId" minlength="4" maxlength="4">
+                    </div>
                     <div>
                         <label> Name </label>
                         <br>
-                        <input required type = "text" id = "name" pattern = "/^[a-zA-Z0-9_-\s]{5,12}$/" title = "Don't use Space and special characters">
+                        <input required type = "text" id = "name" pattern="^[a-zA-Z]+([ ][a-zA-Z]+)*$" title="Don't use spaces in the first and last" oninput = "this.value = this.value.replace(/[^a-z ]/gi,'')">
                     </div>
-                    <div>
+                    <div class = "phoneContainer">
                         <label> Phone No. </label>
                         <br>
-                        <input required type = "tel" id ="phone_no" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" minlength = "10" maxlength= "10" title = "Please enter your phone number">
-
+                        <input type = "tel" id ="phone_no" pattern="^[6789]\d{9}$" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" minlength = "10" maxlength= "10" title = "Please enter a valid phone number">
                     </div>
                     <div>
                         <label> Password </label>
@@ -59,9 +63,7 @@
                         <button type =  "submit"> SUBMIT </button>
                     </div> 
                     <div class = "link_container">
-                        <p>
-                            Existing User? <a href = "sign in.html"> Login here </a> 
-                        </p>
+                        <p> Existing User? <a id = "inLink"> Login here </a> </p>
                     </div>
 
                 </div>
