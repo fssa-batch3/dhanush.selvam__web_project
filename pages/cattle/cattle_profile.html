@@ -166,19 +166,14 @@
         // Delete function
 
         function deleteDetails() {
+
             if (confirm("Are you sure you want to remove this cattle?")) {
+
                 const uid = JSON.parse(localStorage.getItem("cattle_unique_Id"));
-                const cattle = JSON.parse(localStorage.getItem("cattle_details"));
+                const cattleIndex = verifiedCattleLists.indexOf(verifiedCattleLists.find(e => e.cattle_uniqueId === uid));
 
-                function find_data(e) {
-                    return e.cattle_uniqueId == uid;
-                }
-
-                cattle_data = cattle.find(find_data);
-                const removedata = cattle.indexOf(cattle_data);
-
-                cattle.splice(removedata, 1);
-                localStorage.setItem("cattle_details", JSON.stringify(cattle));
+                verifiedCattleLists.splice(cattleIndex, 1);
+                localStorage.setItem("verifiedCattles", JSON.stringify(verifiedCattleLists));
                 document.querySelector("form").reset();
                 window.location.href = "./cattleList.html?page=verifiedCattles";
 
