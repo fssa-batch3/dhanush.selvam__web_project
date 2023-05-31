@@ -1,9 +1,13 @@
-body{
-    font-family: 'PT Serif', serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+body {
     background-color: #e8f5ec;
+    font-family: 'Questrial', sans-serif;
     margin: 0;
     width: 100%;
 }
+
 
 form{
     background-color: white;
@@ -29,7 +33,7 @@ h1{
     font-size: 35px;
 }
 
-.order{
+.details_container{
     margin-top: -20px;
     font-weight: bold;
 }
@@ -52,15 +56,16 @@ input:valid{
     border: 1.5px solid green;
 }
 
-.new{
+.link_container{
+    margin-bottom: -25px;
+}
+
+div.link_containerew >p{
+    margin-top: 13px;
     text-align: center;
 }
 
-div.new >p{
-    margin-bottom: -10px;
-}
-
-div.new >p >a{
+div.link_container >p >a{
     text-decoration: none;
     color: #00a387;
 }
@@ -69,7 +74,7 @@ label{
     font-size: 20px;
 }
 
-.bg{
+.form_container{
     display: flex;
     justify-content: center;
 }
@@ -88,14 +93,10 @@ button{
     color: white;
 }
 
-.btn{
+.submit_btn_container{
     display: flex;
     justify-content: center;
     margin-top: 20px;
-}
-
-.btn1{
-    background-color: rgb(244 157 34);
 }
 
 p{
@@ -104,54 +105,9 @@ p{
     font-size: 20px;
 }
 
-h4 >a{
-    color: black;
-}
-
-h2{
-    margin-top: 10px;
-    text-align: center;
-}
-
-h3{
-    text-align: center;
-    font-size: 20px;
-    margin-top: 0px;
-    margin-bottom: 20px;
-}
-
-.contact{
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: space-evenly;
-}
-
-i{
-    font-size: 30px;
-}
-
-i:hover{
-    transform: scale(1.2);
-    color: green;
-}
-
-#i1:hover{
-    transform: scale(1.2);
-    color: orange;
-}
-
-.hd{
+.logo_name{
     color: #00a651;
     font-size: 50px;
-}
-
-.user{
-    padding-top: 40px;
-}
-
-.new{
-    margin-top: 5px;
 }
 
 @media screen and (max-width: 480px) {
@@ -172,7 +128,7 @@ i:hover{
         margin: 40px 15px 10px 0px;
     }
 
-    .logodiv{
+    .logo_container{
         margin-right: 10px;
     }
 
@@ -181,16 +137,16 @@ i:hover{
         margin: 0;
     }
 
-    .lotit {
+    .logo_name_container {
         margin: 0;
     }
 
-    .hd{
+    .logo_name{
         font-size: 40px;
         margin: 0;
     }
 
-    .order{
+    .details_container{
         margin: 0;
     }
 

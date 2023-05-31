@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,210 +11,337 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/buyer_profile.css">
     <link rel="stylesheet" href="../assets/css/header_footer.css">
-    <script src = "../assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
     <link rel="icon" href="../assets/images/cattles/logo1.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logodiv"><a href = "../index.html"><img class = "logo" src="../assets/images/cattles/logo1.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "../index.html"><h1 class = "hd"> KowMart </h1></a></div>
-        </div>
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <ul class = "navbar">
-                <li><a href="cattle/cattle_index.html">Cattles</a></li>
-                <!-- <li><a href="agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="about.html">About Us</a></li>
-                <li class = "logbutton"><a href="./cattle/sell_details1.html"><button class = "sell"> SELL </button></a></li>
-                <li class = "profile_icon"><a href = "#"><i class="fa-solid fa-user"></i></a></li>
-            </ul>
-        </div> 
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
-        <div class = "link_container">
-            <ul class="navbar">
-                <li><a href="cattle/cattle_index.html">Cattles</a></li>
-                <!-- <li><a href="agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="about.html">About Us</a></li>
-            </ul>
-        </div>
-        <div class = "navbar butcot" id = "sellpro">
-            <div class = "butspace"><a href = "./cattle/sell_details1.html"> <button class = "sell"> SELL </button> </a></div>
-            <div class = "user"><a href = "#"><i class="fa-solid fa-user"></i></a></div>
-        </div>
-    </header>
 
-        <main>
-            <div class = "dmain divs">
-                <form role = "form" onsubmit="updateDetails(event);">
-                    <div class = "s1 divs">
-                        <div class = "hello">
-                            <img class = "prologo" src = "../assets/images/profile_logo.png" alt = "profile_logo">
-                            <!-- <p class = "name"> Hi, XXX </p> -->
+    <main>
+
+        <div class="form_container divspace">
+
+            <form>
+
+                <!-- left section -->
+
+                <div class="left_section divspace">
+
+                    <div class="profile_img_container">
+                        <img class="profile_img" src="../assets/images/profile_logo.png" alt="profile_img">
+                        <input type="url" id="image">
+                    </div>
+
+                    <div id="customer_portal">
+                        <div class="links_container">
+                            <div class="icon_container1">
+                                <i class="fa-solid fa-paw"></i>
+                            </div>
+                            <h2>
+                                <a href="cattle/cattleList.html?page=sellerCattleList"> Cattle List </a>
+                            </h2>
                         </div>
-                        <div class = "myorder">
-                            <div class = "ic1"> <i class="fa-solid fa-paw" id = "ic"></i> </div>
-                            <!-- <div class = "ic1"> <a href = "cattle/seller_cattlelist.html"><i class="fa-solid fa-list" id = "ic"></i></a> </div> -->
-                            <h2><a href = "cattle/seller_cattlelist.html"> Cattle List </a></h2>
+
+                        <div class="links_container">
+                            <div class="icon_container1">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <h2>
+                                <a href="cattle/cattleList.html?page=favourites"> Favourites </a>
+                            </h2>
                         </div>
-                        <div class = "myorder">
-                            <div class = "ic1"> <a href = "cattle/favourites.html"><i class="fa-solid fa-star" id = "ic"></i></a> </div>
-                            <h2><a href = "cattle/favourites.html"> Favourites </a></h2>
+
+                        <div class="links_container">
+                            <div class="icon_container1">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </div>
+                            <h2 class="links_head" id="customerLogOut"> Log out </h2>
                         </div>
-                        <!-- <div class = "myorder">
-                            <div class = "ic1"> <i class="fa-solid fa-bag-shopping" id = "ic"></i> </div>
-                            <h2 class = "head1"><a href = "agro pro/order.html"> My orders </a></h2>
-                        </div>
-                        <div class = "myorder">
-                            <div class = "ic1"> <i class="fa-solid fa-cart-shopping" id = "ic"></i> </div>
-                            <h2 class = "head1"><a href = "agro pro/cart.html"> Cart </a></h2>
-                        </div> -->
-                        <div class = "myorder">
-                            <div class = "ic1"> <a href = "../index.html"><i class="fa-solid fa-right-from-bracket" id = "ic"></i></a> </div>
-                            <h2><a href = "../index.html"> Log out </a></h2>
-                        </div>
-                        <div class = "myorder">
-                            <div class = "ic2"> <i class="fa-solid fa-trash" id = "ic"></i> </div>
-                            <h2 class = "head1" id="delete">Delete Account</h2>
+
+                        <div class="links_container" id="delAccount">
+                            <div class="icon_container2">
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                            <h2 class="links_head" id="delete">Delete Account</h2>
                         </div>
                     </div>
-                    <div class = "s2 divs">
-                        <div class = "details divs">
-                            <h1 class = "head"> Profile </h1>
-                            <div class = "divs">
+
+                    <div id="rep_portal">
+                        <div class="links_container">
+                            <div class="icon_container1">
+                                <i class="fa-solid fa-list"></i>
+                            </div>
+                            <h2>
+                                <a href="cattle/cattleList.html?page=repCattleList"> Cattle List </a>
+                            </h2>
+                        </div>
+
+                        <div class="links_container">
+                            <div class="icon_container1">
+                                <i class="fa-regular fa-circle-check"></i>
+                            </div>
+                            <h2>
+                                <a href="cattle/cattleList.html?page=verifiedCattles"> Verified Cattles </a>
+                            </h2>
+                        </div>
+
+                        <div class="links_container">
+                            <div class="icon_container1">
+                                <i class="fa-regular fa-circle-xmark"></i>
+                            </div>
+                            <h2>
+                                <a href="cattle/cattleList.html?page=rejectedCattles"> Rejected Cattles </a>
+                            </h2>
+                        </div>
+
+                        <div class="links_container">
+                            <div class="icon_container1">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </div>
+                            <h2 class="links_head" id="repLogOut"> Log out </h2>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- right section -->
+
+                <div class="right_section divspace">
+
+                    <div class="user_details divspace">
+
+                        <h1 class="head"> Profile </h1>
+
+                        <div class="divspace divspace1">
+                            <div class="label_container">
                                 <label> Name </label>
-                                <input required type = "text" id = "name" readonly>
                             </div>
-                            <div class = "divs">
-                                <label> Phone.No </label>
-                                <input required type = "tel" maxlength = "10" id = "phone_no" disabled>
-                            </div>
-                            <!-- <div class = "divs">
-                                <label> Email </label><br>
-                                <input placeholder = "abc@gmail.com" readonly required = "Email" id = "email">
-                            </div> -->
-                            <div class = "divs" >
-                                <label> Address line 1</label>
-                                <input required type = "text" id = "address_line1" readonly> 
-                            </div>
-                            <div class = "divs">
-                                <label> Address line 2</label>
-                                <input required type = "text" id = "address_line2" readonly>
-                            </div>
-                            <div class = "divs">
-                                <label> Pincode </label>
-                                <input required type = "text" id = "pincode" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" minlength = "6" maxlength= "6" readonly>
-                            </div>
-                            <div class = "sub divs">
-                                <div class = "divs"><button class = "btn1" id = "editButton"> Edit </button></div>
-                                <div class = "divs"><button type = "submit" id = "save"> Save </button></div>
+                            <div class="colon_container"> : </div>
+                            <div class="input_container">
+                                <input type="text" id="name" pattern="^[a-zA-Z]+([ ][a-zA-Z]+)*$"
+                                    title="Don't use spaces in the first and last"
+                                    oninput="this.value = this.value.replace(/[^a-z ]/gi,'')" readonly>
                             </div>
                         </div>
-                    </div> 
 
-                </form> 
-            </div>
+                        <div class="divspace divspace1">
+                            <div class="label_container">
+                                <label> Phone.No </label>
+                            </div>
+                            <div class="colon_container"> : </div>
+                            <div class="input_container">
+                                <input required type="tel" maxlength="10" id="phone_no" disabled>
+                            </div>
+                        </div>
 
-        </main>    
+                        <div class="divspace divspace1">
+                            <div class="label_container">
+                                <label> Address </label>
+                            </div>
+                            <div class="colon_container"> : </div>
+                            <div class="input_container">
+                                <textarea id="address" readonly></textarea>
+                            </div>
+                        </div>
 
-        <footer>
-            <div class="foot">  
-                <div class="foot1">
-                    <img class="logof" src="../assets/images/cattles/logo2.png" alt = "logo">
-                    <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
-                        Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
-                        full potential while ensuring livestock wellbeing.</p>
-                </div>
-                <div class="foot2">
-                    <h2 class = "connect"> CONNECT WITH US</h2>
-                    <div class = "fspace">
-                        <p> Email: info@kowmart.com</p>
-                        <p> Ph.no: 1234567890</p>
-                        <p> Insta: KowMart</p>
+                        <div class="divspace divspace1">
+                            <div class="label_container">
+                                <label> District </label>
+                            </div>
+                            <div class="colon_container"> : </div>
+                            <div class="input_container">
+                                <select id="district" required>
+                                    <option> Ariyalur </option>
+                                    <option> Chengalpattu </option>
+                                    <option> Chennai </option>
+                                    <option> Coimbatore </option>
+                                    <option> Cuddalore </option>
+                                    <option> Dharmapuri </option>
+                                    <option> Dindigul </option>
+                                    <option> Erode </option>
+                                    <option> Kallakurichi </option>
+                                    <option> Kanchipuram </option>
+                                    <option> Kanniyakumari </option>
+                                    <option> Karur </option>
+                                    <option> Krishnagiri </option>
+                                    <option> Madurai </option>
+                                    <option> Mayiladuthurai </option>
+                                    <option> Nagapattinam </option>
+                                    <option> Namakkal </option>
+                                    <option> Nilgiris </option>
+                                    <option> Perambalur </option>
+                                    <option> Puducherry </option>
+                                    <option> Pudukkottai </option>
+                                    <option> Ramanathapuram </option>
+                                    <option> Ranipet </option>
+                                    <option> Salem </option>
+                                    <option> Sivaganga </option>
+                                    <option> Tenkasi </option>
+                                    <option> Thanjavur </option>
+                                    <option> Theni </option>
+                                    <option> Thoothukudi </option>
+                                    <option> Tiruchirappalli </option>
+                                    <option> Tirunelveli </option>
+                                    <option> Tirupathur </option>
+                                    <option> Tiruppur </option>
+                                    <option> Tiruvallur </option>
+                                    <option> Tiruvannamalai </option>
+                                    <option> Tiruvarur </option>
+                                    <option> Vellore </option>
+                                    <option> Viluppuram </option>
+                                    <option> Virudhunagar </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="divspace divspace1">
+                            <div class="label_container">
+                                <label> Pincode </label>
+                            </div>
+                            <div class="colon_container"> : </div>
+                            <div class="input_container">
+                                <input required type="text" id="pincode" pattern="^[123456789]\d{5}$"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g,'')" minlength="6" maxlength="6"
+                                    readonly>
+                            </div>
+                        </div>
+
+                        <div class="button_container divspace">
+                            <div class="divspace">
+                                <button class="edit_btn" type="submit" id="editButton"> Edit </button>
+                            </div>
+                            <div class="divspace">
+                                <button type="button" id="save"> Save </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class = "contact">
-                        <i class="fa-brands fa-facebook"></i>
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
+
                 </div>
-            </div>
-        </footer>
 
-        <script>
-            let phone_id = JSON.parse(localStorage.getItem('phone_no_id'));
-            let userData = JSON.parse(localStorage.getItem('userData'));
+            </form>
 
-            function login_data(e){
-                return e.phone_no == phone_id;
+        </div>
+
+    </main>
+
+    <script src="../assets/js/header.js"></script>
+    <script src="../assets/js/footer.js"></script>
+
+    <script>
+
+        window.addEventListener("load", function () {
+            if (phone_id === null) {
+                document.getElementById("phone_no").removeAttribute("disabled");
+                document.getElementById("phone_no").setAttribute("readonly", true);
+                document.getElementById("customer_portal").style.display = "none";
             }
-            
-            person_data = userData.find(login_data);
-            document.getElementById("name").value = person_data['name'];
-            document.getElementById("phone_no").value = person_data["phone_no"];
-            document.getElementById("address_line1").value = person_data["address_line1"];
-            document.getElementById("address_line2").value = person_data["address_line2"];
-            document.getElementById("pincode").value = person_data['pincode'];
+            else if (rep_id === null) {
+                document.getElementById("rep_portal").style.display = "none";
+            }
+        });
 
-            document.getElementById("editButton").addEventListener("click",enableInput);
+        // function for enabling input
 
-            function enableInput(e) {
-                if(confirm("Are you sure you want to edit the details")){
-                    document.getElementById("name").removeAttribute("readonly");
-                    document.getElementById("address_line1").removeAttribute("readonly");
-                    document.getElementById("address_line2").removeAttribute("readonly");
-                    document.getElementById("pincode").removeAttribute("readonly");
+        function enableInput(e) {
+            e.preventDefault();
+            if (confirm("Are you sure you want to edit the details")) {
+                document.getElementById("name").removeAttribute("readonly");
+                document.getElementById("phone_no").removeAttribute("readonly")
+                document.getElementById("address").removeAttribute("readonly");
+                document.getElementById("district").removeAttribute("readonly");
+                document.getElementById("pincode").removeAttribute("readonly");
+            }
+        }
+
+        // function for updating details
+
+        function disableInput() {
+
+            if (rep_id === null) {
+
+                const person_data = userDetails.find(e => e.phone_no === phone_id);
+
+                if (confirm("Are you sure you want to save the details")) {
+                    person_data.name = document.getElementById("name").value;
+                    person_data.address = document.getElementById("address").value;
+                    person_data.district = document.getElementById("district").value;
+                    person_data.pincode = document.getElementById("pincode").value;
+
+                    localStorage.setItem("userData", JSON.stringify(userDetails));
                 }
             }
 
-            function updateDetails(e) {
-                person_data["name"] = document.getElementById("name").value;
-                person_data["address_line1"] = document.getElementById("address_line1").value;
-                person_data["address_line2"] = document.getElementById("address_line2").value;
-                person_data["pincode"] = document.getElementById("pincode").value;
+            else if (phone_id === null) {
 
-                localStorage.setItem("userData",JSON.stringify(userData));
-            }
+                const repData = repDetail.find(e => e.userId === rep_id);
 
-            document.getElementById("save").addEventListener("click",disableInput);
-            
-            function disableInput(e) {
-                if(confirm("Are you sure you want to save the details")){
+                if (confirm("Are you sure you want to save the details")) {
+                    repData.name = document.getElementById("name").value;
+                    repData.phone_no = document.getElementById("phone_no").value;
+                    repData.address = document.getElementById("address").value;
+                    repData.district = document.getElementById("district").value;
+                    repData.pincode = document.getElementById("pincode").value;
 
-                    document.getElementById("name").setAttribute("readonly","true");
-                    document.getElementById("address_line1").setAttribute("readonly","true");
-                    document.getElementById("address_line2").setAttribute("readonly","true");
-                    document.getElementById("pincode").setAttribute("readonly","true");
-
-                    window.location.href = "#";
+                    localStorage.setItem("rep_details", JSON.stringify(repDetail));
                 }
             }
 
-            function deleteaccount(e){
-                if(confirm("Are you sure you want to delete the account?"))
-                {
-                    let phone_id = JSON.parse(localStorage.getItem("phone_no_id"));
-                    let userData = JSON.parse(localStorage.getItem("userData"));
+            window.location.reload();
+        }
 
-                    function login_data(e){
-                        return e.phone_no == phone_id;
-                    }
+        if (rep_id === null) {
 
-            person_data = userData.find(login_data);
-            const removedata = userData.indexOf(person_data);
+            const person_data = userDetails.find(e => e.phone_no === phone_id);
 
-            userData.splice(removedata,1);
-            localStorage.setItem("userData",JSON.stringify(userData));
-            window.location.href = "../index.html";
+            document.getElementById("name").value = person_data.name;
+            document.getElementById("phone_no").value = person_data.phone_no;
+            document.getElementById("address").value = person_data.address;
+            document.getElementById("district").value = person_data.district;
+            document.getElementById("pincode").value = person_data.pincode;
+
+            document.getElementById("editButton").addEventListener("click", enableInput);
+
+            document.getElementById("save").addEventListener("click", disableInput);
+
+            // function for deleting account
+
+            function deleteaccount(e) {
+                if (confirm("Are you sure you want to delete the account?")) {
+
+                    const removedata = userDetails.indexOf(person_data);
+                    userDetails.splice(removedata, 1);
+                    localStorage.setItem("userData", JSON.stringify(userDetails));
+                    localStorage.removeItem("phone_no_id");
+                    window.location.href = "../index.html";
                 }
             }
 
             const del = document.querySelector("#delete");
-            del.addEventListener("click",deleteaccount)
-            
-        </script>
+            del.addEventListener("click", deleteaccount);
+        }
+
+        else if (phone_id === null) {
+
+            const repData = repDetail.find(e => e.userId === rep_id);
+
+            document.getElementById("name").value = repData.name;
+            document.getElementById("phone_no").value = repData.phone_no;
+            document.getElementById("address").value = repData.address;
+            document.getElementById("district").value = repData.district;
+            document.getElementById("pincode").value = repData.pincode;
+
+            document.getElementById("editButton").addEventListener("click", enableInput);
+
+            document.getElementById("save").addEventListener("click", disableInput);
+
+        }
+
+    </script>
 
 </body>
+
 </html>

@@ -1,384 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <title>Cattles</title>
 
-    <!-- <script src = "../../assets/js/toggle_button.js" defer></script> -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <!-- <link rel="stylesheet" href="../../assets/css/normalize.css"> -->
-    <link rel="stylesheet" href="../../assets/css/cattles/cattles.css">
-    <link rel="stylesheet" href="../../assets/css/header_footer.css">
-    <script src = "../../assets/js/main.js"></script>
-    <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <title>Cattles</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/cattles/cattles.css">
+  <link rel="stylesheet" href="../../assets/css/header_footer.css">
+  <script src="../../assets/js/main.js"></script>
+  <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo1.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
+
+  <main>
+
+    <!-- Search bar and category section -->
+
+    <div class="category_searchbar_container">
+
+      <div class="search_bar_container">
+        <input type="search" placeholder="search cattles by id (CG1)" id="search_input">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <div class="category_list_container">
+
+        <div class="category_container">
+          <div class="cat_img_container">
+            <img class="cat_img" src="../../assets/images/cattles/ch1.jpg" alt="cow" id="Cow">
+          </div>
+          <p class="cat_img_title"> COW </p>
+        </div>
+        <div class="category_container">
+          <div class="cat_img_container">
+            <img class="cat_img" src="../../assets/images/cattles/ch2.jpg" alt="buffalo" id="Buffalo">
+          </div>
+          <p class="cat_img_title"> BUFFALO </p>
+        </div>
+        <div class="category_container">
+          <div class="cat_img_container">
+            <img class="cat_img" src="../../assets/images/cattles/ch3.jpg" alt="goat" id="Goat">
+          </div>
+          <p class="cat_img_title"> GOAT </p>
+        </div>
+        <div class="category_container">
+          <div class="cat_img_container">
+            <img class="cat_img" src="../../assets/images/cattles/ch4.jpg" alt="sheep" id="Sheep">
+          </div>
+          <p class="cat_img_title"> SHEEP </p>
+        </div>
+        <div class="category_container">
+          <div class="cat_img_container">
+            <img class="cat_img" src="../../assets/images/cattles/ch5.jpg" alt="ox" id="Ox">
+          </div>
+          <p class="cat_img_title"> OX </p>
         </div>
 
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <ul class = "navbar">
-                <li><a href="#">Cattles</a></li>
-                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="../about.html">About Us</a></li>
-                <li class = "logbutton"><a href="./sell_details1.html"><button class = "sell"> SELL </button></a></li>
-                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
-            </ul>
-        </div> 
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
+      </div>
 
-        <div class = "link_container">
-            <ul class = "navbar">
-                <li><a href="#">Cattles</a></li>
-                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="../about.html">About Us</a></li>
-            </ul>
-        </div>
-        
-        <div class = "navbar butcot" id = "sellpro">
-            <div class = "butspace"><a href = "./sell_details1.html"> <button class = "sell"> SELL </button> </a></div>
-            <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
-        </div>
+    </div>
 
-    </header>
+    <!-- Banner Section -->
 
-    <main>
-        <div class="chl">
-            <div class = "chl2">
-                <input type = "search" placeholder = "search cattles"> <a href = "#"><i class="fa-solid fa-magnifying-glass"></i></a>
-            </div>
-            <div class="chl1">
-                <div class="chln">
-                    <div class = "ispace"><img class="chi" src="../../assets/images/cattles/ch1.jpg" alt = "cow" id = "Cow"></div>
-                    <p id = "img_title"> COW </p>
-                </div>
-                <div class="chln">
-                    <div class = "ispace"><img class="chi" src="../../assets/images/cattles/ch2.jpg" alt = "buffalo" id = "Buffalo"></div>
-                    <p id = "img_title"> BUFFALO </p>
-                </div>
-                <div class="chln">
-                    <div class = "ispace"><img class="chi" src="../../assets/images/cattles/ch3.jpg" alt = "goat" id = "Goat"></div>
-                    <p id = "img_title"> GOAT </p>
-                </div>
-                <div class="chln">
-                    <div class = "ispace"><img class="chi" src="../../assets/images/cattles/ch4.jpg" alt = "sheep" id = "Sheep"></div>
-                    <p id = "img_title"> SHEEP </p>
-                </div>
-                <div class="chln">
-                    <div class = "ispace"><img class="chi" src="../../assets/images/cattles/ch5.jpg" alt = "ox"  id = "Ox"></div>
-                    <p id = "img_title"> OX </p>
-                </div>
-            </div>
-        </div>
+    <div class="banner_container">
+      <h1 class="banner_title"> Most Trusted Livestock Market </h1>
+    </div>
 
-        <div class="ho1">
-            <h1 class="ho5"> Most Trusted Livestock Market </h1>
-        </div>
+    <!-- Cattles Section -->
 
-        <div class="ho7">
-            <div class="ho8">
-                <h1 class = "title_color"> Cows </h1>
-                <div><a href = "cattle_list1.html"><button class = "btn1"> View all </button></a></div>
-            </div>
-            <div class="cattles_container">
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/cow/C6.html"><img class="i1" src="../../assets/images/cattles/c6.jpg" alt = "cows"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Sahiwal Cow S139 </p>
-                        <p> Age: 3 Years</p>
-                        <p> Gender: Female</p>
-                        <a href = "../cattle details/cow/C6.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/cow/C7.html"><img class="i1" src="../../assets/images/cattles/c7.jpg" alt = "cows"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Jersey Cow J006 </p>
-                        <p> Age: 5 Year</p>
-                        <p> Gender: Male</p>
-                        <a href = "../cattle details/cow/C7.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/cow/C8.html"><img class="i1" src="../../assets/images/cattles/c8.jpg" alt = "cows"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Rathi Heifer Cow R036 </p>
-                        <p> Age: 1 Year</p>
-                        <p> Gender: Female</p>
-                        <a href = "../cattle details/cow/C8.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="products_section">
+      <div class="product_title_container">
+        <h1 class="product_title"> Gir </h1>
+      </div>
+      <div class="cattles_container1" id="Gir_container"></div>
+      <hr>
 
-        <div class="ho7">
-            <hr>
-            <div class="ho8">
-                <h1 class = "title_color"> Buffaloes </h1>
-                <div><a href = "cattle_list2.html"><button class = "btn1"> View all </button></a></div>
-            </div>
-            <div class="cattles_container">
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/buffalo/B2.html"><img class="i1" src="../../assets/images/cattles/b2.jpg" alt = "buffalo"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Nili Ravi Buffalo N115</p>
-                        <p> Age: 4 Years</p>
-                        <p> Gender: Female</p>
-                        <a href = "../cattle details/buffalo/B2.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/buffalo/B8.html"><img class="i1" src="../../assets/images/cattles/b8.jpg" alt = "buffalo"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Banni Buffalo B198 </p>
-                        <p> Age: 7 Years</p>
-                        <p> Gender: Female</p>
-                        <a href = "../cattle details/buffalo/B8.html"><button class = "btn2"> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/buffalo/B5.html"><img class="i1" src="../../assets/images/cattles/b5.jpg" alt = "buffalo"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Murrah Heifer Buffalo M020 </p>
-                        <p> Age: 3 Years</p>
-                        <p> Gender: Female</p>
-                        <a href ="../cattle details/buffalo/B5.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="product_title_container">
+        <h1 class="product_title"> Surti </h1>
+      </div>
+      <div class="cattles_container2" id="Surti_container"></div>
+      <hr>
 
-        <div class="ho7">
-            <hr>
-            <div class="ho8">
-                <h1 class = "title_color"> Goats </h1>
-                <div><a href = "cattle_list3.html"><button class = "btn1"> View all </button></a></div>
-            </div>
-            <div class = "cattles_container">
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/goat/G3.html"><img class="i1" src="../../assets/images/cattles/g3.jpg" alt = "goat"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Kota Goats K001</p>
-                        <p> Age: 1 Year</p>
-                        <p> Gender: NA</p>
-                        <a href = "../cattle details/goat/G3.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/goat/G5.html"><img class="i1" src="../../assets/images/cattles/g5.jpg" alt = "goat"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Sannen Goat S104 </p>
-                        <p> Age: 2 Years</p>
-                        <p> Gender: Male</p>
-                        <a href = "../cattle details/goat/G5.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/goat/G6.html"><img class="i1" src="../../assets/images/cattles/g6.jpg" alt = "goat"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Jamunapari Goat J111 </p>
-                        <p> Age: 1 Year</p>
-                        <p> Gender: Female</p>
-                        <a href = "../cattle details/goat/G6.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="product_title_container">
+        <h1 class="product_title"> Malabari </h1>
+      </div>
+      <div class="cattles_container3" id="Malabari_container"></div>
+      <hr>
 
-        <div class="ho7">
-            <hr>
-            <div class="ho8">
-                <h1 class = "title_color"> Sheeps </h1>
-                <div><a href = "cattle_list4.html"><button class = "btn1"> View all </button></a></div>
-            </div>
-            <div class = "cattles_container">
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/sheep/S2.html"><img class="i1" src="../../assets/images/cattles/s2.jpg" alt = "sheep"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Neelore Jodipi Sheep N107</p>
-                        <p> Age: 4 Years</p>
-                        <p> Gender: Female</p>
-                        <a href = "../cattle details/sheep/S2.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/sheep/S3.html"><img class="i1" src="../../assets/images/cattles/s3.jpg" alt = "sheep"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Sindhanoor Sheep S001 </p>
-                        <p> Age: 1 Year</p>
-                        <p> Gender: NA</p>
-                        <a href = "../cattle details/sheep/S3.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/sheep/S4.html"><img class="i1" src="../../assets/images/cattles/s4.jpg" alt = "sheep"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Deccani Sheep D001 </p>
-                        <p> Age: 1 Year</p>
-                        <p> Gender: NA</p>
-                        <a href = "../cattle details/sheep/S4.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="product_title_container">
+        <h1 class="product_title"> Bannur </h1>
+      </div>
+      <div class="cattles_container4" id="Bannur_container"></div>
+      <hr>
 
-        <div class="ho7">
-            <hr>
-            <div class="ho8">
-                <h1 class = "title_color"> Ox </h1>
-                <div><a href = "cattle_list5.html"><button class = "btn1"> View all </button></a></div>
-            </div>
-            <div class = "cattles_container">
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/ox/O3.html"><img class="i1" src="../../assets/images/cattles/o3.jpg" alt = "ox"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Ongole Ox O109</p>
-                        <p> Age: 4 Years</p>
-                        <p> Gender: Male</p>
-                        <a href = "../cattle details/ox/O3.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/ox/O4.html"><img class="i1" src="../../assets/images/cattles/o4.jpg" alt = "ox"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Brahma Ox B106 </p>
-                        <p> Age: 3 Years</p>
-                        <p> Gender: Male</p>
-                        <a href = "../cattle details/ox/O4.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "../cattle details/ox/O5.html"><img class="i1" src="../../assets/images/cattles/o5.jpg" alt = "ox"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Gir Bull G376 </p>
-                        <p> Age: 1 Year</p>
-                        <p> Gender: Male</p>
-                        <a href = "../cattle details/ox/O5.html"><button class="btn2"> Know More </button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="product_title_container">
+        <h1 class="product_title"> Ongole </h1>
+      </div>
+      <div class="cattles_container5" id="Ongole_container"></div>
+    </div>
 
-        <img class = "gif" src = "../../assets/images/gif2.gif"  alt = "gif">
-    </main>
+    <!-- Gif -->
 
-    <footer>
-        <div class="foot" id = "fogif">
-            <div class="foot1">
-                <img class="logof" src="../../assets/images/cattles/logo2.png"  alt = "logo">
-                <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
-                    Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
-                    full potential while ensuring livestock wellbeing.</p>
-            </div>
-            <div class="foot2">
-                <div><h2 class = "connect"> CONNECT WITH US</h2></div>
-                <div class = "fspace">
-                    <p> Email: info@kowmart.com</p>
-                    <p> Ph.no: 1234567890</p>
-                    <p> Address: Chennai - 33</p>
-                </div>
-                <div class = "contact">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <img class="gif" src="../../assets/images/gif2.gif" alt="gif">
 
-    <!--<script>
+  </main>
 
-        function cattle_container(){
-            // cattle container
-            div_p1 = document.createElement("div");
-            div_p1.setAttribute("class","p1");
-            document.querySelector("div.ho7").prepend(div_p1)
+  <script src="../../assets/js/header.js"></script>
+  <script src="../../assets/js/footer.js"></script>
 
-            // cattle image
-            cattle_image = document.createElement("img");
-            cattle_image.setAttribute("src","../../assets/images/cattles/c6.jpg");
-            cattle_image.setAttribute("class","i1");
-            cattle_image.setAttribute("alt","cow");
-            div_p1.append(cattle_image)
+  <script>
 
-            // cattle info container
-            div_bspace = document.createElement("div");
-            div_bspace.setAttribute("class","bspace");
-            div_p1.append(div_bspace)
+    // Most breed section
 
-            // cattle info
-            p_name = document.createElement("p");
-            p_name.setAttribute("class","pname");
-            p_name.innerText = "Sahiwal Cow S139";
-            div_bspace.append(p_name)
+    if (verifiedCattleLists.length !== 0) {
 
-            p_age = document.createElement("p");
-            p_age.innerText = "Age: 3 Years";
-            div_bspace.append(p_age)
+      let cattleDetails = [];
 
-            p_gender = document.createElement("p");
-            p_gender.innerText = "Gender: Female";
-            div_bspace.append(p_gender)
+      for (let i = 0; i < verifiedCattleLists.length; i++){
+        let cattleData = cattle_detail.find(e => e.cattle_uniqueId === verifiedCattleLists[i]["cattle_uniqueId"]);
+        cattleData.rep_id = verifiedCattleLists[i]["repUserId"];
+        cattleDetails.push(cattleData);
+      }
+
+      seller_cattles = cattleDetails.filter((e) => e.userId != phone_id);
+      most_breed_Gir = cattleDetails.filter((e) => e.breed == "Gir");
+      most_breed_Surti = cattleDetails.filter((e) => e.breed == "Surti");
+      most_breed_Malabari = cattleDetails.filter((e) => e.breed == "Malabari");
+      most_breed_Bannur = cattleDetails.filter((e) => e.breed == "Bannur");
+      most_breed_Ongole = cattleDetails.filter((e) => e.breed == "Ongole");
+
+      for (let i = 0; i < most_breed_Gir.length; i++) {
+        if (i < 3) {
+          const cattle_container = cards(most_breed_Gir[i]);
+          document.querySelector("div.cattles_container1").append(cattle_container);
         }
+      }
 
-        for(i=0;i<3;i++){
-            cattle_container();
+      for (let i = 0; i < most_breed_Surti.length; i++) {
+        if (i < 3) {
+          const cattle_container = cards(most_breed_Surti[i]);
+          document.querySelector("div.cattles_container2").append(cattle_container);
         }
+      }
 
-    </script>-->
+      for (let i = 0; i < most_breed_Malabari.length; i++) {
+        if (i < 3) {
+          const cattle_container = cards(most_breed_Malabari[i]);
+          document.querySelector("div.cattles_container3").append(cattle_container);
+        }
+      }
 
-    <script>
+      for (let i = 0; i < most_breed_Bannur.length; i++) {
+        if (i < 3) {
+          const cattle_container = cards(most_breed_Bannur[i]);
+          document.querySelector("div.cattles_container4").append(cattle_container);
+        }
+      }
 
-        const category = document.querySelectorAll('.chi');
-        category.forEach(each => {  
-            each.addEventListener('click', (event) => {
-                const id = each.id;
-                
-                window.location.href = `./cattle_list1.html?cattle_details=${id}`;
-            });
-        });
+      for (let i = 0; i < most_breed_Ongole.length; i++) {
+        if (i < 3) {
+          const cattle_container = cards(most_breed_Ongole[i]);
+          document.querySelector("div.cattles_container5").append(cattle_container);
+        }
+      }
 
-    </script>
+      function cards(card) {
+
+        // cattle container
+        cattle_container = document.createElement("div");
+        cattle_container.setAttribute("class", "cattle_container");
+
+        // image container
+        cattle_img_container = document.createElement("div");
+        cattle_img_container.setAttribute("class", "img_container");
+        cattle_container.append(cattle_img_container);
+
+        // a
+        cattle_anchor = document.createElement("a");
+        cattle_anchor.setAttribute("href",`../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.rep_id}`);
+        cattle_img_container.append(cattle_anchor);
+
+        // cattle image
+        cattle_image = document.createElement("img");
+        cattle_image.setAttribute("src", card.image);
+        cattle_image.setAttribute("alt", `${card.breed} ${card.cattle} ${card.id}`);
+        cattle_image.setAttribute("class", "cattle_image");
+        cattle_anchor.append(cattle_image);
+
+        // cattle info container
+        info_container = document.createElement("div");
+        info_container.setAttribute("class", "info_container");
+        cattle_container.append(info_container);
+
+        // cattle info
+        cattle_name = document.createElement("p");
+        cattle_name.setAttribute("class", "cattle_name");
+        cattle_name.innerText = `${card.breed} ${card.cattle} ${card.id}`;
+        info_container.append(cattle_name);
+
+        cattle_age = document.createElement("p");
+        cattle_age.innerText = `Age: ${card.age} Year(s)`;
+        info_container.append(cattle_age);
+
+        cattle_gender = document.createElement("p");
+        cattle_gender.innerText = `Gender: ${card.gender}`;
+        info_container.append(cattle_gender);
+
+        // a
+
+        buttonContainer = document.createElement("a");
+        buttonContainer.setAttribute("href",`../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.rep_id}`);
+        info_container.append(buttonContainer);
+
+        // Know more button
+        know_button = document.createElement("button");
+        know_button.innerText = "Know More";
+        buttonContainer.append(know_button);
+
+        return cattle_container;
+
+      }
+    }
+
+    // Passing category value to the list page
+
+    const category = document.querySelectorAll(".cat_img");
+    category.forEach((each) => {
+      each.addEventListener("click", (event) => {
+        const { id } = each;
+        window.location.href = `./cattle_list1.html?cattle_details=${id}`;
+      });
+    });
+
+    const mag_glass = document.querySelector(".fa-magnifying-glass");
+    mag_glass.addEventListener("click", function () {
+      const search_box = document.getElementById("search_input").value;
+      if (search_box === ""){
+        alert("Please enter a ID")
+        return false;
+      }
+      
+      const searchCattle = cattle_detail.find(e => e.id === search_box);
+      if (searchCattle === undefined) {
+        alert("THERE is no cattle with this ID")
+        return false;
+      }
+
+      const checkVerify = verifiedCattleLists.find(e => e.cattle_uniqueId === searchCattle.cattle_uniqueId);
+      if (checkVerify === undefined) {
+        alert("THERE is no cattle with this ID")
+      }
+      else {
+        const cattle_breed = searchCattle["breed"];
+        const cattle_id = searchCattle["cattle_uniqueId"];
+        const user_id = checkVerify["repUserId"];
+        window.location.href = `../cattle details/cow/C1.html?breed=${cattle_breed}&cattle_id=${cattle_id}&user_id=${user_id}`;
+      }
+    });
+
+  </script>
 
 </body>
 

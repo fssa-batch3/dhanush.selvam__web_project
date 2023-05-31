@@ -11,175 +11,206 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/cattles/selldetails3.css">
     <link rel="stylesheet" href="../../assets/css/header_footer.css">
-    <script src = "../../assets/js/main.js"></script>
+    <script src="../../assets/js/main.js"></script>
     <link rel="icon" href="../../assets/images/cattles/logo.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logodiv"><a href = "../../index.html"><img class = "logo" src="../../assets/images/cattles/logo1.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "../../index.html"><h1 class = "hd"> KowMart </h1></a></div>
-        </div>
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <ul class = "navbar">
-                <li><a href="cattle_index.html">Cattles</a></li>
-                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="../about.html">About Us</a></li>
-                <li class = "logbutton"><a href="./sell_details1.html"><button class = "sell"> SELL </button></a></li>
-                <li class = "profile_icon"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></li>
-            </ul>
-        </div> 
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
-        <div class = "link_container">
-            <ul class="navbar">
-                <li><a href="cattle_index.html">Cattles</a></li>
-                <!-- <li><a href="../agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="../about.html">About Us</a></li>
-            </ul>
-        </div>
-        <div class = "navbar butcot" id = "sellpro">
-            <div class = "butspace"><a href = "./sell_details1.html"> <button class = "sell"> SELL </button> </a></div>
-            <div class = "user"><a href = "../buyer_profile.html"><i class="fa-solid fa-user"></i></a></div>
-        </div>
-    </header>
 
     <main>
-        <div class = "d0">  
-            <div><button onclick="window.history.back()"> BACK </button></a></div>
-            <h1 class = "h11"> List Your LiveStock Here</h1>
+
+        <!-- Pop up section -->
+
+        <!-- <div class="container">
+            <div class="popUpContainer">
+                <p> Uploaded Successfully </p>
+            </div>
+        </div> -->
+
+        <!-- back button section -->
+
+        <div class="back_btn_container">
+            <div>
+                <button onclick="window.history.back()"> BACK </button>
+            </div>
+            <h1 class="title1"> List Your LiveStock Here </h1>
         </div>
-            <h3 class = "h12"> Buy and Sell your Cattles easier!</h3>
-            <img class = "choose" src = "../../assets/images/choose_animals_active.png"  alt = "choose">
-            <h1 class = "h13"> Animal Details  </h1>
-            <hr>
 
-        <form onsubmit= "getValue(event);">
-                <div class = "r1">
-                    <div>
-                        <label> Age (in Years) </label><br>
-                        <input required type = "text" id = "age" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
-                    </div>
-                    <div>
-                        <label> Gender </label><br>
-                        <select required id = "gender" placeholder = "Select">
-                            <option> Female </option>
-                            <option> Male </option>
-                        </select>
-                    </div>
-                    <div class = "weight">
-                        <label> Weight (kg) </label><br>
-                        <input required type = "text" id = "weight" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "5">
-                    </div>
-                </div>
-                
-                <div class = "r1">
-                    <div>
-                        <label> Milk per day (litres) </label><br>
-                        <input type = "text" id = "milk" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
-                    </div>
-                    <div>
-                        <label> Price (Rs.) </label><br>
-                        <input required type = "text" id = "price" oninput = "this.value = this.value.replace(/[^0-9]/g,'')">
-                    </div>
-                    <div class = "weight">
-                        <label> Lactation </label><br>
-                        <input type = "text" id = "lactation" oninput = "this.value = this.value.replace(/[^0-9]/g,'')" maxlength = "2">
-                    </div>
+        <!-- title section -->
+
+        <h3 class="title2"> Buy and Sell your Cattles easier! </h3>
+        <img class="choose" src="../../assets/images/choose_animals_active.png" alt="choose">
+        <h1 class="title3"> Animal Details </h1>
+        <hr>
+
+        <!-- Details section -->
+
+        <form>
+
+            <div class="details_section">
+                <div>
+                    <label> Age (in Years) </label>
+                    <br>
+                    <input required type="text" id="age" oninput="this.value = this.value.replace(/[^1-9]/g,'')"
+                        maxlength="1">
                 </div>
 
-                <div class = "r2">
-                    <label> Description </label><br>
-                    <textarea id = "description"></textarea>
+                <div>
+                    <label> Gender </label>
+                    <br>
+                    <select required id="gender">
+                        <option> Female </option>
+                        <option> Male </option>
+                    </select>
                 </div>
-                <div class = "r3">
-                    <div>
-                        <label> Upload Photo: </label><br>
-                        <input required type = "url" id = "image">
-                    </div>
-                    <div>
-                        <label> Upload Photo: </label><br>
-                        <input type = "url" id = "image1">
-                    </div>  
-                    <div>
-                        <label> Upload Video: </label><br>
-                        <input type = "file" multiple>
-                    </div>  
+
+                <div class="weight">
+                    <label> Weight (kg) </label>
+                    <br>
+                    <input required type="text" id="weight" pattern="^[1-9]\d*$"
+                        oninput="this.value = this.value.replace(/[^0-9]/g,'')" maxlength="4" max="2000"
+                        title="Do not start with 0">
                 </div>
-                <div class="bspace"><button class = "btn0" type = "submit"> SUBMIT </button></div>
+            </div>
+
+            <div class="details_section">
+                <div>
+                    <label> Price (Rs.) </label>
+                    <br>
+                    <input required type="text" id="price" pattern="^[1-9]\d*$"
+                        oninput="this.value = this.value.replace(/[^0-9]/g,'')" maxlength="7"
+                        title="Do not start with 0">
+                </div>
+                <div class="milk_container">
+                    <label> Milk per day (litres) </label>
+                    <br>
+                    <input type="text" id="milk" pattern="^[1-9]\d*$"
+                        oninput="this.value = this.value.replace(/[^0-9]/g,'')" maxlength="2"
+                        title="Do not start with 0">
+                </div>
+                <div class="weight lact_container">
+                    <label> Lactation </label>
+                    <br>
+                    <input type="text" id="lactation" oninput="this.value = this.value.replace(/[^1-9]/g,'')"
+                        maxlength="1">
+                </div>
+            </div>
+
+            <div class="description_section">
+                <label> Description </label>
+                <br>
+                <textarea id="description"></textarea>
+            </div>
+
+            <div class="details_section">
+                <div>
+                    <label> Upload Photo: </label>
+                    <br>
+                    <input required type="url" id="image">
+                </div>
+                <div>
+                    <label> Upload Photo: </label>
+                    <br>
+                    <input type="url" id="image1">
+                </div>
+                <div class="weight">
+                    <label> Upload Video: </label>
+                    <br>
+                    <input type="url" multiple>
+                </div>
+            </div>
+
+            <div class="submit_btn_container">
+                <button class="submit_btn" type="button"> SUBMIT </button>
+            </div>
+
         </form>
+
     </main>
 
-    <footer>
-        <div class="foot">
-            <div class="foot1">
-                <img class="logof" src="../../assets/images/cattles/logo2.png" alt = "logo">
-                <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
-                    Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
-                    full potential while ensuring livestock wellbeing.</p>
-            </div>
-            <div class="foot2">
-                <h2 class = "connect"> CONNECT WITH US</h2>
-                <div class = "fspace">
-                    <p> Email: info@kowmart.com</p>
-                    <p> Ph.no: 1234567890</p>
-                    <p> Insta: KowMart</p>
-                </div>
-                <div class = "contact">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <script src="../../assets/js/header.js"></script>
+    <script src="../../assets/js/footer.js"></script>
 
     <script>
+        const user_address = userDetails.find((e) => e.phone_no == phone_id).address;
+        const user_district = userDetails.find((e) => e.phone_no == phone_id).district;
+        const user_pincode = userDetails.find((e) => e.phone_no == phone_id).pincode;
 
-        function getValue(e) {
-            e.preventDefault();
+        document.getElementById("gender").addEventListener("change", function () {
+            if (document.getElementById("gender").value === "Male") {
+                document.querySelector(".milk_container").style.display = "none";
+                document.querySelector(".lact_container").style.display = "none";
+            }
+            else {
+                document.querySelector(".milk_container").style.display = "block";
+                document.querySelector(".lact_container").style.display = "block";
+            }
+        })
+
+
+        document.querySelector(".submit_btn").addEventListener("click", (e) => {
 
             const urlParams = new URLSearchParams(window.location.search);
 
-            let cattle = urlParams.get("cattle");
-                breed = urlParams.get("breed");
-                age = document.getElementById("age").value;
-                gender = document.getElementById("gender").value; 
-                weight = document.getElementById("weight").value; 
-                milk = document.getElementById("milk").value; 
-                price = document.getElementById("price").value; 
-                lactation = document.getElementById("lactation").value; 
-                description = document.getElementById("description").value;
-                image = document.getElementById("image").value;
-                image1 = document.getElementById("image1").value;
-                cattle_uniqueId = uuidv4();
-                id = cattle[0] + breed[0];
-                user_id = JSON.parse(localStorage.getItem("phone_no_id"));
-                userId = user_id;
-                
-            let cattle_details = JSON.parse(localStorage.getItem('cattle_details')) || [];     
+            const cattle = urlParams.get("cattle");
+            breed = urlParams.get("breed");
+            age = document.getElementById("age").value;
+            gender = document.getElementById("gender").value;
+            weight = document.getElementById("weight").value;
+            milk = document.getElementById("milk").value;
+            price = document.getElementById("price").value;
+            lactation = document.getElementById("lactation").value;
+            description = document.getElementById("description").value;
+            image = document.getElementById("image").value;
+            image1 = document.getElementById("image1").value;
+            cattle_uniqueId = uuidv4();
+            userId = phone_id;
+            timestamp = new Date();
+            date = timestamp.toLocaleDateString();
+            status = "";
+                    
+            notificationId = uuidv4();
 
-            cattle_details.push({cattle, breed, age, gender, weight, milk, price, lactation, description, image, id, cattle_uniqueId, userId, image1});
-            localStorage.setItem('cattle_details', JSON.stringify(cattle_details));
-            location.href = "./seller_cattlelist.html";
-            document.querySelector('form').reset();
-        }
+            messageTitle = "New " + breed + " " + cattle + " has been uploaded";
+
+            const customerData = userDetails.find(e => e.phone_no === userId);
+
+            message = "It is in " + customerData.address + ", " + customerData.district + ", " + customerData.pincode;
+            readStatus = false;
+
+            const stock = cattle_detail.filter((e) => e.breed == breed).length.toString().padStart(3, "0");
+            const stock_no = parseInt(stock) + 1;
+
+            id = cattle[0] + breed[0] + stock_no;
+
+            if (user_address != "" && user_pincode != "" && user_district != "") {
+
+                const repUserId = repDetail.find(e => e.district === customerData.district).userId;
+                const receiver = repUserId;
+
+                cattle_detail.push({ cattle, breed, age, gender, weight, milk, price, lactation, description, image, image1, id, cattle_uniqueId, userId, date, status });
+                repCattleDetails.push({ cattle_uniqueId,repUserId, userId });
+                notificationList.push({ notificationId, messageTitle, message, receiver, readStatus });
+
+                localStorage.setItem("cattle_details", JSON.stringify(cattle_detail));
+                localStorage.setItem("repCattleList", JSON.stringify(repCattleDetails));
+                localStorage.setItem("notificationList", JSON.stringify(notificationList));
+                location.href = "./cattleList.html?page=sellerCattleList";
+                document.querySelector("form").reset();
+            }
+            else {
+                alert("Please fill the address, state and pincode in your profile");
+            }
+        });
 
     </script>
+
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
 
-    
 </body>
 
 </html>
-
-<!-- 
-https://iili.io/HWccpp9.jpg
-https://iili.io/HWclJLb.jpg 
-https://iili.io/HWcc6In.jpg
-https://iili.io/HW8a8Q9.jpg
-https://iili.io/HW8MJvs.jpg 
-https://iili.io/HX7wu7S.jpg
--->

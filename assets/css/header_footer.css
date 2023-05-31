@@ -6,11 +6,65 @@ header{
     align-items: center;
     background-color: white;
     box-shadow: #00a651 4px 4px 4px;
-    padding: 0px 50px 0px 30px;
+    padding: 0px 50px 0px 40px;
     width: auto;
     position: sticky;
     top: 0;
     z-index: 1;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.logo_container{
+    padding: 15px 20px 0px 0px;
+}
+
+.logo{
+    width: 70px;
+}
+
+.navbar>div >a{
+    font-size: 20px;
+    text-decoration: none;
+    color: #00a651;
+}
+
+li {
+    padding: 20px;
+    list-style: none;
+}
+
+li >a{
+    font-size: 22px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #00a651;
+}
+
+li >a:hover{
+    color: orange;
+}
+
+.login{
+    border: 2px solid #00a651;
+    background-color: white;
+    color: #00a651;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.login:hover{
+    color: orange;
+}
+
+#sell{
+    padding: 10px 25px;
 }
 
 .VIpgJd-ZVi9od-ORHb-OEVmcd {
@@ -37,91 +91,46 @@ header{
     margin-left: 30px;
 }
 
-.logo{
-    width: 70px;
-}
-
-.logodiv{
-    padding: 15px;
-    padding-right: 30px;
-}
-
-.navbar {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.lotit >a{
-    font-size: 20px;
-    text-decoration: none;
-    color: #00a651;
-}
-
-li >a{
-    font-size: 22px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #00a651;
-}
-
-li >a:hover{
-    color: orange;
-}
-
-ul{ 
-    margin-left: -60px;
-}
-
-li {
-    padding: 20px 20px;
-    list-style: none;
-}
-
-.foot {
+footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
     background-color: #00a651;
     color: white;
-    margin-top: 40px;
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 150px;
 }
 
-#fogif{
-    margin-top: -10px;
-}
-
-.foot1 {
+.left_foot {
     width: 60%;
 }
 
-.logof {
+.footer_logo {
     width: 100px;
     padding-top: 40px;
     padding-left: 40px;
 }
 
-.f1p {
+.footer_content {
     padding-left: 60px;
     padding-bottom: 25px;
     line-height: 30px;
     font-size: 18px;
 }
 
-.foot2 {
-    padding-top: 50px;
-    padding-right: 150px;
+.right_foot {
+    width: 20%;
 }
 
-.contact{
+.com_icons{
     display: flex;
     justify-content: space-evenly;
     margin-top: 30px;
 }
 
-.connect {
+.right_foot_title {
     font-size: 24px;
     color: gainsboro;
 }
@@ -130,13 +139,12 @@ i{
     font-size: 30px;
 }
 
-i:hover{
+.fa-facebook:hover, .fa-whatsapp:hover, .fa-instagram:hover{
     transform: scale(1.2);
     color: white;
 }
 
 .fa-user{
-    padding-top: 8px;
     color: #00a651;
 }
 
@@ -144,31 +152,20 @@ i:hover{
     color: orange;
 }
 
-.fspace{
+.com_info_container{
     padding-left: 40px;
 }
 
-.sell{
-    background-color: white;
-    border: 2px solid #00a651;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px 25px;
-    border-radius: 10px;
-    color: #00a651;
+.comAddress {
+    line-height: 22px;
 }
 
-.sell:hover {
-    color: orange;
-    /* border-style: none; */
-}
-
-.user{
+.user_icon_container{
     margin-left: 30px;
 }
 
 .sidenav {
-    height: 42%;
+    height: 36%;
     width: 0;
     position: fixed;
     z-index: 1;
@@ -199,23 +196,74 @@ i:hover{
     top: 0;
     right: 25px;
     font-size: 36px;
-    margin-left: 50px;
   }
 
-  span{
+  .navBar{
     display: none;
     position: absolute;
     left: 21rem;
-    top: 25px;
+    top: 23px;
     color: #00a651;
   }
 
+  .btn_container {
+    align-items: center;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #e8f5ec;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 35%;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: gray;
+  }
+  
+  .overlay .closebtn:hover {
+    color: black;
+  }
+
+  .user_container{
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    width: 225px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } 
+
+  .user_container:hover {
+    box-shadow: #57d192 3px 3px 3px;
+  }
+
+  .user_container >h2 >a{
+    color: #00a651;
+    text-decoration: none;
+  }
 
 @media screen and (max-width: 480px) {
-
-    body{
-        width: fit-content;
-    }
 
     header{
         flex-direction: column;
@@ -227,12 +275,12 @@ i:hover{
         width: 60px;
     }
 
-    .logodiv{
-        padding: 20px 15px 0px 20px;
+    .logo_container{
+        padding: 18px 15px 0px 20px;
         margin-top: -7px;
     }
 
-    .hd{
+    .logo_head{
         font-size: 2rem;
     }
 
@@ -242,14 +290,14 @@ i:hover{
         width: 100%;
     }
 
-    .butcot{
+    .btn_container{
         display: none;
         background-color: #f1f1f1;
         margin-top: -10px;
         width: 100%;
     }
 
-    span{
+    .navBar{
         display: flex;
     }
 
@@ -260,61 +308,54 @@ i:hover{
     .sidenav a{
         font-size: 20px;
     }
-
-    ul.navbar{
-        display: flex;
-        flex-direction: column;
-    }
     
     li {
         padding: 13px 15px;
     }
 
-    .logbutton{
-        padding: 0px 10px;
-    }
-
-    .profile_icon{
+    .btn_con{
         padding: 5px 10px;
     }
 
-    .foot{
-        display: block;
-        padding: 0px;
-        background-color: #00a651;
-        color: white;
+    .profile_icon{
+        padding: 0px 12px;
     }
 
-    .foot1{
+    footer{
+        display: block;
+        padding: 0px;
+    }
+
+    .left_foot{
         width: 100%;
         margin: 0;
     }
 
-    .logof{
+    .footer_logo{
         padding: 20px 0px 0px 10px;
         width: 75px;
     }
 
-    .f1p{
+    .footer_content{
         padding: 0px 25px;
         font-size: 13px;
         line-height: 20px;
     }
 
-    .foot2{
+    .right_foot{
         padding: 0px;
     }
 
-    .connect{
+    .right_foot_title{
         text-align: center;
     }
 
-    .contact{
+    .com_icons{
         margin-top: -10px;
         padding: 20px 0px 30px 0px;
     }
 
-    .btn ,.sell{
+    .login {
         background-color: transparent;
         font-size: 25px;
         padding: 7px 15px;
@@ -322,8 +363,9 @@ i:hover{
         border: 2px solid teal;
     }
 
-    #sellpro{
-        flex-direction: column;
+    #sell{
+        padding: 7px 20px;
+        font-weight: bold;
     }
 
     .fa-user{
@@ -331,7 +373,12 @@ i:hover{
         font-size: 30px;
     }
 
-    .user{
+    .user_icon_container{
         margin: 0px 0px 20px 40px;
     }
+
+    .list_page_foot{
+        margin-top: 15px;
+    }
+    
 }

@@ -2,251 +2,269 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <title>Home Page</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <title>Home Page</title>
 
-    <link rel="stylesheet" href="assets/js/main.js">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/homepage.css">
-    <link rel="stylesheet" href="assets/css/header_footer.css">
-    <script src = "assets/js/main.js"></script>
-    <link rel="icon" href="assets/images/cattles/logo1.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/homepage.css">
+  <link rel="stylesheet" href="assets/css/header_footer.css">
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/index.js"></script>
+  <link rel="icon" href="assets/images/cattles/logo1.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logodiv"><a href = "index.html"><img class = "logo" src="assets/images/cattles/logo1.png" alt="logo"></a></div>
-            <div class="lotit"><a href = "index.html"><h1 class = "hd"> KowMart </h1></a></div>
+  <main>
+
+    <!-- banner section -->
+
+    <div class="banner_container">
+      <h1 class="banner_title"> Buy or Sell Livestock Online </h1>
+    </div>
+
+    <!-- Cattles Section -->
+
+    <div class="products_section">
+      <h2 class="product_title"> Our Best Cattles </h2>
+      <div class="cattles_container"></div>
+    </div>
+
+    <!-- Reviews Section -->
+
+    <div class="reviewsContainer">
+
+      <div class="headContainer">
+
+        <div class="titleContainer">
+          <span class="iconContainer">
+            <i class="fas fa-user-edit"></i>
+            <i class="fas fa-caret-right"></i>
+          </span>
+          <h3> <span class="text"> Customer </span> Feedback </h3>
         </div>
 
-        <div id="mySidenav" class="sidenav">
-             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> 
-            <ul class = "navbar">
-                <li><a href="pages/cattle/cattle_index.html">Cattles</a></li>
-                <!-- <li><a href="pages/agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="pages/about.html">About Us</a></li>
-                <li class = "logbutton"><a href="./pages/sign in.html"><button class = "btn"> LOGIN </button></a></li>
-            </ul>
-        </div> 
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      </div>
 
-        <div class = "link_container">
-            <ul class = "navbar">
-                <li><a href="pages/cattle/cattle_index.html">Cattles</a></li>
-                <!-- <li><a href="pages/agro pro/agro.html">Agro Products</a></li> -->
-                <li><a href="pages/about.html">About Us</a></li>
-            </ul>
+      <div class="container">
+
+        <div class="contentContainer">
+          <div class=roleContainer>
+            <h4> </h4>
+          </div>
+          <div class="videoContainer"> 
+            <!-- <img class="video" alt="">  -->
+            <iframe class = "video" alt=""> </iframe>
+          </div>
+          <div class="userDetailsContainer">
+            <h4> </h4>
+          </div>
+          <div class="descContainer">
+            <p class="desc"> </p>
+          </div>
         </div>
 
-        <!-- <div id = "google_translate_element"></div> -->
-        <div class = "butcot"><div class = "butspace"><a href="./pages/sign in.html"><button class = "btn"> LOGIN </button></a></div>
-    
-    </header>
-    
-    <main>
-        
-        <div class="ho1">
-            <h1 class="ho5"> Buy or Sell Livestock Online </h1>
+        <div class="nextContainer">
+          <button class="left"> <i class="fa-solid fa-chevron-left"></i> </button>
+          <button class="right"> <i class="fa-solid fa-chevron-right"></i> </button>
         </div>
 
-        <div class="ho7">
-            <h1 class="ho6"> Our Best Cattles</h1>
-            <div class = "cattles_container">
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "pages/cattle details/cow/C1.html"><img class="i1" src="assets/images/cattles/c1.jpg" alt = "cow"></a>      
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Gir Cow G018 </p>
-                        <p> Age: 4 Years</p>
-                        <p> Gender: Female</p>
-                        <a href="pages/cattle details/cow/C1.html"><button> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                        <a href = "pages/cattle details/cow/C3.html"><img class="i1" src="assets/images/cattles/c3.jpg" alt = "cow"></a>
-                    </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Kankrej Cow K006 </p>
-                        <p> Age: 1 Year</p>
-                        <p> Gender: Female</p>
-                        <a href = "pages/cattle details/cow/C3.html"><button> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                    <a href = "pages/cattle details/buffalo/B1.html"><img class="i1" src="assets/images/cattles/b1.jpg" alt = "buffalo"></a>
-                </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Surti Buffalo S101 </p>
-                        <p> Age: 6 Years</p>
-                        <p> Gender: Female</p>
-                        <a href = "pages/cattle details/buffalo/B1.html"><button> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                    <a href = "pages/cattle details/goat/G1.html"><img class="i1" src="assets/images/cattles/g1.jpg" alt = "goat"></a>
-                </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Malabari Goat M080 </p>
-                        <p> Age: 3 Years</p>
-                        <p> Gender: Male</p>
-                        <a href = "pages/cattle details/goat/G1.html"><button> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                    <a href = "pages/cattle details/sheep/S1.html"><img class="i1" src="assets/images/cattles/s1.jpg" alt = "sheep"></a>
-                </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Bannur Sheep B023 </p>
-                        <p> Age: 1 Year</p>
-                        <p> Gender: Male</p>
-                        <a href = "pages/cattle details/sheep/S1.html"><button> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <div class = "img_container">
-                    <a href = "pages/cattle details/ox/O1.html"><img class="i1" src="assets/images/cattles/o1.jpg" alt = "ox"></a>   
-                </div>
-                    <div class = "bspace">
-                        <p class = "pname"> Ongole Ox O107 </p>
-                        <p> Age: 4 Years</p>
-                        <p> Gender: Male</p>
-                        <a href = "pages/cattle details/ox/O1.html"><button> Know More </button></a>
-                    </div>
-                </div>
-            </div>
+        <div class="dotsContainer">
+          <div> <span class="dots"> </span> </div>
+          <div> <span class="dots"> </span> </div>
+          <div> <span class="dots"> </span> </div>
         </div>
 
-            <!-- <hr>
+      </div>
 
-            <h1 class="ho6"> Best Agro Products</h1>
+    </div>
 
-            <div class="ho7">
-                <div class="p1">
-                    <a href = "pages/agro details/cowfeed/cowfeeddetail9.html"><img class="i1" src="assets/images/agro/cf9.jpg" alt = "cattle feed"></a>
-                    <div class = "bspace">
-                        <p class = "pname"> Growel Growmin Feed Premix </p>
-                        <p> Quantity: 5 kg</p>
-                        <p> Price: Rs.899</p>
-                        <a href = "pages/agro details/cowfeed/cowfeeddetail9.html"><button> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <a href = "pages/agro details/fertilizer/fertilizer7.html"><img class="i1" src="assets/images/agro/f7.jpg" alt = "fertilizer"></a>
-                    <div class = "bspace">
-                        <p class = "pname"> TrustBasket Neem Fertilizer</p>
-                        <p> Quantity: 500g</p>
-                        <p> Price: Rs.180</p>
-                        <a href = "pages/agro details/fertilizer/fertilizer7.html"><button> Know More </button></a>
-                    </div>
-                </div>
-                <div class="p1">
-                    <a href = "pages/agro details/manure/manure8.html"><img class="i1" src="assets/images/agro/m8.jpg" alt = "manure"></a>
-                    <div class = "bspace">
-                        <p class = "pname"> TrustBasket Organic Manure </p>
-                        <p> Quantity: 1Kg</p>
-                        <p> Price: Rs.249</p>
-                        <a href = "pages/agro details/manure/manure8.html"><button> Know More </button></a>
-                    </div>
-                </div>
-            </div> -->
-            <img class = "gif" src = "assets/images/gif1.gif" alt = "gif">
-        
-    </main>
+    <!-- Gif -->
 
-    <footer>
-        <div class="foot" id = "fogif">
-            <div class="foot1">
-                <img class="logof" src="assets/images/cattles/logo2.png" alt = "logo">
-                <p class=" f1p"> Kowmart.com is an online marketplace established with the aim to strengthen Livestock
-                    Economy of the country. It helps livestock enterprises/self-employed/individuals to achieve their
-                    full potential while ensuring livestock wellbeing.</p>
-            </div>
-            <div class="foot2">
-                <div><h2 class = "connect"> CONNECT WITH US</h2></div>
-                <div class = "fspace">
-                    <p> Email: info@kowmart.com</p>
-                    <p> Ph.no: 1234567890</p>
-                    <p> Address: Chennai - 33</p>
-                </div>
-                <div class = "contact">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <img class="gif" src="assets/images/gif1.gif" alt="gif">
 
-    <!-- <script src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script>
-        function googleTranslateElementInit(){
-            new google.translate.TranslateElement(
-                {pageLanguage: 'en',
-                includedLanguages: 'en,ta,'},
-                'google_translate_element'
-            );
+  </main>
+
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/footer.js"></script>
+
+  <script src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src = "assets/js/languages.js"></script>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      const contents = [
+        {
+          image: "https://www.youtube.com/embed/BijkYqPBGTE",
+          role: "Entrepreneur",
+          name: "Sanjay Ramasamy (Tamil Nadu)",
+          feedback: "I would say their way of working is highly organized and as I was looking for the professionalism I met my requirements here. Being new to dairy farming I received all types of support and solutions from Kowmart, a team became like my family."
+        },
+        {
+          image: "https://www.youtube.com/embed/kPpXsFTzmWA",
+          role: "Cattle Seller",
+          name: "Anand Prasad & Vikas Kandola (Andhra Pradesh)",
+          feedback: "Happy Seller - Kowmart.com is the best cattle procurement solution. This will enable farmers like us to learn and implement world-class dairy practices. We are very happy to have kowmart.com to support us."
+        },
+        {
+          image: "https://www.youtube.com/embed/pnMu6liScrg",
+          role: "Dairy Entrepreneur",
+          name: "Pradeep & Gopi (Kerala)",
+          feedback: "It was a great experience with Kowmart.com. The entire process of cattle selection, verification and transportation was very systematic and transparent. The representatives were very supportive and knowledgeable. I was surprised to see such a degree of commitment to delivering quality. Overall I am very happy with the service and cattle. I would recommend it to everyone."
         }
-    </script> -->
+      ];
 
-    <!--<script>
+      let currentIndex = 0;
+      let dots;
 
-        const cattle_card = [
-                {
-                    "image": "assets/images/cattles/c1.jpg",
-                    "alt_name": "Gir Cow",
-                    "name": "Gir Cow G018",
-                    "age": "Age: 4 Years",
-                    "gender": "Gender: Female"
-                },
-                {
-                    "image": "assets/images/cattles/c3.jpg",
-                    "alt_name": "Kankrej Cow",
-                    "name": "Kankrej Cow K006",
-                    "age": "Age: 1 Year",
-                    "gender": "Gender: Female"
-                },
-                {
-                    "image": "assets/images/cattles/b1.jpg",
-                    "alt_name": "Surti Buffalo",
-                    "name": "Surti Buffalo S101",
-                    "age": "Age: 6 Years",
-                    "gender": "Gender: Female"
-                },
-                {
-                    "image": "assets/images/cattles/g1.jpg",
-                    "alt_name": "Malabari Goat",
-                    "name": "Malabari Goat M080",
-                    "age": "Age: 3 Years",
-                    "gender": "Gender: Male"
-                },
-                {
-                    "image": "assets/images/cattles/s1.jpg",
-                    "alt_name": "Bannur Sheep",
-                    "name": "Bannur Sheep B023",
-                    "age": "Age: 1 Year",
-                    "gender": "Gender: Male"
-                },
-                {
-                    "image": "assets/images/cattles/o1.jpg",
-                    "alt_name": "Ongole Ox",
-                    "name": "Ongole Ox O107",
-                    "age": "Age: 4 Years",
-                    "gender": "Gender: Male"
-                }
-            ]
+      function updateContent(index) {
+        document.querySelector(".roleContainer h4").innerText = contents[index]["role"];
+        document.querySelector(".videoContainer iframe").setAttribute("src", contents[index]["image"]);
+        document.querySelector(".userDetailsContainer h4").innerText = contents[index]["name"];
+        document.querySelector(".descContainer p").innerText = contents[index]["feedback"];
+      }
 
-        -->
+      function moveLeft() {
+        currentIndex = (currentIndex - 1 + contents.length) % contents.length;
+        updateContent(currentIndex);
+        updateDotsColor(currentIndex);
+      }
+
+      function moveRight() {
+        currentIndex = (currentIndex + 1) % contents.length;
+        updateContent(currentIndex);
+        updateDotsColor(currentIndex);
+      }
+
+      document.querySelector(".left").addEventListener("click", moveLeft);
+      document.querySelector(".right").addEventListener("click", moveRight);
+
+      // Function to update the color of the dots based on the current index
+      function updateDotsColor(currentIndex) {
+        dots.forEach((e, index) => {
+          if (index === currentIndex) {
+            e.classList.add("active");
+          } else {
+            e.classList.remove("active");
+          }
+        });
+      }
+
+      // Function to handle dot click events
+      function handleDotClick(index) {
+        currentIndex = index;
+        updateContent(currentIndex);
+        updateDotsColor(currentIndex);
+      }
+
+      // Get the dots after the DOM is loaded
+      dots = document.querySelectorAll(".dotsContainer .dots");
+
+      // Add click event listeners to the dots
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          handleDotClick(index);
+        });
+      });
+
+      updateDotsColor(currentIndex);
+      updateContent(currentIndex);
+
+    });
+
+    const verificationDetail = [
+      {question: "Overall Health"},
+      {question: "Size and Weight"},
+      {question: "Structure Soundness"},
+      {question: "Body Condition"},
+      {question: "Muscling"},
+      {question: "Reproductive Capacity"},
+      {question: "Temperament"},
+      {question: "Vaccination Records"},
+    ]
+
+    localStorage.setItem("verificationDetails",JSON.stringify(verificationDetail))
+
+    if (verifiedCattleLists.length !== 0) {
+
+      let cattleDetails = [];
+
+      for (let i = 0; i < verifiedCattleLists.length; i++) {
+        let cattleData = cattle_detail.find(e => e.cattle_uniqueId === verifiedCattleLists[i]["cattle_uniqueId"]);
+        cattleData.rep_id = verifiedCattleLists[i]["repUserId"];
+        cattleDetails.push(cattleData);
+      }
+
+      for (let i = 0; i < cattleDetails.length; i++) {
+
+        if (i < 6) {
+          // cattle container
+          const cattle_container = document.createElement("div");
+          cattle_container.setAttribute("class", "cattle_container");
+
+          // image container
+          const cattle_img_container = document.createElement("div");
+          cattle_img_container.setAttribute("class", "img_container");
+          cattle_container.append(cattle_img_container);
+
+          // a
+
+          const cattle_anchor = document.createElement("a");
+          cattle_anchor.setAttribute("href", `pages/cattle details/cow/C1.html?breed=${cattleDetails[i].breed}&cattle_id=${cattleDetails[i].cattle_uniqueId}&user_id=${cattleDetails[i].rep_id}`);
+          cattle_img_container.append(cattle_anchor);
+
+          // cattle image
+          const cattle_image = document.createElement("img");
+          cattle_image.setAttribute("src", cattleDetails[i].image);
+          cattle_image.setAttribute("alt", `${cattleDetails[i].breed} ${cattleDetails[i].cattle}`);
+          cattle_image.setAttribute("class", "cattle_image");
+          cattle_anchor.append(cattle_image);
+
+          // cattle info container
+          const info_container = document.createElement("div");
+          info_container.setAttribute("class", "info_container");
+          cattle_container.append(info_container);
+
+          // cattle info
+          const cattle_name = document.createElement("p");
+          cattle_name.setAttribute("class", "cattle_name");
+          cattle_name.innerText = `${cattleDetails[i].breed} ${cattleDetails[i].cattle} ${cattleDetails[i].id}`;
+          info_container.append(cattle_name);
+
+          const cattle_age = document.createElement("p");
+          cattle_age.innerText = `Age: ${cattleDetails[i].age} Year(s)`;
+          info_container.append(cattle_age);
+
+          const cattle_gender = document.createElement("p");
+          cattle_gender.innerText = `Gender: ${cattleDetails[i].gender}`;
+          info_container.append(cattle_gender);
+
+          // a
+
+          const buttonContainer = document.createElement("a");
+          buttonContainer.setAttribute("href", `pages/cattle details/cow/C1.html?breed=${cattleDetails[i].breed}&cattle_id=${cattleDetails[i].cattle_uniqueId}&user_id=${cattleDetails[i].rep_id}`);
+          info_container.append(buttonContainer);
+
+          // Know more button
+
+          const button_know = document.createElement("button");
+          button_know.innerText = "Know More";
+          buttonContainer.append(button_know);
+
+          document.querySelector("div.cattles_container").append(cattle_container);
+        }
+      }
+
+    }
+  </script>
 
 </body>
 
