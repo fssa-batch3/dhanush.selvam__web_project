@@ -31,7 +31,6 @@ function signUp(e) {
       const district = "";
       const pincode = "";
       const user = "customer";
-      // const notification = [];
     
       const userData = JSON.parse(localStorage.getItem("userData")) || [];
     

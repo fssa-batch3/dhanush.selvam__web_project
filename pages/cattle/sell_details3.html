@@ -55,7 +55,8 @@
                 <div>
                     <label> Age (in Years) </label>
                     <br>
-                    <input type="text" id="age" oninput="this.value = this.value.replace(/[^1-9]/g,'')" maxlength="1">
+                    <input required type="text" id="age" oninput="this.value = this.value.replace(/[^1-9]/g,'')"
+                        maxlength="1">
                 </div>
 
                 <div>
@@ -70,7 +71,7 @@
                 <div class="weight">
                     <label> Weight (kg) </label>
                     <br>
-                    <input type="text" id="weight" pattern="^[1-9]\d*$"
+                    <input required type="text" id="weight" pattern="^[1-9]\d*$"
                         oninput="this.value = this.value.replace(/[^0-9]/g,'')" maxlength="4" max="2000"
                         title="Do not start with 0">
                 </div>
@@ -80,7 +81,7 @@
                 <div>
                     <label> Price (Rs.) </label>
                     <br>
-                    <input type="text" id="price" pattern="^[1-9]\d*$"
+                    <input required type="text" id="price" pattern="^[1-9]\d*$"
                         oninput="this.value = this.value.replace(/[^0-9]/g,'')" maxlength="7"
                         title="Do not start with 0">
                 </div>
@@ -109,7 +110,7 @@
                 <div>
                     <label> Upload Photo: </label>
                     <br>
-                    <input type="url" id="image">
+                    <input required type="url" id="image">
                 </div>
                 <div>
                     <label> Upload Photo: </label>
@@ -153,8 +154,6 @@
 
         document.querySelector(".submit_btn").addEventListener("click", (e) => {
 
-            // document.querySelector(".container").style.display = "flex";
-
             const urlParams = new URLSearchParams(window.location.search);
 
             const cattle = urlParams.get("cattle");
@@ -173,12 +172,7 @@
             timestamp = new Date();
             date = timestamp.toLocaleDateString();
             status = "";
-
-            const cattle_details = JSON.parse(localStorage.getItem("cattle_details")) || [];
-
-            const repCattleList = JSON.parse(localStorage.getItem("repCattleList")) || [];
-
-            const notificationList = JSON.parse(localStorage.getItem("notificationList")) || [];
+                    
             notificationId = uuidv4();
 
             messageTitle = "New " + breed + " " + cattle + " has been uploaded";
@@ -188,25 +182,26 @@
             message = "It is in " + customerData.address + ", " + customerData.district + ", " + customerData.pincode;
             readStatus = false;
 
-            const repUserId = repDetail.find(e => e.district === customerData.district).userId;
-            const receiver = repUserId;
-
-            const stock = cattle_details.filter((e) => e.breed == breed).length.toString().padStart(3, "0");
+            const stock = cattle_detail.filter((e) => e.breed == breed).length.toString().padStart(3, "0");
             const stock_no = parseInt(stock) + 1;
 
             id = cattle[0] + breed[0] + stock_no;
 
             if (user_address != "" && user_pincode != "" && user_district != "") {
-                cattle_details.push({ cattle, breed, age, gender, weight, milk, price, lactation, description, image, image1, id, cattle_uniqueId, userId, date, status});
-                repCattleList.push({repUserId, userId, cattle_uniqueId});
-                notificationList.push({notificationId, messageTitle, message, receiver, readStatus});
 
-                localStorage.setItem("cattle_details", JSON.stringify(cattle_details));
-                localStorage.setItem("repCattleList",JSON.stringify(repCattleList));
-                localStorage.setItem("notificationList",JSON.stringify(notificationList));
+                const repUserId = repDetail.find(e => e.district === customerData.district).userId;
+                const receiver = repUserId;
+
+                cattle_detail.push({ cattle, breed, age, gender, weight, milk, price, lactation, description, image, image1, id, cattle_uniqueId, userId, date, status });
+                repCattleDetails.push({ cattle_uniqueId,repUserId, userId });
+                notificationList.push({ notificationId, messageTitle, message, receiver, readStatus });
+
+                localStorage.setItem("cattle_details", JSON.stringify(cattle_detail));
+                localStorage.setItem("repCattleList", JSON.stringify(repCattleDetails));
+                localStorage.setItem("notificationList", JSON.stringify(notificationList));
                 location.href = "./cattleList.html?page=sellerCattleList";
                 document.querySelector("form").reset();
-            } 
+            }
             else {
                 alert("Please fill the address, state and pincode in your profile");
             }

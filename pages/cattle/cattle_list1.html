@@ -340,305 +340,308 @@
     category_name.innerText = `All ${cattlePage}s`;
     document.querySelector("div.title_container1").append(category_name);
 
-    let cattleDetails = [];
+    if (verifiedCattleLists.length !== 0) {
 
-    for (let i = 0; i < verifiedCattleLists.length; i++) {
-      let cattleData = cattle_detail.find(e => e.cattle_uniqueId === verifiedCattleLists[i]["cattle_uniqueId"]);
-      cattleData.rep_id = verifiedCattleLists[i]["repUserId"];
-      cattleDetails.push(cattleData);
-    }
+      let cattleDetails = [];
 
-    let categoryCattleDetails = cattleDetails.filter(e => e.cattle === cattlePage);
-
-    for (let i = 0; i < categoryCattleDetails.length; i++) {
-      const cattle_container = cards(categoryCattleDetails[i]);
-      document.querySelector("div.cattles_container").append(cattle_container);
-    }
-
-    const selectedBreeds = [];
-    const selectedDistricts = [];
-
-    function filterCattles() {
-
-      let breedFilteredCattles = [];
-
-      for (let i = 0; i < selectedBreeds.length; i++) {
-        const filter_products = categoryCattleDetails.filter((e) => e.breed === selectedBreeds[i]);
-        breedFilteredCattles = breedFilteredCattles.concat(filter_products);
+      for (let i = 0; i < verifiedCattleLists.length; i++) {
+        let cattleData = cattle_detail.find(e => e.cattle_uniqueId === verifiedCattleLists[i]["cattle_uniqueId"]);
+        cattleData.rep_id = verifiedCattleLists[i]["repUserId"];
+        cattleDetails.push(cattleData);
       }
 
-      const selectedRep = [];
+      let categoryCattleDetails = cattleDetails.filter(e => e.cattle === cattlePage);
 
-      for (let i = 0; i < selectedDistricts.length; i++) {
-        const filterRep = repDetail.find((e) => e.district === selectedDistricts[i]);
-        if (filterRep) {
-          selectedRep.push(filterRep.userId);
+      for (let i = 0; i < categoryCattleDetails.length; i++) {
+        const cattle_container = cards(categoryCattleDetails[i]);
+        document.querySelector("div.cattles_container").append(cattle_container);
+      }
+
+      const selectedBreeds = [];
+      const selectedDistricts = [];
+
+      function filterCattles() {
+
+        let breedFilteredCattles = [];
+
+        for (let i = 0; i < selectedBreeds.length; i++) {
+          const filter_products = categoryCattleDetails.filter((e) => e.breed === selectedBreeds[i]);
+          breedFilteredCattles = breedFilteredCattles.concat(filter_products);
         }
-      }
 
-      let filteredCattles = [];
+        const selectedRep = [];
 
-      if (selectedBreeds.length > 0 && selectedDistricts.length > 0) {
-        const filterCattles = breedFilteredCattles.filter((e) => selectedRep.includes(e.rep_id));
-        filteredCattles = filteredCattles.concat(filterCattles);
-      }
-
-      else if (selectedBreeds.length > 0) {
-        filteredCattles = filteredCattles.concat(breedFilteredCattles);
-      }
-
-      else if (selectedDistricts.length > 0) {
-        for (let i = 0; i < categoryCattleDetails.length; i++) {
-          if (selectedRep.includes(categoryCattleDetails[i].rep_id)) {
-            filteredCattles.push(categoryCattleDetails[i]);
+        for (let i = 0; i < selectedDistricts.length; i++) {
+          const filterRep = repDetail.find((e) => e.district === selectedDistricts[i]);
+          if (filterRep) {
+            selectedRep.push(filterRep.userId);
           }
         }
-      }
 
-      else {
-        filteredCattles = categoryCattleDetails;
-      }
+        let filteredCattles = [];
 
-      displayFilteredCattles(filteredCattles);
-
-    }
-
-    function displayFilteredCattles(cattles) {
-
-      const cattlesContainer = document.querySelector("div.cattles_container");
-      cattlesContainer.innerHTML = "";
-
-      if (cattles.length === 0) {
-        const no_image = document.createElement("img");
-        no_image.setAttribute("src", "../../assets/images/no_result.gif");
-        no_image.setAttribute("class", "no_result");
-        cattlesContainer.append(no_image);
-      }
-
-      else {
-        for (let i = 0; i < cattles.length; i++) {
-          const cattle_container = cards(cattles[i]);
-          cattlesContainer.append(cattle_container);
+        if (selectedBreeds.length > 0 && selectedDistricts.length > 0) {
+          const filterCattles = breedFilteredCattles.filter((e) => selectedRep.includes(e.rep_id));
+          filteredCattles = filteredCattles.concat(filterCattles);
         }
-      }
-    }
 
-    function breedOnSelect(event) {
-      const element = event.target;
-      if (element.checked) {
-        selectedBreeds.push(element.id);
-      } else {
-        const index = selectedBreeds.indexOf(this.id);
-        selectedBreeds.splice(index, 1);
-      }
-      filterCattles();
-    }
+        else if (selectedBreeds.length > 0) {
+          filteredCattles = filteredCattles.concat(breedFilteredCattles);
+        }
 
-    function stateOnSelect(event) {
-      const element = event.target;
-      if (element.checked) {
-        selectedDistricts.push(element.id);
-      } else {
-        const index = selectedDistricts.indexOf(this.id);
-        selectedDistricts.splice(index, 1);
-      }
-      filterCattles();
-    }
-
-    const magnifying_glass = document.getElementById("mag_search");
-    magnifying_glass.addEventListener("click", function () {
-      const pincode_value = document.getElementById("pincode_input").value;
-      const zoneRep = repDetail.filter((e) => e.pincode == pincode_value);
-
-      const crossButton = document.getElementById("pincode_input");
-      crossButton.addEventListener("search", () => {
-        if (!crossButton.value) {
-          document.querySelector("div.cattles_container").innerHTML = "";
+        else if (selectedDistricts.length > 0) {
           for (let i = 0; i < categoryCattleDetails.length; i++) {
-            const defaultCattleContainer = cards(categoryCattleDetails[i]);
-            document.querySelector("div.cattles_container").append(defaultCattleContainer);
+            if (selectedRep.includes(categoryCattleDetails[i].rep_id)) {
+              filteredCattles.push(categoryCattleDetails[i]);
+            }
           }
         }
-      })
 
-      if (pincode_value.length === 6) {
-        document.querySelector("div.cattles_container").innerHTML = "";
+        else {
+          filteredCattles = categoryCattleDetails;
+        }
 
-        const zoneVerifiedCattles = verifiedCattleLists.filter((e) => zoneRep.some((a) => a.userId === e.repUserId));
-        const zoneAllCattles = cattle_detail.filter((e) => zoneVerifiedCattles.some((a) => a.cattle_uniqueId === e.cattle_uniqueId));
-        const zoneCattles = zoneAllCattles.filter((e) => e.cattle === cattlePage);
+        displayFilteredCattles(filteredCattles);
 
-        if (zoneCattles.length == 0) {
+      }
+
+      function displayFilteredCattles(cattles) {
+
+        const cattlesContainer = document.querySelector("div.cattles_container");
+        cattlesContainer.innerHTML = "";
+
+        if (cattles.length === 0) {
           const no_image = document.createElement("img");
           no_image.setAttribute("src", "../../assets/images/no_result.gif");
           no_image.setAttribute("class", "no_result");
-          document.querySelector("div.cattles_container").append(no_image);
+          cattlesContainer.append(no_image);
         }
+
         else {
-          for (let i = 0; i < zoneCattles.length; i++) {
-            const cattle_filter_container = cards(zoneCattles[i]);
-            document.querySelector("div.cattles_container").append(cattle_filter_container);
+          for (let i = 0; i < cattles.length; i++) {
+            const cattle_container = cards(cattles[i]);
+            cattlesContainer.append(cattle_container);
           }
         }
       }
 
-      else if (pincode_value.length === 0) {
-        alert("Please enter a pincode")
-      }
-
-      else {
-        alert("Please enter a proper pincode");
-      }
-    });
-
-    const rangeInput = document.querySelectorAll(".range-input input");
-    const priceInput = document.querySelectorAll(".price-input input");
-    const progress = document.querySelector(".slider .progress");
-
-    let priceGap = 2000;
-    let uniqueCattles = [];
-
-    priceInput.forEach(input => {
-      input.addEventListener("change", e => {
-        let minVal = parseInt(priceInput[0].value);
-        maxVal = parseInt(priceInput[1].value);
-
-        if (e.target.value < 1000) {
-          e.target.value = 1000;
+      function breedOnSelect(event) {
+        const element = event.target;
+        if (element.checked) {
+          selectedBreeds.push(element.id);
+        } else {
+          const index = selectedBreeds.indexOf(this.id);
+          selectedBreeds.splice(index, 1);
         }
+        filterCattles();
+      }
 
-        if ((maxVal - minVal >= priceGap) && maxVal <= 300000) {
-          if (e.target.className === "input-min") {
-            rangeInput[0].value = minVal;
-            progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+      function stateOnSelect(event) {
+        const element = event.target;
+        if (element.checked) {
+          selectedDistricts.push(element.id);
+        } else {
+          const index = selectedDistricts.indexOf(this.id);
+          selectedDistricts.splice(index, 1);
+        }
+        filterCattles();
+      }
+
+      const magnifying_glass = document.getElementById("mag_search");
+      magnifying_glass.addEventListener("click", function () {
+        const pincode_value = document.getElementById("pincode_input").value;
+        const zoneRep = repDetail.filter((e) => e.pincode == pincode_value);
+
+        const crossButton = document.getElementById("pincode_input");
+        crossButton.addEventListener("search", () => {
+          if (!crossButton.value) {
+            document.querySelector("div.cattles_container").innerHTML = "";
+            for (let i = 0; i < categoryCattleDetails.length; i++) {
+              const defaultCattleContainer = cards(categoryCattleDetails[i]);
+              document.querySelector("div.cattles_container").append(defaultCattleContainer);
+            }
+          }
+        })
+
+        if (pincode_value.length === 6) {
+          document.querySelector("div.cattles_container").innerHTML = "";
+
+          const zoneVerifiedCattles = verifiedCattleLists.filter((e) => zoneRep.some((a) => a.userId === e.repUserId));
+          const zoneAllCattles = cattle_detail.filter((e) => zoneVerifiedCattles.some((a) => a.cattle_uniqueId === e.cattle_uniqueId));
+          const zoneCattles = zoneAllCattles.filter((e) => e.cattle === cattlePage);
+
+          if (zoneCattles.length == 0) {
+            const no_image = document.createElement("img");
+            no_image.setAttribute("src", "../../assets/images/no_result.gif");
+            no_image.setAttribute("class", "no_result");
+            document.querySelector("div.cattles_container").append(no_image);
           }
           else {
-            rangeInput[1].value = maxVal;
+            for (let i = 0; i < zoneCattles.length; i++) {
+              const cattle_filter_container = cards(zoneCattles[i]);
+              document.querySelector("div.cattles_container").append(cattle_filter_container);
+            }
+          }
+        }
+
+        else if (pincode_value.length === 0) {
+          alert("Please enter a pincode")
+        }
+
+        else {
+          alert("Please enter a proper pincode");
+        }
+      });
+
+      const rangeInput = document.querySelectorAll(".range-input input");
+      const priceInput = document.querySelectorAll(".price-input input");
+      const progress = document.querySelector(".slider .progress");
+
+      let priceGap = 2000;
+      let uniqueCattles = [];
+
+      priceInput.forEach(input => {
+        input.addEventListener("change", e => {
+          let minVal = parseInt(priceInput[0].value);
+          maxVal = parseInt(priceInput[1].value);
+
+          if (e.target.value < 1000) {
+            e.target.value = 1000;
+          }
+
+          if ((maxVal - minVal >= priceGap) && maxVal <= 300000) {
+            if (e.target.className === "input-min") {
+              rangeInput[0].value = minVal;
+              progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+            }
+            else {
+              rangeInput[1].value = maxVal;
+              progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+            }
+          }
+          uniqueCattles = [];
+          for (let i = 0; i < categoryCattleDetails.length; i++) {
+            if ((minVal < categoryCattleDetails[i]["price"]) && (categoryCattleDetails[i]["price"] < maxVal)) {
+              uniqueCattles.push(categoryCattleDetails[i]);
+            }
+          }
+          document.querySelector("div.cattles_container").innerHTML = "";
+          if (uniqueCattles.length === 0) {
+            const no_image = document.createElement("img");
+            no_image.setAttribute("src", "../../assets/images/no_result.gif");
+            no_image.setAttribute("class", "no_result");
+            document.querySelector("div.cattles_container").append(no_image);
+          }
+          else {
+            for (let i = 0; i < uniqueCattles.length; i++) {
+              const cattle_container = cards(uniqueCattles[i]);
+              document.querySelector("div.cattles_container").append(cattle_container);
+            }
+          }
+        });
+      });
+
+      rangeInput.forEach(input => {
+        input.addEventListener("change", e => {
+          let minVal = parseInt(rangeInput[0].value),
+            maxVal = parseInt(rangeInput[1].value);
+
+          if (e.target.value < 1000) {
+            e.target.value = 1000;
+          }
+
+          if (maxVal - minVal < priceGap) {
+            if (e.target.className === "range-min") {
+              rangeInput[0].value = maxVal - priceGap;
+            }
+            else {
+              rangeInput[1].value = minVal + priceGap;
+            }
+          }
+          else {
+            priceInput[0].value = minVal;
+            priceInput[1].value = maxVal;
+            progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
             progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
           }
-        }
-        uniqueCattles = [];
-        for (let i = 0; i < categoryCattleDetails.length; i++) {
-          if ((minVal < categoryCattleDetails[i]["price"]) && (categoryCattleDetails[i]["price"] < maxVal)) {
-            uniqueCattles.push(categoryCattleDetails[i]);
+          uniqueCattles = [];
+          for (let i = 0; i < categoryCattleDetails.length; i++) {
+            if ((minVal < categoryCattleDetails[i]["price"]) && (categoryCattleDetails[i]["price"] < maxVal)) {
+              uniqueCattles.push(categoryCattleDetails[i]);
+            }
           }
-        }
-        document.querySelector("div.cattles_container").innerHTML = "";
-        if (uniqueCattles.length === 0) {
-          const no_image = document.createElement("img");
-          no_image.setAttribute("src", "../../assets/images/no_result.gif");
-          no_image.setAttribute("class", "no_result");
-          document.querySelector("div.cattles_container").append(no_image);
-        }
-        else {
-          for (let i = 0; i < uniqueCattles.length; i++) {
-            const cattle_container = cards(uniqueCattles[i]);
-            document.querySelector("div.cattles_container").append(cattle_container);
-          }
-        }
-      });
-    });
-
-    rangeInput.forEach(input => {
-      input.addEventListener("change", e => {
-        let minVal = parseInt(rangeInput[0].value),
-          maxVal = parseInt(rangeInput[1].value);
-
-        if (e.target.value < 1000) {
-          e.target.value = 1000;
-        }
-
-        if (maxVal - minVal < priceGap) {
-          if (e.target.className === "range-min") {
-            rangeInput[0].value = maxVal - priceGap;
+          document.querySelector("div.cattles_container").innerHTML = "";
+          if (uniqueCattles.length === 0) {
+            const no_image = document.createElement("img");
+            no_image.setAttribute("src", "../../assets/images/no_result.gif");
+            no_image.setAttribute("class", "no_result");
+            document.querySelector("div.cattles_container").append(no_image);
           }
           else {
-            rangeInput[1].value = minVal + priceGap;
+            for (let i = 0; i < uniqueCattles.length; i++) {
+              const cattle_container = cards(uniqueCattles[i]);
+              document.querySelector("div.cattles_container").append(cattle_container);
+            }
           }
-        }
-        else {
-          priceInput[0].value = minVal;
-          priceInput[1].value = maxVal;
-          progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
-          progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
-        }
-        uniqueCattles = [];
-        for (let i = 0; i < categoryCattleDetails.length; i++) {
-          if ((minVal < categoryCattleDetails[i]["price"]) && (categoryCattleDetails[i]["price"] < maxVal)) {
-            uniqueCattles.push(categoryCattleDetails[i]);
-          }
-        }
-        document.querySelector("div.cattles_container").innerHTML = "";
-        if (uniqueCattles.length === 0) {
-          const no_image = document.createElement("img");
-          no_image.setAttribute("src", "../../assets/images/no_result.gif");
-          no_image.setAttribute("class", "no_result");
-          document.querySelector("div.cattles_container").append(no_image);
-        }
-        else {
-          for (let i = 0; i < uniqueCattles.length; i++) {
-            const cattle_container = cards(uniqueCattles[i]);
-            document.querySelector("div.cattles_container").append(cattle_container);
-          }
-        }
+        });
       });
-    });
 
-    function cards(card) {
+      function cards(card) {
 
-      // cattle container
-      cattle_container = document.createElement("div");
-      cattle_container.setAttribute("class", "cattle_container");
+        // cattle container
+        cattle_container = document.createElement("div");
+        cattle_container.setAttribute("class", "cattle_container");
 
-      // image container
-      cattle_img_container = document.createElement("div");
-      cattle_img_container.setAttribute("class", "img_container");
-      cattle_container.append(cattle_img_container);
+        // image container
+        cattle_img_container = document.createElement("div");
+        cattle_img_container.setAttribute("class", "img_container");
+        cattle_container.append(cattle_img_container);
 
-      // a
-      cattle_anchor = document.createElement("a");
-      cattle_anchor.setAttribute("href", `../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.rep_id}`);
-      cattle_img_container.append(cattle_anchor);
+        // a
+        cattle_anchor = document.createElement("a");
+        cattle_anchor.setAttribute("href", `../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.rep_id}`);
+        cattle_img_container.append(cattle_anchor);
 
-      // cattle image
-      cattle_image = document.createElement("img");
-      cattle_image.setAttribute("src", card.image);
-      cattle_image.setAttribute("alt", `${card.breed} ${card.cattle}`);
-      cattle_image.setAttribute("class", "cattle_image");
-      cattle_anchor.append(cattle_image);
+        // cattle image
+        cattle_image = document.createElement("img");
+        cattle_image.setAttribute("src", card.image);
+        cattle_image.setAttribute("alt", `${card.breed} ${card.cattle}`);
+        cattle_image.setAttribute("class", "cattle_image");
+        cattle_anchor.append(cattle_image);
 
-      // cattle info container
-      info_container = document.createElement("div");
-      info_container.setAttribute("class", "info_container");
-      cattle_container.append(info_container);
+        // cattle info container
+        info_container = document.createElement("div");
+        info_container.setAttribute("class", "info_container");
+        cattle_container.append(info_container);
 
-      // cattle info
-      cattle_name = document.createElement("p");
-      cattle_name.setAttribute("class", "cattle_name");
-      cattle_name.innerText = `${card.breed} ${card.cattle} ${card.id}`;
-      info_container.append(cattle_name);
+        // cattle info
+        cattle_name = document.createElement("p");
+        cattle_name.setAttribute("class", "cattle_name");
+        cattle_name.innerText = `${card.breed} ${card.cattle} ${card.id}`;
+        info_container.append(cattle_name);
 
-      cattle_age = document.createElement("p");
-      cattle_age.innerText = `Age: ${card.age} Year(s)`;
-      info_container.append(cattle_age);
+        cattle_age = document.createElement("p");
+        cattle_age.innerText = `Age: ${card.age} Year(s)`;
+        info_container.append(cattle_age);
 
-      cattle_gender = document.createElement("p");
-      cattle_gender.innerText = `Gender: ${card.gender}`;
-      info_container.append(cattle_gender);
+        cattle_gender = document.createElement("p");
+        cattle_gender.innerText = `Gender: ${card.gender}`;
+        info_container.append(cattle_gender);
 
-      // a
+        // a
 
-      buttonContainer = document.createElement("a");
-      buttonContainer.setAttribute("href", `../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.rep_id}`);
-      info_container.append(buttonContainer);
+        buttonContainer = document.createElement("a");
+        buttonContainer.setAttribute("href", `../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.rep_id}`);
+        info_container.append(buttonContainer);
 
-      // Know more button
+        // Know more button
 
-      button_know = document.createElement("button");
-      button_know.innerText = "Know More";
-      buttonContainer.append(button_know);
+        button_know = document.createElement("button");
+        button_know.innerText = "Know More";
+        buttonContainer.append(button_know);
 
-      return cattle_container;
+        return cattle_container;
+      }
     }
 
   </script>

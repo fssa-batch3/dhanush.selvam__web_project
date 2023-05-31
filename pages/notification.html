@@ -81,81 +81,87 @@
 
         }
 
-        if (phone_id === null) {
+        if (notificationList.length !== 0) {
 
-            const repNotificationList = notificationList.filter(e => e.receiver === rep_id);
-            
-            if (repNotificationList.length === 0) {
-                noNote();
+            if (phone_id === null) {
+
+                const repNotificationList = notificationList.filter(e => e.receiver === rep_id);
+                
+                if (repNotificationList.length === 0) {
+                    noNote();
+                }
+
+                else {
+                    for (let i = 0; i < repNotificationList.length; i++) {
+                        const message = repNotificationList[i];
+                        createNotification(message);
+                    }
+                
+                    const newNote = document.querySelectorAll(".contentContainer_anchor");
+                    newNote.forEach(function (findId) {
+                        findId.addEventListener("click", function () {
+                            const id = this.dataset.yid;
+                            const oldNote = notificationList.find(e => e.notificationId === id);
+                            oldNote.readStatus = true;
+                            localStorage.setItem("notificationList", JSON.stringify(notificationList));
+                            window.location.href = "./cattle/cattleList.html?page=repCattleList";
+                        });
+                    });
+
+                    const removeNotifications = document.querySelectorAll(".fa-xmark");
+                    removeNotifications.forEach(function (findId) {
+                        findId.addEventListener("click", function () {
+                            const { id } = this.dataset;
+                            let notificationIndex = notificationList.indexOf(notificationList.find(e => e.notificationId === id));
+                            notificationList.splice(notificationIndex, 1);
+                            localStorage.setItem("notificationList", JSON.stringify(notificationList));
+                            window.location.reload();
+                        });
+                    });
+                }
             }
 
-            else {
-                for (let i = 0; i < repNotificationList.length; i++) {
-                    const message = repNotificationList[i];
-                    createNotification(message);
-                }
-            
-                const newNote = document.querySelectorAll(".contentContainer_anchor");
-                newNote.forEach(function (findId) {
-                    findId.addEventListener("click", function () {
-                        const id = this.dataset.yid;
-                        const oldNote = notificationList.find(e => e.notificationId === id);
-                        oldNote.readStatus = true;
-                        localStorage.setItem("notificationList", JSON.stringify(notificationList));
-                        window.location.href = "./cattle/cattleList.html?page=repCattleList";
-                    });
-                });
+            else if (rep_id === null) {
 
-                const removeNotifications = document.querySelectorAll(".fa-xmark");
-                removeNotifications.forEach(function (findId) {
-                    findId.addEventListener("click", function () {
-                        const { id } = this.dataset;
-                        let notificationIndex = notificationList.indexOf(notificationList.find(e => e.notificationId === id));
-                        notificationList.splice(notificationIndex, 1);
-                        localStorage.setItem("notificationList", JSON.stringify(notificationList));
-                        window.location.reload();
+                const userNotificationList = notificationList.filter(e => e.receiver === phone_id);
+
+                if (userNotificationList.length === 0){
+                    noNote();
+                }
+
+                else {
+
+                    for (let i = 0; i < userNotificationList.length; i++) {
+                        const message = userNotificationList[i];
+                        createNotification(message);
+                    }
+
+                    const newNote = document.querySelectorAll(".contentContainer_anchor");
+                    newNote.forEach(function (findId) {
+                        findId.addEventListener("click", function () {
+                            const id = this.dataset.yid;
+                            const oldNote = notificationList.find(e => e.notificationId === id);
+                            oldNote.status = true;
+                            localStorage.setItem("notificationList", JSON.stringify(notificationList));
+                            window.location.href = "./cattle/cattleList.html?page=sellerCattleList";
+                        });
                     });
-                });
+
+                    const removeNotifications = document.querySelectorAll(".fa-xmark");
+                    removeNotifications.forEach(function (findId) {
+                        findId.addEventListener("click", function () {
+                            const id = this.dataset.iid;
+                            let notificationIndex = notificationList.indexOf(notificationList.find(e => e.notificationId === id));
+                            notificationList.splice(notificationIndex, 1);
+                            localStorage.setItem("notificationList", JSON.stringify(notificationList));
+                            window.location.reload();
+                        });
+                    });
+                }
             }
         }
-
-        else if (rep_id === null) {
-
-            const userNotificationList = notificationList.filter(e => e.receiver === phone_id);
-
-            if (userNotificationList.length === 0){
-                noNote();
-            }
-
-            else {
-
-                for (let i = 0; i < userNotificationList.length; i++) {
-                    const message = userNotificationList[i];
-                    createNotification(message);
-                }
-
-                const newNote = document.querySelectorAll(".contentContainer_anchor");
-                newNote.forEach(function (findId) {
-                    findId.addEventListener("click", function () {
-                        const id = this.dataset.yid;
-                        const oldNote = notificationList.find(e => e.notificationId === id);
-                        oldNote.status = true;
-                        localStorage.setItem("notificationList", JSON.stringify(notificationList));
-                        window.location.href = "./cattle/cattleList.html?page=sellerCattleList";
-                    });
-                });
-
-                const removeNotifications = document.querySelectorAll(".fa-xmark");
-                removeNotifications.forEach(function (findId) {
-                    findId.addEventListener("click", function () {
-                        const id = this.dataset.iid;
-                        let notificationIndex = notificationList.indexOf(notificationList.find(e => e.notificationId === id));
-                        notificationList.splice(notificationIndex, 1);
-                        localStorage.setItem("notificationList", JSON.stringify(notificationList));
-                        window.location.reload();
-                    });
-                });
-            }
+        else {
+            noNote()
         }
 
         function noNote() {

@@ -193,72 +193,76 @@
 
     localStorage.setItem("verificationDetails",JSON.stringify(verificationDetail))
 
-    let cattleDetails = [];
+    if (verifiedCattleLists.length !== 0) {
 
-    for (let i = 0; i < verifiedCattleLists.length; i++) {
-      let cattleData = cattle_detail.find(e => e.cattle_uniqueId === verifiedCattleLists[i]["cattle_uniqueId"]);
-      cattleData.rep_id = verifiedCattleLists[i]["repUserId"];
-      cattleDetails.push(cattleData);
-    }
+      let cattleDetails = [];
 
-    for (let i = 0; i < cattleDetails.length; i++) {
-
-      if (i < 6) {
-        // cattle container
-        const cattle_container = document.createElement("div");
-        cattle_container.setAttribute("class", "cattle_container");
-
-        // image container
-        const cattle_img_container = document.createElement("div");
-        cattle_img_container.setAttribute("class", "img_container");
-        cattle_container.append(cattle_img_container);
-
-        // a
-
-        const cattle_anchor = document.createElement("a");
-        cattle_anchor.setAttribute("href", `pages/cattle details/cow/C1.html?breed=${cattleDetails[i].breed}&cattle_id=${cattleDetails[i].cattle_uniqueId}&user_id=${cattleDetails[i].rep_id}`);
-        cattle_img_container.append(cattle_anchor);
-
-        // cattle image
-        const cattle_image = document.createElement("img");
-        cattle_image.setAttribute("src", cattleDetails[i].image);
-        cattle_image.setAttribute("alt", `${cattleDetails[i].breed} ${cattleDetails[i].cattle}`);
-        cattle_image.setAttribute("class", "cattle_image");
-        cattle_anchor.append(cattle_image);
-
-        // cattle info container
-        const info_container = document.createElement("div");
-        info_container.setAttribute("class", "info_container");
-        cattle_container.append(info_container);
-
-        // cattle info
-        const cattle_name = document.createElement("p");
-        cattle_name.setAttribute("class", "cattle_name");
-        cattle_name.innerText = `${cattleDetails[i].breed} ${cattleDetails[i].cattle} ${cattleDetails[i].id}`;
-        info_container.append(cattle_name);
-
-        const cattle_age = document.createElement("p");
-        cattle_age.innerText = `Age: ${cattleDetails[i].age} Year(s)`;
-        info_container.append(cattle_age);
-
-        const cattle_gender = document.createElement("p");
-        cattle_gender.innerText = `Gender: ${cattleDetails[i].gender}`;
-        info_container.append(cattle_gender);
-
-        // a
-
-        const buttonContainer = document.createElement("a");
-        buttonContainer.setAttribute("href", `pages/cattle details/cow/C1.html?breed=${cattleDetails[i].breed}&cattle_id=${cattleDetails[i].cattle_uniqueId}&user_id=${cattleDetails[i].rep_id}`);
-        info_container.append(buttonContainer);
-
-        // Know more button
-
-        const button_know = document.createElement("button");
-        button_know.innerText = "Know More";
-        buttonContainer.append(button_know);
-
-        document.querySelector("div.cattles_container").append(cattle_container);
+      for (let i = 0; i < verifiedCattleLists.length; i++) {
+        let cattleData = cattle_detail.find(e => e.cattle_uniqueId === verifiedCattleLists[i]["cattle_uniqueId"]);
+        cattleData.rep_id = verifiedCattleLists[i]["repUserId"];
+        cattleDetails.push(cattleData);
       }
+
+      for (let i = 0; i < cattleDetails.length; i++) {
+
+        if (i < 6) {
+          // cattle container
+          const cattle_container = document.createElement("div");
+          cattle_container.setAttribute("class", "cattle_container");
+
+          // image container
+          const cattle_img_container = document.createElement("div");
+          cattle_img_container.setAttribute("class", "img_container");
+          cattle_container.append(cattle_img_container);
+
+          // a
+
+          const cattle_anchor = document.createElement("a");
+          cattle_anchor.setAttribute("href", `pages/cattle details/cow/C1.html?breed=${cattleDetails[i].breed}&cattle_id=${cattleDetails[i].cattle_uniqueId}&user_id=${cattleDetails[i].rep_id}`);
+          cattle_img_container.append(cattle_anchor);
+
+          // cattle image
+          const cattle_image = document.createElement("img");
+          cattle_image.setAttribute("src", cattleDetails[i].image);
+          cattle_image.setAttribute("alt", `${cattleDetails[i].breed} ${cattleDetails[i].cattle}`);
+          cattle_image.setAttribute("class", "cattle_image");
+          cattle_anchor.append(cattle_image);
+
+          // cattle info container
+          const info_container = document.createElement("div");
+          info_container.setAttribute("class", "info_container");
+          cattle_container.append(info_container);
+
+          // cattle info
+          const cattle_name = document.createElement("p");
+          cattle_name.setAttribute("class", "cattle_name");
+          cattle_name.innerText = `${cattleDetails[i].breed} ${cattleDetails[i].cattle} ${cattleDetails[i].id}`;
+          info_container.append(cattle_name);
+
+          const cattle_age = document.createElement("p");
+          cattle_age.innerText = `Age: ${cattleDetails[i].age} Year(s)`;
+          info_container.append(cattle_age);
+
+          const cattle_gender = document.createElement("p");
+          cattle_gender.innerText = `Gender: ${cattleDetails[i].gender}`;
+          info_container.append(cattle_gender);
+
+          // a
+
+          const buttonContainer = document.createElement("a");
+          buttonContainer.setAttribute("href", `pages/cattle details/cow/C1.html?breed=${cattleDetails[i].breed}&cattle_id=${cattleDetails[i].cattle_uniqueId}&user_id=${cattleDetails[i].rep_id}`);
+          info_container.append(buttonContainer);
+
+          // Know more button
+
+          const button_know = document.createElement("button");
+          button_know.innerText = "Know More";
+          buttonContainer.append(button_know);
+
+          document.querySelector("div.cattles_container").append(cattle_container);
+        }
+      }
+
     }
   </script>
 

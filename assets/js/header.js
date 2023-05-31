@@ -76,15 +76,16 @@ const afterLogin = `<header>
     </header>`;
 
 const userDetails = JSON.parse(localStorage.getItem("userData"));
-const cattle_detail = JSON.parse(localStorage.getItem("cattle_details"));
+const cattle_detail = JSON.parse(localStorage.getItem("cattle_details")) || [];
 const repDetail = JSON.parse(localStorage.getItem("rep_details"));
 const phone_id = JSON.parse(localStorage.getItem("phone_no_id"));
 const rep_id = JSON.parse(localStorage.getItem("rep_id"));
-const repCattleDetails = JSON.parse(localStorage.getItem("repCattleList"));
-const verifiedCattleLists = JSON.parse(localStorage.getItem("verifiedCattles"));
-const rejectedCattleLists = JSON.parse(localStorage.getItem("rejectedCattles"));
-const notificationList = JSON.parse(localStorage.getItem("notificationList"));
-const verificationDetails = JSON.parse(localStorage.getItem("verificationDetails"))
+const repCattleDetails = JSON.parse(localStorage.getItem("repCattleList")) || [];
+const verifiedCattleLists = JSON.parse(localStorage.getItem("verifiedCattles")) || [];
+const rejectedCattleLists = JSON.parse(localStorage.getItem("rejectedCattles")) || [];
+const notificationList = JSON.parse(localStorage.getItem("notificationList")) || [];
+const verificationDetails = JSON.parse(localStorage.getItem("verificationDetails"));
+const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 
 if (phone_id) {
 
@@ -99,13 +100,16 @@ if (phone_id) {
         }
     });
 
-    const userNotificationList = notificationList.filter(e => e.receiver === phone_id);
-    const newNote = userNotificationList.find(e => e.status === false);
-    
-    if (newNote) {
-        document.querySelector(".newNotification").style.borderBottom = "2px solid #00a651";
-    }
+    if(notificationList) {
 
+        const userNotificationList = notificationList.filter(e => e.receiver === phone_id);
+        const newNote = userNotificationList.find(e => e.status === false);
+
+        if (newNote) {
+            document.querySelector(".newNotification").style.borderBottom = "2px solid #00a651";
+        }
+
+    }
 }
 
 else if (rep_id){
@@ -121,13 +125,14 @@ else if (rep_id){
         }
     });
 
-    const repNotificationList = notificationList.filter(e => e.receiver === rep_id);
-    const newNote = repNotificationList.find(e => e.readStatus === false);
-    
-    if (newNote) {
-        document.querySelector(".newNotification").style.borderBottom = "2px solid #00a651";
+    if(notificationList) {
+        const repNotificationList = notificationList.filter(e => e.receiver === rep_id);
+        const newNote = repNotificationList.find(e => e.readStatus === false);
+        
+        if (newNote) {
+            document.querySelector(".newNotification").style.borderBottom = "2px solid #00a651";
+        }
     }
-
 }
 else {
     document.body.insertAdjacentHTML("afterbegin", beforeLogin);
