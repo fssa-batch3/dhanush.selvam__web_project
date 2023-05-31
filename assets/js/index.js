@@ -15,8 +15,10 @@ const cattle_data = [
     lactation: "2",
     milk: "12",
     price: "70000",
-    userId: "1111111111",
+    userId: "9111111111",
     weight: "400",
+    status: "Verified",
+    verificationData : ["0","1","4","6","7"]
   },
   {
     age: "1",
@@ -33,8 +35,10 @@ const cattle_data = [
     lactation: "3",
     milk: "14",
     price: "100000",
-    userId: "2222222222",
+    userId: "9111111111",
     weight: "",
+    status: "Verified",
+    verificationData : ["0","1","4","6","7"]
   },
   {
     age: "6",
@@ -51,8 +55,10 @@ const cattle_data = [
     lactation: "2",
     milk: "10",
     price: "80000",
-    userId: "1111111111",
+    userId: "9111111111",
     weight: "350",
+    status: "Verified",
+    verificationData : ["0","1","4","6","7"]
   },
   {
     age: "3",
@@ -69,8 +75,10 @@ const cattle_data = [
     lactation: "",
     milk: "",
     price: "10000",
-    userId: "2222222222",
+    userId: "9111111111",
     weight: "32",
+    status: "Verified",
+    verificationData : ["0","1","4","6","7"]
   },
   {
     age: "1",
@@ -87,8 +95,10 @@ const cattle_data = [
     lactation: "",
     milk: "",
     price: "18000",
-    userId: "1111111111",
+    userId: "9111111111",
     weight: "25",
+    status: "Verified",
+    verificationData : ["0","1","4","6","7"]
   },
   {
     age: "4",
@@ -105,8 +115,10 @@ const cattle_data = [
     lactation: "",
     milk: "",
     price: "35000",
-    userId: "2222222222",
+    userId: "9111111111",
     weight: "280",
+    status: "Verified",
+    verificationData : ["0","1","4","6","7"]
   },
 
   // --------------------- GIR ------------------
@@ -125,8 +137,10 @@ const cattle_data = [
     lactation: "2",
     milk: "12",
     price: "150000",
-    userId: "1111111111",
+    userId: "9111111111",
     weight: "520",
+    status: "Verified",
+    verificationData : ["0","1","4","6","7"]
   },
   {
     age: "2",
@@ -143,8 +157,10 @@ const cattle_data = [
     lactation: "",
     milk: "",
     price: "150000",
-    userId: "2222222222",
+    userId: "9111111111",
     weight: "110",
+    status: "Rejected",
+    verificationData : ["0","1","4","6"]
   },
   {
     age: "3",
@@ -161,8 +177,10 @@ const cattle_data = [
     lactation: "2",
     milk: "10",
     price: "50000",
-    userId: "1111111111",
+    userId: "9111111111",
     weight: "400",
+    status: "Verified",
+    verificationData : ["0","1","4","6","7"]
   },
   // --------------------- HF ------------------
   {
@@ -180,8 +198,10 @@ const cattle_data = [
     lactation: "2",
     milk: "20",
     price: "82000",
-    userId: "2222222222",
+    userId: "9111111111",
     weight: "520",
+    status: "Verified",
+    verificationData : ["0","1","4","5","7"]
   },
   {
     age: "3",
@@ -198,8 +218,10 @@ const cattle_data = [
     lactation: "2",
     milk: "10",
     price: "80000",
-    userId: "1111111111",
+    userId: "9111111111",
     weight: "500",
+    status: "Verified",
+    verificationData : ["0","1","2","6","7"]
   },
   {
     age: "2",
@@ -216,8 +238,10 @@ const cattle_data = [
     lactation: "1",
     milk: "35",
     price: "150000",
-    userId: "2222222222",
+    userId: "9111111111",
     weight: "530",
+    status: "Rejected",
+    verificationData : ["0","1","2","6"]
   },
   // --------------------- JERSEY ------------------
   {
@@ -235,8 +259,10 @@ const cattle_data = [
     lactation: "1",
     milk: "18",
     price: "50000",
-    userId: "1111111111",
+    userId: "9111111111",
     weight: "300",
+    status: "Verified",
+    verificationData : ["0","1","2","3","4"]
   },
   {
     age: "5",
@@ -253,8 +279,10 @@ const cattle_data = [
     lactation: "",
     milk: "",
     price: "42000",
-    userId: "2222222222",
+    userId: "9111111111",
     weight: "210",
+    status: "Verified",
+    verificationData : ["0","1","4","6","7"]
   },
   {
     age: "5",
@@ -271,8 +299,10 @@ const cattle_data = [
     lactation: "2",
     milk: "24",
     price: "42000",
-    userId: "1111111111",
+    userId: "9111111111",
     weight: "650",
+    status: "Rejected",
+    verificationData : ["1","2","4","6"]
   },
   // --------------------- MURRAH ------------------
   {
@@ -290,8 +320,10 @@ const cattle_data = [
     lactation: "2",
     milk: "10",
     price: "45000",
-    userId: "2222222222",
+    userId: "9111111111",
     weight: "250",
+    status: "Verified",
+    verificationData : ["0","1","4","6","7"]
   },
   {
     age: "1",
@@ -308,8 +340,10 @@ const cattle_data = [
     lactation: "",
     milk: "",
     price: "60000",
-    userId: "1111111111",
+    userId: "9111111111",
     weight: "250",
+    status: "Verified",
+    verificationData : ["0","1","2","3","4"]
   },
   {
     age: "2",
@@ -326,8 +360,10 @@ const cattle_data = [
     lactation: "",
     milk: "",
     price: "30000",
-    userId: "2222222222",
+    userId: "9111111111",
     weight: "370",
+    status: "Rejected",
+    verificationData : ["0","1","3"]
   },
   // --------------------- SIROHI ------------------
   {
@@ -345,8 +381,10 @@ const cattle_data = [
     lactation: "",
     milk: "",
     price: "20000",
-    userId: "1111111111",
+    userId: "9111111111",
     weight: "50",
+    status: "Rejected",
+    verificationData : ["0","1","2","3"]
   },
   {
     age: "1",
@@ -363,8 +401,10 @@ const cattle_data = [
     lactation: "",
     milk: "",
     price: "30000",
-    userId: "2222222222",
+    userId: "9111111111",
     weight: "150",
+    status: "Verified",
+    verificationData : ["0","1","4","6","7"]
   },
   {
     age: "2",
@@ -381,8 +421,10 @@ const cattle_data = [
     lactation: "",
     milk: "",
     price: "27000",
-    userId: "1111111111",
+    userId: "9111111111",
     weight: "30",
+    status: "Verified",
+    verificationData : ["0","1","4","6","7"]
   },
 ];
 // --------------------------------------------
@@ -390,26 +432,120 @@ const cattle_data = [
 const user_data = [
   {
     name: "Dhanush",
-    phone_no: "1111111111",
-    password: "Don123",
-    address: "No.03/25, Gandhi Street, Kamarajar Salai, Anna Nager, Chennai",
-    pincode: "600018",
+    phone_no: "9111111111",
+    password: "Aa!12345",
+    address: "No.22/7, Raghavan Colony, West Mambalam",
+    district: "Chennai",
+    pincode: "600033",
+    user: "customer",
     user_uniqueId: "9e6c8ef1-d606-4d19-9c1c-96c50518d039",
-  },
-  {
-    name: "Ram",
-    phone_no: "2222222222",
-    password: "Don123",
-    address: "No.03/25, Raghavan Colony, MGR Salai, KK Nager, Chennai",
-    pincode: "600045",
-    user_uniqueId: "9e6c8ef1-d606-4d19-9c1c-96c50518d038",
-  },
+  }
 ];
 
-const cattle_details = JSON.parse(localStorage.getItem("cattle_details"));
-const userData = JSON.parse(localStorage.getItem("userData"));
+const rep_data = [
+  {
+    name: "Rep A",
+    phone_no: "9999999999",
+    password: "Aa!12345",
+    address: "No.3/5, Anna Salai, Central",
+    district: "Chennai",
+    pincode: "600001",
+    user: "rep",
+    user_uniqueId: "9e6c8ef1-d606-4d19-9c1c-96c50518d030",
+  }
+]
 
-if (!cattle_details && !userData) {
+const verification_data = [
+  {
+  cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c1",
+  repUserId: "Rep1",
+  userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c2",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c3",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c4",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c5",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c6",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c7",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085c9",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a1",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a2",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a4",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a5",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a7",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085a8",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085b2",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+  {
+    cattle_uniqueId: "846bb3db-d183-4add-bcc6-0a976d9085b3",
+    repUserId: "Rep1",
+    userId: "9111111111",
+  },
+]
+
+const cattle__Details = JSON.parse(localStorage.getItem("cattle_details"));
+const user__Data = JSON.parse(localStorage.getItem("userData"));
+const rep__Data = JSON.parse(localStorage.getItem("rep_details"));
+const verify__Cattles = JSON.parse(localStorage.getItem("verifiedCattles"));
+
+if (!cattle__Details && !user__Data && !rep__Data && !verify__Cattles) {
   localStorage.setItem("cattle_details", JSON.stringify(cattle_data));
   localStorage.setItem("userData", JSON.stringify(user_data));
+  localStorage.setItem("rep_details",JSON.stringify(rep_data));
+  localStorage.setItem("verifiedCattles",JSON.stringify(verification_data));
 }
