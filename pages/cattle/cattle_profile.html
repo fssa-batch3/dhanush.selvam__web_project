@@ -157,7 +157,7 @@
                 cattle_data.image1 = document.getElementById("image1").value;
 
                 localStorage.setItem("cattle_details", JSON.stringify(cattle));
-                window.location.href = "./favourites.html?page=verifiedCattles";
+                window.location.href = "./cattleList.html?page=verifiedCattles";
             }
         }
 
@@ -180,12 +180,13 @@
                 cattle.splice(removedata, 1);
                 localStorage.setItem("cattle_details", JSON.stringify(cattle));
                 document.querySelector("form").reset();
-                window.location.href = "./seller_cattlelist.html";
+                window.location.href = "./cattleList.html?page=verifiedCattles";
 
             }
         }
 
         document.getElementById("sold_btn").addEventListener("click", deleteDetails);
+
     </script>
 
 </body>

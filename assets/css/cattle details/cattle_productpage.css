@@ -46,6 +46,7 @@ div.info_container >a >button:hover{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     margin-top: 2%;
 }
 
@@ -288,11 +289,6 @@ span{
     margin-right: 15px;
 }
 
-.fa-phone:hover, .fa-location-dot:hover{
-    transform: scale(1);
-    color: black;
-}
-
 .fa-location-dot{
     font-size: 20px;
     margin: 0px 20px 0px 5px;
@@ -330,7 +326,6 @@ span{
 
 .fa-chevron-left:hover ,.fa-chevron-right:hover{
     color: #00a651;
-    transform: scale(1);
 } 
 
 .seller_phoneno_container{

@@ -36,71 +36,71 @@
                         <input type="url" id="image">
                     </div>
 
-                    <div id = "customer_portal">
+                    <div id="customer_portal">
                         <div class="links_container">
                             <div class="icon_container1">
-                                <i class="fa-solid fa-paw" id="icon"></i>
+                                <i class="fa-solid fa-paw"></i>
                             </div>
                             <h2>
-                                <a href="cattle/favourites.html?page=sellerCattleList"> Cattle List </a>
+                                <a href="cattle/cattleList.html?page=sellerCattleList"> Cattle List </a>
                             </h2>
                         </div>
 
                         <div class="links_container">
                             <div class="icon_container1">
-                                <i class="fa-solid fa-star" id="icon"></i>
+                                <i class="fa-solid fa-star"></i>
                             </div>
                             <h2>
-                                <a href="cattle/favourites.html?page=favourites"> Favourites </a>
+                                <a href="cattle/cattleList.html?page=favourites"> Favourites </a>
                             </h2>
                         </div>
 
                         <div class="links_container">
                             <div class="icon_container1">
-                                <i class="fa-solid fa-right-from-bracket" id="icon"></i>
+                                <i class="fa-solid fa-right-from-bracket"></i>
                             </div>
                             <h2 class="links_head" id="customerLogOut"> Log out </h2>
                         </div>
 
                         <div class="links_container" id="delAccount">
                             <div class="icon_container2">
-                                <i class="fa-solid fa-trash" id="icon"></i>
+                                <i class="fa-solid fa-trash"></i>
                             </div>
                             <h2 class="links_head" id="delete">Delete Account</h2>
                         </div>
                     </div>
 
-                    <div id = "rep_portal">
+                    <div id="rep_portal">
                         <div class="links_container">
                             <div class="icon_container1">
-                                <i class="fa-solid fa-list" id = "icon"></i>
+                                <i class="fa-solid fa-list"></i>
                             </div>
                             <h2>
-                                <a href="cattle/favourites.html?page=repCattleList"> Cattle List </a>
+                                <a href="cattle/cattleList.html?page=repCattleList"> Cattle List </a>
                             </h2>
                         </div>
 
                         <div class="links_container">
                             <div class="icon_container1">
-                                <i class="fa-regular fa-circle-check" id = "icon"></i>
+                                <i class="fa-regular fa-circle-check"></i>
                             </div>
                             <h2>
-                                <a href="cattle/favourites.html?page=verifiedCattles"> Verified Cattles </a>
+                                <a href="cattle/cattleList.html?page=verifiedCattles"> Verified Cattles </a>
                             </h2>
                         </div>
 
                         <div class="links_container">
                             <div class="icon_container1">
-                                <i class="fa-regular fa-circle-xmark" id = "icon"></i>
+                                <i class="fa-regular fa-circle-xmark"></i>
                             </div>
                             <h2>
-                                <a href="cattle/favourites.html?page=rejectedCattles"> Rejected Cattles </a>
+                                <a href="cattle/cattleList.html?page=rejectedCattles"> Rejected Cattles </a>
                             </h2>
                         </div>
 
                         <div class="links_container">
                             <div class="icon_container1">
-                                <i class="fa-solid fa-right-from-bracket" id="icon"></i>
+                                <i class="fa-solid fa-right-from-bracket"></i>
                             </div>
                             <h2 class="links_head" id="repLogOut"> Log out </h2>
                         </div>
@@ -204,7 +204,9 @@
                             </div>
                             <div class="colon_container"> : </div>
                             <div class="input_container">
-                                <input required type="text" id="pincode" pattern="^[123456789]\d{5}$" oninput="this.value = this.value.replace(/[^0-9]/g,'')" minlength="6" maxlength="6" readonly>
+                                <input required type="text" id="pincode" pattern="^[123456789]\d{5}$"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g,'')" minlength="6" maxlength="6"
+                                    readonly>
                             </div>
                         </div>
 
@@ -237,12 +239,10 @@
                 document.getElementById("phone_no").setAttribute("readonly", true);
                 document.getElementById("customer_portal").style.display = "none";
             }
-            else if (rep_id === null){
+            else if (rep_id === null) {
                 document.getElementById("rep_portal").style.display = "none";
             }
         });
-
-        const repData = repDetail.find(e => e.userId === rep_id);
 
         // function for enabling input
 
@@ -274,7 +274,11 @@
                     localStorage.setItem("userData", JSON.stringify(userDetails));
                 }
             }
+
             else if (phone_id === null) {
+
+                const repData = repDetail.find(e => e.userId === rep_id);
+
                 if (confirm("Are you sure you want to save the details")) {
                     repData.name = document.getElementById("name").value;
                     repData.phone_no = document.getElementById("phone_no").value;
@@ -285,6 +289,7 @@
                     localStorage.setItem("rep_details", JSON.stringify(repDetail));
                 }
             }
+
             window.location.reload();
         }
 
@@ -320,6 +325,8 @@
         }
 
         else if (phone_id === null) {
+
+            const repData = repDetail.find(e => e.userId === rep_id);
 
             document.getElementById("name").value = repData.name;
             document.getElementById("phone_no").value = repData.phone_no;

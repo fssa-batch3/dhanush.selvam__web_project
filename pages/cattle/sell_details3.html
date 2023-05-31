@@ -23,6 +23,14 @@
 
     <main>
 
+        <!-- Pop up section -->
+
+        <!-- <div class="container">
+            <div class="popUpContainer">
+                <p> Uploaded Successfully </p>
+            </div>
+        </div> -->
+
         <!-- back button section -->
 
         <div class="back_btn_container">
@@ -41,13 +49,13 @@
 
         <!-- Details section -->
 
-        <form onsubmit="getValue(event);">
+        <form>
 
             <div class="details_section">
                 <div>
                     <label> Age (in Years) </label>
                     <br>
-                    <input required type="text" id="age" oninput="this.value = this.value.replace(/[^1-9]/g,'')" maxlength="1">
+                    <input type="text" id="age" oninput="this.value = this.value.replace(/[^1-9]/g,'')" maxlength="1">
                 </div>
 
                 <div>
@@ -62,7 +70,9 @@
                 <div class="weight">
                     <label> Weight (kg) </label>
                     <br>
-                    <input required type="text" id="weight" oninput="this.value = this.value.replace(/[^0-9]/g,'')" maxlength="4" max="2000">
+                    <input type="text" id="weight" pattern="^[1-9]\d*$"
+                        oninput="this.value = this.value.replace(/[^0-9]/g,'')" maxlength="4" max="2000"
+                        title="Do not start with 0">
                 </div>
             </div>
 
@@ -70,17 +80,22 @@
                 <div>
                     <label> Price (Rs.) </label>
                     <br>
-                    <input required type="text" id="price" oninput="this.value = this.value.replace(/[^0-9]/g,'')" maxlength="7">
+                    <input type="text" id="price" pattern="^[1-9]\d*$"
+                        oninput="this.value = this.value.replace(/[^0-9]/g,'')" maxlength="7"
+                        title="Do not start with 0">
                 </div>
-                <div class = "milk_container">
+                <div class="milk_container">
                     <label> Milk per day (litres) </label>
                     <br>
-                    <input type="text" id="milk" oninput="this.value = this.value.replace(/[^0-9]/g,'')" maxlength="2">
+                    <input type="text" id="milk" pattern="^[1-9]\d*$"
+                        oninput="this.value = this.value.replace(/[^0-9]/g,'')" maxlength="2"
+                        title="Do not start with 0">
                 </div>
                 <div class="weight lact_container">
                     <label> Lactation </label>
                     <br>
-                    <input type="text" id="lactation" oninput="this.value = this.value.replace(/[^1-9]/g,'')" maxlength="1">
+                    <input type="text" id="lactation" oninput="this.value = this.value.replace(/[^1-9]/g,'')"
+                        maxlength="1">
                 </div>
             </div>
 
@@ -94,7 +109,7 @@
                 <div>
                     <label> Upload Photo: </label>
                     <br>
-                    <input required type="url" id="image">
+                    <input type="url" id="image">
                 </div>
                 <div>
                     <label> Upload Photo: </label>
@@ -109,7 +124,7 @@
             </div>
 
             <div class="submit_btn_container">
-                <button class="submit_btn" type="submit"> SUBMIT </button>
+                <button class="submit_btn" type="button"> SUBMIT </button>
             </div>
 
         </form>
@@ -129,14 +144,16 @@
                 document.querySelector(".milk_container").style.display = "none";
                 document.querySelector(".lact_container").style.display = "none";
             }
-            else{
+            else {
                 document.querySelector(".milk_container").style.display = "block";
                 document.querySelector(".lact_container").style.display = "block";
             }
         })
 
-        function getValue(e) {
-            e.preventDefault();
+
+        document.querySelector(".submit_btn").addEventListener("click", (e) => {
+
+            // document.querySelector(".container").style.display = "flex";
 
             const urlParams = new URLSearchParams(window.location.search);
 
@@ -163,12 +180,16 @@
 
             const notificationList = JSON.parse(localStorage.getItem("notificationList")) || [];
             notificationId = uuidv4();
+
             messageTitle = "New " + breed + " " + cattle + " has been uploaded";
-            
+
             const customerData = userDetails.find(e => e.phone_no === userId);
+
             message = "It is in " + customerData.address + ", " + customerData.district + ", " + customerData.pincode;
+            readStatus = false;
 
             const repUserId = repDetail.find(e => e.district === customerData.district).userId;
+            const receiver = repUserId;
 
             const stock = cattle_details.filter((e) => e.breed == breed).length.toString().padStart(3, "0");
             const stock_no = parseInt(stock) + 1;
@@ -178,20 +199,19 @@
             if (user_address != "" && user_pincode != "" && user_district != "") {
                 cattle_details.push({ cattle, breed, age, gender, weight, milk, price, lactation, description, image, image1, id, cattle_uniqueId, userId, date, status});
                 repCattleList.push({repUserId, userId, cattle_uniqueId});
-                notificationList.push({notificationId, messageTitle, message});
-                const findRep = repDetail.find(e => e.userId === repUserId);
-                findRep.notification.push({notificationId});
-                
+                notificationList.push({notificationId, messageTitle, message, receiver, readStatus});
+
                 localStorage.setItem("cattle_details", JSON.stringify(cattle_details));
                 localStorage.setItem("repCattleList",JSON.stringify(repCattleList));
                 localStorage.setItem("notificationList",JSON.stringify(notificationList));
-                localStorage.setItem("rep_details",JSON.stringify(repDetail));
-                location.href = "./favourites.html?page=sellerCattleList";
+                location.href = "./cattleList.html?page=sellerCattleList";
                 document.querySelector("form").reset();
-            } else {
+            } 
+            else {
                 alert("Please fill the address, state and pincode in your profile");
             }
-        }
+        });
+
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>

@@ -103,6 +103,7 @@
   <script src="../../assets/js/footer.js"></script>
 
   <script>
+
     const breed_list = [
       {
         name: "Gir",
@@ -285,9 +286,9 @@
     ];
 
     const urlParams = new URLSearchParams(window.location.search);
-    const cattle_details = urlParams.get("cattle_details");
+    const cattlePage = urlParams.get("cattle_details");
 
-    const cat_breed_list = breed_list.filter((e) => e.category == cattle_details);
+    const cat_breed_list = breed_list.filter((e) => e.category == cattlePage);
 
     for (let i = 0; i < cat_breed_list.length; i++) {
       // breed_container
@@ -336,113 +337,89 @@
     // heading
     category_name = document.createElement("h1");
     category_name.setAttribute("class", "title_color");
-    category_name.innerText = `All ${cattle_details}s`;
+    category_name.innerText = `All ${cattlePage}s`;
     document.querySelector("div.title_container1").append(category_name);
 
     let cattleDetails = [];
 
-    for (let i = 0; i < verifiedCattleLists.length; i++){
+    for (let i = 0; i < verifiedCattleLists.length; i++) {
       let cattleData = cattle_detail.find(e => e.cattle_uniqueId === verifiedCattleLists[i]["cattle_uniqueId"]);
       cattleData.rep_id = verifiedCattleLists[i]["repUserId"];
       cattleDetails.push(cattleData);
     }
 
-    let categoryCattleDetails = cattleDetails.filter(e => e.cattle === cattle_details);
-
-    const selectedBreeds = [];
-    const selectedStates = [];
-    const user_data = JSON.parse(localStorage.getItem("userData"));
+    let categoryCattleDetails = cattleDetails.filter(e => e.cattle === cattlePage);
 
     for (let i = 0; i < categoryCattleDetails.length; i++) {
       const cattle_container = cards(categoryCattleDetails[i]);
       document.querySelector("div.cattles_container").append(cattle_container);
     }
 
+    const selectedBreeds = [];
+    const selectedDistricts = [];
+
     function filterCattles() {
 
-      const breedFilteredCattles = [];
-
-      if ((selectedBreeds.length == 0) && (selectedStates.length == 0)) {
-        document.querySelector("div.cattles_container").innerHTML = "";
-        for (let i = 0; i < categoryCattleDetails.length; i++) {
-          const cattle_container = cards(categoryCattleDetails[i]);
-          document.querySelector("div.cattles_container").append(cattle_container);
-        }
-      }
+      let breedFilteredCattles = [];
 
       for (let i = 0; i < selectedBreeds.length; i++) {
-        const filter_products = categoryCattleDetails.filter((e) => e.breed == selectedBreeds[i]);
-        const filtered_products = filter_products.filter((e) => e.userId != user_unique);
-        breedFilteredCattles.push(filtered_products);
+        const filter_products = categoryCattleDetails.filter((e) => e.breed === selectedBreeds[i]);
+        breedFilteredCattles = breedFilteredCattles.concat(filter_products);
       }
 
-      const selectedUser = [];
-      for (let i = 0; i < selectedStates.length; i++) {
-        const filter_state = user_data.filter((e) => e.district == selectedStates[i]);
-        const filter_user = filter_state.filter((e) => e.phone_no != user_unique);
+      const selectedRep = [];
 
-        for (let j = 0; j < filter_user.length; j++) {
-          selectedUser.push(filter_user[j].phone_no);
-        }
-      }
-
-      const uniqueCattles = [];
-
-      if ((breedFilteredCattles.length != 0) && (selectedUser != 0)) {
-        for (let i = 0; i < breedFilteredCattles.length; i++) {
-          for (let j = 0; j < breedFilteredCattles[i].length; j++) {
-            if (selectedUser.includes(breedFilteredCattles[i][j].userId)) {
-              uniqueCattles.push(breedFilteredCattles[i][j]);
-            }
-          }
-        }
-        appendFilterCattles();
-      }
-
-      else if ((breedFilteredCattles.length != 0) && (selectedUser == 0)) {
-        for (let i = 0; i < breedFilteredCattles.length; i++) {
-          for (let j = 0; j < breedFilteredCattles[i].length; j++) {
-            uniqueCattles.push(breedFilteredCattles[i][j]);
-          }
-        }
-        appendFilterCattles();
-      }
-
-      else if ((selectedStates.length != 0) && (breedFilteredCattles == 0)) {
-        if ((selectedUser.length != 0) && (breedFilteredCattles == 0)) {
-          let selectedBreeds = [];
-          for (let i = 0; i < selectedUser.length; i++) {
-            let selectedCattles = categoryCattleDetails.filter((e) => e.userId == selectedUser[i]);
-            selectedBreeds.push(selectedCattles.filter((e) => e.cattle == cattle_details));
-          }
-          for (let i = 0; i < selectedBreeds.length; i++) {
-            for (let j = 0; j < selectedBreeds[i].length; j++) {
-              uniqueCattles.push(selectedBreeds[i][j]);
-            }
-          }
-          appendFilterCattles();
-        }
-        else if (selectedUser.length === 0) {
-          appendFilterCattles();
+      for (let i = 0; i < selectedDistricts.length; i++) {
+        const filterRep = repDetail.find((e) => e.district === selectedDistricts[i]);
+        if (filterRep) {
+          selectedRep.push(filterRep.userId);
         }
       }
 
-      function appendFilterCattles() {
+      let filteredCattles = [];
 
-        document.querySelector("div.cattles_container").innerHTML = "";
-        if (uniqueCattles.length === 0) {
-          const no_image = document.createElement("img");
-          no_image.setAttribute("src", "../../assets/images/no_result.gif");
-          no_image.setAttribute("class", "no_result");
-          document.querySelector("div.cattles_container").append(no_image);
-        }
-        else {
-          for (let i = 0; i < uniqueCattles.length; i++) {
-            const cattle_container = cards(uniqueCattles[i]);
-            document.querySelector("div.cattles_container").append(cattle_container);
+      if (selectedBreeds.length > 0 && selectedDistricts.length > 0) {
+        const filterCattles = breedFilteredCattles.filter((e) => selectedRep.includes(e.rep_id));
+        filteredCattles = filteredCattles.concat(filterCattles);
+      }
+
+      else if (selectedBreeds.length > 0) {
+        filteredCattles = filteredCattles.concat(breedFilteredCattles);
+      }
+
+      else if (selectedDistricts.length > 0) {
+        for (let i = 0; i < categoryCattleDetails.length; i++) {
+          if (selectedRep.includes(categoryCattleDetails[i].rep_id)) {
+            filteredCattles.push(categoryCattleDetails[i]);
           }
         }
+      }
 
+      else {
+        filteredCattles = categoryCattleDetails;
+      }
+
+      displayFilteredCattles(filteredCattles);
+
+    }
+
+    function displayFilteredCattles(cattles) {
+
+      const cattlesContainer = document.querySelector("div.cattles_container");
+      cattlesContainer.innerHTML = "";
+
+      if (cattles.length === 0) {
+        const no_image = document.createElement("img");
+        no_image.setAttribute("src", "../../assets/images/no_result.gif");
+        no_image.setAttribute("class", "no_result");
+        cattlesContainer.append(no_image);
+      }
+
+      else {
+        for (let i = 0; i < cattles.length; i++) {
+          const cattle_container = cards(cattles[i]);
+          cattlesContainer.append(cattle_container);
+        }
       }
     }
 
@@ -460,10 +437,10 @@
     function stateOnSelect(event) {
       const element = event.target;
       if (element.checked) {
-        selectedStates.push(element.id);
+        selectedDistricts.push(element.id);
       } else {
-        const index = selectedStates.indexOf(this.id);
-        selectedStates.splice(index, 1);
+        const index = selectedDistricts.indexOf(this.id);
+        selectedDistricts.splice(index, 1);
       }
       filterCattles();
     }
@@ -471,7 +448,7 @@
     const magnifying_glass = document.getElementById("mag_search");
     magnifying_glass.addEventListener("click", function () {
       const pincode_value = document.getElementById("pincode_input").value;
-      const pin_user = user_data.filter((e) => e.pincode == pincode_value);
+      const zoneRep = repDetail.filter((e) => e.pincode == pincode_value);
 
       const crossButton = document.getElementById("pincode_input");
       crossButton.addEventListener("search", () => {
@@ -487,35 +464,28 @@
       if (pincode_value.length === 6) {
         document.querySelector("div.cattles_container").innerHTML = "";
 
-        const user_list = [];
+        const zoneVerifiedCattles = verifiedCattleLists.filter((e) => zoneRep.some((a) => a.userId === e.repUserId));
+        const zoneAllCattles = cattle_detail.filter((e) => zoneVerifiedCattles.some((a) => a.cattle_uniqueId === e.cattle_uniqueId));
+        const zoneCattles = zoneAllCattles.filter((e) => e.cattle === cattlePage);
 
-        for (let i = 0; i < pin_user.length; i++) {
-          const users = pin_user[i].phone_no;
-          if (users != user_data) {
-            user_list.push(users);
-          }
-        }
-
-        if (user_list.length == 0) {
+        if (zoneCattles.length == 0) {
           const no_image = document.createElement("img");
           no_image.setAttribute("src", "../../assets/images/no_result.gif");
           no_image.setAttribute("class", "no_result");
           document.querySelector("div.cattles_container").append(no_image);
         }
-
-        for (let i = 0; i < user_list.length; i++) {
-          const selectedCattles = categoryCattleDetails.filter((e) => e.userId == user_list[i]);
-          const selectedBreeds = selectedCattles.filter((e) => e.cattle == cattle_details);
-
-          for (let j = 0; j < selectedBreeds.length; j++) {
-            const cattle_filter_container = cards(selectedBreeds[j]);
+        else {
+          for (let i = 0; i < zoneCattles.length; i++) {
+            const cattle_filter_container = cards(zoneCattles[i]);
             document.querySelector("div.cattles_container").append(cattle_filter_container);
           }
         }
       }
+
       else if (pincode_value.length === 0) {
         alert("Please enter a pincode")
       }
+
       else {
         alert("Please enter a proper pincode");
       }
@@ -615,7 +585,7 @@
     });
 
     function cards(card) {
-      
+
       // cattle container
       cattle_container = document.createElement("div");
       cattle_container.setAttribute("class", "cattle_container");
@@ -627,7 +597,7 @@
 
       // a
       cattle_anchor = document.createElement("a");
-      cattle_anchor.setAttribute("href",`../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.rep_id}`);
+      cattle_anchor.setAttribute("href", `../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.rep_id}`);
       cattle_img_container.append(cattle_anchor);
 
       // cattle image
@@ -659,7 +629,7 @@
       // a
 
       buttonContainer = document.createElement("a");
-      buttonContainer.setAttribute("href",`../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.rep_id}`);
+      buttonContainer.setAttribute("href", `../cattle details/cow/C1.html?breed=${card.breed}&cattle_id=${card.cattle_uniqueId}&user_id=${card.rep_id}`);
       info_container.append(buttonContainer);
 
       // Know more button

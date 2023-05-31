@@ -10,9 +10,9 @@ const footer = `<footer>
         <div class = "right_foot">
             <div> <h2 class = "right_foot_title"> CONNECT WITH US</h2> </div>
             <div class = "com_info_container">
-                <p> Email: info@kowmart.cm</p>
+                <p> Email: info@kowmart.com</p>
                 <p> Ph.no: 1234567890</p>
-                <p> Address: Chennai - 33</p>
+                <p class = "comAddress"> Address:  No.3/5, Anna Salai, West Mambalam, Chennai - 33. </p>
             </div>
             <div class = "com_icons">
                 <i class = "fa-brands fa-facebook"></i>

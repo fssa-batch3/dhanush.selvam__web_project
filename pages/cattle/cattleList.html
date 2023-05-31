@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-  <title> Favourites </title>
+  <title> Cattle List </title>
 
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="../../assets/css/cattles/cattlelist.css">
@@ -38,6 +38,31 @@
 
     </div>
 
+    <div id="myOverlay" class="overlay1">
+
+      <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+
+      <div class="overlay-content1">
+
+        <div class="titleContainer">
+          <h2> Verification List </h2>
+        </div>
+
+        <div class="checklistsContainer"> </div>
+
+        <div class="descContainer">
+          <label class="descLabel"> Description <small> (optional) </small> </label> <br>
+          <textarea> </textarea>
+        </div>
+
+        <div class="buttonContainer">
+          <button class="verifiedSubmit"> Submit </button>
+        </div>
+
+      </div>
+
+    </div>
+
   </main>
 
   <script src="../../assets/js/header.js"></script>
@@ -55,10 +80,20 @@
       document.querySelector("h1.title_color").innerText = "Your Favourites"
 
       const favourites = JSON.parse(localStorage.getItem("favourites"));
-      const users_FavCattle = favourites.filter((e) => e.user_unique_id === phone_id);
-      const favourite_id = cattle_detail.filter((e) => users_FavCattle.some((uuid) => uuid.cattleId === e.cattle_uniqueId));
+      const users_FavCattle = favourites.filter((e) => e.phone_id === phone_id);
 
-      for (let i = 0; i < favourite_id.length; i++) {
+      const favourite_id = cattle_detail.filter((e) => users_FavCattle.find((a) => a.cattleId === e.cattle_uniqueId));
+
+      const favouriteCattles = favourite_id.filter((e) => {
+        const matchCattleId = verifiedCattleLists.find((a) => a.cattle_uniqueId === e.cattle_uniqueId);
+        if (matchCattleId) {
+          e.repId = matchCattleId.repUserId;
+          return true;
+        }
+        return false;
+      });
+
+      for (let i = 0; i < favouriteCattles.length; i++) {
         // cattle container
         cattle_container = document.createElement("div");
         cattle_container.setAttribute("class", "cattle_container");
@@ -71,13 +106,13 @@
         // a
 
         cattle_anchor = document.createElement("a");
-        cattle_anchor.setAttribute("href", `../cattle details/cow/C1.html?breed=${favourite_id[i].breed}&cattle_id=${favourite_id[i].cattle_uniqueId}&user_id=${favourite_id[i].userId}`);
+        cattle_anchor.setAttribute("href", `../cattle details/cow/C1.html?breed=${favouriteCattles[i].breed}&cattle_id=${favouriteCattles[i].cattle_uniqueId}&user_id=${favouriteCattles[i].repId}`);
         cattle_img_container.append(cattle_anchor);
 
         // cattle image
         cattle_image = document.createElement("img");
-        cattle_image.setAttribute("src", favourite_id[i].image);
-        cattle_image.setAttribute("alt", `${favourite_id[i].breed} ${favourite_id[i].cattle}`);
+        cattle_image.setAttribute("src", favouriteCattles[i].image);
+        cattle_image.setAttribute("alt", `${favouriteCattles[i].breed} ${favouriteCattles[i].cattle}`);
         cattle_image.setAttribute("class", "cattle_image");
         cattle_anchor.append(cattle_image);
 
@@ -89,24 +124,24 @@
         // cattle info
         cattle_name = document.createElement("p");
         cattle_name.setAttribute("class", "cattle_name");
-        cattle_name.innerText = `${favourite_id[i].breed} ${favourite_id[i].cattle} ${favourite_id[i].id}`;
+        cattle_name.innerText = `${favouriteCattles[i].breed} ${favouriteCattles[i].cattle} ${favouriteCattles[i].id}`;
         info_container.append(cattle_name);
 
         cattle_age = document.createElement("p");
-        cattle_age.innerText = `Age: ${favourite_id[i].age} Year(s)`;
+        cattle_age.innerText = `Age: ${favouriteCattles[i].age} Year(s)`;
         info_container.append(cattle_age);
 
         cattle_gender = document.createElement("p");
-        cattle_gender.innerText = `Gender: ${favourite_id[i].gender}`;
+        cattle_gender.innerText = `Gender: ${favouriteCattles[i].gender}`;
         info_container.append(cattle_gender);
 
         button_know = document.createElement("button");
         button_know.setAttribute("class", "remove_button");
-        button_know.setAttribute("data-id", favourite_id[i].cattle_uniqueId);
+        button_know.setAttribute("data-id", favouriteCattles[i].cattle_uniqueId);
         button_know.innerText = "Remove";
         info_container.append(button_know);
 
-        document.querySelector("div.cattles_container").append(cattle_container);
+        document.querySelector("div.cattles_container").prepend(cattle_container);
       }
 
       // function for dislike
@@ -119,12 +154,12 @@
 
             const { id } = this.dataset;
             const favourites = JSON.parse(localStorage.getItem("favourites"));
-
-            const fav_obj = favourites.find((e => e.cattleId === id) && (e => e.user_unique_id === phone_id));
+            const fav_obj = favourites.find((e => e.cattleId === id && e.phone_id === phone_id));
             const fav_index = favourites.indexOf(fav_obj);
             favourites.splice(fav_index, 1);
             localStorage.setItem("favourites", JSON.stringify(favourites));
             location.reload();
+
           }
         });
       });
@@ -153,7 +188,7 @@
         // a
 
         cattle_anchor = document.createElement("a");
-        cattle_anchor.setAttribute("href", `../cattle details/cow/C1.html?cattle_id=${usersCattle[i].cattle_uniqueId}&user_id=${usersCattle[i].userId}&page=${"seller"}`);
+        cattle_anchor.setAttribute("href", `../cattle details/cow/C1.html?cattle_id=${usersCattle[i].cattle_uniqueId}&user_id=${usersCattle[i].userId}&page=${"seller"}&desc=no`);
         cattle_img_container.append(cattle_anchor);
 
         // cattle image
@@ -170,23 +205,101 @@
 
         button_know = document.createElement("button");
 
-        if (cattle_detail[i]["status"] === ""){
+        if (usersCattle[i]["status"] === "") {
           button_know.setAttribute("class", "status_button");
           button_know.innerText = "Verifying";
         }
-        else if (cattle_detail[i]["status"] === "Verified"){
+        else if (usersCattle[i]["status"] === "Verified") {
           button_know.setAttribute("class", "verify_button");
           button_know.innerText = "Verified";
         }
-        else if (cattle_detail[i]["status"] === "Rejected"){
+        else if (usersCattle[i]["status"] === "Rejected") {
           button_know.setAttribute("class", "reject_button");
           button_know.innerText = "Rejected";
         }
 
         cattle_container.append(button_know);
 
+        document.querySelector("div.cattles_container").prepend(cattle_container);
+      }
+    }
+
+    // REP OTHER CATTLES // 
+
+    else if (page === "repOtherCattles") {
+
+      document.querySelector("h1.title_color").innerText = "Cattle List";
+
+      const user_id = urlParams.get("user-id");
+
+      const repData = repDetail.find(e => e.userId === user_id);
+      const repCattlesId = verifiedCattleLists.filter(e => e.repUserId === user_id);
+
+      const repOtherCattles = [];
+
+      for (let i = 0; i < repCattlesId.length; i++) {
+        let repOtherCattlesData = cattle_detail.find(e => e.cattle_uniqueId === repCattlesId[i]["cattle_uniqueId"]);
+        repOtherCattles.push(repOtherCattlesData);
+      }
+
+      for (i = 0; i < repOtherCattles.length; i++) {
+
+        // cattle container
+        cattle_container = document.createElement("div");
+        cattle_container.setAttribute("class", "cattle_container");
+
+        // image container
+        cattle_img_container = document.createElement("div");
+        cattle_img_container.setAttribute("class", "img_container");
+        cattle_container.append(cattle_img_container);
+
+        // a
+
+        cattle_anchor = document.createElement("a");
+        cattle_anchor.setAttribute("href", `../cattle details/cow/C1.html?breed=${repOtherCattles[i].breed}&cattle_id=${repOtherCattles[i].cattle_uniqueId}&user_id=${user_id}`);
+        cattle_img_container.append(cattle_anchor);
+
+        // cattle image
+        cattle_image = document.createElement("img");
+        cattle_image.setAttribute("src", repOtherCattles[i].image);
+        cattle_image.setAttribute("alt", `${repOtherCattles[i].breed} ${repOtherCattles[i].cattle}`);
+        cattle_image.setAttribute("class", "cattle_image");
+        cattle_anchor.append(cattle_image);
+
+        // cattle info container
+        info_container = document.createElement("div");
+        info_container.setAttribute("class", "info_container");
+        cattle_container.append(info_container);
+
+        // cattle info
+        cattle_name = document.createElement("p");
+        cattle_name.setAttribute("class", "cattle_name");
+        cattle_name.innerText = `${repOtherCattles[i].breed} ${repOtherCattles[i].cattle} ${repOtherCattles[i].id}`;
+        info_container.append(cattle_name);
+
+        cattle_age = document.createElement("p");
+        cattle_age.innerText = `Age: ${repOtherCattles[i].age} Year(s)`;
+        info_container.append(cattle_age);
+
+        cattle_gender = document.createElement("p");
+        cattle_gender.innerText = `Gender: ${repOtherCattles[i].gender}`;
+        info_container.append(cattle_gender);
+
+        // a
+
+        buttonContainer = document.createElement("a");
+        buttonContainer.setAttribute("href", `../cattle details/cow/C1.html?breed=${repOtherCattles[i].breed}&cattle_id=${repOtherCattles[i].cattle_uniqueId}&user_id=${user_id}`);
+        info_container.append(buttonContainer);
+
+        // Know more button
+
+        button_know = document.createElement("button");
+        button_know.innerText = "Know More";
+        buttonContainer.append(button_know);
+
         document.querySelector("div.cattles_container").append(cattle_container);
       }
+
     }
 
     // REP CATTLE LIST PAGE //
@@ -219,7 +332,7 @@
         // a
 
         cattle_anchor = document.createElement("a");
-        cattle_anchor.setAttribute("href", `../cattle details/cow/C1.html?cattle_id=${repCattles[i]["cattle_uniqueId"]}&user_id=${repCattles[i].userId}&page=${"seller"}`);
+        cattle_anchor.setAttribute("href", `../cattle details/cow/C1.html?cattle_id=${repCattles[i]["cattle_uniqueId"]}&user_id=${repCattles[i].userId}&page=${"seller"}&desc=no`);
         cattle_img_container.append(cattle_anchor);
 
         // cattle image
@@ -240,104 +353,146 @@
 
         button_know = document.createElement("button");
         button_know.setAttribute("id", "verifyButton");
-        button_know.setAttribute("data-id", repCattles[i].cattle_uniqueId);
-        button_know.innerText = "Verified";
+        button_know.setAttribute("data-iid", repCattles[i].cattle_uniqueId);
+        button_know.innerText = "Pending";
         btnContainer.append(button_know);
 
-        rejectedBtn = document.createElement("button");
-        rejectedBtn.setAttribute("id", "rejectButton");
-        rejectedBtn.setAttribute("data-id", repCattles[i].cattle_uniqueId);
-        rejectedBtn.innerText = "Rejected";
-        btnContainer.append(rejectedBtn);
-
-        document.querySelector("div.cattles_container").append(cattle_container);
+        document.querySelector("div.cattles_container").prepend(cattle_container);
       }
 
-      // verifying by rep //
+      for (let i = 0; i < 8; i++) {
 
-      let verifiedCattles = JSON.parse(localStorage.getItem("verifiedCattles")) || [];
+        const checklistContainer = document.createElement("div");
+        checklistContainer.setAttribute("class", "checklistContainer");
+
+        const labelContainer = document.createElement("div");
+        labelContainer.setAttribute("class", "labelContainer");
+        checklistContainer.append(labelContainer);
+
+        const label = document.createElement("label");
+        label.innerText = verificationDetails[i]["question"]
+        labelContainer.append(label);
+
+        const inputContainer = document.createElement("div");
+        checklistContainer.append(inputContainer);
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.setAttribute("class", "checkbox")
+        checkbox.setAttribute("data-index", i);
+        inputContainer.append(checkbox);
+
+        document.querySelector("div.checklistsContainer").append(checklistContainer)
+
+      }
+
+      let verificationData = []
 
       const verifyButton = document.querySelectorAll("#verifyButton");
       verifyButton.forEach(function (findId) {
+
         findId.addEventListener("click", function () {
-          if (confirm("Are you verified this cattle?")) {
-            const { id } = this.dataset;
-            
-            let verifiedCattleData = cattle_detail.find(e => e.cattle_uniqueId === id);
-            verifiedCattleData.status = "Verified";
-            localStorage.setItem("cattle_details",JSON.stringify(cattle_detail));
+          const cattle_id = this.dataset.iid;
+          openSearch();
 
-            let repCattleIndex = repCattleDetails.indexOf(repCattleDetails.find(e => e.cattle_uniqueId === id));
+          const checkbox = document.querySelectorAll(".checkbox");
+          checkbox.forEach(function (e) {
+            e.addEventListener("click", function () {
+              const id = this.dataset.index;
+              verificationData.push(id);
+            })
+          })
 
-            let repUserId = repCattleDetails[repCattleIndex]["repUserId"];
-            let userId = repCattleDetails[repCattleIndex]["userId"];
-            let cattle_uniqueId = repCattleDetails[repCattleIndex]["cattle_uniqueId"];
-            
-            let findCattle = cattle_detail.find(e => e.cattle_uniqueId === cattle_uniqueId);
-            
-            let notificationId = uuidv4();
-            let messageTitle = "From " + rep_id + ", Representative of KowMart";
-            let message = "Your " + findCattle.breed + " " + findCattle.cattle + " has been Verified. We will reach you soon";
-            
-            notificationList.push({notificationId, messageTitle, message});
-            localStorage.setItem("notificationList",JSON.stringify(notificationList));
+          document.querySelector(".verifiedSubmit").addEventListener("click", () => {
 
-            let userNotification = userDetails.find(e => e.phone_no === findCattle.userId).notification;
-            userNotification.push({notificationId});
-            localStorage.setItem("userData",JSON.stringify(userDetails));
+            if (verificationData.length > 4) {
 
-            verifiedCattles.push({ repUserId, userId, cattle_uniqueId });
-            repCattleDetails.splice(repCattleIndex, 1);
-            localStorage.setItem("verifiedCattles", JSON.stringify(verifiedCattles));
-            localStorage.setItem("repCattleList", JSON.stringify(repCattleDetails))
-            window.location.reload();
-            // window.location.href = "./cattle_profile.html";
-          }
+              let verifiedCattles = JSON.parse(localStorage.getItem("verifiedCattles")) || [];
+
+              let verifiedCattleData = cattle_detail.find(e => e.cattle_uniqueId === cattle_id);
+              verifiedCattleData.status = "Verified";
+              localStorage.setItem("cattle_details", JSON.stringify(cattle_detail));
+
+              let repCattleIndex = repCattleDetails.indexOf(repCattleDetails.find(e => e.cattle_uniqueId === cattle_id));
+
+              let repUserId = repCattleDetails[repCattleIndex]["repUserId"];
+              let userId = repCattleDetails[repCattleIndex]["userId"];
+              let cattle_uniqueId = repCattleDetails[repCattleIndex]["cattle_uniqueId"];
+
+              let findCattle = cattle_detail.find(e => e.cattle_uniqueId === cattle_id);
+              findCattle.verificationData = verificationData;
+              let receiver = findCattle.userId;
+
+              let notificationId = uuidv4();
+              let messageTitle = "From " + rep_id + ", Representative of KowMart";
+              let message = "Your " + findCattle.breed + " " + findCattle.cattle + " has been Verified. We will reach you soon";
+              let status = false;
+
+              notificationList.push({ notificationId, messageTitle, message, receiver, status });
+              localStorage.setItem("notificationList", JSON.stringify(notificationList));
+
+              verifiedCattles.push({ repUserId, userId, cattle_uniqueId });
+              repCattleDetails.splice(repCattleIndex, 1);
+              localStorage.setItem("cattle_details",JSON.stringify(cattle_detail))
+              localStorage.setItem("verifiedCattles", JSON.stringify(verifiedCattles));
+              localStorage.setItem("repCattleList", JSON.stringify(repCattleDetails))
+              window.location.reload();
+
+            }
+
+            else if ((verificationData.length > 1) && (verificationData.length < 5)) {
+
+              let rejectedCattles = JSON.parse(localStorage.getItem("rejectedCattles")) || [];
+
+              let rejectedCattleData = cattle_detail.find(e => e.cattle_uniqueId === cattle_id);
+              rejectedCattleData.status = "Rejected";
+              localStorage.setItem("cattle_details", JSON.stringify(cattle_detail))
+
+              let repCattleIndex = repCattleDetails.indexOf(repCattleDetails.find(e => e.cattle_uniqueId === cattle_id));
+
+              let repUserId = repCattleDetails[repCattleIndex]["repUserId"];
+              let userId = repCattleDetails[repCattleIndex]["userId"];
+              let cattle_uniqueId = repCattleDetails[repCattleIndex]["cattle_uniqueId"];
+
+              let findCattle = cattle_detail.find(e => e.cattle_uniqueId === cattle_id);
+              findCattle.verificationData = verificationData;
+              let receiver = findCattle.userId;
+
+              let notificationId = uuidv4();
+              let messageTitle = "From " + rep_id + ", Representative of KowMart";
+              let message = "Your " + findCattle.breed + " " + findCattle.cattle + " has been Rejected. Sorry...";
+              let status = false;
+
+              notificationList.push({ notificationId, messageTitle, message, receiver, status });
+              localStorage.setItem("notificationList", JSON.stringify(notificationList));
+
+              rejectedCattles.push({ repUserId, userId, cattle_uniqueId, verificationData });
+              repCattleDetails.splice(repCattleIndex, 1);
+              localStorage.setItem("cattle_details",JSON.stringify(cattle_detail))
+              localStorage.setItem("rejectedCattles", JSON.stringify(rejectedCattles));
+              localStorage.setItem("repCattleList", JSON.stringify(repCattleDetails))
+              window.location.reload();
+                   
+            }
+
+            else {
+              alert("Atleast one checkbox have to select")
+            }
+
+          });
+
         });
       });
 
-      // rejecting by rep //
 
-      let rejectedCattles = JSON.parse(localStorage.getItem("rejectedCattles")) || [];
+      function openSearch() {
+        document.getElementById("myOverlay").style.display = "block";
+      }
 
-      const rejectedButton = document.querySelectorAll("#rejectButton");
-      rejectedButton.forEach(function (findId) {
-        findId.addEventListener("click", function () {
-          if (confirm("Are you verified this cattle?")) {
-            const { id } = this.dataset;
-
-            let rejectedCattleData = cattle_detail.find(e => e.cattle_uniqueId === id);
-            rejectedCattleData.status = "Rejected";
-            localStorage.setItem("cattle_details",JSON.stringify(cattle_detail))
-
-            let repCattleIndex = repCattleDetails.indexOf(repCattleDetails.find(e => e.cattle_uniqueId === id));
-
-            let repUserId = repCattleDetails[repCattleIndex]["repUserId"];
-            let userId = repCattleDetails[repCattleIndex]["userId"];
-            let cattle_uniqueId = repCattleDetails[repCattleIndex]["cattle_uniqueId"];
-
-            let findCattle = cattle_detail.find(e => e.cattle_uniqueId === cattle_uniqueId);
-            
-            let notificationId = uuidv4();
-            let messageTitle = "From " + rep_id + ", Representative of KowMart";
-            let message = "Your " + findCattle.breed + " " + findCattle.cattle + " has been Rejected. Sorry...";
-            
-            notificationList.push({notificationId, messageTitle, message});
-            localStorage.setItem("notificationList",JSON.stringify(notificationList));
-
-            let userNotification = userDetails.find(e => e.phone_no === findCattle.userId).notification;
-            userNotification.push({notificationId});
-            localStorage.setItem("userData",JSON.stringify(userDetails));
-
-            rejectedCattles.push({ repUserId, userId, cattle_uniqueId });
-            repCattleDetails.splice(repCattleIndex, 1);
-            localStorage.setItem("rejectedCattles", JSON.stringify(rejectedCattles));
-            localStorage.setItem("repCattleList", JSON.stringify(repCattleDetails))
-            window.location.reload();
-            // window.location.href = "./cattle_profile.html";
-          }
-        });
-      });
+      function closeSearch() {
+        document.getElementById("myOverlay").style.display = "none";
+      }
+      
     }
 
     // VERIFIED CATTLES PAGE //
@@ -400,7 +555,7 @@
         cancelBtn.innerText = "Cancel Verification";
         btnContainer.append(cancelBtn);
 
-        document.querySelector("div.cattles_container").append(cattle_container);
+        document.querySelector("div.cattles_container").prepend(cattle_container);
       }
 
       // Function for edit button
@@ -426,7 +581,7 @@
 
             let cancelVerifyCattleData = cattle_detail.find(e => e.cattle_uniqueId === id);
             cancelVerifyCattleData.status = "";
-            localStorage.setItem("cattle_details",JSON.stringify(cattle_detail));
+            localStorage.setItem("cattle_details", JSON.stringify(cattle_detail));
 
             let repCattleIndex = verifiedCattleLists.indexOf(verifiedCattleLists.find(e => e.cattle_uniqueId === id));
 
@@ -449,6 +604,7 @@
     // REJECTED CATTLES PAGE //
 
     else if (page === "rejectedCattles") {
+
       document.querySelector("h1.title_color").innerText = "Rejected Cattles";
 
       const repRejectedCattles = rejectedCattleLists.filter(e => e.repUserId === rep_id);
@@ -457,6 +613,7 @@
 
       for (let i = 0; i < repRejectedCattles.length; i++) {
         let rejectedCattlesData = cattle_detail.find(e => e.cattle_uniqueId === repRejectedCattles[i]["cattle_uniqueId"]);
+        rejectedCattlesData.verificationData = rejectedCattleLists[i]["verificationData"];
         rejected_cattles.push(rejectedCattlesData)
       }
 
@@ -499,7 +656,7 @@
         cancelBtn.innerText = "Cancel Rejection";
         btnContainer.append(cancelBtn);
 
-        document.querySelector("div.cattles_container").append(cattle_container);
+        document.querySelector("div.cattles_container").prepend(cattle_container);
       }
 
       // cancelling the rejection by rep //
@@ -513,10 +670,9 @@
 
             let cancelRejectCattleData = cattle_detail.find(e => e.cattle_uniqueId === id);
             cancelRejectCattleData.status = "";
-            localStorage.setItem("cattle_details",JSON.stringify(cattle_detail));
+            localStorage.setItem("cattle_details", JSON.stringify(cattle_detail));
 
             let repCattleIndex = rejectedCattleLists.indexOf(rejectedCattleLists.find(e => e.cattle_uniqueId === id));
-            console.log(repCattleIndex)
 
             let repUserId = rejectedCattleLists[repCattleIndex]["repUserId"];
             let userId = rejectedCattleLists[repCattleIndex]["userId"];

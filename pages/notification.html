@@ -36,14 +36,24 @@
     <script>
 
         function createNotification(message) {
+
             // noteContainer
             const noteContainer = document.createElement("div");
             noteContainer.setAttribute("class", "noteContainer");
+            if ((message.status === false) || (message.readStatus === false)) {
+                noteContainer.style.borderLeft = "2px solid #00a651";
+            }
+
+            // div anchor
+            const contentContainer_anchor = document.createElement("a");
+            contentContainer_anchor.setAttribute("class", "contentContainer_anchor");
+            contentContainer_anchor.setAttribute("data-yid", message.notificationId);
+            noteContainer.append(contentContainer_anchor);
 
             // contentContainer
             const contentContainer = document.createElement("div");
             contentContainer.setAttribute("class", "contentContainer");
-            noteContainer.append(contentContainer);
+            contentContainer_anchor.append(contentContainer);
 
             // noteTitle
             const noteTitle = document.createElement("h3");
@@ -64,114 +74,107 @@
             // icon
             const icon = document.createElement("i");
             icon.setAttribute("class", "fa-solid fa-xmark");
+            icon.setAttribute("data-iid", message.notificationId);
             iconContainer.append(icon);
 
             document.querySelector("div.notificationsContainer").prepend(noteContainer);
+
         }
 
         if (phone_id === null) {
-            const repNotificationList = repDetail.find(e => e.userId === rep_id);
 
-            for (let i = 0; i < repNotificationList.notification.length; i++) {
-                const message = notificationList.find(e => e.notificationId === repNotificationList.notification[i]["notificationId"]);
-                createNotification(message);
+            const repNotificationList = notificationList.filter(e => e.receiver === rep_id);
+            
+            if (repNotificationList.length === 0) {
+                noNote();
             }
-        } else if (rep_id === null) {
-            const userNotificationList = userDetails.find(e => e.phone_no === phone_id);
 
-            for (let i = 0; i < userNotificationList.notification.length; i++) {
-                const message = notificationList.find(e => e.notificationId === userNotificationList.notification[i]["notificationId"]);
-                createNotification(message);
+            else {
+                for (let i = 0; i < repNotificationList.length; i++) {
+                    const message = repNotificationList[i];
+                    createNotification(message);
+                }
+            
+                const newNote = document.querySelectorAll(".contentContainer_anchor");
+                newNote.forEach(function (findId) {
+                    findId.addEventListener("click", function () {
+                        const id = this.dataset.yid;
+                        const oldNote = notificationList.find(e => e.notificationId === id);
+                        oldNote.readStatus = true;
+                        localStorage.setItem("notificationList", JSON.stringify(notificationList));
+                        window.location.href = "./cattle/cattleList.html?page=repCattleList";
+                    });
+                });
+
+                const removeNotifications = document.querySelectorAll(".fa-xmark");
+                removeNotifications.forEach(function (findId) {
+                    findId.addEventListener("click", function () {
+                        const { id } = this.dataset;
+                        let notificationIndex = notificationList.indexOf(notificationList.find(e => e.notificationId === id));
+                        notificationList.splice(notificationIndex, 1);
+                        localStorage.setItem("notificationList", JSON.stringify(notificationList));
+                        window.location.reload();
+                    });
+                });
             }
         }
 
-        // if (phone_id === null) {
+        else if (rep_id === null) {
 
-        //     const repNotificationList = repDetail.find(e => e.userId === rep_id);
+            const userNotificationList = notificationList.filter(e => e.receiver === phone_id);
 
-        //     for (let i = 0; i < repNotificationList.notification.length; i++) {
+            if (userNotificationList.length === 0){
+                noNote();
+            }
 
-        //         let message = notificationList.find(e => e.notificationId === repNotificationList.notification[i]["notificationId"]);
+            else {
 
-        //         // noteContainer
-        //         noteContainer = document.createElement("div");
-        //         noteContainer.setAttribute("class", "noteContainer");
+                for (let i = 0; i < userNotificationList.length; i++) {
+                    const message = userNotificationList[i];
+                    createNotification(message);
+                }
 
-        //         // contentContainer
-        //         contentContainer = document.createElement("div");
-        //         contentContainer.setAttribute("class", "contentContainer");
-        //         noteContainer.append(contentContainer);
+                const newNote = document.querySelectorAll(".contentContainer_anchor");
+                newNote.forEach(function (findId) {
+                    findId.addEventListener("click", function () {
+                        const id = this.dataset.yid;
+                        const oldNote = notificationList.find(e => e.notificationId === id);
+                        oldNote.status = true;
+                        localStorage.setItem("notificationList", JSON.stringify(notificationList));
+                        window.location.href = "./cattle/cattleList.html?page=sellerCattleList";
+                    });
+                });
 
-        //         // noteTitle
-        //         noteTitle = document.createElement("h3");
-        //         noteTitle.setAttribute("class", "noteTitle")
-        //         noteTitle.innerText = message.messageTitle;
-        //         contentContainer.append(noteTitle);
+                const removeNotifications = document.querySelectorAll(".fa-xmark");
+                removeNotifications.forEach(function (findId) {
+                    findId.addEventListener("click", function () {
+                        const id = this.dataset.iid;
+                        let notificationIndex = notificationList.indexOf(notificationList.find(e => e.notificationId === id));
+                        notificationList.splice(notificationIndex, 1);
+                        localStorage.setItem("notificationList", JSON.stringify(notificationList));
+                        window.location.reload();
+                    });
+                });
+            }
+        }
 
-        //         // content
-        //         content = document.createElement("p");
-        //         content.innerText = message.message + " .";
-        //         contentContainer.append(content);
+        function noNote() {
+            document.querySelector(".heading").style.display = "none";
 
-        //         // iconContainer
-        //         iconContainer = document.createElement("div");
-        //         iconContainer.setAttribute("class", "iconContainer");
-        //         noteContainer.append(iconContainer);
+            container = document.createElement("div");
+            container.setAttribute("class", "noNoteContainer")
 
-        //         // icon
-        //         icon = document.createElement("i");
-        //         icon.setAttribute("class", "fa-solid fa-xmark");
-        //         iconContainer.append(icon);
+            icon = document.createElement("i");
+            icon.setAttribute("class", "fa-solid fa-bell bell");
+            container.append(icon);
 
-        //         document.querySelector("div.notificationsContainer").prepend(noteContainer)
+            title = document.createElement("h2");
+            title.setAttribute("class", "title");
+            title.innerText = "No Notifications";
+            container.append(title);
 
-        //     }
-
-        // }
-
-        // else if (rep_id === null) {
-
-        //     const userNotificationList = userDetails.find(e => e.phone_no === phone_id);
-
-        //     for (let i = 0; i < userNotificationList.notification.length; i++) {
-
-        //         let message = notificationList.find(e => e.notificationId === userNotificationList.notification[i]["notificationId"]);
-
-        //         // noteContainer
-        //         noteContainer = document.createElement("div");
-        //         noteContainer.setAttribute("class", "noteContainer");
-
-        //         // contentContainer
-        //         contentContainer = document.createElement("div");
-        //         contentContainer.setAttribute("class", "contentContainer");
-        //         noteContainer.append(contentContainer);
-
-        //         // noteTitle
-        //         noteTitle = document.createElement("h3");
-        //         noteTitle.setAttribute("class", "noteTitle")
-        //         noteTitle.innerText = message.messageTitle;
-        //         contentContainer.append(noteTitle);
-
-        //         // content
-        //         content = document.createElement("p");
-        //         content.innerText = message.message + " .";
-        //         contentContainer.append(content);
-
-        //         // iconContainer
-        //         iconContainer = document.createElement("div");
-        //         iconContainer.setAttribute("class", "iconContainer");
-        //         noteContainer.append(iconContainer);
-
-        //         // icon
-        //         icon = document.createElement("i");
-        //         icon.setAttribute("class", "fa-solid fa-xmark");
-        //         iconContainer.append(icon);
-
-        //         document.querySelector("div.notificationsContainer").prepend(noteContainer)
-
-        //     }
-
-        // }
+            document.querySelector("div.notificationsContainer").append(container);
+        }
 
     </script>
 

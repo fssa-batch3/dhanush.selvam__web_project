@@ -31,7 +31,7 @@ function signUp(e) {
       const district = "";
       const pincode = "";
       const user = "customer";
-      const notification = [];
+      // const notification = [];
     
       const userData = JSON.parse(localStorage.getItem("userData")) || [];
     
@@ -39,7 +39,7 @@ function signUp(e) {
     
       if (!exist) {
         if (password === confirm_password) {
-          userData.push({name, phone_no, password, address, district, pincode, user_uniqueId, user, notification});
+          userData.push({name, phone_no, password, address, district, pincode, user_uniqueId, user});
           localStorage.setItem("userData", JSON.stringify(userData));
           document.querySelector("form").reset();
           // document.getElementById("phone_no").focus();
@@ -62,7 +62,7 @@ function signUp(e) {
       const district = "";
       const pincode = "";
       const user = "rep";
-      const notification = [];
+      // const notification = [];
       const phone_no = "";
 
       const rep_details = JSON.parse(localStorage.getItem("rep_details")) || [];
@@ -71,7 +71,7 @@ function signUp(e) {
     
       if (!exist) {
         if (password === confirm_password) {
-          rep_details.push({userId, name, phone_no, password, address, district, pincode, user, notification});
+          rep_details.push({userId, name, phone_no, password, address, district, pincode, user});
           localStorage.setItem("rep_details", JSON.stringify(rep_details));
           document.querySelector("form").reset();
           // document.getElementById("user_id").focus();

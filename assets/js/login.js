@@ -1,5 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const user = params.get('user');
+const repDetail = JSON.parse(localStorage.getItem("rep_details"));
 
 window.addEventListener("load", function () {
     if (user === "rep") {
@@ -26,14 +27,21 @@ function signIn(e) {
     const phone_no = document.getElementById("phone_no").value;
     const password = document.getElementById("password").value;
 
-    const exist = JSON.parse(localStorage.getItem("userData")).some((data) => data.phone_no === phone_no && data.password === password);
+    const userDetails = JSON.parse(localStorage.getItem("userData"));
 
-    if (!exist) {
+    if (userDetails) {
+      const exist = userDetails.some((data) => data.phone_no === phone_no && data.password === password);
+  
+      if (!exist) {
+        alert("Incorrect login credentials");
+      } else {
+        localStorage.setItem("phone_no_id", JSON.stringify(phone_no));
+        alert("Successfully logined");
+        window.location.href = "../../pages/buyer_profile.html";
+      }
+    }
+    else {
       alert("Incorrect login credentials");
-    } else {
-      localStorage.setItem("phone_no_id", JSON.stringify(phone_no));
-      alert("Successfully logined");
-      window.location.href = "../../pages/buyer_profile.html";
     }
   }
 
@@ -42,14 +50,21 @@ function signIn(e) {
     const user_id = document.getElementById("user_id").value;
     const password = document.getElementById("password").value;
 
-    const exist = JSON.parse(localStorage.getItem("rep_details")).some((data) => data.userId === user_id && data.password === password);
+    const repDetail = JSON.parse(localStorage.getItem("rep_details"))
 
-    if (!exist) {
-      alert("Incorrect login credentials");
-    } else {
-      localStorage.setItem("rep_id", JSON.stringify(user_id));
-      alert("Successfully logined");
-      window.location.href = "../../pages/buyer_profile.html";
+    if (repDetail) {
+      const exist = repDetail.some((data) => data.userId === user_id && data.password === password);
+
+      if (!exist) {
+        alert("Incorrect login credentials");
+      } else {
+        localStorage.setItem("rep_id", JSON.stringify(user_id));
+        alert("Successfully logined");
+        window.location.href = "../../pages/buyer_profile.html";
+      }
+    }
+    else {
+      alert("Incorrect login credentails")
     }
   }
 

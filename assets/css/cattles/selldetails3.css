@@ -171,6 +171,26 @@ textarea:focus{
     color: darkslategray;
 }
 
+/* .container {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popUpContainer {
+    background: #00a651;
+    position: absolute;
+    top: 15%;
+    color: white;
+    height: 45px;
+    width: 18%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+} */
+    
 @media screen and (max-width: 480px) {
 
     form{

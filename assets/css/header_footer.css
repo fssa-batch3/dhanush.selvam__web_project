@@ -95,11 +95,12 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
     background-color: #00a651;
     color: white;
     padding-left: 15px;
-    padding-right: 15px;
+    padding-right: 150px;
 }
 
 .left_foot {
@@ -120,8 +121,7 @@ footer {
 }
 
 .right_foot {
-    padding-top: 50px;
-    padding-right: 150px;
+    width: 20%;
 }
 
 .com_icons{
@@ -139,7 +139,7 @@ i{
     font-size: 30px;
 }
 
-i:hover{
+.fa-facebook:hover, .fa-whatsapp:hover, .fa-instagram:hover{
     transform: scale(1.2);
     color: white;
 }
@@ -154,6 +154,10 @@ i:hover{
 
 .com_info_container{
     padding-left: 40px;
+}
+
+.comAddress {
+    line-height: 22px;
 }
 
 .user_icon_container{
@@ -194,7 +198,7 @@ i:hover{
     font-size: 36px;
   }
 
-  span{
+  .navBar{
     display: none;
     position: absolute;
     left: 21rem;
@@ -202,7 +206,11 @@ i:hover{
     color: #00a651;
   }
 
-.overlay {
+  .btn_container {
+    align-items: center;
+  }
+
+  .overlay {
     height: 100%;
     width: 100%;
     display: none;
@@ -211,7 +219,6 @@ i:hover{
     top: 0;
     left: 0;
     background-color: #e8f5ec;
-    /* background-color: rgba(232, 245, 236, 0.9);; */
   }
   
   .overlay-content {
@@ -225,11 +232,9 @@ i:hover{
   }
   
   .overlay .closebtn {
-    display: block;
     position: absolute;
     top: 20px;
     right: 45px;
-    left: auto;
     font-size: 60px;
     cursor: pointer;
     color: gray;
@@ -256,10 +261,6 @@ i:hover{
   .user_container >h2 >a{
     color: #00a651;
     text-decoration: none;
-  }
-
-  .btn_container {
-    align-items: center;
   }
 
 @media screen and (max-width: 480px) {
@@ -296,7 +297,7 @@ i:hover{
         width: 100%;
     }
 
-    span{
+    .navBar{
         display: flex;
     }
 
@@ -379,4 +380,5 @@ i:hover{
     .list_page_foot{
         margin-top: 15px;
     }
+    
 }

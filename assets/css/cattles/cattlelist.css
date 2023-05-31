@@ -124,11 +124,6 @@ div.search_bar_container >input{
     color: #00a651;
 }
 
-.fa-magnifying-glass:hover{
-    transform: scale(1.0);
-    color: #00a651;
-}
-
 .range_container{
     background-color: white;
     width: 85%;
@@ -379,6 +374,87 @@ input[type="range"]::-moz-range-thumb{
     background: #17A2B8;
 }
 
+.overlay1 {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #e8f5ec;
+  }
+  
+  .overlay-content1 {
+    background: #ffffff;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    position: relative;
+    top: 10%;
+    width: 35%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 10px 0px;
+  }
+
+  .titleContainer {
+    text-align: center;
+  }
+
+  .checklistsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checklistContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0px;
+  }
+
+  .labelContainer {
+    width: 70%;
+  }
+
+  .descContainer {
+    margin: 20px 0px 0px 70px;
+  }
+
+  .descLabel {
+    font-weight: bold;
+  }
+
+  small {
+    font-weight: normal;
+  }
+
+  textarea {
+    margin-top: 10px;
+    width: 82%;
+    height: 80px;
+    resize: none;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px 20px 0px;
+  }
+  
+  .overlay .closebtn, .overlay1 .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: gray;
+  }
+  
+  .overlay .closebtn:hover, .overlay1 .closebtn:hover {
+    color: black;
+  }
 
 @media screen and (max-width: 480px) {
 

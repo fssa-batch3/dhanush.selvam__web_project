@@ -129,9 +129,9 @@
 
         <!-- Cattles Section -->
 
-        <div class="products_section"> 
-            <hr id = "line">
-            <h1 id = "cattle_title"> </h1>
+        <div class="products_section">
+            <hr id="line">
+            <h1 id="cattle_title"> </h1>
         </div>
 
     </main>
@@ -145,10 +145,12 @@
         const cattle_id = urlParams.get("cattle_id");
         const user_id = urlParams.get("user_id");
         const page = urlParams.get("page");
+        const desc = urlParams.get("desc");
 
         const cattleData = cattle_detail.filter((e) => e.cattle_uniqueId == cattle_id);
         const repData = repDetail.find(e => e.userId === user_id);
         const userData = userDetails.find(e => e.phone_no === user_id);
+        // const verificationdesc = 
 
         cattle_image = document.createElement("img");
         cattle_image.setAttribute("src", cattleData[0].image);
@@ -161,7 +163,8 @@
             cattle_image1.setAttribute("src", cattleData[0].image1);
             cattle_image1.setAttribute("alt", `${cattleData[0].breed} ${cattleData[0].cattle}`);
             cattle_image1.setAttribute("class", "image");
-        } else {
+        } 
+        else {
             document.getElementById("left").style.display = "none";
             document.getElementById("right").style.display = "none";
         }
@@ -169,6 +172,7 @@
         // Function for toggling two cattle images
 
         function add(e) {
+
             const imagesrc = document.querySelector(".image").getAttribute("src");
 
             if (imagesrc == cattleData[0].image) {
@@ -199,13 +203,26 @@
         weight = document.querySelector("p.cattle_weight");
         weight.innerText = `${cattleData[0].weight} Kg`;
 
-        if (cattleData[0].description != "") {
-            description = document.querySelector("p.description");
-            description.innerText = cattleData[0].description;
-        } else {
-            description = document.querySelector("p.description");
-            description.innerText = `Quality ${cattleData[0].breed} ${cattleData[0].cattle} of ${cattleData[0].age} year(s) age is available. The price of the cattle is Rs. ${cattleData[0].price} /-. The ${cattleData[0].cattle} is in ${cattleData[0].lactation} lactation. It Produces ${cattleData[0].milk} Litres of milk on daily basis.`;
-        }
+        // if (desc === "no") {
+            if (cattleData[0].description != "") {
+                description = document.querySelector("p.description");
+                description.innerText = cattleData[0].description;
+            } else {
+                description = document.querySelector("p.description");
+                description.innerText = `Quality ${cattleData[0].breed} ${cattleData[0].cattle} of ${cattleData[0].age} year(s) age is available. The price of the cattle is Rs. ${cattleData[0].price} /-. The ${cattleData[0].cattle} is in ${cattleData[0].lactation} lactation. It Produces ${cattleData[0].milk} Litres of milk on daily basis.`;
+            }
+        // }
+        // else {
+
+        //     let verification = "";
+
+        //     for (let i = 0; i < cattleData[0]["verificationData"].length; i++){
+        //         verification += verificationDetails[cattleData[0]["verificationData"][i]]["question"] + ". ";
+        //     }
+
+        //     description = document.querySelector("p.description");
+        //     description.innerText = verification;
+        // }
 
         price = document.querySelector("h1.price");
         price.innerText = `Rs.${cattleData[0].price}`;
@@ -222,7 +239,7 @@
         // Function for favourites
 
         favourite.addEventListener("click", function (event) {
-            if (page === null) { 
+            if (page === null) {
                 if (phone_id == null) {
                     alert("Please Log In");
                     return;
@@ -232,7 +249,7 @@
                     const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 
                     for (let i = 0; i < favourites.length; i++) {
-                        if (cattleId == favourites[i].cattleId && favourites[i].user_unique_id == phone_id) {
+                        if ((cattleId == favourites[i].cattleId) && (favourites[i].phone_id == phone_id)) {
                             alert("Already added in the list");
                             return;
                         }
@@ -240,13 +257,13 @@
                     alert("Added to your Favourites list");
                     favourites.push({ cattleId, phone_id });
                     localStorage.setItem("favourites", JSON.stringify(favourites));
-                // window.location.href = "../../cattle/favourites.html";                
+                    // window.location.href = "../../cattle/cattleList.html";     
                 }
             }
         });
 
 
-        if (page === null){
+        if (page === null) {
 
             seller_name = document.querySelector("h2.seller_name");
             seller_name.innerText = repData.name;
@@ -264,7 +281,7 @@
 
         }
 
-        if (page === "seller"){
+        if (page === "seller") {
 
             seller_name = document.querySelector("h2.seller_name");
             seller_name.innerText = userData.name;
@@ -287,30 +304,34 @@
         seller_profile.setAttribute("id", "seller_profile");
         seller_profile.setAttribute("onclick", sellerId());
         seller_profile.setAttribute("custom-id", user_id);
-        seller_profile.innerText = "View Seller Profile";
+        seller_profile.innerText = "View Seller's Other Cattles";
         document.querySelector(".seller_profile_btn").append(seller_profile);
 
         // Function for seller-profile
 
-        
+
         function sellerId() {
-            if (page === null){
+            if (page === null) {
                 seller_profile.addEventListener("click", function (event) {
-                    window.location.href = `../../cattle/b-sprofile.html?user-id=${user_id}`;
+                    window.location.href = `../../cattle/cattleList.html?page=repOtherCattles&user-id=${user_id}`;
                 });
             }
         }
 
-        const category = JSON.parse(localStorage.getItem("cattle_details"));
-        const category_id = category.filter((e) => e.breed == breed_category);
+        const breedCattles = cattle_detail.filter((e) => e.breed == breed_category);
 
-        const index = category_id.find((e) => e.cattle_uniqueId == cattle_id);
-        const index_no = category_id.indexOf(index);
+        const verifiedBreedCattles = breedCattles.filter((e) => {
+            const matchCattleId = verifiedCattleLists.find((a) => a.cattle_uniqueId === e.cattle_uniqueId);
+            if (matchCattleId) {
+                e.repId = matchCattleId.repUserId;
+                return true;
+            }
+            return false;
+        });
 
-        const array = category_id.splice(0, index_no);
-
-        const array1 = category_id.concat(array);
-        const new_array = array1.filter((e) => e.userId != phone_id);
+        const currentIndexNo = verifiedBreedCattles.indexOf(verifiedBreedCattles.find((e) => e.cattle_uniqueId == cattle_id));
+        const spliceCattles = verifiedBreedCattles.splice(0, currentIndexNo);
+        const addedCattles = verifiedBreedCattles.concat(spliceCattles);
 
         document.getElementById("cattle_title").innerText = `More ${breed_category}`;
 
@@ -326,7 +347,7 @@
 
         document.querySelector("div.products_section").append(cattles_container);
 
-        for (let i = 1; i < new_array.length; i++) {
+        for (let i = 1; i < addedCattles.length; i++) {
 
             if (i <= 3) {
 
@@ -341,13 +362,13 @@
 
                 // a
                 cattle_anchor = document.createElement("a");
-                cattle_anchor.setAttribute("href", `./C1.html?breed=${new_array[i].breed}&cattle_id=${new_array[i].cattle_uniqueId}&user_id=${new_array[i].userId}`);
+                cattle_anchor.setAttribute("href", `./C1.html?breed=${addedCattles[i].breed}&cattle_id=${addedCattles[i].cattle_uniqueId}&user_id=${addedCattles[i].repId}`);
                 cattle_img_container.append(cattle_anchor);
 
                 // cattle image
                 cat_image = document.createElement("img");
-                cat_image.setAttribute("src", new_array[i].image);
-                cat_image.setAttribute("alt", `${new_array[i].breed} ${new_array[i].cattle}`);
+                cat_image.setAttribute("src", addedCattles[i].image);
+                cat_image.setAttribute("alt", `${addedCattles[i].breed} ${addedCattles[i].cattle}`);
                 cat_image.setAttribute("class", "cattle_image");
                 cattle_anchor.append(cat_image);
 
@@ -359,23 +380,23 @@
                 // cattle info
                 cattle_name = document.createElement("p");
                 cattle_name.setAttribute("class", "cattle_name");
-                cattle_name.innerText = `${new_array[i].breed} ${new_array[i].cattle} ${new_array[i].id}`;
+                cattle_name.innerText = `${addedCattles[i].breed} ${addedCattles[i].cattle} ${addedCattles[i].id}`;
                 info_container.append(cattle_name);
 
                 cattle_age = document.createElement("p");
                 cattle_age.setAttribute("class", "cattle_age");
-                cattle_age.innerText = `Age: ${new_array[i].age} Year(s)`;
+                cattle_age.innerText = `Age: ${addedCattles[i].age} Year(s)`;
                 info_container.append(cattle_age);
 
                 cattle_gender = document.createElement("p");
                 cattle_gender.setAttribute("class", "cattle_age");
-                cattle_gender.innerText = `Gender: ${new_array[i].gender}`;
+                cattle_gender.innerText = `Gender: ${addedCattles[i].gender}`;
                 info_container.append(cattle_gender);
 
                 // a
 
                 buttonContainer = document.createElement("a");
-                buttonContainer.setAttribute("href", `./C1.html?breed=${new_array[i].breed}&cattle_id=${new_array[i].cattle_uniqueId}&user_id=${new_array[i].userId}`);
+                buttonContainer.setAttribute("href", `./C1.html?breed=${addedCattles[i].breed}&cattle_id=${addedCattles[i].cattle_uniqueId}&user_id=${addedCattles[i].repId}`);
                 info_container.append(buttonContainer);
 
                 button_know = document.createElement("button");
